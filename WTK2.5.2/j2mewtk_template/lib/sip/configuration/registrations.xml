@@ -1,0 +1,5 @@
+<REGISTRATIONS>
+<REGISTRATION displayName="Happy User" uri="sip:huser@localhost" >
+<CONTACT uri="sip:huser@anotherdomain.com" />
+</REGISTRATION>
+</REGISTRATIONS>

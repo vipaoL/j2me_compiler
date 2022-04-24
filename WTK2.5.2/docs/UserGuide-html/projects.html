@@ -1,0 +1,413 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  3 - Working With Projects
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="developing.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="emulator.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626613_pgfId-56546"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">3</SPAN><A NAME="50626613_99364"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626613_pgfId-50462"></A><A NAME="50626613_36360"></A><A NAME="50626613_marker-51263"></A>Working With Projects
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-50455"></A>In the last chapter, you learned how the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC helps you with the MIDP development cycle. This chapter delves more deeply into the details of working with projects, including the following:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626613_pgfId-47788"></A>Selecting the target APIs for a project
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626613_pgfId-47792"></A>Manipulating MIDlet suite attributes, including the list of MIDlets
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626613_pgfId-47793"></A>Understanding the project directory structure
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626613_pgfId-51675"></A>Including third-party libraries in a project
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H2 CLASS="Head1"><A NAME="50626613_pgfId-51677"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>3.1	<A NAME="50626613_marker-51676"></A>Selecting APIs</H2>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-60032"></A>Each project is built against some set of APIs. The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC supports many APIs. The full list is detailed in <A HREF="introduction.html#50626611_83653" CLASS="XRef">Section 1.6, Supported Technology</A>. The toolkit enables you to develop applications for some subset of APIs based on the type of devices you expect to run your software.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-51685"></A>For example, even though the toolkit supports JSR 184, the Mobile 3D Graphics API, you might want to develop applications that don't make use of that API. The project's API Selection settings make it possible to choose only the APIs you want to use.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-51686"></A>To see how this works, launch the toolkit and open a project. Click Settings to bring up the window shown in <A HREF="projects.html#50626613_51613" CLASS="XRef">FIGURE 3-1</A>:
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626613_pgfId-61998"></A>FIGURE 3-1 	<A NAME="50626613_51613"></A>Project Settings Window
+</P>
+<BR><A NAME="50626613_pgfId-69648"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626613_pgfId-56583"></A>
+<P><IMG SRC="figures/projects-4.jpg" TITLE="Project settings window for API Selection. The target platform is MSA." ALT="Project settings window for API Selection. The target platform is MSA." ALIGN="BASELINE">
+</P><A NAME="50626613_pgfId-69591"></A><A NAME="50626613_pgfId-69647"></A>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-56610"></A>On the API Selection pane, the <A NAME="50626613_marker-56609"></A>Target Platform setting controls the appearance of the rest of the pane. Choose the setting that best suits your need, and tweak your selection with the controls below. For example, if you're developing applications for devices that are compliant with the Java Technology for the Wireless Industry JSR, choose JTWI from the combo box. Then use the controls below to specify a version of CLDC and choose optional APIs.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-56611"></A>The toolkit applies your selections when you compile your source code.
+</P>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626613_pgfId-56612"></A>API selections do not apply to the emulator. The emulator always supports all the available APIs. The API selections you make in the project settings apply only to building a project. In essence, the API selections choose which classpath the toolkit uses for compiling and preverifying your source files.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR><H2 CLASS="Head1"><A NAME="50626613_pgfId-51703"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>3.2	<A NAME="50626613_marker-51702"></A>Changing MIDlet Suite Attributes</H2>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-59043"></A>The project settings window also allows you to control the MIDlet suite attributes, which are stored in the descriptor as well as the manifest file of the MIDlet suite JAR file.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-59044"></A>To see the attributes, open a project, then click the Settings button. The icon bar on the left of the settings window has three icons for attributes: Required, Optional, and User Defined.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47247"></A>Consult the MIDP 2.0 specification, final release 2 (referred to as MIDP 2.1) for the definitions of the required and optional attributes. The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC takes care of most of the details. In the early stages of development, you might not have to worry about the attributes at all. Once your application is stable and you're starting to think about deploying on real devices and going to market, adjust the values.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47257"></A>To adjust a value on the Required or Optional panes, click in the cell next to the attribute key you wish to change. Type in the new value.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626613_pgfId-62004"></A>FIGURE 3-2 	Editing MIDlet Suite Attributes
+</P>
+<BR><A NAME="50626613_pgfId-69652"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626613_pgfId-56625"></A>
+<P><IMG SRC="figures/projects-6.jpg" TITLE="Midlet Suite attributes for &quot;Tiny&quot; project" ALT="Midlet Suite attributes for &quot;Tiny&quot; project" ALIGN="BASELINE">
+</P><A NAME="50626613_pgfId-69596"></A><A NAME="50626613_pgfId-69651"></A>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47278"></A>To create new user-defined attributes, click the User Defined icon. Click the Add button and fill in the property name and value, then click OK. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-60659"></A>To edit the user-defined property value, click the value column next to the key, just as you would with required or optional attributes.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47285"></A>To remove an attribute, select an attribute and click Remove.
+</P><H2 CLASS="Head1"><A NAME="50626613_pgfId-47281"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>3.3	<A NAME="50626613_marker-51267"></A>Manipulating MIDlets</H2>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47297"></A>The project settings also provide a way to add or modify the MIDlets that are contained in the current MIDlet suite project. To see how this works, start the toolkit and open an existing project. Click Settings and choose the MIDlets icon. You will see a list of all MIDlets in the project. If you just created a new project, the toolkit automatically fills in the first MIDlet entry.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626613_pgfId-62010"></A>FIGURE 3-3 	List of MIDlets in a Project
+</P>
+<BR><A NAME="50626613_pgfId-69654"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626613_pgfId-56659"></A>
+<P><IMG SRC="figures/projects-7.jpg" TITLE="MIDlet list for project &quot;Tiny&quot;" ALT="MIDlet list for project &quot;Tiny&quot;" ALIGN="BASELINE">
+</P><A NAME="50626613_pgfId-69601"></A><A NAME="50626613_pgfId-69653"></A>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47321"></A>To add a new <A NAME="50626613_marker-60842"></A>MIDlet, click Add. Fill in the name, icon file name, and class name. You can leave the icon file name blank if you wish. To change values or remove MIDlet entries, use the Edit and Remove buttons.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47350"></A>The MIDlet names are presented to the user in the order shown when the MIDlet suite is launched. You can modify the order by selecting a MIDlet and clicking Move Up or Move Down. 
+</P><H2 CLASS="Head1"><A NAME="50626613_pgfId-47810"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>3.4	<A NAME="50626613_marker-51268"></A>Using the Push Registry</H2>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47814"></A>You can also use project settings to work with a MIDlet suite's push registry settings. Click on Settings... and choose the Push Registry icon.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626613_pgfId-62351"></A>FIGURE 3-4 	Project Push Registry Settings
+</P>
+<BR><A NAME="50626613_pgfId-69644"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626613_pgfId-62355"></A>
+<P><IMG SRC="figures/projects-8.jpg" TITLE="This figure displays the push registry settings for the WMADemo project" ALT="This figure displays the push registry settings for the WMADemo project" ALIGN="BASELINE">
+</P><A NAME="50626613_pgfId-69606"></A><A NAME="50626613_pgfId-69643"></A>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-62357"></A>To add an entry to the push registry, press Add and fill in values for the connection URL, MIDlet class, and allowed sender, then click OK. To edit an entry, select the entry and press the Edit button. To remove a push registry entry, select it and click Remove.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47838"></A>If you do make push registry entries for your application, make sure you also enter the appropriate permissions. See <A HREF="security.html#50626616_32725" CLASS="XRef">Chapter 6</A> for details.
+</P><H2 CLASS="Head1"><A NAME="50626613_pgfId-57037"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>3.5	Setting Up Content Handlers</H2>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-57041"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC supports the Content Handler API (CHAPI), which is defined by JSR 211. The basic concept of CHAPI is that MIDlets can be launched in response to incoming content (files). Modern mobile phones can receive content using SMS, infrared, Bluetooth, e-mail, and other methods. Most content has an associated content type. CHAPI specifies a system by which MIDlets can be launched in response to specific types of content.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-57275"></A>To modify the content handler settings in your project, click on Settings and choose the Content Handlers pane.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626613_pgfId-62016"></A>FIGURE 3-5 	Configuring Content Handlers
+</P>
+<BR><A NAME="50626613_pgfId-69650"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626613_pgfId-57286"></A>
+<P><IMG SRC="figures/projects-9.jpg" TITLE="Project Settings window for CHAPIDemo with Content Handlers icon selected on left" ALT="Project Settings window for CHAPIDemo with Content Handlers icon selected on left" ALIGN="BASELINE">
+</P><A NAME="50626613_pgfId-69611"></A><A NAME="50626613_pgfId-69649"></A>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-57276"></A>Each line in the list represents the settings for a content handler. In this example, two content handlers have been configured, one for <KBD CLASS="Filename-Command">TextViewer</KBD> and one for <KBD CLASS="Filename-Command">ImageViewer</KBD>. To create a new content handler, press Add, or to edit an existing content handler, press Edit. You can adjust the order of the content handlers by selecting one and using the Move Up and Move Down buttons. To remove a content handler from the list, press Remove.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-57321"></A>When you add or edit a content handler, the details window appears:
+</P>
+<P CLASS="FigureCaption"><A NAME="50626613_pgfId-61980"></A>FIGURE 3-6 	Content Handler Details
+</P>
+<BR><A NAME="50626613_pgfId-69656"></A>
+<P CLASS="FigureBox"><A NAME="50626613_pgfId-57322"></A>
+<P><IMG SRC="figures/projects-10.jpg" TITLE="Content Handler details window with Content Handler tab selected" ALT="Content Handler details window with Content Handler tab selected" ALIGN="BASELINE">
+</P><A NAME="50626613_pgfId-69616"></A><A NAME="50626613_pgfId-69655"></A>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-60232"></A>In the Class field, fill in the name of a MIDlet. ID is an identification string that can be used to invoke a content handler and control access.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-59225"></A>Content types is a list of content types for which this content handler is responsible. Use Add and Remove to manage the list. <EM CLASS="Emphasis">Suffix strings</EM> is a list of URL suffixes that are often a substitute for an explicit content type. Finally, <EM CLASS="Emphasis">Access allowed to</EM> is a list of content handler IDs that indicates which other content handlers have access to this content handler. If the list is empty, access to this content handler is granted to every other content handler.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-59075"></A>Content handlers have associated actions, which give invoking applications a choice about how to handle content. An image viewer content handler, for example, might include an action for viewing the image at its original size and another action that makes the image fill the available screen space. Click the Actions tab of the content handler details window to edit the actions for a content handler.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626613_pgfId-62022"></A>FIGURE 3-7 	Content Handler Actions
+</P>
+<BR><A NAME="50626613_pgfId-69658"></A>
+<P CLASS="FigureBox"><A NAME="50626613_pgfId-57394"></A>
+<P><IMG SRC="figures/projects-11.jpg" TITLE="Content Handler details window with Actions tab selected" ALT="Content Handler details window with Actions tab selected" ALIGN="BASELINE">
+</P><A NAME="50626613_pgfId-69621"></A><A NAME="50626613_pgfId-69657"></A>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-57401"></A>The Actions list contains the internal names of the actions for this content handler. Locales is a list of all the locales for which human-readable action names will be provided. Localized actions is a grid which contains the human-readable action names for various locales. Each locale is represented by a row, while the actions are listed as columns. You can see all the human-readable action names for a particular locale by reading across a single row.
+</P><H2 CLASS="Head1"><A NAME="50626613_pgfId-57364"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>3.6	Project Directory Structure</H2>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-60264"></A>Projects have a standard directory structure. The project itself is represented by a directory in the <KBD CLASS="Filename-Command">apps</KBD> subdirectory. For example, on Windows the <KBD CLASS="Filename-Command">demos</KBD> project resides in <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;apps&#92;demos</KBD>. The following table describes the project directory structure.
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaption"> <A NAME="50626613_pgfId-47631"> </A> TABLE 3-1 	Project Directory Structure </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626613_pgfId-47635"></A>Directory
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626613_pgfId-47637"></A>Description
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47639"></A><KBD CLASS="Filename-Command">bin</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47641"></A>The MIDlet suite descriptor and JAR file are placed in this directory when you package the project. This directory also contains the unpackaged manifest information and might include an HTML file that is used internally if you use Run via OTA.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47643"></A><KBD CLASS="Filename-Command">classes</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47645"></A>This directory is used to store compiled class files.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47647"></A><KBD CLASS="Filename-Command">lib</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47649"></A>Place a third-party library in this directory to include it in this project.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47651"></A><KBD CLASS="Filename-Command">res</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47653"></A>Place images, sounds, and other resource files in this directory. They are packaged into the root of the MIDlet suite JAR file.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47660"></A><KBD CLASS="Filename-Command">src</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47662"></A>Place source files in this directory.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47664"></A><KBD CLASS="Filename-Command">tmpclasses</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47666"></A>For toolkit use.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47668"></A><KBD CLASS="Filename-Command">tmplib</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-47670"></A>For toolkit use.
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47656"></A>In addition, the project directory contains a <KBD CLASS="Filename-Command">project.properties</KBD> file that contains information about the project.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47728"></A>To remove temporary directories and files from the project, choose Project &gt; <A NAME="50626613_marker-60565"></A>Clean. 
+</P><H2 CLASS="Head1"><A NAME="50626613_pgfId-47758"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>3.7	<A NAME="50626613_marker-51270"></A>Using Third-Party Libraries</H2>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47762"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC enables you to incorporate third-party libraries in your applications. Using third-party libraries can reduce your development time by providing functionality you don't wish to build yourself, but keep a close eye on the size of your MIDlet suite JAR file.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47361"></A>When you use a third-party library in your application, your JAR expands by the size of the third-party library. You can use an obfuscator to reduce the code size, and a good obfuscator even eliminates whatever parts of the library you are not using. Even with the use of an obfuscator, a third-party library is probably still larger than your own custom code, carefully written from scratch. You have to evaluate the trade-off between reducing your development time and the size of your MIDlet suite JAR file.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-57000"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC supplies two methods for incorporating third-party libraries. The External APIs pane in the project settings makes it easy to include or exclude libraries in a project. In addition, you can place libraries in specific locations to make them available to one or all projects.
+</P><H3 CLASS="Head2"><A NAME="50626613_pgfId-56972"></A>3.7.1	Using External APIs</H3>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-56977"></A>To specify which APIs should be included, click Settings and click the External APIs icon. A list of available external APIs appears (the list might be empty).
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-62798"></A>To add the API to the classpath at build time, check the box in the Use column (see <A HREF="projects.html#50626613_15648" CLASS="XRef">FIGURE 3-8</A>). If you want the API bundled into your application, also check the Bundle box. If you know you will deploy your application on devices where your selected external APIs are not present, you need to bundle those APIs in your application.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626613_pgfId-61992"></A>FIGURE 3-8 	<A NAME="50626613_15648"></A>Choosing External APIs
+</P>
+<BR><A NAME="50626613_pgfId-69646"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626613_pgfId-56985"></A>
+<P><IMG SRC="figures/projects-12.jpg" TITLE="External APIs for CHAPIDemo project." ALT="External APIs for CHAPIDemo project." ALIGN="BASELINE">
+</P><A NAME="50626613_pgfId-69626"></A><A NAME="50626613_pgfId-69645"></A><H3 CLASS="Head2"><A NAME="50626613_pgfId-47369"></A>3.7.2	Third-Party Libraries for One Project</H3>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47371"></A>Any library files placed in your project's <KBD CLASS="Filename-Command">lib</KBD> directory are included in the building and packaging of your project. Libraries should be JAR or Zip files of Java technology classes.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-61728"></A>So, if you installed on Windows and your application is called <KBD CLASS="Filename-Command">Tiny,</KBD> the class library goes in <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;apps&#92;Tiny&#92;lib</KBD>. When you build, run, debug, and package your project, the class files in the <KBD CLASS="Filename-Command">lib</KBD> directory are used.
+</P><H3 CLASS="Head2"><A NAME="50626613_pgfId-47379"></A>3.7.3	Third-Party Libraries for All Projects</H3>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47381"></A>Some devices have libraries available to all installed MIDlet suites. A manufacturer, for example, can make additional APIs available on all their devices. In this case, you want to be able to use these libraries when you build and test your application. You don't want the libraries to be included in your packaged MIDlet suite because you are installing the MIDlet suite on devices where the library is already present.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-47437"></A>You can accomplish this by placing libraries in the <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;apps&#92;lib</KBD> directory. Libraries in this directory are available for all projects.
+</P><H2 CLASS="Head1"><A NAME="50626613_pgfId-49873"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>3.8	<A NAME="50626613_91125"></A>Configuring the Wireless Toolkit</H2>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-49875"></A>The toolkit includes some advanced configuration options. You can use these options by editing a copy of the <KBD CLASS="Filename-Command">ktools.properties</KBD> file, which is found in the following location:
+</P>
+<BR>
+<TABLE CLASS="Legend" BORDER="0" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626613_pgfId-62938"></A>Windows:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-62940"></A><I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;wtklib&#92;</KBD>Windows<KBD CLASS="Filename-Command">&#92;ktools.properties</KBD>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626613_pgfId-62942"></A>Linux:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626613_pgfId-62944"></A><I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">/wtklib/</KBD>Linux<KBD CLASS="Filename-Command">/ktools.properties</KBD>
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-62931"></A>Copy <KBD CLASS="Filename-Command">ktools.properties</KBD> to <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">/</KBD><I CLASS="Variable">os</I><KBD CLASS="Filename-Command">/wtklib</KBD> and make changes as described in the remainder of this section.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626613_pgfId-62988"></A><A HREF="projects.html#50626613_79684" CLASS="XRef">Changing the Console Font</A>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626613_pgfId-62992"></A><A HREF="projects.html#50626613_59926" CLASS="XRef">Setting the Application Directory</A>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626613_pgfId-62997"></A><A HREF="projects.html#50626613_33370" CLASS="XRef">Setting the javac Encoding Property</A>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626613_pgfId-63002"></A><A HREF="projects.html#50626613_53502" CLASS="XRef">Working with Revision Control Systems</A>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-61758"></A>The effect of changes to <KBD CLASS="Filename-Command">ktools.properies</KBD> is visible the next time the toolkit is started.
+</P><H3 CLASS="Head2"><A NAME="50626613_pgfId-49876"></A>3.8.1	<A NAME="50626613_79684"></A>Changing the Console Font</H3>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-57020"></A>You can change the font that's used in the console (and other text areas) by editing two properties. Here is one example that changes the font to Times New Roman 20 point:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626613_pgfId-57029"></A>font.JTextArea=Times New Roman
+<A NAME="50626613_pgfId-57030"></A>font.size.JTextArea=20
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-57027"></A>To restore the default font and size, remove both properties.
+</P><H3 CLASS="Head2"><A NAME="50626613_pgfId-57019"></A>3.8.2	<A NAME="50626613_marker-51271"></A><A NAME="50626613_59926"></A>Setting the Application Directory</H3>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-49878"></A>By default, the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC stores <A NAME="50626613_marker-49877"></A>applications in your working directory's <KBD CLASS="Filename-Command">apps</KBD> subdirectory. You can change this by adding a line to <KBD CLASS="Filename-Command">ktools.properties</KBD><A NAME="50626613_marker-49879"></A> of the following form:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626613_pgfId-49880"></A>kvem.apps.dir: <I CLASS="Variable">application-directory</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-60352"></A>For Windows, any backslash (&#92;) characters in the directory's path must be preceded by another backslash. Also, the directory's path cannot contain any spaces.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-49882"></A>For example, to set the application directory to <KBD CLASS="Filename-Command">D:&#92;dev&#92;midlets</KBD>, use:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626613_pgfId-49883"></A>kvem.apps.dir: D:&#92;&#92;dev&#92;&#92;midlets
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-61932"></A>Linux paths can be specified as usual.
+</P><H3 CLASS="Head2"><A NAME="50626613_pgfId-49884"></A>3.8.3	<A NAME="50626613_marker-51272"></A><A NAME="50626613_33370"></A>Setting the <KBD CLASS="Filename-Command">javac</KBD> Encoding Property</H3>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-60368"></A>By default, the <KBD CLASS="Filename-Command">javac</KBD> uses the encoding set in the Java SE platform that you are running. For information on how to override the default source file encoding, see <A HREF="internationalization.html#50626619_32725" CLASS="XRef">Appendix C</A>.
+</P><H3 CLASS="Head2"><A NAME="50626613_pgfId-49958"></A>3.8.4	<A NAME="50626613_marker-51273"></A><A NAME="50626613_53502"></A>Working with Revision Control Systems</H3>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-49960"></A>Using the <KBD CLASS="Filename-Command">filterRevisionControl</KBD><A NAME="50626613_marker-49959"></A> property, you can configure the toolkit to recognize and ignore auxiliary files created by the SCCS, RCS and CVS revision control systems. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-49895"></A>To recognize and ignore auxiliary files, include the following line in <KBD CLASS="Filename-Command">ktools.properties</KBD>:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626613_pgfId-49896"></A>kvem.filterRevisionControl: true
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-49898"></A>This prevents the toolkit from treating <A NAME="50626613_marker-49897"></A>revision control files as source and resource files. For example, the toolkit treats a file named <KBD CLASS="Filename-Command">src&#92;SCCS&#92;s.MyClass.java</KBD> as being an SCCS revision control file and not a Java technology source file.
+</P>
+<P CLASS="Paragraph"><A NAME="50626613_pgfId-49871"></A>&nbsp;
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="developing.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="emulator.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

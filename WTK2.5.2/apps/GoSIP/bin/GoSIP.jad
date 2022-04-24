@@ -1,0 +1,11 @@
+MIDlet-1: Sippy A,,example.sip.Sippy_A
+MIDlet-2: Sippy B,,example.sip.Sippy_B
+MIDlet-Description: Advanced SIP functionality demo.
+MIDlet-Jar-Size: 19669
+MIDlet-Jar-URL: GoSIP.jar
+MIDlet-Name: GoSIP
+MIDlet-Permissions: javax.microedition.io.Connector.sip,javax.microedition.io.Connector.socket,javax.microedition.io.Connector.serversocket
+MIDlet-Vendor: Sun Microsystems Inc.
+MIDlet-Version: 1.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.1

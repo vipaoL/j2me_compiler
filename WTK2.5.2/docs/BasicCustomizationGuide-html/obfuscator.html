@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC Basic Customization Guide">
+<META name="description" content="The Basic Customization Guide for Sun Java Wireless Toolkit for CLDC details the customization options available in a binary release.">
+<META name="partnumber" content="v252">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  3 - Creating an Obfuscator Plug-in
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="2" width="100%"><col id="1" span="1" width="50%"><col id="2" span="1" width="50%">
+<tr bgcolor="#cccccc">
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC Basic Customization Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="skinning.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><A HREF="ix.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a></td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50417691_pgfId-874"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">3</SPAN><A NAME="50417691_30810"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50417691_pgfId-999838"></A><A NAME="50417691_42159"></A>Creating an Obfuscator Plug-in
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50417691_pgfId-999842"></A>The Sun Java Wireless Toolkit for CLDC allows you to use a bytecode obfuscator to reduce the size of your MIDlet suite JAR file. The toolkit comes with support for ProGuard, as described in the <I CLASS="Title">Sun Java Wireless Toolkit for CLDC User's Guide</I>.
+</P>
+<P CLASS="Paragraph"><A NAME="50417691_pgfId-999848"></A>If you want to use a different obfuscator, you can write a plug-in for the Sun Java Wireless Toolkit for CLDC.
+</P><H2 CLASS="Head1"><A NAME="50417691_pgfId-999850"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>3.1	Writing the Plug-in</H2>
+<P CLASS="Paragraph"><A NAME="50417691_pgfId-1000394"></A>Obfuscator plug-ins extend the <KBD CLASS="Filename-Command">com.sun.kvem.environment.Obfuscator</KBD> interface. The interface itself is contained in <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;wtklib&#92;kenv.zip</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50417691_pgfId-1000431"></A><A NAME="50417691_marker-999852"></A>The <KBD CLASS="Filename-Command">Obfuscator</KBD> interface contains two methods that you must implement:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417691_pgfId-999854"></A><KBD CLASS="Filename-Command">public void createScriptFile(File jadFilename
+<BR>   File projectDir);</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417691_pgfId-999856"></A><KBD CLASS="Filename-Command">public void run(File jarFileObfuscated, String wtkBinDir,
+<BR></KBD>  <KBD CLASS="Filename-Command"> String wtkLibDir, String jarFilename, String projectDir,
+<BR>   String classPath, String emptyAPI) throws IOException;</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50417691_pgfId-999859"></A>To compile your obfuscator plug-in, make sure to add <KBD CLASS="Filename-Command">kenv.zip</KBD> to your <KBD CLASS="Filename-Command">CLASSPATH</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50417691_pgfId-999860"></A>For example, here is the source code for a very simple plug-in. It doesn't actually invoke an obfuscator, but it shows how to implement the <KBD CLASS="Filename-Command">Obfuscator</KBD> interface.
+</P>
+<DIV CLASS="Code">
+<BR>
+<TABLE CLASS="Code" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW">
+<PRE CLASS="ScreenText"><A NAME="50417691_pgfId-1000578"></A><A NAME="50417691_marker-1000603"></A>import java.io.*;
+<A NAME="50417691_pgfId-1000580"></A>public class NullObfuscator
+<A NAME="50417691_pgfId-1000582"></A>    implements com.sun.kvem.environment.Obfuscator {
+<A NAME="50417691_pgfId-1000584"></A>  public void createScriptFile(File jadFilename, File projectDir) {
+<A NAME="50417691_pgfId-1000586"></A>    System.out.println(&quot;NullObfuscator: createScriptFile()&quot;);
+<A NAME="50417691_pgfId-1000588"></A>  }
+<A NAME="50417691_pgfId-1000590"></A>&nbsp;
+<A NAME="50417691_pgfId-1000955"></A>  public void run(File jarFileObfuscated, String wtkBinDir,
+<A NAME="50417691_pgfId-1000594"></A>    String wtkLibDir, String jarFilename, String projectDir,
+<A NAME="50417691_pgfId-1000596"></A>    String classPath, String emptyAPI) throws IOException {
+<A NAME="50417691_pgfId-1000598"></A>      System.out.println(&quot;NullObfuscator: run()&quot;);
+<A NAME="50417691_pgfId-1000600"></A>    }
+<A NAME="50417691_pgfId-1000602"></A>}
+</PRE>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+</DIV>
+<P CLASS="Paragraph"><A NAME="50417691_pgfId-1000454"></A>Suppose you save this as <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;wtklib&#92;test&#92;NullObfuscator.java</KBD>. Then you can compile it at the command line like this:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417691_pgfId-999880"></A>set classpath=%classpath%;<I CLASS="Variable">toolkit</I>&#92;wtklib&#92;kenv.zip
+<A NAME="50417691_pgfId-999881"></A>javac NullObfuscator.java
+</PRE><H2 CLASS="Head1"><A NAME="50417691_pgfId-999882"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>3.2	Configuring the Toolkit</H2>
+<P CLASS="Paragraph"><A NAME="50417691_pgfId-1000474"></A><A NAME="50417691_marker-1000473"></A>Once you've written an obfuscator plug-in, you must tell the toolkit where to find it. To do this, edit <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;wtklib&#92;Windows&#92;ktools.properties</KBD>. Edit the obfuscator plug-in class name and tell the toolkit where to find the class. If you're following along with the example, edit the properties as follows:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417691_pgfId-999885"></A>obfuscator.runner.class.name: NullObfuscator
+<A NAME="50417691_pgfId-999886"></A>obfuscator.runner.classpath: wtklib&#92;&#92;test
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417691_pgfId-999887"></A>Restart the toolkit and open a project. Now choose Project &gt; Package &gt; Create Obfuscated Package. In the console, the output of <KBD CLASS="Filename-Command">NullObfuscator</KBD> displays, as follows:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417691_pgfId-999888"></A>Project settings saved
+<A NAME="50417691_pgfId-999889"></A>Building &quot;Tiny&quot;
+<A NAME="50417691_pgfId-999890"></A>NullObfuscator: createScriptFile()
+<A NAME="50417691_pgfId-999891"></A>NullObfuscator: run()
+<A NAME="50417691_pgfId-999895"></A>Wrote C:&#92;WTK252&#92;apps&#92;Tiny&#92;bin&#92;Tiny.jar
+<A NAME="50417691_pgfId-999899"></A>Wrote C:&#92;WTK252&#92;apps&#92;Tiny&#92;bin&#92;Tiny.jad
+<A NAME="50417691_pgfId-999900"></A>Build complete
+</PRE>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="45%"><col id="2" span="1" width="25%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc">
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC Basic Customization Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">v252
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="skinning.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><A HREF="ix.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a></td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

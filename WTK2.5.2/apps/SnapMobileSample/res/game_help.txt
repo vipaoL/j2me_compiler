@@ -1,0 +1,10 @@
+Maze racer can be played in online mode, or in single user mode.
+
+Single user mode allows the player to practice solving mazes quickly.
+
+In  online mode, the goal is to solve a total of three mazes before the opponent can do the same (best of five). Players are synchronized at the beginning of each level.
+
+Up/Down/Right/Left button allows player to navigate in the desired direction.
+
+The icon in the top right hand corner, represents the online status of the user. Gray = Offline, Orange = Online, Orange with Red overlay = game mode, Orange with a bubble = chat message.
+The number next to the icon indicates the total number of friends that are online.

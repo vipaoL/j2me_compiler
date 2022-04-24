@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>A P P E N D I X  C - Localization
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="commandline.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><A HREF="ix.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a></td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626619_pgfId-26937"></A>A P P E N D I X  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">C</SPAN><A NAME="50626619_32725"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626619_pgfId-6947"></A><A NAME="50626619_86729"></A>Localization
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-22338"></A>This appendix describes setting the <A NAME="50626619_marker-23084"></A>language displayed in the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC and the localization setting of the emulation environment.
+</P><H2 CLASS="Head1A"><A NAME="50626619_pgfId-22834"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>C.1	Locale Setting</H2>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-22835"></A>A <A NAME="50626619_marker-27334"></A>locale is a geographic or political region or community that shares the same language, customs, or cultural conventions. In software, a locale is represented by a collection of files, data, and code, which contains the information necessary to adapt software to a specific location. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-22836"></A>Some software uses a locale to tailor information for users, such as:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626619_pgfId-22837"></A>Messages displayed to the user
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626619_pgfId-22838"></A>Fonts used or other writing-specific information
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-22839"></A>By default, all strings in the user interface are displayed in the language of the supported platform's locale.
+</P>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-23654"></A>For example, Japanese characters can be displayed in a toolkit that is running on a Japanese Microsoft Windows machine, provided that the correct localized Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC is downloaded and installed.
+</P>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-28156"></A>You can set the <KBD CLASS="Filename-Command">wtk.locale</KBD> property to have the user interface displayed in a specified locale's language. As discussed in <A HREF="projects.html#50626613_91125" CLASS="XRef">Section 3.8, Configuring the Wireless Toolkit</A>, you must copy <KBD CLASS="Filename-Command">ktools.properties</KBD> from the installation directory to your working directory (<I CLASS="Variable">workdir</I><A NAME="50626619_marker-28215"></A><KBD CLASS="Filename-Command">/wtklib/ktools.properties</KBD>), then edit your copy. For example, you can have the toolkit running on a Japanese machine but still have the user interface display shown in English by setting the locale property to <KBD CLASS="Filename-Command">en-US</KBD>, and making sure that the proper supplement has been downloaded and installed over the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC. 
+</P><H2 CLASS="Head1A"><A NAME="50626619_pgfId-28181"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>C.2	Emulated Locale</H2>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-28179"></A>A device's locale is contained in the system property <KBD CLASS="Filename-Command">microedition.locale</KBD>.<A NAME="50626619_marker-27348"></A> You can change the emulator's locale by choosing Edit &gt; Preferences and selecting i18n. Choose a locale from the combo box or type it in directly.
+</P>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-22564"></A>For information on <KBD CLASS="Filename-Command">microedition.locale</KBD>, consult the MIDP specification.
+</P><H2 CLASS="Head1A"><A NAME="50626619_pgfId-22792"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>C.3	<A NAME="50626619_59235"></A>Character Encodings</H2>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-27204"></A>The CLDC system property, <KBD CLASS="Filename-Command">microedition.encoding,</KBD><A NAME="50626619_marker-22971"></A> defines the default <A NAME="50626619_marker-22664"></A>character encoding name of the MIDP environment. In the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator, this property is set according to the underlying window system you are using. The property's value is set to the default encoding for the Java SE platform running on the same window system. For example, in an English window system, the encoding setting is as follows:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626619_pgfId-22767"></A>microedition.encoding=ISO8859_1
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-22731"></A>You can override the default value by adding the <KBD CLASS="Filename-Command">microedition.encoding </KBD>property to the <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;wtklib&#92;ktools.properties</KBD> file. For example, if you want to use UTF-8 as the default setting on Microsoft Windows, you can set the property in the <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;wtklib&#92;ktools.properties</KBD> file as follows:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626619_pgfId-22777"></A>microedition.encoding=UTF-8
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-22775"></A>For more information on character encoding, see the CLDC specification.
+</P>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626619_pgfId-22734"></A>All the Java SE platform encoders are available in the emulated environment. See the <I CLASS="Title">Sun Java</I><SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC<I CLASS="Title"> Basic Customization Guide</I> for information on how to limit the list of available encoders for a specific device.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR><H2 CLASS="Head1A"><A NAME="50626619_pgfId-23008"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>C.4	<A NAME="50626619_34862"></A>Java Technology Compiler Encoding Setting</H2>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-23050"></A>The <KBD CLASS="Filename-Command">javac.encoding</KBD> property determines the encoding used by the <KBD CLASS="Filename-Command">javac</KBD> <A NAME="50626619_marker-27352"></A>compiler to compile your source files. The property's value is set to the default encoding for the Java SE platform running on the same window system. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-26104"></A>You can override the default value by adding the <KBD CLASS="Filename-Command">javac.encoding</KBD> property to the <KBD CLASS="Filename-Command">ktools.properties</KBD> file. For example, if you are running in an English system but find you need to compile a Japanese resource bundle, you can specify a Japanese character set, such as:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626619_pgfId-23053"></A>javac.encoding=EUCJIS
+</PRE><H2 CLASS="Head1A"><A NAME="50626619_pgfId-23031"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>C.5	Font Support in the Default Emulator</H2>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-27219"></A><A NAME="50626619_marker-27353"></A>The default <A NAME="50626619_marker-22973"></A>fonts that are used in the emulated environment are set according to the underlying window system locale. By default, the MIDP environment fonts are mapped to the default Java SE platform Java technology fonts. These fonts usually support all the characters that are required by the current window's locale.
+</P>
+<P CLASS="Paragraph"><A NAME="50626619_pgfId-21992"></A>You can override these fonts to support other characters that are not supported by the default fonts. See the <I CLASS="Title">Sun Java<IMG SRC=shared/chars/tm.gif TITLE="trademark" ALT="trademark"> Wireless Toolkit for CLDC</I> <I CLASS="Title">Basic Customization Guide</I> for information on how to configure them.<I CLASS="Variable"></I>
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="commandline.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><A HREF="ix.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a></td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

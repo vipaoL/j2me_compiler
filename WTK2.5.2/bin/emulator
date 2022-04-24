@@ -1,0 +1,26 @@
+#!/bin/sh
+
+javapathtowtk=/home/runner/work/j2me_compiler/jdk1.6.0_45/bin/
+
+PRG=$0
+
+# Resolve soft links
+while [ -h "$PRG" ]; do
+    ls=`/bin/ls -ld "$PRG"`
+    link=`/usr/bin/expr "$ls" : '.*-> \(.*\)$'`
+    if /usr/bin/expr "$link" : '^/' > /dev/null 2>&1; then
+        PRG="$link"
+    else
+        PRG="`/usr/bin/dirname $PRG`/$link"
+    fi
+done
+
+KVEM_BIN=`dirname "$PRG"`
+KVEM_HOME=`cd "${KVEM_BIN}/.." ; pwd`
+KVEM_LIB="${KVEM_HOME}/wtklib"
+export MMAPI_GM_SOUNDBANK="${KVEM_HOME}/lib/soundbank.dls"
+
+"${javapathtowtk}java" -Dkvem.home="${KVEM_HOME}" \
+    -Djava.library.path="${KVEM_HOME}/bin" \
+    -cp "${KVEM_LIB}/kenv.zip:${KVEM_LIB}/ktools.zip:${KVEM_LIB}/customjmf.jar" \
+    com.sun.kvem.environment.EmulatorWrapper "$@" 0

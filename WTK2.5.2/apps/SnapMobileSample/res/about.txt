@@ -1,0 +1,14 @@
+SNAP Mobile Sample Game.
+Software developed by Nokia Inc.
+
+Version 1.3.0
+ 
+For more information about Nokia's SNAP Mobile please visit:
+http://snapmobile.nokia.com
+
+Development resources and support are available from:
+http://forum.nokia.com/games/snapmobile
+
+Visit SNAParcade online community:
+snaparcade.com
+mobile.snaparcade.com

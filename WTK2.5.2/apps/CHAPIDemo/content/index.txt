@@ -1,0 +1,10 @@
+Media Player to install: http:handlers/MediaHandler.jad
+Images: 
+http:icons/App.png
+http:icons/Duke.png
+Animated GIF: http:video/animated_89_c.gif
+J1 Video: http:video/test-mpeg.mpg
+Audio: 
+http:audio/pattern.mid
+http:audio/beethoven.jts
+Help: http:help.txt

@@ -1,0 +1,13 @@
+MIDlet-1: Socket Demo, , socket.SocketMIDlet
+MIDlet-2: Datagram Demo, , datagram.DatagramMIDlet
+MIDlet-Description: Networking examples.
+MIDlet-Name: NetworkDemo
+MIDlet-Permissions: javax.microedition.io.Connector.http,javax.microedi
+ tion.io.Connector.socket,javax.microedition.io.Connector.https,javax.m
+ icroedition.io.Connector.datagram,javax.microedition.io.Connector.serv
+ ersocket,javax.microedition.io.Connector.datagramreceiver,javax.microe
+ dition.io.Connector.comm,javax.microedition.io.PushRegistry
+MIDlet-Vendor: Sun Microsystems, Inc.
+MIDlet-Version: 1.0
+MicroEdition-Configuration: CLDC-1.0
+MicroEdition-Profile: MIDP-2.0

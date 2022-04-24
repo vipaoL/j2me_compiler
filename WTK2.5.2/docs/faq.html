@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+	<head>
+  <title>Frequently Asked Questions - Sun Java Wireless Toolkit for CLDC</title>
+  <link rel="stylesheet" href="document.css" type="text/css">
+</head>
+
+	<body>
+		<a name="_top"></a>
+		<table width=100% cellspacing=0 cellpadding=0 border=0 summary="This table is for formatting purposes only.">
+			<tr>
+				<td class=sun-darkblue>&nbsp;</td>
+			</tr>
+			<tr>
+				<td class=sun-darkblue>
+					<h1>Frequently Asked Questions</h1>
+					<h2>Sun Java<small><sup>TM</sup></small> Wireless Toolkit for CLDC<br>
+					</h2>
+					<h4>December 2008</h4>
+				</td>
+			</tr>
+			<tr>
+				<td class="sun-lightblue">&nbsp;</td>
+			</tr>
+		</table>
+		
+<!-- 
+<table id="SummaryNotReq1" class="full-width" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td class="go-left">
+					<p class="nav-link"><a href="../index.html">Documentation Home</a> &gt; Frequently Asked Questions</p>
+				</td></tr></table> 
+-->
+		<p>
+		<a href="#install">Installation</a><br>
+		<a href="#general">General Questions</a><br>
+		<a href="#emulator">Emulator Questions</a><br>
+		<a href="#trouble">Troubleshooting Questions</a></p>
+		<h2><a name="install"></a>Installation</h2>
+		<p><b>The installation failed during the extraction phase. I got a message that says:</b></p>
+		<blockquote>
+				<b><tt>Extracting the installation files...<br>
+					
+					
+		 Error! CRCs do not match! Got e61aebb2, expected f53ddfb0<br>
+					
+					
+Failed to extract files. Installation will stop now.</tt></b>
+</blockquote>
+		<blockquote><p>It is likely that the Java archive (JAR) utility you are using is incompatible. During the installation you are prompted for the path to the Java interpreter. You must provide the <i>full</i> path to a Java<small><sup>TM </sup></small>Platform, Standard Edition (Java SE SDK), version 1.5.0 installation. </p></blockquote>
+		<p><b>The installation failed during the extraction phase. I got a message that says:</b></p>		<blockquote>
+			...<br>
+			<b><tt>
+		/usr/java/jre1.5.0_08/bin/jar: No such file or directory<br>
+				Failed to extract files. Installation will stop now.</tt></b>
+
+			<p>The JRE is not enough, you need a  version 1.5.0 Java Development Kit (JDK). Install the full Java<small><sup>TM</sup></small> Platform, Standard Edition (Java SE). During installation, provide the <i>full</i> path to the Java SE installation.</p>
+		</blockquote>
+		<p><b>The Release Notes describe the installation of the SNAP Mobile Emulation Environment on the Windows platform. How do I get the SnapMobileSample MIDlet working on Linux?</b></p>
+		<ol>
+			<blockquote>
+				<li>Use the Release Note instructions to install the SNAP Mobile Emulation Environment on any Windows machine in your network.
+				<li>Launch the SNAP server emulator.<br>
+				<li>Change the property &quot;SNAP-Mobile-Host&quot; in the <tt>SnapMobileSample.jad</tt> file to the name of the machine running the SNAP server emulator.
+			</blockquote>
+		</ol>
+		<p><b>I successfully installed on Windows 98 SE, but there are some problems.</b></p>
+		<blockquote><p>Windows 98 SE is not a supported platform. Windows XP is the only supported platform, as stated in <tt>docs/BinaryReleasNotes.html</tt> .</p></blockquote>
+		<p class="nav-link">[<a href="#_top">Top</a>]</p>
+		<h2><a name="general"></a>General Questions</h2>
+		<p><b>Do I need Sun Java Wireless Toolkit Version 2.5.2_01 for CLDC?</b></p>
+		<blockquote>
+			The Sun Java Wireless Toolkit contains vulnerabilities that might allow an untrusted application to execute arbitrary code. The vulnerability can only be exploited if you obtain a malicious program and execute it in the toolkit. Although this scenario is unlikely for toolkit users, Sun Microsystems has released version 2.5.2_01 to fix the vulnerability. You can download the updated version from <a href="(EmptyReference!)">http://java.sun.com/products/sjwtoolkit/download.html</a>, or, you can resolve to <b>never</b> use the toolkit to execute MIDlets from untrusted sources.</blockquote>
+		<p><b>If this toolkit is written in Java, why does it take so long to make it available on other platforms?</b></p>
+		<blockquote><p>Although the user interface of the toolkit is written in Java SE, the product contains a substantial amount of platform-specific native code, including a full implementation of a Java ME Virtual Machine.  Each platform requires a separate effort to port, test, and maintain the native code.</p></blockquote>
+		<p><b><font color="black">I have updated my JDK. How do I get the emulator to use the updated JDK?</font></b></p>
+		<blockquote>
+			<font color="black">You cannot point the emulator at a different installation. You can install the new JDK in the same location as the old JDK, or, you can uninstall and re-install, supplying the path to the new JDK.</font></blockquote>
+		<p><b>What's the fastest way to get started? </b></p>
+		<blockquote>
+			<p>To get started using KToolbar, try opening some of the demonstration projects and running them. You can also examine and modify the source code for the demonstrations. More information is <a href="UserGuide-html/demonstrations.html">here</a>.</p>
+		</blockquote>
+		<p><b>Can I use the toolkit from the command line? </b></p>
+		<blockquote>
+			<p>Yes. See Appendix B of the <i>User's Guide</i> for more information.</p>
+		</blockquote>
+		<p><b>Where can I find out more about MIDP, CLDC, MMAPI, and WMA? </b></p>
+		<blockquote>
+			<blockquote>
+				<p>For more information, visit these links:<br>
+				</p>
+			</blockquote>
+			<ul>
+				<blockquote>
+					<li><a href="http://developers.sun.com/techtopics/mobility/">http://developers.sun.com/techtopics/mobility/</a></li>
+					<li><a href="http://java.sun.com/javame/reference/docs/">http://java.sun.com/javame/reference/docs/</a>
+					<li><a href="http://developers.sun.com/techtopics/mobility/learn/midp/midp20/"><i>Learning Path: Getting Started with MIDP 2.0</i></a>
+					<li><a href="http://java.sun.com/products/midp/">http://java.sun.com/products/midp</a>
+					<li><a href="http://java.sun.com/products/cldc/">http://java.sun.com/products/cldc</a>
+					<li><a href="http://java.sun.com/products/mmapi/">http://java.sun.com/products/mmapi</a>
+					<li><a href="http://java.sun.com/products/wma/">http://java.sun.com/products/wma</a>.
+				</blockquote>
+			</ul>
+		</blockquote>
+		<p><b>Can I build applications for MIDP 1.0 devices? </b></p>
+		<blockquote>
+			<p>Yes, you can build applications for a wide variety of software stacks. Click the <b>Settings...</b> button to edit project settings, then choose the configuration, profile, and optional packages you would like on the <b>API Selection</b> tab.</p>
+		</blockquote>
+		<p><b>I created a new project. Now what do I do? </b></p>
+		<blockquote>
+			<p>The next step is to edit source code for the project. The messages in the KToolbar console tell you where to put the source code, resource files, and library files. If you're still not sure what to do, Chapter 2 of the <i>User's Guide</i> contains a simple example.</p>
+		</blockquote>
+		<p><b>Where are my project's Java Application Descriptor (JAD) and Java Archive (JAR) files? </b></p>
+		<blockquote>
+			<p>First you need to package the project by choosing <b>Project &gt; Package &gt; Create Package</b> from the KToolbar menu. The MIDlet suite descriptor and JAR file are placed in the <i>bin</i> directory of your project.</p>
+		</blockquote>
+		<p><b>Can I change the directory for my project after it has been created? </b></p>
+		<blockquote>
+			<p>Edit <tt>wtklib/Windows/ktools.properties</tt> to add the following property: <br>
+				<tt>kvem.apps.dir =</tt> <i>your-new-app-directory</i><br>
+			</p>
+			<p>For full project management features, consider the <a href="http://www.netbeans.org/kb/55/mobility.html">NetBeans Mobility Pack</a>.</p>
+		</blockquote>
+		<p><b>Can I use an obfuscator? </b></p>
+		<blockquote>
+			<p>Yes. The toolkit supports <a href="http://proguard.sourceforge.net/">ProGuard</a> and includes an architecture for supporting any obfuscator. See the <i>User's Guide</i> for more information.</p>
+		</blockquote>
+		<p><b>Can I use a debugger? </b></p>
+		<blockquote>
+			<p>Yes. Most likely you will use the Sun Java Wireless Toolkit for CLDC in conjunction with the debugger in an IDE. The <i>User's Guide</i> has more information on using a debugger.</p>
+		</blockquote>
+		<p><b>How can I make sure that my application only uses specific APIs, for example only MIDP 2.0 APIs? </b></p>
+		<blockquote>
+			<p>Select the API Selection tab in the Settings dialog box and select the Target Platform and APIs that you want to use.</p>
+		</blockquote>
+		<p><b>Can I use network protocols other than HTTP and HTTPS in Java ME applications? </b></p>
+		<blockquote>
+			<p>Yes. The MIDP 2.0 specification introduces optional support for socket, server socket, datagram, SSL, and serial (COMM) communication. The WMA specification provides support for SMS, CBS, and MMS messaging. The toolkit's support for JSR 75 and JSR 82 adds file, Bluetooth, and OBEX connections as well.</p>
+		</blockquote>
+		<p><b>How can I test the push registry? </b></p>
+		<blockquote>
+			<p>To observe MIDlets being launched in response to incoming network connections, you will need to run your application using the Run via OTA feature. Run via OTA simulates the process of installing an application on a device and will correctly respond to incoming network connections based on entries in the push registry. See the <i>User's Guide</i> for more information.</p>
+		</blockquote>
+		<p><b>How can I access a Comm port when running on Linux? </b></p>
+		<blockquote>
+			<p>You must set the following permission at the command line (note that you must have root privileges):<br>
+				<br>
+				<code>chmod a+w /dev/ttyS[01]</code></p>
+		</blockquote>
+		<p><b>How can I transfer a MIDlet suite to a real device? </b></p>
+		<blockquote>
+			<p>It depends entirely on the device. Each device manufacturer that supports MIDP must provide a mechanism for transferring MIDlets onto its devices.</p>	</blockquote>
+		<p><b>Can I connect the wireless toolkit to an external bluetooth device, such as a mobile phone?</b></p>
+		<blockquote>No, the wireless toolkit does not enable communications with wireless devices.		</blockquote>
+		<p class="nav-link">[<a href="#_top">Top</a>]</p>
+		<h2><a name="emulator"></a>Emulator Questions</h2>
+		<p><b>Why does the emulator ask me if I can connect to the network? </b></p>
+		<blockquote>
+			<p>Depending on the protection domain in which your application runs, the emulator might ask permission for certain operations including network access. For an overview of permissions and protection domains in MIDP 2.0, see <a href="http://developers.sun.com/techtopics/mobility/midp/articles/permissions/"><i>Understanding MIDP 2.0's Security Architecture</i></a>.</p>
+		</blockquote>
+		<p><b>I can still use an API in the emulator even though it's not selected in the API selection project settings. What's going on? </b></p>
+		<blockquote>
+			<p>The API selection project settings apply to building only. The emulator always supports all available APIs.</p>
+		</blockquote>
+		<p><b>The Emulator incorrectly displays text in languages other than English. How can I change the fonts? </b></p>
+		<blockquote>
+			<p>To display text in languages other than English, follow one of these steps:</p>
+			<ul>
+				<li>Set the default locale of the desktop to the language you are trying to display.
+				<li>Update the font configuration of the emulated device. See the <i>Basic Customization Guide</i> for details.
+			</ul>
+		</blockquote>
+		<p><b>The device image displayed by the emulator is too small. How can I enlarge it?<br>
+				How can I enable touch screen events in the emulator?<br>
+				How can I change the set of character encoding converters available for a device? </b></p>
+		<blockquote>
+			<p>See the <i>Basic Customization Guide</i> for information on modifying the default emulator.</p>
+		</blockquote>
+		<p class="nav-link">[<a href="#_top">Top</a>]</p>
+		<h2><a name="trouble"></a>Troubleshooting Questions</h2>
+		<p><b>I'm having problems deploying a demo MIDlet to a real device. What's wrong?</b></p>
+		<blockquote><p>Some demo MIDlets are built for the MSA platform and use the MIDP 2.1 profile (check their <tt>.jad</tt> and <tt>.jar</tt> files). Many devices do not support this rather new profile. To change your project settings to match your device capabilities, click the <b>Settings...</b> button. In the Settings window click API Selection on the left. In the API Selection pane, choose a target platform other than MSA, and a profile other than MIDP 2.1. Select a configuration and any optional packages. Click OK.</p></blockquote>
+		<p><b>My MIDlet won't talk to my server. What's wrong? </b></p>
+		<blockquote>
+			<p>Make sure your server is speaking the right version of HTTP. You can adjust the version used by the emulator in the KToolbar preferences. A good way to debug network problems is to use the network monitor. See the <i>User's Guide</i> for details.</p>
+			<p>A connection might fail because you are behind a firewall. Go to Preferences &gt; Network Configuration &gt; User Proxy Server and supply your proxy information.</p>
+		</blockquote>
+		<p><b>Why won't my device recognize my signed MIDlet suite? </b></p>
+		<blockquote>
+			<p>Real devices on real networks might have root certificates that are specific to the manufacturer or wireless carrier. Check with your device manufacturer or wireless carrier for details on signed MIDlets.</p>
+		</blockquote>
+		<p><b>I signed my MIDlet with a trusted key, but when I install it on my device the midlet is classified as untrusted. What is wrong?</b></p>
+		<blockquote><p>This can happen when the project's security policy does not match the security policy available on the device. While the emulator is able to switch security policies between MSA or JTWI, a device cannot. It will have either MSA or JTWI, never both. To avoid this problem you must make sure the MIDlet security policy matches that of the device.</p>
+			<p> For example, let's suppose that you develop your MIDlet with the MSA security policy.You sign the MIDlet with the default signing certificate named trustedkey, which has a corresponding root certificate that belongs to the MSA security policy <i>manufacturer</i> domain. Next you decide to install this MIDlet on a real device that runs JTWI. You switch the emulator security policy to JTWI and start to install via OTA. The emulator finds trustedkey's root certficate in the <i>manufacturer</i> domain. This is a problem because <i>manufacturer</i> does not exist in the JTWI security policy, so the MIDlet is not recognized as trusted. During the installation, the emulator displays the content of the certificate and asks you to confirm the installation.The installation is successful, but the MIDlet is considered untrusted. This is the only possible behavior when the root certificate is not known to the security policy on the device. </p>
+		</blockquote>
+
+		<p><b>When running my MIDlet, a security alert is displayed. Why can't I dismiss the alert? </b></p>
+		<blockquote>
+			<p>You are probably trying to access a protected API (for example, opening a connection) from your <code>commandAction()</code> method, which is locking the UI thread. Access protected APIs from a separate thread. Refer to the NetworkDemo for an example on how this can be done.</p>
+		</blockquote>
+		<p><b>When I run the emulator it crashes with one of these messages. How can I fix it?</b></p>
+		<p><b><tt>&nbsp;&nbsp;Title: drwtsn32.exe - Unable To Locate Component<br>
+					&nbsp;&nbsp;Content: This aplication has failed to start because dbgeng.dll was not found.</tt><br>
+				<tt>&nbsp;&nbsp;Re-installing the application may fix this problem.<br>
+				</tt></b></p>
+		<p><b><tt>&nbsp;&nbsp;Error: Can not find soundbank path in registry.</tt></b></p>
+		<blockquote>
+			<p>Your Windows installation is missing one or more of the following files:</p>
+			<p><tt><i>windows-directory</i>\system32\drivers\gm.dls<br>
+					<i>windows-directory</i>\system32\drwatson.exe<br>
+					<i>windows-directory</i>\system32\dbgeng.dll</tt></p>
+			<p>Copy the missing files from a standard Windows installation to the problem installation and restart.</p>
+		</blockquote>
+		<p><b>I'm using an application that connects to the internet and I get an error code. Do I&nbsp;need to change the settings in the toolkit?</b></p>
+		<blockquote>
+			<p>Yes. Select Preferences &gt; Network &gt; Proxy Server and specify your proxy information.</p>
+		</blockquote>
+		<p><b>JSR172Demo calls sunwireless.quimbik.com but that server does not respond. Is there another server I can use?</b></p>
+		<blockquote>Yes. JSR172Demo uses <a href="http://cds.cmsg.sun.com:80/serverscript/serverscript">http://cds.cmsg.sun.com:80/serverscript/serverscript</a>.</blockquote>
+		<p><b>Why do I get <code>Error loading class...</code> messages when running the preverifier?</b></p>
+		<blockquote>
+			<p>First, check that your Java sources and libraries can be used with CLDC and MIDP APIs.</p>
+			<p>Then, ensure that you installed the Sun Java Wireless Toolkit for CLDC in a directory whose path does not contain any spaces. For example, the toolkit does not work with the path <code>C:\Program Files\WTK25</code>.</p>
+			<p>If you installed the toolkit in a directory whose path contains spaces, you must uninstall the toolkit and reinstall it in a directory whose path name does not contain any spaces.</p>
+		</blockquote>
+		<p><b>I want to use an external library, but when I try to build a MIDlet suite that uses it, I get &quot; <code>Error preverifying class...&quot;</code> messages.  Why does this happen?</b></p>
+		<blockquote>
+			<p>If you get this error, you are probably using a class library that was written for Java 2 Platform, Standard Edition (J2SE<small><sup>TM</sup></small> platform). This toolkit supports the development of MIDP applications, which have limited capabilities compared to their J2SE counterparts.</p>
+		</blockquote>
+		<p><b>I created an application that uses a third party library. There are no compilation or preverification problems, but I get the following error message. How can I fix this?<br>
+					<tt>Uncaught exception java/lang/NoClassDefFoundError: java/awt/Frame: Cannot create class in system package. </tt></b></p>
+		<blockquote>To use 3rd party libraries see Project &gt; Properties &gt; External APIs and see the <i>User's Guide</i>. Note, you can't create classes in system packages (for example, <tt>java</tt>, <tt>javax</tt>., <tt>com.sun.</tt>) because of security restrictions. </blockquote>
+		<p><b>I wrote an application to send SMS messages and it fails with *Type not supported*. </b></p>
+		<blockquote>
+			<p>You should pass <tt>MessageConnection.TEXT_MESSAGE</tt> and add the payload like this:<br></p>
+			<p><tt>smsconn = (MessageConnection)Connector.open(address);<br>
+						<br>
+						
+					TextMessage txtmessage = (TextMessage)smsconn.newMessage(<br>
+						
+					     MessageConnection.TEXT_MESSAGE);<br>
+						
+					           txtmessage.setAddress(address);<br>
+						
+					           txtmessage.setPayloadText(messageBox.getString());<br>
+						
+					           smsconn.send(txtmessage);<br>
+					</tt></p>
+			<p>Please, see the SMSDemo example for a complete code example.</p>
+		</blockquote>
+		<p><b>I have another question, and I can't find the answer here. </b></p>
+		<blockquote>
+			<p>Try the <a href="http://forum.java.sun.com/forum.jspa?forumID=82">developer forum</a>, or send us <a href="http://developers.sun.com/contact/feedback.jsp?&category=j2me&mailsubject=Sun%20Java%20Wireless%20Toolkit%20for%20CLDC">feedback</a> from developer.sun.com.</p>
+		</blockquote>
+		<p class="nav-link">[<a href="#_top">Top</a>]</p>
+		<hr class="pHr">
+		<p class="copyright"><a href="copyright.html">Copyright &copy; 2007</a> Sun Microsystems, Inc. All rights reserved. Use is subject to the <a href="BinaryLicense.html">license terms</a>.</p>
+	</body>
+
+</html>
+

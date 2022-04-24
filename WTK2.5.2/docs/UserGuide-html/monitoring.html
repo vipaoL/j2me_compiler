@@ -1,0 +1,424 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  5 - Monitoring Applications
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="emulator.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="security.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626615_pgfId-1013823"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">5</SPAN><A NAME="50626615_47713"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626615_pgfId-997169"></A><A NAME="50626615_43319"></A>Monitoring Applications
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-997190"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC provides several tools to monitor the behavior of your applications. These tools are helpful in debugging and optimizing your code:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-997439"></A>The <EM CLASS="Emphasis">profiler</EM> lists the frequency of use and execution time for every method in your application.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-997440"></A>The <EM CLASS="Emphasis">memory monitor</EM> shows the usage of memory while your application runs.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1004275"></A>The <EM CLASS="Emphasis">network monitor</EM> shows network data transmitted and received by your application. It supports many network protocols including HTTP, HTTPS, SMS, and CBS.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1004283"></A><EM CLASS="Emphasis">Tracing</EM> outputs low-level information to the toolkit console.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626615_pgfId-1009376"></A>Monitoring features might slow the execution of your application.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR><H2 CLASS="Head1"><A NAME="50626615_pgfId-1009379"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>5.1	<A NAME="50626615_marker-1009377"></A><A NAME="50626615_61619"></A>Using the Profiler</H2>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1014428"></A>The profiler keeps track of every method in your application. For a particular run, it figures out how much time was spent in each method and how many times each method was called. After you finish running your application and shut down the emulator, the profiler pops up, allowing you to browse through the method call information.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1014429"></A>To turn on the profiler, choose Edit &gt; Preferences. See <A HREF="monitoring.html#50626615_97798" CLASS="XRef">FIGURE 5-1</A>. Click Monitor in the left pane. In the right pane, check Enable Profiling. If you are interested in seeing profiling information for all the system implementation methods, check Show System Classes. Otherwise, the profiler shows only system methods that contain calls to your application methods. Click OK.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626615_pgfId-1016736"></A>FIGURE 5-1 	<A NAME="50626615_97798"></A>Turning on the Profiler
+</P>
+<BR><A NAME="50626615_pgfId-1023600"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626615_pgfId-1013836"></A>
+<P><IMG SRC="figures/monitoring-5.jpg" TITLE="In the preferences window, select the monitor category, then check Enable Profiling" ALT="In the preferences window, select the monitor category, then check Enable Profiling" ALIGN="BASELINE">
+</P><A NAME="50626615_pgfId-1023576"></A><A NAME="50626615_pgfId-1023599"></A>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004336"></A>Now click the Run button to start your application. Interact with your application as you normally would. When you are finished, shut down the emulator. The profiler pops up with information about all the method calls in your application.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626615_pgfId-1016742"></A>FIGURE 5-2 	Method Profiler
+</P>
+<BR><A NAME="50626615_pgfId-1023602"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626615_pgfId-1013870"></A>
+<P><IMG SRC="figures/monitoring-6.jpg" TITLE="Methods Profiler viewing the DefaultColorPhone" ALT="Methods Profiler viewing the DefaultColorPhone" ALIGN="BASELINE">
+</P><A NAME="50626615_pgfId-1023581"></A><A NAME="50626615_pgfId-1023601"></A>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004325"></A>The profiler displays two types of information:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-997499"></A>Method relationships are shown in a hierarchical list, the <A NAME="50626615_marker-1009357"></A>Call Graph.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-997502"></A>The right side of the profiler shows the execution time and number of calls for each method and its descendants.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626615_pgfId-1003278"></A>The profiling values obtained from the emulator do not reflect actual values on a real device.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR><H3 CLASS="Head2"><A NAME="50626615_pgfId-1003291"></A>5.1.1	Call Graph</H3>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004412"></A><A NAME="50626615_marker-1009358"></A>The call graph shows a hierarchy of method calls. Methods that call other methods are shown as folders. Double-click a method to open it and see the methods it calls. Methods that do not call any other method are shown as gray circles.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004440"></A>You can search for a particular class or method name. Click Find and fill in a name. The search is performed from the current selection in the call graph to the end. If you want to search the entire call graph, check Wrap before you click the Find button.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004475"></A>As you click different nodes in the call graph, the right side of the profiler shows details about the methods for that node.
+</P><H3 CLASS="Head2"><A NAME="50626615_pgfId-1004417"></A>5.1.2	Execution Time and Number of Calls</H3>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1014421"></A>The right side of the profiler window displays detailed information about methods. You can see the method name, the number of times it was called, and the amount of time that the emulator spent in the method. The execution time is described in four distinct ways:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1014422"></A>Cycles shows the amount of processor time spent in the method itself.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1004455"></A>%Cycles is the percentage of the total execution time that is spent in the method itself.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1004458"></A>Cycles with Children is the amount of time spent in the method <EM CLASS="Emphasis">and</EM> its called methods.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1004459"></A>%Cycles with Children shows the time spent in the method and its called methods as compared to the total execution time.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004469"></A>Click any column to sort by that column. Click a second time to switch the sort between ascending and descending.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004499"></A>The right pane shows the methods contained in the currently selected node in the call graph. If you want to see every method, click on the &lt;root&gt; node in the call graph.
+</P><H3 CLASS="Head2"><A NAME="50626615_pgfId-1004422"></A>5.1.3	Saving and Loading Profiler Information</H3>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004416"></A>To save your profiler session, click the Save button in the profiler window. Choose a file name.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004480"></A>To load a profiler session, choose File &gt; Utilities. Click Profiler and press Launch. When you select a file, the profiler window appears with all the session information.
+</P><H2 CLASS="Head1"><A NAME="50626615_pgfId-997698"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>5.2	<A NAME="50626615_marker-1009359"></A><A NAME="50626615_32782"></A>Using the Memory Monitor</H2>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004504"></A>Memory is scarce on many MIDP devices. The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC includes a memory monitor that makes it easy to examine the memory usage of your application. You can see the total memory used by your application and a detailed listing of the memory usage per object.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004505"></A>To turn on the memory monitor, choose Edit &gt; Preferences. Click on Monitor in the left pane. Check Enable Memory Monitor.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004520"></A>Next time you run the emulator, the memory monitor window appears, displaying a <A NAME="50626615_marker-1009362"></A>graph of your application's memory usage over time. The memory monitor slows your application startup because every object created is recorded.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626615_pgfId-1016748"></A>FIGURE 5-3 	Memory Monitor Graph
+</P>
+<BR><A NAME="50626615_pgfId-1023604"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626615_pgfId-1013904"></A>
+<P><IMG SRC="figures/monitoring-7.jpg" TITLE="Memory monitor extension with Graph tab selected" ALT="Memory monitor extension with Graph tab selected" ALIGN="BASELINE">
+</P><A NAME="50626615_pgfId-1023586"></A><A NAME="50626615_pgfId-1023603"></A>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1007634"></A>The memory monitor graph shows the following information:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1004558"></A><STRONG CLASS="Ixmain">Current - </STRONG>Current amount of memory used by the application.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1004559"></A><STRONG CLASS="Lead-In2para">Maximum - </STRONG>Maximum amount of memory used since program execution began, shown in the graph by a broken red line.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1004560"></A><STRONG CLASS="Lead-In2para">Objects - </STRONG>Number of objects in the heap.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1004561"></A><STRONG CLASS="Lead-In2para">Used - </STRONG>Amount of memory used.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1004562"></A><STRONG CLASS="Lead-In2para">Free - </STRONG>Amount of unused memory available.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1004563"></A><STRONG CLASS="Lead-In2para">Total - </STRONG>Total amount of memory available at startup.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004533"></A>Remember, to modify the heap size select Edit &gt; Preferences and choose the Storage tab. See <A HREF="projects.html#50626613_99364" CLASS="XRef">Chapter 3</A> for details.
+</P>
+<P CLASS="StepPara1"><A NAME="50626615_pgfId-1003210"></A>To request the system to perform a garbage collection, click Run GC.
+</P>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626615_pgfId-1003211"></A>The memory usage you observe with the emulator is not exactly the same as memory usage on a real device. Remember, the emulator does not represent a real device. It is just one possible implementation of its supported APIs.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1015456"></A>To see <A NAME="50626615_marker-1009363"></A>details about the objects in your application, click the Objects tab in the memory monitor window.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626615_pgfId-1016754"></A>FIGURE 5-4 	Memory Monitor Objects Display
+</P>
+<BR><A NAME="50626615_pgfId-1023606"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626615_pgfId-1013938"></A>
+<P><IMG SRC="figures/monitoring-8.jpg" TITLE="Memory monitor extension Objects tab" ALT="Memory monitor extension Objects tab" ALIGN="BASELINE">
+</P><A NAME="50626615_pgfId-1023591"></A><A NAME="50626615_pgfId-1023605"></A>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1015465"></A>A table with the following columns appears:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-999712"></A><STRONG CLASS="Lead-In2para">Name - </STRONG>Class name of the objects.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-999713"></A><STRONG CLASS="Lead-In2para">Live - </STRONG>Number of instances. Some of these might be eligible for garbage collection.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-999714"></A><STRONG CLASS="Lead-In2para">Total - </STRONG>Total number of objects that have been allocated since the application began.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-999715"></A><STRONG CLASS="Lead-In2para">Total Size - </STRONG>Total amount of memory used by the objects.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-999716"></A><STRONG CLASS="Lead-In2para">Average Size - </STRONG>Average object size, calculated by dividing the live instances into the total size.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004708"></A>Click any column header to sort on that column.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004712"></A>You can search for a specific class name by choosing View &gt; Find... from the memory monitor window menu.
+</P><H3 CLASS="Head2"><A NAME="50626615_pgfId-999009"></A>5.2.1	Saving and Loading Memory Monitor Information</H3>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004751"></A>To save your memory monitor session, click the Save button. Choose a file name.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004752"></A>To load a memory monitor session, choose File &gt; Utilities. Click Memory Monitor and press Launch. When you select a file, the memory monitor window appears with all the session information.
+</P><H2 CLASS="Head1"><A NAME="50626615_pgfId-999208"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>5.3	<A NAME="50626615_marker-1009364"></A>Using the Network <A NAME="50626615_85284"></A>Monitor</H2>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004776"></A>MIDP applications, at a minimum, are capable of HTTP network connections, but many other types of network connections are also possible. The network monitor provides a convenient way to see the information your application is sending and receiving on the network. This is helpful if you are debugging network interactions or looking for ways to optimize network traffic.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1014662"></A>To turn on the network monitor, choose Edit &gt; Preferences. Click Monitor in the left pane. Check Enable Network Monitoring.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1014663"></A>Next time you run the emulator, the network monitor window appears.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626615_pgfId-1016760"></A>FIGURE 5-5 	Network Monitor
+</P>
+<BR><A NAME="50626615_pgfId-1023608"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626615_pgfId-1013972"></A>
+<P><IMG SRC="figures/monitoring-9.jpg" TITLE="Network Monitor HTTP/HTTPS tab" ALT="Network Monitor HTTP/HTTPS tab" ALIGN="BASELINE">
+</P><A NAME="50626615_pgfId-1023596"></A><A NAME="50626615_pgfId-1023607"></A>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004809"></A>When your application makes any type of network connection, information about the connection is captured and displayed. The figure shows HTTP requests and responses.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004816"></A>The display on the left side shows a hierarchy of messages and message pieces. Click a message or a portion of a message to see details in the right side of the network monitor. Double-click messages or message portions to expand or collapse them.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004831"></A>Message bodies are shown as raw hexadecimal values and the equivalent text.
+</P>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626615_pgfId-1004846"></A>You can examine messages that are still in the process of being sent. Incomplete messages are indicated by bold highlighting in the message tree.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR><H3 CLASS="Head2"><A NAME="50626615_pgfId-1014675"></A>5.3.1	<A NAME="50626615_78042"></A><A NAME="50626615_marker-1014674"></A>Filtering Messages</H3>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1014676"></A>Filters are useful for examining some subset of the total network traffic. Filter settings are specific to the network protocol used.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004857"></A>Press the Filter Settings button to use the filter. Change the filter settings to suit your needs.
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaption"> <A NAME="50626615_pgfId-1004863"> </A> TABLE 5-1 	Network Monitor Filter Settings </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626615_pgfId-1004867"></A>Network Protocol
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626615_pgfId-1004869"></A>Filter Settings
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1004871"></A>HTTP/HTTPS
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1004901"></A>Enter text to match the various parts of HTTP messages: URL, status line, headers, or body. For example, entering <KBD CLASS="Filename-Command">slashdot</KBD> in the URL field filters to show only messages whose URL contain <KBD CLASS="Filename-Command">slashdot</KBD>.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1004875"></A>SMS/CBS
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1004877"></A>You can specify a protocol, message type, and direction to match. Furthermore, you can enter text to match in the sender, receiver, and message content.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1007672"></A>MMS
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1007674"></A>Enter text to match the direction, sender, receiver, and copied (cc) and blind copied (bcc) receivers. In addition, you can filter on the subject, content ID, content location, MIME type, and encoding.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1007676"></A>OBEX, SPP/L2CAP
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1007678"></A>You can filter using the URL or header content.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1014308"></A>APDU, JCRMI
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1014310"></A>Filter on the URL or the message content.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1014548"></A>SIP
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1014550"></A>None available
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1004879"></A>Socket, SSL, Datagram, Comm
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626615_pgfId-1004881"></A>Enter text to match in either the connection string (URL) or content.
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1002675"></A>When you are done entering filter settings, press OK to return to the network monitor. The Filter checkbox is checked, indicating that a filter is in use. To disable the filter and see all messages, uncheck the checkbox.
+</P><H3 CLASS="Head2"><A NAME="50626615_pgfId-1004924"></A>5.3.2	<A NAME="50626615_20568"></A>Sorting Messages</H3>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1002688"></A>To arrange the <A NAME="50626615_marker-1002687"></A>message tree in a particular order, click on the Sort By combo box and choose a criteria.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1002690"></A><STRONG CLASS="Lead-In2para">Time - </STRONG>Messages are sorted in chronological order of time sent or received.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1002691"></A><STRONG CLASS="Lead-In2para">URL - </STRONG>Messages are sorted by URL address. Multiple messages with the same address are sorted by time.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1002692"></A><STRONG CLASS="Lead-In2para">Connection - </STRONG>Messages are sorted by communication connection. Messages using the same connection are sorted by time. This sort type enables you to see messages grouped by requests and their associated responses. 
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626615_pgfId-1002693"></A>Sorting parameters are dependent on the message protocol you choose. For instance, sorting by time is not relevant for socket messages.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H3 CLASS="Head2"><A NAME="50626615_pgfId-1004947"></A>5.3.3	Saving and Loading Network Monitor Information</H3>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004948"></A>To save your network monitor session, choose File &gt; Save or File &gt; Save As from the network monitor window menu. Choose a file name.
+</P>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1004949"></A>To load a network monitor session, choose File &gt; Utilities. Select Network Monitor from the list and press Launch. When you select a file, the network monitor window appears with all the session information.
+</P><H3 CLASS="Head2"><A NAME="50626615_pgfId-1002718"></A>5.3.4	Clearing the Message Tree</H3>
+<P CLASS="Paragraph"><A NAME="50626615_pgfId-1002720"></A>To remove all messages from the network monitor, choose Edit &gt; Clear from the network monitor menu.
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="emulator.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="security.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

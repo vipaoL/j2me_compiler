@@ -1,0 +1,415 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  8 - Using the Mobile Media API
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="wma.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="mobile3d.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626618_pgfId-27073"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">8</SPAN><A NAME="50626618_11459"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626618_pgfId-21060"></A><A NAME="50626618_30678"></A>Using the <A NAME="50626618_marker-25127"></A>Mobile Media API
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-27441"></A><A NAME="50626618_marker-27625"></A>JSR 135, the <A NAME="50626618_marker-27633"></A>Mobile Media API (<A NAME="50626618_marker-27632"></A>MMAPI), provides a standard API for rendering and capturing time-based media, like audio or video. The API is designed to be flexible with respect to the media formats, protocols, and features supported by various devices. For information on programming with MMAPI, see the following articles:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-26104"></A><I CLASS="Title">Mobile Media API Overview</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<PRE CLASS="ScreenText"><A NAME="50626618_pgfId-26117"></A><KBD CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/apis/articles/mmapi_overview/" CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/apis/articles/mmapi_overview/" CLASS="URL">http://developers.sun.com/techtopics/mobility/apis/articles/mmapi_overview/</A></A></KBD>
+</PRE>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-26112"></A><I CLASS="Title">The J2ME Mobile Media API</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<PRE CLASS="ScreenText"><A NAME="50626618_pgfId-26105"></A><KBD CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/midp/articles/mmapioverview/" CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/midp/articles/mmapioverview/" CLASS="URL">http://developers.sun.com/techtopics/mobility/midp/articles/mmapioverview/</A></A></KBD>
+</PRE><H2 CLASS="Head1"><A NAME="50626618_pgfId-22571"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>8.1	Supported <A NAME="50626618_marker-25128"></A>Formats and Protocols</H2>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-27469"></A>The emulator's MMAPI implementation supports the following media types.
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaption"> <A NAME="50626618_pgfId-27181"> </A> TABLE 8-1 	Supported MMAPI Media Formats  </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626618_pgfId-27185"></A>MIME Type
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626618_pgfId-27187"></A>Description
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27189"></A>audio/amr
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27191"></A>Adaptive Multi-Rate
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27193"></A>audio/midi
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27195"></A>MIDI files
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27197"></A>audio/sp-midi
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27199"></A>Scalable Polyphony MIDI
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27201"></A>audio/x-tone-seq
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27203"></A>MIDP 2.0 tone sequence
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27205"></A>audio/x-wav
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27207"></A>WAV PCM sampled audio
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27209"></A>image/gif
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27211"></A>GIF 89a (animated GIF)
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27217"></A>video/mpeg
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27219"></A>MPEG video
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27221"></A>video/vnd.sun.rgb565
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626618_pgfId-27223"></A>Video capture
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR><H2 CLASS="Head1"><A NAME="50626618_pgfId-24616"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>8.2	Adaptive Multi-Rate (<A NAME="50626618_marker-28110"></A>AMR) Content</H2>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-28109"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC simulates support for Adaptive Multi-Rate (AMR) content (<KBD CLASS="URL"><A HREF="http://www.ietf.org/rfc/rfc3267.txt" CLASS="URL">http://www.ietf.org/rfc/rfc3267.txt</A></KBD><A NAME="50626618_marker-28132"></A>). Although the toolkit cannot decode AMR content, the implementation returns a player for AMR content when requested.
+</P><H3 CLASS="Head2"><A NAME="50626618_pgfId-28137"></A>8.2.1	Windows</H3>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-28113"></A>On Windows, AMR files are converted to regular WAVE files and passed to Qsound. Because the Windows version interfaces with the 3GPP implementation, you do not have to do anything to ge t AMR files to play.
+</P><H3 CLASS="Head2"><A NAME="50626618_pgfId-28138"></A>8.2.2	Linux</H3>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-28114"></A>The AMR support for Linux is based on the 3GPP AMR Narrow Band (AMR-NB) Reference Implementation decoder and the SOX audio processor (AMR Wide Band is not supported).
+</P><H4 CLASS="Head3"><A NAME="50626618_pgfId-28141"></A>8.2.2.1	Enabling <A NAME="50626618_marker-28262"></A>AMR Support</H4>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-28142"></A>Follow these steps to enable AMR support.
+</P>
+<P CLASS="Step1"><A NAME="50626618_pgfId-28143"></A>	1.	Get the AMR-NB RI provided by 3GPP. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626618_pgfId-28178"></A>There are several versions available. One can be found here:
+</P>
+<P CLASS="StepPara1"><A NAME="50626618_pgfId-28177"></A><KBD CLASS="URL"><A HREF="http://www.3gpp.org/ftp/Specs/archive/26_series/26.073/26073-530.zip" CLASS="URL"><A HREF="http://www.3gpp.org/ftp/Specs/archive/26_series/26.073/26073-530.zip" CLASS="URL">http://www.3gpp.org/ftp/Specs/archive/26_series/26.073/26073-530.zip</A></A></KBD>
+</P>
+<P CLASS="Step1-"><A NAME="50626618_pgfId-28180"></A>	2.	Open the makefile contained in the package.
+</P>
+<P CLASS="StepPara1"><A NAME="50626618_pgfId-28187"></A>Find the line starting with 'CFLAGS = '. 
+</P>
+<P CLASS="Step2"><A NAME="50626618_pgfId-28192"></A>a.	Add the <KBD CLASS="Filename-Command">DMMS_IO</KBD> option.
+</P>
+<P CLASS="Step2-"><A NAME="50626618_pgfId-28193"></A>b. 	Remove the <KBD CLASS="Filename-Command">pedantic-errors</KBD> option. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626618_pgfId-28198"></A>Save and compile. If you have problems, try removing the the O3 (or O2) optimization flags as well (the binaries will be nearly twice the size).
+</P>
+<P CLASS="Step1-"><A NAME="50626618_pgfId-28147"></A>	3.	To build the RI , enter: <KBD CLASS="Filename-Command"> make VAD=VAD1</KBD>
+</P>
+<P CLASS="StepPara1"><A NAME="50626618_pgfId-28149"></A>After the compilation you should have a binary file named <KBD CLASS="Filename-Command">decoder</KBD>. That's the AMR-NB decoder itself. 
+</P>
+<P CLASS="Step1-"><A NAME="50626618_pgfId-28237"></A>	4.	Set the environment variable <KBD CLASS="Filename-Command">AMR_DECODER</KBD> to point to the path to the decoder.
+</P>
+<P CLASS="StepPara1"><A NAME="50626618_pgfId-28238"></A>For example, if <KBD CLASS="Filename-Command">&#126;/amr</KBD> is the path to the decoder, specify:
+</P>
+<P CLASS="StepPara1"><A NAME="50626618_pgfId-28239"></A><KBD CLASS="Filename-Command">export AMR_DECODER=&#126;/amr/decoder</KBD>
+</P>
+<P CLASS="Step1-"><A NAME="50626618_pgfId-28151"></A>	5.	Set execution access rights for the <KBD CLASS="Filename-Command">decoder</KBD> file.
+</P>
+<P CLASS="StepPara1"><A NAME="50626618_pgfId-28255"></A>In the same directory as the decoder, type:
+</P>
+<P CLASS="StepPara1"><A NAME="50626618_pgfId-28254"></A><KBD CLASS="Filename-Command">chmod 555 ./decoder</KBD>
+</P>
+<P CLASS="Step1-"><A NAME="50626618_pgfId-28153"></A>	6.	Test the decoder as follows:
+</P>
+<P CLASS="StepPara1"><A NAME="50626618_pgfId-28267"></A>Run the MobileMediaAPI demo Simple Player as described in <A HREF="demonstrations.html#50626580_72669" CLASS="XRef">Section A.13, MobileMediaAPI</A>. From the main menu select Simple Player and then 'AMR Narrow Band [jar]'. Don't forget to turn your speakers on.
+</P><H4 CLASS="Head3"><A NAME="50626618_pgfId-28155"></A>8.2.2.2	AMR Format Support</H4>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-28159"></A>You may also encounter problems with some &quot;clones&quot; of the AMR-NB. There appear to be at least two file formats for AMR-NB codec data:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28161"></A><KBD CLASS="Filename-Command">.AMR</KBD> files stored in &quot;AMR File Storage Format&quot;
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28295"></A>This is specified in <KBD CLASS="Filename-Command">draft-ietf-avt-rtp-amr-10.txt</KBD>, Sec. 6.2, which is included with the Ericsson AMR converter tool. (The draft is an early form of RFC 3267). These files are handled by the Ericsson AMR tool and Nokia Series 60 phones. They have a header of <KBD CLASS="Filename-Command">#!AMR&#92;n</KBD> and they're encoded in big-endian.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28163"></A><KBD CLASS="Filename-Command">.COD</KBD> files stored in &quot;AMR Interface Format 2&quot; 
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28305"></A>This format is specified in 3GPP TS 26.101, Appendix A. These are coded and decoded by the 3GPP TS 26.104 floating point reference codec source package. These files have no header and are encoded in little-endian.
+</P>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-28165"></A>To convert from between these formats try this Python script:
+</P>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-28139"></A><KBD CLASS="URL"><A HREF="http://www.connactivity.com/&#126;eaw/amrwork/amrconv.py" CLASS="URL"><A HREF="http://www.connactivity.com/&#126;eaw/amrwork/amrconv.py" CLASS="URL">http://www.connactivity.com/&#126;eaw/amrwork/amrconv.py</A></A> </KBD>
+</P><H2 CLASS="Head1"><A NAME="50626618_pgfId-28115"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>8.3	Using <KBD CLASS="Filename-Command">MediaControlSkin</KBD></H2>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-24627"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC comes with an emulator skin, <KBD CLASS="Filename-Command">MediaControlSkin</KBD>, that is focused on multimedia playback and control. The skin includes buttons with symbols representing play, stop, volume up and volume down, and other commands. To see the usefulness of <KBD CLASS="Filename-Command">MediaControlSkin</KBD>, try it out with the <KBD CLASS="Filename-Command">MobileMediaAPI</KBD> demonstration application.
+</P><H2 CLASS="Head1"><A NAME="50626618_pgfId-24287"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>8.4	<A NAME="50626618_marker-25129"></A>Media Capture</H2>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-24291"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator supports audio and video capture. Audio capture is supported by using the capture capabilities of the system upon which the emulator runs.
+</P>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-24295"></A>Video capture is supported by simulating a camera input.
+</P>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-24296"></A>Consult the <KBD CLASS="Filename-Command">MobileMediaAPI</KBD> example application for details and source code that demonstrates how to capture audio and video.
+</P><H2 CLASS="Head1"><A NAME="50626618_pgfId-25368"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>8.5	Well-Behaved MIDlets</H2>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-25372"></A>MIDlets have a life cycle that is defined in the MIDP specification. MIDlets can be paused by events such as incoming phone calls. A well-behaved MIDlet releases important device resources when it is paused and reallocates or restarts those resources when the MIDlet is resumed. In the MMAPI arena, stop any <KBD CLASS="Filename-Command">Player</KBD>s that are rendering content when a MIDlet is paused.
+</P>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-25375"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC prints a message to the console if you pause a MIDlet and it does not stop its running <KBD CLASS="Filename-Command">Player</KBD>s. You can test this feature using the Pausing Audio Test MIDlet in the <KBD CLASS="Filename-Command">MobileMediaAPI</KBD> demonstration application. See <A HREF="demonstrations.html#50626580_32725" CLASS="XRef">Appendix A</A> for details.
+</P>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-25393"></A>The warning message is printed once only for each running emulator.
+</P><H2 CLASS="Head1"><A NAME="50626618_pgfId-28321"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>8.6	Ring Tones</H2>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-28326"></A>MMAPI can be used to play ring tones, as demonstrated in <A HREF="demonstrations.html#50626580_80681" CLASS="XRef">Section A.13.1, Simple Tones</A> and <A HREF="demonstrations.html#50626580_12651" CLASS="XRef">Section A.13.2, Simple Player</A>. Several ring tone formats are in common use. You can download ring tones or create your own.
+</P><H3 CLASS="Head2"><A NAME="50626618_pgfId-28328"></A>8.6.1	Download Ring Tones</H3>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-28420"></A><A NAME="50626618_marker-28557"></A>Ring tone files can be downloaded from many internet sites, including the following: 
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28421"></A><KBD CLASS="URL"><A HREF="http://www.surgeryofsound.co.uk/" CLASS="URL"><A HREF="http://www.surgeryofsound.co.uk/" CLASS="URL">http://www.surgeryofsound.co.uk/</A></A></KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28422"></A><KBD CLASS="URL"><A HREF="http://www.convertyourtone.com/" CLASS="URL"><A HREF="http://www.convertyourtone.com/" CLASS="URL">http://www.convertyourtone.com/</A></A></KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28332"></A><A HREF="http://www.filmfind.tv/ringtones/" CLASS="URL">http://www.filmfind.tv/ringtones/</A>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H3 CLASS="Head2"><A NAME="50626618_pgfId-28334"></A>8.6.2	Ring Tone Formats</H3>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-28558"></A>This section provides samples of several formats
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28428"></A>RTTTL, the Ringing Tones text transfer language format, is explained at
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28335"></A><KBD CLASS="URL"><A HREF="http://www.convertyourtone.com/rtttl.html" CLASS="URL"><A HREF="http://www.convertyourtone.com/rtttl.html" CLASS="URL">http://www.convertyourtone.com/rtttl.html</A></A></KBD>
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28339"></A>Nokia Composer
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28340"></A>This is a rendition of Beethoven's 9th symphony in Nokia Composer format:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28453"></A><KBD CLASS="Filename-Command">16g1,16g1,16g1,4#d1,16f1,16f1,16f1,4d1,16g1,16g1,16g1,16#d1,</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28477"></A><KBD CLASS="Filename-Command">16#g1,16#g1,16#g1,16g1,16#d2,16#d2,16#d2,4c2,16g1,16g1,16g1,</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28480"></A><KBD CLASS="Filename-Command">16d1,16#g1,16#g1,16#g1, 16g1,16f2,16f2,16f2,4d2</KBD>
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28345"></A>Ericsson Composer
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28346"></A>Beethoven's Menuett in G:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28347"></A><KBD CLASS="Filename-Command">a b + c b + c b + c b + C p + d a B p + c g A </KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28496"></A><KBD CLASS="Filename-Command">p f g a g a g a g A p b f G p a e F</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28349"></A>Beethoven's 9th symphony theme:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28350"></A><KBD CLASS="Filename-Command">f f f # C # d # d # d C p f f f # c # f #f # f f +# c + # c + # c # A ff f c # f # f # f f + # d + # d + # d</KBD>
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28354"></A>Siemens Composer Format
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28355"></A>Inspector Gadget theme:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28356"></A><KBD CLASS="Filename-Command">C2(1/8) D2(1/16) Dis2(1/8) F2(1/16) G2(1/8)</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28357"></A><KBD CLASS="Filename-Command">P(1/16) Dis2(1/8) P(1/16) Fis2(1/8) P(1/16)</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28358"></A><KBD CLASS="Filename-Command">D2(1/8) P(1/16) F2(1/8) P(1/16) Dis2(1/8)</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28359"></A><KBD CLASS="Filename-Command">P(1/16) C2(1/8) D2(1/16) Dis2(1/8) F2(1/16)</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28360"></A><KBD CLASS="Filename-Command">G2(1/8) P(1/16) C3(1/8) P(1/16) B2(1/2) P(1/4)</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28361"></A><KBD CLASS="Filename-Command">C2(1/8) D2(1/16) Dis2(1/8) F2(1/16) G2(1/8) P(1/16)</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28362"></A><KBD CLASS="Filename-Command">Dis2(1/8) P(1/16) Fis2(1/8) P(1/16) D2(1/8) P(1/16)</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28363"></A><KBD CLASS="Filename-Command">F2(1/8) P(1/16) Dis2(1/8) P(1/16) C3(1/8) B2(1/16)</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28364"></A><KBD CLASS="Filename-Command">Ais2(1/8) A2(1/16) Gis2(1/2) G2(1/8) P(1/16) C3(1/2)</KBD>
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28366"></A>Motorola Composer
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28367"></A>Beethovens 9th symphony:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28368"></A><KBD CLASS="Filename-Command">4 F2 F2 F2 C#4 D#2 D#2 D#2 C4 R2 F2 F2 F2 C#2 F#2 F#2</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28369"></A><KBD CLASS="Filename-Command">F#2 F2 C#+2 C#+2 C#+2 A#4 F2 F2 F2 C2 F#2 F#2 F#2 F2</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28370"></A><KBD CLASS="Filename-Command">D#+2 D#+2 D#+2</KBD>
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28372"></A>Panasonic Composer
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28373"></A>Beethovens 9thsymphony:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28374"></A><KBD CLASS="Filename-Command">444** 444** 444** 1111* 4444** 4444** 4444** 111*</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28375"></A><KBD CLASS="Filename-Command">0** 444** 444** 444** 1111** 4444** 4444** 4444**</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28376"></A><KBD CLASS="Filename-Command">444** 11** 11** 11** 6666* 444** 444** 444** 111**</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28377"></A><KBD CLASS="Filename-Command">4444** 4444** 4444** 444** 22** 22** 22**</KBD>
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626618_pgfId-28379"></A>Sony Composer
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28380"></A>Beethovens 9th sympony:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28381"></A><KBD CLASS="Filename-Command">444****444****444****111#*****444#****444#****444#****</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28541"></A><KBD CLASS="Filename-Command">111*****(JD)0000444****444****444****111#****444#****</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28542"></A><KBD CLASS="Filename-Command">444#****444#****444****11#****11#****11#****666#*****</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28545"></A><KBD CLASS="Filename-Command">444****444****444****111****444#****444#****</KBD>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626618_pgfId-28384"></A><KBD CLASS="Filename-Command">444#****444****22#****22#****22#****</KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626618_pgfId-28385"></A>&nbsp;
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="wma.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="mobile3d.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

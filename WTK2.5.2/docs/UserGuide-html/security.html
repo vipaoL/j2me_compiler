@@ -1,0 +1,364 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  6 - Security and MIDlet Signing
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="monitoring.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="wma.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626616_pgfId-45703"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">6</SPAN><A NAME="50626616_32725"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626616_pgfId-39771"></A><A NAME="50626616_99444"></A>Security and MIDlet Signing
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-34657"></A><A NAME="50626616_marker-40946"></A>MIDP 2.0 (<A NAME="50626616_marker-47804"></A>JSR 118) includes a comprehensive security model based on protection domains. MIDlet suites are installed into a protection domain that determines access to protected functions. The MIDP 2.0 specification also includes a recommended practice for using public key cryptography to verify and authenticate MIDlet suites.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36410"></A>For definitive information, consult the MIDP 2.0 specification. For an overview of MIDlet signing using the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC, read the article <I CLASS="Title">Understanding MIDP 2.0's Security Architecture</I>, which is available at 
+<BR><KBD CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/midp/articles/permissions/" CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/midp/articles/permissions/" CLASS="URL">http://developers.sun.com/techtopics/mobility/midp/articles/permissions/</A></A></KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36423"></A>If you need more background on public key cryptography, try the article <I CLASS="Title">MIDP Application Security 1: Design Concerns and Cryptography</I>, which is available at
+<BR><KBD CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/midp/articles/security1/" CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/midp/articles/security1/" CLASS="URL">http://developers.sun.com/techtopics/mobility/midp/articles/security1/</A></A></KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36453"></A>This chapter describes support for protection domains, permissions, and MIDlet signing in the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC.
+</P><H2 CLASS="Head1"><A NAME="50626616_pgfId-36511"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>6.1	<A NAME="50626616_marker-40947"></A><A NAME="50626616_70730"></A>Permissions</H2>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36515"></A>MIDlets must have permission to perform sensitive operations, such as connecting to the network. Permissions have specific names, and MIDlet suites can indicate their need for certain kinds of permissions through attributes in the MIDlet suite descriptor.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36516"></A>You can add these permission attributes to a project by clicking the Settings button. Select the Permissions icon. The MIDlet-Permissions box shows permissions which the MIDlet must possess, while the MIDlet-Permissions-Opt box contains permissions that are optional.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626616_pgfId-48610"></A>FIGURE 6-1 	MIDlet Suite Permissions
+</P>
+<BR><A NAME="50626616_pgfId-56015"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626616_pgfId-45716"></A>
+<P><IMG SRC="figures/security-4.jpg" TITLE="Project settings for project &quot;Tiny&quot; with Permissions icon selected on left" ALT="Project settings for project &quot;Tiny&quot; with Permissions icon selected on left" ALIGN="BASELINE">
+</P><A NAME="50626616_pgfId-55996"></A><A NAME="50626616_pgfId-56014"></A>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-46347"></A>To add a permission to either box, click Add and choose the permission you want to add. To remove a permission, highlight it and click Remove.
+</P><H2 CLASS="Head1"><A NAME="50626616_pgfId-46349"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>6.2	Selecting the Security Policy</H2>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47835"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC supports the security policies defined by both <A NAME="50626616_marker-47836"></A>JSR 185 (Java Technology for the Wireless Industry) and <A NAME="50626616_marker-47837"></A>JSR 248 (Mobile Service Architecture or MSA). The protection domains are further described in <A HREF="security.html#50626616_79144" CLASS="XRef">Section 6.2.1, MSA Protection Domains</A> and <A HREF="security.html#50626616_53831" CLASS="XRef">Section 6.2.2, Java for the Wireless Toolkit Industry Protection Domains</A>.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47845"></A>To choose the security policy you want the emulator to use, select Edit &gt; Preferences and select Security in the Category list. From the Security Policy combo box, choose either MSA or JTWI. Select one of the available security policies.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47552"></A>When you use <A NAME="50626616_marker-47551"></A>Run via OTA. your packaged MIDlet suite is installed directly into the emulator and it is placed in a protection domain at installation time. The emulator uses public key cryptography to determine the protection domain of installed MIDlet suites.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47553"></A>If the MIDlet suite is not signed, it is placed in the default protection domain. The default is different for MSA and JTWI. See Sections <A HREF="security.html#50626616_79144" CLASS="XRef">6.2.1</A> and <A HREF="security.html#50626616_53831" CLASS="XRef">6.2.2</A>. If the MIDlet is signed, it is placed in the protection domain that is associated with the root certificate of the signing key's certificate chain.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47554"></A>For example, suppose Respectable Software, a hypothetical company, wants to distribute a cryptographically signed MIDlet suite. Respectable Software buys a signing key pair from Super-Trustee, a hypothetical certificate authority. Using the signing key, Respectable Software signs the MIDlet suite and distributes their certificate with the MIDlet suite. When the MIDlet suite is installed on the emulator or on a device, the implementation verifies Respectable's certificate using its own copy of Super-Trustee's root certificate. Then it uses Respectable's certificate to verify the signature on the MIDlet suite. Assuming everything checks out, the device or emulator installs the MIDlet suite into the protection domain that is associated with Super-Trustee's root certificate, most likely <KBD CLASS="Filename-Command">identified_third_party</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47558"></A>The toolkit provides tools to sign MIDlet suites, manage keys, and manage root certificates.
+</P><H3 CLASS="Head2"><A NAME="50626616_pgfId-47372"></A>6.2.1	<A NAME="50626616_marker-47370"></A><A NAME="50626616_79144"></A>MSA Protection Domains</H3>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47854"></A>The toolkit supports five protection domains for MSA:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-47374"></A><KBD CLASS="Filename-Command">unidentified_third_party</KBD><STRONG CLASS="Lead-In2para"> - </STRONG>Provides a high level of security for applications whose origins and authenticity cannot be determined. The user is prompted frequently when the application attempts a sensitive operation
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-45765"></A><KBD CLASS="Filename-Command">identified_third_party</KBD><STRONG CLASS="Lead-In2para"> - </STRONG>Intended for MIDlets whose origins were determined using cryptographic certificates. Permissions are not granted automatically, but the user is prompted less often than for the <KBD CLASS="Filename-Command">unidentified_third_party</KBD> domain.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-46289"></A><KBD CLASS="Filename-Command">manufacturer</KBD><STRONG CLASS="Lead-In2para"> - </STRONG>Intended for MIDlet suites whose credentials originate from the manufacturer's root certificate.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-46293"></A><KBD CLASS="Filename-Command">minimum</KBD><STRONG CLASS="Lead-In2para"> - </STRONG>All permissions are denied to MIDlets in this domain.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-45766"></A><KBD CLASS="Filename-Command">maximum</KBD><STRONG CLASS="Lead-In2para"> - </STRONG>All permissions are granted to MIDlets in this domain.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36544"></A>When you press the Run button to run your application in the emulator, your code runs in the <KBD CLASS="Filename-Command">unidentified_third_party</KBD> protection domain by default. 
+</P><H3 CLASS="Head2"><A NAME="50626616_pgfId-47389"></A>6.2.2	<A NAME="50626616_53831"></A>Java for the Wireless Toolkit Industry Protection Domains</H3>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47410"></A>The Sun Java Wireless Toolkit includes four <A NAME="50626616_marker-47810"></A>protection domains:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-47413"></A><KBD CLASS="Filename-Command">untrusted</KBD> - Provides a high level of security for applications whose origins and authenticity cannot be determined. The user is prompted frequently when the application attempts a sensitive operation.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-47414"></A><KBD CLASS="Filename-Command">trusted</KBD> - All permissions are granted to MIDlets in this domain.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-47455"></A><KBD CLASS="Filename-Command">minimum</KBD><STRONG CLASS="Lead-In2para"> - </STRONG>All permissions are denied to MIDlets in this domain.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-47456"></A><KBD CLASS="Filename-Command">maximum</KBD><STRONG CLASS="Lead-In2para"> - </STRONG>All permissions are granted to MIDlets in this domain (equivalent to <KBD CLASS="Filename-Command">trusted</KBD>.).
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47583"></A>When you press the Run button to run your application in the emulator, your code runs in the <KBD CLASS="Filename-Command">untrusted</KBD> protection domain by default. 
+</P><H2 CLASS="Head1"><A NAME="50626616_pgfId-47588"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>6.3	<A NAME="50626616_marker-47587"></A><A NAME="50626616_99295"></A>Signing a MIDlet Suite</H2>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36603"></A>To sign a <A NAME="50626616_marker-47809"></A>MIDlet suite, you must package it first (select Project &gt; Package). Then choose Project &gt; Sign. The signing window appears (<A HREF="security.html#50626616_68276" CLASS="XRef">FIGURE 6-2</A>).
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626616_pgfId-48617"></A>FIGURE 6-2 	<A NAME="50626616_68276"></A>MIDlet Suite Signing Window
+</P>
+<BR><A NAME="50626616_pgfId-56017"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626616_pgfId-45793"></A>
+<P><IMG SRC="figures/security-5.jpg" TITLE="Sign MIDlet Suite window with localhost1 alias selected shows Java SE key details" ALT="Sign MIDlet Suite window with localhost1 alias selected shows Java SE key details" ALIGN="BASELINE">
+</P><A NAME="50626616_pgfId-56001"></A><A NAME="50626616_pgfId-56016"></A>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-39526"></A>Select the key you want to use in the Alias List and click the Sign MIDlet Suite button (the green triangle).
+</P><H2 CLASS="Head1"><A NAME="50626616_pgfId-36632"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>6.4	<A NAME="50626616_marker-40951"></A>Managing Keys</H2>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36636"></A>The MIDlet signing window can also be used to manage keys. For test purposes, you can create a key pair to sign a MIDLet. To deploy on a device, you must obtain a signing key pair from a certificate authority recognized by the device. You can also import keys from an existing Java SE platform keystore.
+</P><H3 CLASS="Head2"><A NAME="50626616_pgfId-36706"></A>6.4.1	Creating a New <A NAME="50626616_marker-40952"></A>Key Pair</H3>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36637"></A>To create an entirely new key pair, click New Key Pair. The toolkit prompts you for a key alias and information that will be associated with the key pair.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626616_pgfId-48623"></A>FIGURE 6-3 	Creating a New Key Pair
+</P>
+<BR><A NAME="50626616_pgfId-56019"></A>
+<P CLASS="FigureBox"><A NAME="50626616_pgfId-45827"></A>
+<P><IMG SRC="figures/security-6.jpg" TITLE="New Key Pair dialog prompts for an alias name, common name, organization unit, organization, City/Locality, State/Province and a two-letter country code" ALT="New Key Pair dialog prompts for an alias name, common name, organization unit, organization, City/Locality, State/Province and a two-letter country code" ALIGN="BASELINE">
+</P><A NAME="50626616_pgfId-56006"></A><A NAME="50626616_pgfId-56018"></A>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36638"></A>After you click Create, the toolkit prompts you to choose a protection domain. The connection between the key pair you just created and a protection domain might seem oblique, but it makes perfect sense:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-36650"></A>The toolkit creates a self-signed root certificate using the key pair you just created.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-36654"></A>The root certificate is added to the emulator's list of root certificates.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-36658"></A>The toolkit needs to associate the root certificate with a protection domain.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36659"></A>Now imagine what happens when you install a MIDlet suite signed with your new key:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-36668"></A>The implementation examines the certificate chain in the MIDlet suite descriptor. In this case the certificate chain is a single certificate, the self-signed root.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-36672"></A>The implementation tries to find the root of the certificate chain in its internal list. This succeeds because the root certificate was added when you create the key pair.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-36678"></A>The implementation considers the certificate valid and uses it to verify the signature on the MIDlet suite.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-36686"></A>The MIDlet suite is installed into whatever protection domain you picked.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H3 CLASS="Head2"><A NAME="50626616_pgfId-36762"></A>6.4.2	Getting Real Keys</H3>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-41808"></A>The ability to create a key pair and sign a <A NAME="50626616_marker-47813"></A>MIDlet within the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC environment is for testing purposes only. When you run your application on an actual device, you must obtain a signing key pair from a certificate authority recognized by the device.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-43194"></A>The procedure for signing MIDlet suites with real keys works this way:
+</P>
+<P CLASS="Step1"><A NAME="50626616_pgfId-43224"></A>	1.	Generate a new key pair. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626616_pgfId-47065"></A>In the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC, you can do this by pressing New Key Pair in the MIDlet signing window, as described above.
+</P>
+<P CLASS="Step1-"><A NAME="50626616_pgfId-43239"></A>	2.	Generate a Certificate Signing Request (CSR). 
+</P>
+<P CLASS="Step2"><A NAME="50626616_pgfId-47072"></A>a.	Press Generate CSR in the signing window. 
+</P>
+<P CLASS="Step2-"><A NAME="50626616_pgfId-47076"></A>b. 	To change the location of the CSR file, enter a new path or press Browse and choose a new file location. 
+</P>
+<P CLASS="Step2-"><A NAME="50626616_pgfId-47080"></A>c. 	Press Create to write the CSR file. 
+</P>
+<P CLASS="StepPara2"><A NAME="50626616_pgfId-47087"></A>After the CSR is written, a message that indicates success appears.
+</P>
+<P CLASS="Step1-"><A NAME="50626616_pgfId-43258"></A>	3.	Send the CSR to a certificate authority (CA). 
+</P>
+<P CLASS="StepPara1"><A NAME="50626616_pgfId-47094"></A>The CA needs more information from you to verify your identity. You must also pay the CA for the certificate they generate for you.
+</P>
+<P CLASS="StepPara1"><A NAME="50626616_pgfId-43264"></A>Once the CA verifies your identity and taken your money, it sends a certificate that certifies your public key.
+</P>
+<P CLASS="Step1-"><A NAME="50626616_pgfId-43268"></A>	4.	Import the certificate into the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC by pressing Import Certificate... in the MIDlet signing window.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-43294"></A>You can now use your own private key to sign MIDlet suites. The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC takes care of the details of placing the signature and your certificate into the MIDlet suite.
+</P><H3 CLASS="Head2"><A NAME="50626616_pgfId-41831"></A>6.4.3	Importing an Existing <A NAME="50626616_marker-41830"></A>Key Pair</H3>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47145"></A>You might have keys in a Java SE platform keystore that you would like to use for MIDlet signing. In this case, you need to import your signing keys to the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC so that you can sign your MIDlet suite. To do this from the MIDlet signing window, click Import Key Pair. Select a file that contains a Java SE platform keystore. You are prompted to select the alias of the key pair you want to import, then you just supply the alias you want to identify the key pair once it is imported to your keystore. Finally, you must select a protection domain for the key pair's root certificate.
+</P><H3 CLASS="Head2"><A NAME="50626616_pgfId-36718"></A>6.4.4	Removing a Key Pair</H3>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36722"></A>To remove a key pair from the MIDlet signing window, select its alias and choose Action &gt; Delete Selection.
+</P><H2 CLASS="Head1"><A NAME="50626616_pgfId-36714"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>6.5	<A NAME="50626616_marker-40954"></A>Managing Certificates</H2>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47165"></A>This section describes how to manage the emulator's list of root certificates using the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36773"></A>Real devices have similar lists of root certificates, although they cannot usually be modified by the user. When you want to deploy your application on a real device, you must to use signing keys issued by a certificate authority whose root certificate is present on the device. Otherwise, the device is unable to verify your application.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36774"></A>While you're developing your application, the toolkit's certificate management utility provides a convenient way to manipulate the emulator's list of root certificates for testing purposes.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-48845"></A>Choose File &gt; Utilities. Select Manage Certificates and press Launch to open up the certificate manager window. The micro keystore, <KBD CLASS="Filename-Command">_main.mks</KBD> is displayed. This keystore resides in the <KBD CLASS="Filename-Command">appdb</KBD> directory. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-48909"></A>The <KBD CLASS="Filename-Command">appdb</KBD> directory also contains <KBD CLASS="Filename-Command">keystore.ks</KBD> and <KBD CLASS="Filename-Command">serverkeystore.ks</KBD>. The Java ME Platform Certificate Manager cannot open <KBD CLASS="Filename-Command">*.ks</KBD> files, but you can import certificates from these keystores as described in <A HREF="security.html#50626616_95562" CLASS="XRef">Section 6.5.2, Importing Certificates</A>.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626616_pgfId-48846"></A>FIGURE 6-4 	Certificate Manager
+</P>
+<BR><A NAME="50626616_pgfId-56021"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626616_pgfId-45861"></A>
+<P><IMG SRC="figures/security-7.jpg" TITLE="Java ME certificate manager displays certificate list on the left and Java ME key details on the right." ALT="Java ME certificate manager displays certificate list on the left and Java ME key details on the right." ALIGN="BASELINE">
+</P><A NAME="50626616_pgfId-56011"></A><A NAME="50626616_pgfId-56020"></A>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36809"></A>Each certificate is shown as a single line in the left part of the window, the Certificate List. When you click a certificate, its details are shown in the right part of the window along with the certificate's associated protection domain.
+</P><H3 CLASS="Head2"><A NAME="50626616_pgfId-46328"></A>6.5.1	Enabling and Disabling Certificates</H3>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-46335"></A>Certificates can be enabled or disabled. This is handy if you want to make certificates temporarily unavailable without removing them from the keystore. To enable or disable a certificate, select it in the list and press Enable/Disable Certificate. The toolkit asks you to confirm the action. Choose Yes to proceed.
+</P><H3 CLASS="Head2"><A NAME="50626616_pgfId-46337"></A>6.5.2	<A NAME="50626616_marker-46336"></A><A NAME="50626616_95562"></A>Importing Certificates</H3>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-47199"></A>You can import certificates either from certificate files or from Java SE platform keystore files.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36883"></A>To import a certificate from a file, click Import Certificate in the certificate manager window. After you locate the certificate file, choose which protection domain is associated with the certificate.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36884"></A>To import a certificate from a Java SE platform keystore, choose Action &gt; Import Java SE Certificate from the menu in the certificate manager window. First, choose a protection domain for the certificate. Then select the keystore file and enter the keystore password. Finally, select the alias for the certificate you wish to import.
+</P><H3 CLASS="Head2"><A NAME="50626616_pgfId-36828"></A>6.5.3	Removing Certificates</H3>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-36832"></A>To remove a certificate from the list, select the certificate and choose Action &gt; Delete Selection.
+</P><H2 CLASS="Head1"><A NAME="50626616_pgfId-36738"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>6.6	USB Token Support</H2>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-49145"></A>A <A NAME="50626616_marker-49195"></A>USB token provides portable password-protected storage for public and private keys and certificates. The Java SE PKCS#11 native interface supports access to a USB token that has a PKCS#11-compliant native driver. When the driver is installed, a PKCS#11 library is included. On Windows the library is a win32 DLL. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-49141"></A>This section provides sample instructions for installing and using a USB Token on the Windows platform. 
+</P>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626616_pgfId-49419"></A>Linux is not supported because we have not fully tested a USB token with a Linux driver. USB tokens might work on Linux if a PKCS#11-compliant native driver is available. 
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-49223"></A>The remainder of this section steps through the installation and setup process required for USB token support.
+</P><H3 CLASS="Head2"><A NAME="50626616_pgfId-48958"></A>6.6.1	Installing USB Token Drivers</H3>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-49274"></A>Close all applications.
+</P>
+<P CLASS="Step1"><A NAME="50626616_pgfId-48962"></A>	1.	Go to <KBD CLASS="URL"><A HREF="http://downloads.geotrust.com/TCSPIKEY0407203016.exe" CLASS="URL"><A HREF="http://downloads.geotrust.com/TCSPIKEY0407203016.exe" CLASS="URL">http://downloads.geotrust.com/TCSPIKEY0407203016.exe</A></A></KBD>
+</P>
+<P CLASS="Step1-"><A NAME="50626616_pgfId-48965"></A>	2.	When the File Download dialog box opens, click Save.
+</P>
+<P CLASS="StepPara1"><A NAME="50626616_pgfId-49111"></A>Note the directory where you save the executable.
+</P>
+<P CLASS="Step1-"><A NAME="50626616_pgfId-48968"></A>	3.	Select the executable and double-click to start the Crypto Token installation.
+</P>
+<P CLASS="StepPara1"><A NAME="50626616_pgfId-49266"></A>Follow the installation prompts. insert the token so you can complete the installation.
+</P>
+<P CLASS="Step1-"><A NAME="50626616_pgfId-48971"></A>	4.	The Windows New Hardware Wizard launches. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626616_pgfId-49273"></A>Follow the instructions, accepting all default actions.
+</P>
+<P CLASS="Step1-"><A NAME="50626616_pgfId-48974"></A>	5.	When the Wizard finishes, answer Yes to restart your computer.
+</P>
+<BR>
+<TABLE DIR="LTR" cellpadding="0" cellspacing="0" WIDTH="100%" SUMMARY="procedure">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR align="left" valign="top">
+<TD valign="baseline" ROWSPAN="1" COLSPAN="1" ABBR="ProcIconTitle">
+<H3 CLASS="Head2ProcTitle"><A NAME="50626616_pgfId-48976"></A><IMG CLASS="icon" TITLE="procedure icon" ALT="procedure icon" SRC="shared/downtriangle.gif">&nbsp;&nbsp;Resetting the USB Token Passphrase
+</H3>
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-48977"></A>This step is valid only for new USB tokens. All USB tokens arrive with the default passphrase, PASSWORD (all upper case). You should reset this PassPhrase.
+</P>
+<P CLASS="Step1"><A NAME="50626616_pgfId-48981"></A>	1.	Click Start on your Windows task bar. Select All Programs &gt; GeoTrust Token, &gt; iKey 2000 Series Software &gt; PassPhrase Utility.
+</P>
+<P CLASS="Step1-"><A NAME="50626616_pgfId-48984"></A>	2.	Click Update Passphrase. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626616_pgfId-49241"></A>You are prompted to input your &quot;old passphrase&quot; before you can input your new one. 
+</P>
+<P CLASS="Step1-"><A NAME="50626616_pgfId-48987"></A>	3.	Reset the passphrase. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626616_pgfId-49255"></A>GeoTrust and Cingular recommend making your passphrase a combination of at least eight mixed characters.
+</P>
+<BR>
+<TABLE DIR="LTR" cellpadding="0" cellspacing="0" WIDTH="100%" SUMMARY="procedure">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR align="left" valign="top">
+<TD valign="baseline" ROWSPAN="1" COLSPAN="1" ABBR="ProcIconTitle">
+<H3 CLASS="Head2ProcTitle"><A NAME="50626616_pgfId-48990"></A><IMG CLASS="icon" TITLE="procedure icon" ALT="procedure icon" SRC="shared/downtriangle.gif">&nbsp;&nbsp;Managing the USB Token
+</H3>
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-48956"></A>Go to the GeoTrust driver installation directory. Run <KBD CLASS="Filename-Command">CIPUtils.exe</KBD> to manage the content of USB token.
+</P><H3 CLASS="Head2"><A NAME="50626616_pgfId-49323"></A>6.6.2	Using the USB Token</H3>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-49329"></A>The Sign MIDlet Suite dialog provides access to the USB token. With the USB token attached and the driver installed, select File &gt; Load keystore &gt; from USB Token (or, type Ctrl -T). If the USB token is password protected, you are prompted to enter a password. When the token is properly loaded all aliases and key details are listed. You can then select keys and use them for signing as described in <A HREF="security.html#50626616_99295" CLASS="XRef">Section 6.3, Signing a MIDlet Suite</A>.
+</P>
+<P CLASS="Paragraph"><A NAME="50626616_pgfId-49337"></A>When you attempt to load a keystore from the USB token you might see an error message.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-49380"></A>If the USB token cannot be accessed, you might see the error &quot;USB token or driver might be unplugged or invalid.&quot; Make sure the token is plugged in. You might need to try different USB ports on your machine.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626616_pgfId-49392"></A>If the native library is not found, you are prompted to enter the path to the DLL library installed with the driver. It is usually in the directory in which you installed the driver.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><Alt CLASS="AltText-Long"><A NAME="50626616_pgfId-49364"></A>&nbsp;</Alt>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="monitoring.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="wma.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

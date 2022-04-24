@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
+    xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+  <service name="serverscript"
+      typeNamespace="http://serverscript.org/types"
+      targetNamespace="http://serverscript.org/wsdl"
+      packageName="serverscript">
+    <interface name="serverscript.Interface"
+      servantName="serverscript.Implementation"/>
+  </service>
+</configuration>
+

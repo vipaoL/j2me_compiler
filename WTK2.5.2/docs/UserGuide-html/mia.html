@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  17 - Using the Mobile Internationalization API
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="payment.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="demonstrations.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626593_pgfId-28425"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">17</SPAN><A NAME="50626593_11459"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626593_pgfId-28807"></A><A NAME="50626593_28941"></A>Using the Mobile Internationalization API
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28808"></A><A NAME="50626593_marker-29497"></A>JSR 238, the <A NAME="50626593_marker-29498"></A>Mobile Internationalization API, is designed for applications that are to be displayed in multiple languages and used in multiple countries. The combination of country (or region) and language is a <EM CLASS="Emphasis">locale</EM>.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28819"></A>The central concept of JSR 238 is a <EM CLASS="Emphasis">resource</EM>, which is a string, image, or other object that is suitable for a particular locale. For example, an application that is to be distributed in Europe might include resources for Italian-speaking people living in Italy, Italian-speaking people living in Switzerland, Spanish-speaking people living in Spain, Spanish-speaking people living in Portugal, and so on.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28799"></A>Resources are stored in files in a format defined in JSR 238. The resource files are bundled as part of the MIDlet suite JAR file. The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC provides a resource manager that simplifies the job of creating and maintaining resource files.
+</P><H2 CLASS="Head1"><A NAME="50626593_pgfId-29031"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>17.1	Setting the Emulator's Locale</H2>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-29035"></A>A device's locale is contained in the system property <KBD CLASS="Filename-Command">microedition.locale</KBD>. You can change the emulator's locale by choosing Edit &gt; Preferences, then selecting i18n. Choose a locale from the combo box or type it in directly.
+</P><H2 CLASS="Head1"><A NAME="50626593_pgfId-28847"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>17.2	Viewing Application Resources</H2>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28848"></A>To launch the resource manager, choose File &gt; Utilities. Select i18n Resources Manager and click Launch.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626593_pgfId-30087"></A>FIGURE 17-1 	<A NAME="50626593_24240"></A>Resource Manager
+</P>
+<BR><A NAME="50626593_pgfId-36850"></A>
+<P CLASS="FigureBox"><A NAME="50626593_pgfId-28861"></A>
+<P><IMG SRC="figures/mia-4.jpg" TITLE="118n Resources Manager views the settings for a specific project" ALT="118n Resources Manager views the settings for a specific project" ALIGN="BASELINE">
+</P><A NAME="50626593_pgfId-36841"></A><A NAME="50626593_pgfId-36849"></A>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28851"></A>First, choose your project from the Projects menu. All the resources for the selected project are shown in the rest of the window. If this is your first time looking at the resource manager, look at the resources for the <KBD CLASS="Filename-Command">i18nDemo</KBD> demonstration application, which contains lots of interesting resources.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28896"></A>You can click + symbols to expand directories or - symbols to collapse them.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-29030"></A>Nearly all other operations are available by right-clicking directories or resource files.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28880"></A>The top pane of the window shows the hierarchy of resource files in the application, while the bottom pane shows the contents of a resource file. In <A HREF="mia.html#50626593_24240" CLASS="XRef">FIGURE 17-1</A>, the contents of the top-level <KBD CLASS="Filename-Command">common</KBD> resource file are being displayed.
+</P><H2 CLASS="Head1"><A NAME="50626593_pgfId-28843"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>17.3	Working With Locales</H2>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28901"></A>Locales are represented by directories under the top-level <KBD CLASS="Filename-Command">global</KBD> directory. The locale directories contain resource files which, in turn, hold the actual resources that can be used by the application.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28921"></A>Locales are represented by standard language and country codes as described in the MIDP 2.0 specification. For example, <KBD CLASS="Filename-Command">pt-BR</KBD> represents Portuguese-speaking people living in Brazil.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28914"></A>To add a locale directory, right-click on the top-level <KBD CLASS="Filename-Command">global</KBD> directory and choose Add Locale. Choose the locale from the combo box, or type it directly, and click OK.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28918"></A>To rename a locale, right-click the locale directory and choose Rename.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28934"></A>To remove a locale and all its contained resource files, right-click the locale directory and choose Delete.
+</P><H2 CLASS="Head1"><A NAME="50626593_pgfId-28903"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>17.4	Working With Resource Files</H2>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28938"></A>Resource files can be global (at the top level) or inside a locale directory. To create a new global resource file, right-click the top-level <KBD CLASS="Filename-Command">global</KBD> directory and choose Add new resource file. Choose a name for the file.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28954"></A>Rename a resource file by right-clicking the file and choosing Rename.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28955"></A>Remove a resource file by right-clicking the file and choosing Delete.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-29022"></A>You can copy, cut, and paste entire resource files. Right-click a file and choose Copy or Cut. Then right-click the locale directory (or the top-level <KBD CLASS="Filename-Command">global</KBD>) and choose Paste.
+</P><H2 CLASS="Head1"><A NAME="50626593_pgfId-28940"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>17.5	Working With Resources</H2>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28944"></A>Click on a resource file in the top pane of the resource manager window to see its contents in the bottom pane.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-29012"></A>To add a new text resource, click on Add and select Add string resource. An identifier is automatically assigned, but you can enter a different one if you want. Click OK.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28982"></A>To add an image or another type of data, click Add and select Add binary resource. You can browse to whatever file you want to add. Again, you can change the identifier if you wish. Click OK to add the resource.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626593_pgfId-30093"></A>FIGURE 17-2 	Adding an Image Resource
+</P>
+<BR><A NAME="50626593_pgfId-36852"></A>
+<P CLASS="FigureBox"><A NAME="50626593_pgfId-28992"></A>
+<P><IMG SRC="figures/mia-5.jpg" TITLE="Configure New Resource window has fields for Identifier, and binary or string resource fields" ALT="Configure New Resource window has fields for Identifier, and binary or string resource fields" ALIGN="BASELINE">
+</P><A NAME="50626593_pgfId-36846"></A><A NAME="50626593_pgfId-36851"></A>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-28977"></A>To edit a resource, double-click it. You can type a new value for a string resource. If you double-click file resources, you can choose another file.
+</P>
+<P CLASS="Paragraph"><A NAME="50626593_pgfId-29017"></A>&nbsp;
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="payment.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="demonstrations.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

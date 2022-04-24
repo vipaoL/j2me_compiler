@@ -1,0 +1,825 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC Basic Customization Guide">
+<META name="description" content="The Basic Customization Guide for Sun Java Wireless Toolkit for CLDC details the customization options available in a binary release.">
+<META name="partnumber" content="v252">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  2 - Skinning the Emulator
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="2" width="100%"><col id="1" span="1" width="50%"><col id="2" span="1" width="50%">
+<tr bgcolor="#cccccc">
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC Basic Customization Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="introduction.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="obfuscator.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50417690_pgfId-874"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">2</SPAN><A NAME="50417690_49242"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50417690_pgfId-999840"></A><A NAME="50417690_83794"></A><A NAME="50417690_marker-999838"></A><A NAME="50417690_96862"></A>Skinning the Emulator
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999841"></A>This chapter describes how emulator skins are defined. You can modify existing skins or create new skins for the emulator. This process is known as <EM CLASS="Emphasis">skinning</EM><A NAME="50417690_marker-1002691"></A> the emulator.
+</P><H2 CLASS="Head1"><A NAME="50417690_pgfId-999843"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>2.1	Skin Property File</H2>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001051"></A>Emulator skins are defined by a single property file. Each skin property file is contained in its own subdirectory of <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;wtklib&#92;devices</KBD>, where <I CLASS="Variable">toolkit</I> is the installation directory of the Sun Java Wireless Toolkit for CLDC. The name of the property file matches the directory name.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999848"></A>For example, the <KBD CLASS="Filename-Command">DefaultColorPhone</KBD><A NAME="50417690_marker-1002618"></A> skin is defined by <KBD CLASS="Filename-Command">DefaultColorPhone.properties</KBD> in the <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;wtklib&#92;devices&#92;DefaultColorPhone</KBD> directory.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999849"></A>The <A NAME="50417690_marker-1002626"></A>skin property file defines the appearance and behavior of the emulator skin. It includes pointers to images and sounds that may or may not reside in the same directory. For example, the <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> directory contains images for the phone itself, but the icons and sounds for <KBD CLASS="Filename-Command">DefaultColorPhone </KBD>are defined in <KBD CLASS="Filename-Command">wtklib&#92;devices&#92;Share</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999850"></A>The remainder of this chapter describes the contents of the skin property file. The property file is a plain text file. You can use any text editor to modify it. In general, entries in the property file have a property name followed by a value. A colon or equals sign separates the name and value. Lines that begin with a hash mark (#) are comments.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999851"></A>The simplest way to create a new skin is to copy an existing one and modify it, for example:
+</P>
+<P CLASS="Step1"><A NAME="50417690_pgfId-999852"></A>	1.	Copy the <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> directory.
+</P>
+<P CLASS="Step1-"><A NAME="50417690_pgfId-999853"></A>	2.	Name the new directory with the name of your new skin. 
+</P>
+<P CLASS="Step1-"><A NAME="50417690_pgfId-999854"></A>	3.	Rename the properties file to match the directory name. 
+</P>
+<P CLASS="StepPara1"><A NAME="50417690_pgfId-1001077"></A>If you named the directory <KBD CLASS="Filename-Command">NewSkin</KBD>, rename its property file to <KBD CLASS="Filename-Command">NewSkin.properties</KBD>.
+</P><H2 CLASS="Head1"><A NAME="50417690_pgfId-999855"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>2.2	Skin Appearance</H2>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999856"></A>The overall appearance of the emulator skin is determined by a variety of factors, each of which is described in this section:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999857"></A>Skin images
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999858"></A>Screen bounds and paintable area
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999859"></A>Screen characteristics
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999860"></A>Icons
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999861"></A>Fonts
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999862"></A>Commands
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999863"></A>Sounds
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H3 CLASS="Head2"><A NAME="50417690_pgfId-999865"></A>2.2.1	<A NAME="50417690_marker-999864"></A>Skin Images</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999866"></A>Much of a skin's appearance is determined by three images:
+</P>
+<P CLASS="List1"><A NAME="50417690_pgfId-999867"></A>1.	The <EM CLASS="Emphasis">default</EM> image shows the device in a neutral (normal) state.
+</P>
+<P CLASS="List1-"><A NAME="50417690_pgfId-999868"></A>	2. 	The <EM CLASS="Emphasis">highlighted</EM> image shows the device with all the buttons highlighted, as they are when the user moves the mouse over the buttons.
+</P>
+<P CLASS="List1-"><A NAME="50417690_pgfId-999869"></A>	3. 	The <EM CLASS="Emphasis">pressed</EM> image shows the device with all its buttons pressed.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999872"></A>Each of these images shows the entire device. The toolkit uses portions of these images to show button highlights and button presses.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999877"></A>For example, the three images from <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> are shown in <A HREF="skinning.html#50417690_63562" CLASS="XRef">FIGURE 2-1</A>.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50417690_pgfId-1003853"></A>FIGURE 2-1 	<A NAME="50417690_63562"></A>Normal, Highlighted, and Pressed Images for <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> 
+</P>
+<BR><A NAME="50417690_pgfId-1010636"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50417690_pgfId-1001118"></A>
+<P><IMG SRC="figures/skinning-4.jpg" TITLE="Left image: emulator no action. Center: center button selected. Right: center button pressed." ALT="Left image: emulator no action. Center: center button selected. Right: center button pressed." ALIGN="BASELINE">
+</P><A NAME="50417690_pgfId-1010612"></A><A NAME="50417690_pgfId-1010635"></A>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001131"></A>A close-up of a portion of each keypad is shown in <A HREF="skinning.html#50417690_88913" CLASS="XRef">FIGURE 2-2</A> so you can see the differences in the three images.
+</P>
+<P CLASS="FigureCaption"><A NAME="50417690_pgfId-1003860"></A>FIGURE 2-2 	<A NAME="50417690_88913"></A>Normal, Highlighted, and Pressed Emulator Skin Image Details
+</P>
+<BR><A NAME="50417690_pgfId-1010644"></A>
+<P CLASS="FigureBox"><A NAME="50417690_pgfId-999931"></A>
+<P><IMG SRC="figures/skinning-5.jpg" TITLE="Left image: emulator no action. Center: center button selected. Right: center button pressed." ALT="Left image: emulator no action. Center: center button selected. Right: center button pressed." ALIGN="BASELINE">
+</P><A NAME="50417690_pgfId-1010617"></A><A NAME="50417690_pgfId-1010643"></A>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001963"></A>In the skin property file, the three image files are specified with the following properties:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1001964"></A><KBD CLASS="Filename-Command">default_image=</KBD><I CLASS="Variable">image-file-name</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1002920"></A><KBD CLASS="Filename-Command">pressed_buttons_image=</KBD><I CLASS="Variable">image-file-name</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1001960"></A><KBD CLASS="Filename-Command">highlighted_image=</KBD><I CLASS="Variable">image-file-name</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1002904"></A>The image files can be PNG, GIF, or JPEG. Use the same dimension for all image files. For example, <KBD CLASS="Filename-Command">DefaultColorPhone.properties</KBD> has the following entries:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1002912"></A><KBD CLASS="Filename-Command">default_image=DefaultColorPhoneNormal.png</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1002913"></A><KBD CLASS="Filename-Command">pressed_buttons_image=DefaultColorPhonePressed.png</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1002907"></A><KBD CLASS="Filename-Command">highlighted_image=DefaultColorPhoneHiLite.png</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H3 CLASS="Head2"><A NAME="50417690_pgfId-1002908"></A>2.2.2	Screen Bounds and Paintable Area</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999942"></A>The screen represents the display of a real device. It is defined by the overall screen bounds, the <EM CLASS="Emphasis">paintable</EM> bounds, and other parameters that determine factors like the number of colors.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999944"></A>The overall <A NAME="50417690_marker-999943"></A>screen bounds are the total area of the display. They are defined in pixel measurements relative to the origin of the image files, which is in the upper left corner (0,0).
+</P>
+<P CLASS="FigureCaption"><A NAME="50417690_pgfId-1003866"></A>FIGURE 2-3 	Screen Bounds
+</P>
+<BR><A NAME="50417690_pgfId-1010648"></A>
+<P CLASS="FigureBox"><A NAME="50417690_pgfId-999968"></A>
+<P><IMG SRC="figures/skinning-6.jpg" TITLE="The screen coordinates are x for width and y for height. Images are placed relative to the upper left corner, or 0,0." ALT="The screen coordinates are x for width and y for height. Images are placed relative to the upper left corner, or 0,0." ALIGN="BASELINE">
+</P><A NAME="50417690_pgfId-1010622"></A><A NAME="50417690_pgfId-1010647"></A>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999969"></A>The screen bounds are specified in the property file as follows:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999970"></A><KBD CLASS="Filename-Command">screen.x=</KBD><I CLASS="Variable">x-coordinate</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1001974"></A><KBD CLASS="Filename-Command">screen.y=</KBD><I CLASS="Variable">y-coordinate</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1001975"></A><KBD CLASS="Filename-Command">screen.width=</KBD><I CLASS="Variable">width</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1001976"></A><KBD CLASS="Filename-Command">screen.height=</KBD><I CLASS="Variable">height</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-999974"></A>For example:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999975"></A><KBD CLASS="Filename-Command">screen.x=37</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999976"></A><KBD CLASS="Filename-Command">screen.y=54</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999977"></A><KBD CLASS="Filename-Command">screen.width=240</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-999978"></A><KBD CLASS="Filename-Command">screen.height=320</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001237"></A>Most devices do not make their full display area available to MIDP applications. The remainder of the screen is generally reserved for icons and indicators of various kinds. Similarly, the Sun Java Wireless Toolkit for CLDC emulator enables you to define a subset of the full screen, called the <EM CLASS="Emphasis">paintable</EM><A NAME="50417690_marker-999983"></A> area, that is available for MIDP applications. The origin of the paintable area is expressed in coordinates relative to the upper left corner of the display. For example, the <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> emulator skin uses a top bar for icons and a bottom bar for soft labels and other icons, as shown in <A HREF="skinning.html#50417690_55587" CLASS="XRef">FIGURE 2-4</A>.
+</P>
+<P CLASS="FigureCaption"><A NAME="50417690_pgfId-1003873"></A>FIGURE 2-4 	<A NAME="50417690_55587"></A>Paintable Screen Area in <KBD CLASS="Filename-Command">DefaultColorPhone</KBD>
+</P>
+<BR><A NAME="50417690_pgfId-1010638"></A>
+<P CLASS="FigureBox"><A NAME="50417690_pgfId-1000008"></A>
+<P><IMG SRC="figures/skinning-7.jpg" TITLE="Default color phone paintable screen area width and height. Top and bottom bars are not paintable." ALT="Default color phone paintable screen area width and height. Top and bottom bars are not paintable." ALIGN="BASELINE">
+</P><A NAME="50417690_pgfId-1010627"></A><A NAME="50417690_pgfId-1010637"></A>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001267"></A>In the emulator skin property file, the paintable area is expressed as follows. 
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000010"></A><KBD CLASS="Filename-Command">screenPaintableRegion.x=</KBD><I CLASS="Variable">x-coordinate</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000011"></A><KBD CLASS="Filename-Command">screenPaintableRegion.y=</KBD><I CLASS="Variable">y-coordinate</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000012"></A><KBD CLASS="Filename-Command">screenPaintableRegion.width=</KBD><I CLASS="Variable">width</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000013"></A><KBD CLASS="Filename-Command">screenPaintableRegion.height=</KBD><I CLASS="Variable">height</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000014"></A>Note, the x and y coordinates are relative to the screen position. Also the width and height values for <KBD CLASS="Filename-Command">screenPaintableRegion</KBD> cannot exceed the corresponding values for <KBD CLASS="Filename-Command">screen.width</KBD> and <KBD CLASS="Filename-Command">screen.height</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1002417"></A>For example:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000015"></A><KBD CLASS="Filename-Command">screenPaintableRegion.x=0</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000016"></A><KBD CLASS="Filename-Command">screenPaintableRegion.y=10</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000017"></A><KBD CLASS="Filename-Command">screenPaintableRegion.width=240</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000018"></A><KBD CLASS="Filename-Command">screenPaintableRegion.height=290</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50417690_pgfId-1000020"></A>For <A NAME="50417690_marker-1000019"></A>full-screen mode (in MIDP 2.0 and higher), the emulator uses the area beginning at the paintable area origin and extending through the bottom right corner of the screen. In <KBD CLASS="Filename-Command">DefaultColorPhone</KBD>, this is the entire screen region with the exception of the top bar.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000021"></A>2.2.3	Screen Characteristics</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000022"></A>The emulator skin property file determines the number of colors supported by the screen and the aspect ratio of the pixels. <KBD CLASS="Filename-Command">iscolor</KBD> specifies whether the emulator skin uses <A NAME="50417690_marker-1000023"></A>color or grayscale.
+</P><H4 CLASS="Head3"><A NAME="50417690_pgfId-1000024"></A>2.2.3.1	<KBD CLASS="Filename-Command">isColor=</KBD><I CLASS="Variable">[true|false]</I></H4>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000026"></A>Specify <I CLASS="Variable">true</I> for color or <I CLASS="Variable">false</I> for grayscale.
+</P><H4 CLASS="Head3"><A NAME="50417690_pgfId-1000027"></A>2.2.3.2	<KBD CLASS="Filename-Command">colorCount=</KBD><I CLASS="Variable">number</I><A NAME="50417690_marker-1002637"></A></H4>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1002030"></A><KBD CLASS="Filename-Command">colorCount</KBD>, specifies the number of available colors. For grayscale devices it specifies the number of gray levels:
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000028"></A>For example, <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> has a color screen with 4096 colors:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000029"></A>isColor=true
+<A NAME="50417690_pgfId-1000030"></A>colorCount=0x1000
+</PRE><H4 CLASS="Head3"><A NAME="50417690_pgfId-1000032"></A>2.2.3.3	<KBD CLASS="Filename-Command">enableAlphaChannel=</KBD><I CLASS="Variable">[true|false]</I></H4>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1002051"></A><A NAME="50417690_marker-1000033"></A>This option determines the emulator's handling of alpha (transparency).
+</P><H4 CLASS="Head3"><A NAME="50417690_pgfId-1000035"></A>2.2.3.4	<KBD CLASS="Filename-Command">gamma=</KBD><I CLASS="Variable">number</I></H4>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1002138"></A>This value determines gamma correction. A value of 1 means no error correction. 
+</P><H4 CLASS="Head3"><A NAME="50417690_pgfId-1002139"></A>2.2.3.5	<KBD CLASS="Filename-Command">screenDoubleBuffer=</KBD>[<I CLASS="Variable">true</I>|<I CLASS="Variable">false</I>]</H4>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000038"></A><KBD CLASS="Filename-Command">true</KBD> enables double buffering, <KBD CLASS="Filename-Command">false</KBD> disables it.
+</P><H4 CLASS="Head3"><A NAME="50417690_pgfId-1000041"></A>2.2.3.6	<KBD CLASS="Filename-Command">screenBorderColor=</KBD><I CLASS="Variable">color</I></H4>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000042"></A><KBD CLASS="Filename-Command">screenBorderColor</KBD> specifies the background color that is used for the non-paintable areas of the screen. For example, <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> uses the following color:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000043"></A>screenBorderColor=0xb6b6aa
+</PRE><H4 CLASS="Head3"><A NAME="50417690_pgfId-1000045"></A>2.2.3.7	<KBD CLASS="Filename-Command">screenBGColor=</KBD><I CLASS="Variable">color</I></H4>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1002187"></A>Use this property to set the background color of the screen on grayscale devices.
+</P><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000049"></A>2.2.4	<A NAME="50417690_marker-1000047"></A><A NAME="50417690_28989"></A>Icons</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000053"></A>The Sun Java Wireless Toolkit for CLDC emulator supports the use of icons, which are small images that convey information to the user. Usually, icons are placed on the display but outside the paintable area. The emulator implements a fixed set of icons which are described in <A HREF="skinning.html#50417690_60145" CLASS="XRef">TABLE 2-1</A>.
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaption"> <A NAME="50417690_pgfId-1000061"> </A> TABLE 2-1 	 <A NAME="50417690_60145"> </A> Emulator Icons </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50417690_pgfId-1000065"></A>Name
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50417690_pgfId-1000067"></A>Description
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000069"></A>battery
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000071"></A>Shows battery state
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000073"></A>domain
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000075"></A>Indicates the protection domain of the running MIDlet
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000077"></A>down
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000079"></A>Indicates that scrolling is possible
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000081"></A>inmode
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000083"></A>Indicates the input mode: lower case, upper case, numbers
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000085"></A>internet
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000087"></A>Shows Internet activity
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000089"></A>left
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000091"></A>Indicates that scrolling is possible
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000093"></A>reception
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000095"></A>Shows wireless signal strength
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000097"></A>right
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000099"></A>Indicates that scrolling is possible
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000101"></A>up
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417690_pgfId-1000103"></A>Indicates that scrolling is possible
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000105"></A>Icons are defined with a <A NAME="50417690_marker-1000104"></A>location (measured relative to the origin of the screen), a default state, and <A NAME="50417690_marker-1000106"></A>a list of images that correspond to the possible states. For example, here is the definition of the <KBD CLASS="Filename-Command">down</KBD> icon in <KBD CLASS="Filename-Command">DefaultColorPhone</KBD>, which is a downward-pointing arrow that appears when a list or form is shown that is taller than the available screen space:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000107"></A>icon.down: 113, 314, off
+<A NAME="50417690_pgfId-1000108"></A>icon.down.off:
+<A NAME="50417690_pgfId-1000109"></A>icon.down.on: ../Share/down.gif
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001310"></A>The first line specifies the location where the icon is shown, which for <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> is a location in the center of the bottom bar, outside the paintable screen area. The default state is <KBD CLASS="Filename-Command">off</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000111"></A>No image file corresponds to the <KBD CLASS="Filename-Command">off</KBD> state, but the <KBD CLASS="Filename-Command">on</KBD> state uses the image <KBD CLASS="Filename-Command">down.gif</KBD> from the <KBD CLASS="Filename-Command">wtklib&#92;devices&#92;Share</KBD> directory.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000113"></A>Another interesting example is the <A NAME="50417690_marker-1000112"></A><KBD CLASS="Filename-Command">inmode</KBD> icon, which includes seven states with six corresponding image files:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000114"></A>icon.inmode: 113, 2, off
+<A NAME="50417690_pgfId-1000115"></A>icon.inmode.off:
+<A NAME="50417690_pgfId-1000116"></A>icon.inmode.ABC: ../Share/ABC.gif
+<A NAME="50417690_pgfId-1000117"></A>icon.inmode.abc: ../Share/abc_lower.gif
+<A NAME="50417690_pgfId-1000118"></A>icon.inmode.123: ../Share/123.gif
+<A NAME="50417690_pgfId-1000119"></A>icon.inmode.kana: ../Share/kana.gif
+<A NAME="50417690_pgfId-1000120"></A>icon.inmode.hira: ../Share/hira.gif
+<A NAME="50417690_pgfId-1000121"></A>icon.inmode.sym: ../Share/sym.gif
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000122"></A>Another aspect of the emulator that is similar to an icon is the network indicator. Instead of being located in the screen, the network indicator is shown on the emulator skin. In <KBD CLASS="Filename-Command">DefaultColorPhone</KBD>, the network indicator is shown as a small green light in the upper left of the emulator skin. The network indicator is defined using two properties:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000123"></A><KBD CLASS="Filename-Command">netindicator.image: </KBD><I CLASS="Variable">image</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000124"></A><KBD CLASS="Filename-Command">netindicator.bounds: </KBD><I CLASS="Variable">x</I><KBD CLASS="Filename-Command">, </KBD><I CLASS="Variable">y</I><KBD CLASS="Filename-Command">, </KBD><I CLASS="Variable">width</I><KBD CLASS="Filename-Command">, </KBD><I CLASS="Variable">height</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000125"></A>For example, in <KBD CLASS="Filename-Command">DefaultColorPhone</KBD>, the network indicator looks like this:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000126"></A><KBD CLASS="Filename-Command">netindicator.image: net_indicator.png</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000127"></A><KBD CLASS="Filename-Command">netindicator.bounds: 53, 27, 30, 30</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000128"></A>The width and height should match the width and height of the network indicator image.
+</P><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000130"></A>2.2.5	<A NAME="50417690_marker-1000129"></A>Fonts</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000131"></A>The fonts used by the emulator are defined in the skin property file. In essence, you can define a font for each of the faces, styles, and sizes that are available in MIDP's <KBD CLASS="Filename-Command">Font</KBD> class. The format is as follows:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000132"></A>font.<I CLASS="Variable">face</I>.<I CLASS="Variable">style</I>.<I CLASS="Variable">size</I>: <I CLASS="Variable">font-specifier</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000133"></A>You can surmise the fact, style, and size parameters from the MIDP <KBD CLASS="Filename-Command">Font</KBD> API, except the identifiers are lower case in the emulator skin property file. The font face is <KBD CLASS="Filename-Command">system</KBD>, <KBD CLASS="Filename-Command">monospace</KBD>, or <KBD CLASS="Filename-Command">proportional</KBD>, the style is <KBD CLASS="Filename-Command">plain</KBD>, <KBD CLASS="Filename-Command">bold</KBD>, or <KBD CLASS="Filename-Command">italic</KBD>, and the size is <KBD CLASS="Filename-Command">small</KBD>, <KBD CLASS="Filename-Command">medium</KBD>, or <KBD CLASS="Filename-Command">large</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001359"></A>The font specifier follows the convention laid out in the Java Platform, Standard Edition (Java SE) <KBD CLASS="Filename-Command">java.awt.Font</KBD> class library. The following example from <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> defines the proportional italic fonts in all three sizes:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000135"></A>font.proportional.italic.small: SansSerif-italic-9
+<A NAME="50417690_pgfId-1000136"></A>font.proportional.italic.medium: SansSerif-italic-11
+<A NAME="50417690_pgfId-1000137"></A>font.proportional.italic.large: SansSerif-italic-14
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001362"></A>You need to specify a <A NAME="50417690_marker-1000138"></A>default font that is used in case no other definition is available. In <KBD CLASS="Filename-Command">DefaultColorPhone</KBD>, a 10-point SansSerif font is used for the default:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000140"></A>font.default=SansSerif-plain-10
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001365"></A><A NAME="50417690_marker-1000141"></A>Fonts can also be underlined. By default, this is supported by the MIDP implementation, but you can disable for specific fonts like this:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000143"></A>font.<I CLASS="Variable">face</I>.<I CLASS="Variable">style</I>.<I CLASS="Variable">size</I>.underline.enabled=false
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000144"></A>If you wish, you can disable underlining for all fonts like this:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000145"></A>font.all.underline.enabled=false
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1002217"></A>Instead of using system fonts, you have an additional option of using a <EM CLASS="Emphasis">bitmap</EM><A NAME="50417690_marker-1002216"></A> font. A bitmap font is simply an image that contains character shapes for a font. The bitmap font image is a single line of text containing one of each character shape. To define a bitmap font, use the following property:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1002218"></A>font.<I CLASS="Variable">name</I>=<I CLASS="Variable">font-property-file</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1002219"></A>The font property file contains the following property definitions:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000150"></A><KBD CLASS="Filename-Command">font_image = </KBD><I CLASS="Variable">image-file</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000151"></A><KBD CLASS="Filename-Command">font_height = </KBD><I CLASS="Variable">font-height</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000152"></A><KBD CLASS="Filename-Command">font_ascent = </KBD><I CLASS="Variable">font-ascent</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000153"></A><KBD CLASS="Filename-Command">font_descent = </KBD><I CLASS="Variable">font-descent</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000154"></A><KBD CLASS="Filename-Command">font_leading = </KBD><I CLASS="Variable">font-leading</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001391"></A>The image file can be in PNG, GIF or JPEG format. It must contain a <EM CLASS="Emphasis">single</EM> row of characters. <A HREF="skinning.html#50417690_69121" CLASS="XRef">FIGURE 2-5</A> shows two rows so that the characters are easier to see.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50417690_pgfId-1003880"></A>FIGURE 2-5 	<A NAME="50417690_69121"></A>Bitmap Font Image
+</P>
+<BR><A NAME="50417690_pgfId-1010646"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50417690_pgfId-1000165"></A>
+<P><IMG SRC="figures/palm_font2.gif" TITLE="This figure shows a string of punctuation characters, upper and lower case letters, and additional symbols." ALT="This figure shows a string of punctuation characters, upper and lower case letters, and additional symbols.">
+</P><A NAME="50417690_pgfId-1010632"></A><A NAME="50417690_pgfId-1010645"></A>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001406"></A>The height, ascent, descent, and leading are all specified in pixels. If you are unfamiliar with these font terms, refer to the Java SE documentation for <KBD CLASS="Filename-Command">java.awt.FontMetrics</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000167"></A>The font property file must also contain a list of mappings between ASCII character codes and horizontal pixel offsets into the image. In the following example, the ASCII code 65 is mapped to the horizontal offset 124:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000168"></A>ascii_x-65=124
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000169"></A>Once a bitmap font is defined, its name can be used as a font specifier.
+</P><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000171"></A>2.2.6	<A NAME="50417690_marker-1000170"></A>Soft Button Labels</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001418"></A>Soft buttons are buttons without a fixed function. They are fully discussed later in this chapter. Labels for the soft buttons are shown on the screen. The emulator skin property file determines where and how the soft button labels are shown.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000173"></A>The fonts for the soft button labels are defined using font aliases, which are short names that you assign to a font. Each soft button label is described by a property:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000174"></A>softbutton.<I CLASS="Variable">n</I>=<I CLASS="Variable">x</I>, <I CLASS="Variable">y</I>, <I CLASS="Variable">width</I>, <I CLASS="Variable">height</I>, <I CLASS="Variable">font-alias</I>, <I CLASS="Variable">alignment</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000175"></A>Valid values for <I CLASS="Variable">alignment</I> are <KBD CLASS="Filename-Command">left</KBD>, <KBD CLASS="Filename-Command">right</KBD>, and <KBD CLASS="Filename-Command">center</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001493"></A>For example, the following properties tell the toolkit to use a Courier 12-point font for the soft button labels:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1001494"></A><KBD CLASS="Filename-Command">font.softButton=Courier-plain-12</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000178"></A><KBD CLASS="Filename-Command">softbutton.0=1,306,78,16, softButton, left</KBD> 
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000179"></A><KBD CLASS="Filename-Command">softbutton.1=160,306,78,16, softButton, right</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001478"></A>First the font alias <KBD CLASS="Filename-Command">softButton</KBD> is defined. The first label is left justified, while the second is right justified.
+</P><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000182"></A>2.2.7	<A NAME="50417690_marker-1000180"></A><A NAME="50417690_marker-1000181"></A>Sounds</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001541"></A>MIDP alerts have associated sounds. In the Sun Java Wireless Toolkit for CLDC emulator, sounds are defined using files, one for each type enumerated in the MIDP <KBD CLASS="Filename-Command">AlertType</KBD> class. The emulator can use any sound file type that is supported by the underlying Java SE implementation. In Java SE Development Kit 1.5, this includes AIFF, AU, WAV, MIDI, and RMF. For example, here are the definitions in <KBD CLASS="Filename-Command">DefaultColorPhone</KBD>:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000187"></A>alert.alarm.sound:   ../Share/mid_alarm.wav
+<A NAME="50417690_pgfId-1000188"></A>alert.info.sound:    ../Share/mid_info.wav
+<A NAME="50417690_pgfId-1000189"></A>alert.warning.sound: ../Share/mid_warn.wav
+<A NAME="50417690_pgfId-1000190"></A>alert.error.sound:   ../Share/mid_err.wav
+<A NAME="50417690_pgfId-1000191"></A>alert.confirmation.sound: ../Share/mid_confirm.wav
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000192"></A>A default sound is played if no sound is defined for a specific alert type:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000193"></A>alert.confirmation.sound: <I CLASS="Variable">sound-file</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000194"></A>In addition, you can define a sound that is played to simulate a phone's vibration. In <KBD CLASS="Filename-Command">DefaultColorPhone</KBD>, it looks like this:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000195"></A>vibrator.sound: ../Share/vibrate.wav
+</PRE><H2 CLASS="Head1"><A NAME="50417690_pgfId-1000196"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>2.3	Mapping User Input</H2>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001565"></A>Describing an emulator skin is done in two parts. The first part is the appearance, which is described above. The second part defines how user input is mapped in the emulator.
+</P><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000201"></A>2.3.1	<A NAME="50417690_marker-1000198"></A><A NAME="50417690_65798"></A><A NAME="50417690_marker-1000200"></A>Keyboard Handler</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000202"></A>A <A NAME="50417690_marker-1002684"></A>keyboard handler takes button presses and performs an appropriate action in the emulator. For example, if you use the mouse to press one of the soft buttons, it is the keyboard handler that makes the appropriate action happen in the emulator.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000203"></A>The keyboard handler defines a set of standard button names, which you will use when you define buttons. You just have to tell the emulator where the buttons are located in the skin and the keyboard handler takes care of the rest.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000207"></A>The Sun Java Wireless Toolkit for CLDC emulator includes two keyboard handlers, one for phone devices with an ITU-T keypad (<A NAME="50417690_marker-1000208"></A><KBD CLASS="Filename-Command">DefaultKeyboardHandler</KBD>) and one for devices with a full Qwerty keyboard. For example, <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> includes this keyboard handler property:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000209"></A>keyboard.handler = com.sun.kvem.midp.DefaultKeyboardHandler
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000210"></A><KBD CLASS="Filename-Command">DefaultKeyboardHandler</KBD> recognizes the following standard button names: <KBD CLASS="Filename-Command">0</KBD> through <KBD CLASS="Filename-Command">9</KBD>, <KBD CLASS="Filename-Command">POUND</KBD>, <KBD CLASS="Filename-Command">ASTERISK</KBD>, <KBD CLASS="Filename-Command">POWER</KBD>, <KBD CLASS="Filename-Command">SEND</KBD>, <KBD CLASS="Filename-Command">END</KBD>, <KBD CLASS="Filename-Command">LEFT</KBD>, <KBD CLASS="Filename-Command">RIGHT</KBD>, <KBD CLASS="Filename-Command">UP</KBD>, <KBD CLASS="Filename-Command">DOWN</KBD>, <KBD CLASS="Filename-Command">SELECT</KBD>, <KBD CLASS="Filename-Command">SOFT1</KBD>, <KBD CLASS="Filename-Command">SOFT2</KBD>, <KBD CLASS="Filename-Command">SOFT3</KBD>, <KBD CLASS="Filename-Command">SOFT4</KBD>, <KBD CLASS="Filename-Command">USER1</KBD> through <KBD CLASS="Filename-Command">USER10</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000211"></A>In <KBD CLASS="Filename-Command">QwertyDevice</KBD>, the keyboard handler looks like this:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000212"></A>keyboard.handler = com.sun.kvem.midp.QwertyKeyboardHandler
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000214"></A><KBD CLASS="Filename-Command">QwertyKeyboardHandler</KBD><A NAME="50417690_marker-1000213"></A> supports the same buttons as <KBD CLASS="Filename-Command">DefaultKeyboardHandler</KBD> and also includes buttons found on a standard keyboard like alphabetic keys, shift, and alt.
+</P><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000216"></A>2.3.2	<A NAME="50417690_marker-1000215"></A>Buttons</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000217"></A>Buttons are defined using a name and a set of coordinates. If two sets of coordinates are supplied, a <A NAME="50417690_marker-1000218"></A>rectangular button is defined. If more than two sets of coordinates are present, a polygonal area is used for the button.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000219"></A>The button region is defined relative to the device skin image. When the user moves the mouse over a defined button region, the corresponding region from the skin highlight image is shown. If the user presses a button, the corresponding region from the skin pressed image is shown.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000220"></A>By themselves, buttons aren't very interesting. They just associate a button name with a rectangular or polygonal region. It's the keyboard handler's job to map the button name to a function in the emulator. <A HREF="skinning.html#50417690_41959" CLASS="XRef">Section 2.3.3, Assigning Desktop Keyboard Keys to Buttons</A> explains how keys on your desktop computer's keyboard can be mapped to buttons.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000221"></A>The following property shows how to define a rectangular region for the 5 button. Its origin is <KBD CLASS="Filename-Command">140, 553</KBD>, with a width of <KBD CLASS="Filename-Command">84</KBD> and a height of <KBD CLASS="Filename-Command">37</KBD>.
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000222"></A>button.5 = 140, 553,  84,  37
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000224"></A><A NAME="50417690_marker-1000223"></A>Here is an example polygonal definition for the asterisk button:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000225"></A>button.ASTERISK = 66, 605, 110, 606, 140, 636, 120, 647, 70, 637
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000226"></A>This polygon is defined using straight line segments connecting the listed points:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000227"></A>66, 605
+<A NAME="50417690_pgfId-1000228"></A>110, 606
+<A NAME="50417690_pgfId-1000229"></A>140, 636
+<A NAME="50417690_pgfId-1000230"></A>120, 647
+<A NAME="50417690_pgfId-1000231"></A>70, 637
+</PRE><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000234"></A>2.3.3	<A NAME="50417690_marker-1000232"></A><A NAME="50417690_marker-1000233"></A><A NAME="50417690_41959"></A>Assigning Desktop Keyboard Keys to Buttons</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000235"></A>Buttons can have one or more associated desktop keyboard keys. This means that you can use your desktop keyboard to control the emulator instead of having to move the mouse over on the device skin and press the mouse button.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001573"></A>For example, <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> enables you to press F1 on your desktop keyboard to simulate the left soft button. The left soft button is defined as <KBD CLASS="Filename-Command">SOFT1</KBD> in the property file, as follows:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000237"></A>button.SOFT1 = 78, 417, 120, 423, 126, 465, 74, 440
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001770"></A>The desktop keyboard shortcut is defined like this:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000239"></A>key.SOFT1 = VK_F1
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001576"></A>The actual key definitions are <I CLASS="Variable">virtual key codes</I>, which are defined in the Java SE <KBD CLASS="Filename-Command">java.awt.event.KeyEvent</KBD> class library. See the Java SE documentation for details.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001585"></A>You can assign multiple desktop keyboard keys to a button, if you wish. In the following example from <KBD CLASS="Filename-Command">DefaultColorPhone</KBD>, the 5 key or the number pad 5 key on your desktop keyboard are both defined as shortcuts for the 5 button on the emulator skin:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000242"></A>key.5 = VK_5 VK_NUMPAD5
+</PRE><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000244"></A>2.3.4	<A NAME="50417690_marker-1000243"></A>Mapping Game Keys</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000245"></A>Game actions are already defined in <KBD CLASS="Filename-Command">DefaultKeyboardHandler</KBD>, but you can specify your own game actions with <KBD CLASS="Filename-Command">QwertyKeyboardHandler</KBD>. Use lines of this form:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000246"></A>game.<I CLASS="Variable">function</I> = <I CLASS="Variable">button-name</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000247"></A>The function can be one of <KBD CLASS="Filename-Command">LEFT</KBD>, <KBD CLASS="Filename-Command">RIGHT</KBD>, <KBD CLASS="Filename-Command">UP</KBD>, <KBD CLASS="Filename-Command">DOWN</KBD>, and <KBD CLASS="Filename-Command">SELECT</KBD>. Standard button names are described earlier in this chapter.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000248"></A>The default settings are as follows:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000249"></A><KBD CLASS="Filename-Command">game.UP = UP</KBD> 
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1001608"></A><KBD CLASS="Filename-Command">game.DOWN = DOWN</KBD> 
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1001609"></A><KBD CLASS="Filename-Command">game.LEFT = LEFT</KBD> 
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1001610"></A><KBD CLASS="Filename-Command">game.RIGHT = RIGHT</KBD> 
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000253"></A><KBD CLASS="Filename-Command">game.SELECT = SELECT</KBD> 
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000256"></A>2.3.5	<A NAME="50417690_marker-1000254"></A><A NAME="50417690_marker-1000255"></A>Mapping Keys to Characters</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000257"></A>With <KBD CLASS="Filename-Command">QwertyKeyboardHandler</KBD>, you can specify which character is generated by a button press either alone or in combination with the Shift or Alt keys.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000258"></A>Use a line of this form:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000259"></A>keyboard.handler.qwerty.<I CLASS="Variable">button</I> = '<I CLASS="Variable">base-character</I>' '<I CLASS="Variable">shift-character</I>' '<I CLASS="Variable">alternate-character</I>'
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000260"></A>The base character is the character the button normally generates, shift character is the character used when the button is pressed at the same time as shift, and alternate character is the character generated when the button is pressed at the same time as alt.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001631"></A>You emulate a button press at the same time as pressing Shift or Alt in two ways:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000262"></A>Map the buttons to the keyboard, as in the previous section, and press the key associated with the button at the same time as the Shift or Alt keys.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000263"></A>Press the button shift-lock or alt-lock and then do the button press. Press Shift-lock or Alt-lock again to revert to the initial state.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000264"></A>For example:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000265"></A>keyboard.handler.qwerty.A = 'a' 'A' '?'
+</PRE><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000267"></A>2.3.6	<A NAME="50417690_marker-1000266"></A>Mapping Commands to Soft Buttons</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000268"></A>Commands are part of the MIDP specification. They are a flexible way to specify actions that need to be available to the user without mandating how a particular device makes them available.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000269"></A>In general, MIDP devices use soft buttons to invoke commands. The command text is shown on the display somewhere physically near to the soft buttons. If more commands are available than available soft buttons, the implementation shows one soft button label as a menu. Pressing the menu soft button brings up a menu of available commands.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000273"></A>The Sun Java Wireless Toolkit for CLDC emulator enables you to specify where you want certain types of commands to appear, based on the command types specified in <KBD CLASS="Filename-Command">javax.microedition.lcdui.Command</KBD>. For example, on an emulator skin with two soft buttons, you might prefer that <KBD CLASS="Filename-Command">BACK</KBD> and <KBD CLASS="Filename-Command">EXIT</KBD> commands always appear on the left soft button, and that the <KBD CLASS="Filename-Command">OK</KBD> commands appear on the right soft button.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000274"></A>You can specify these types of preferences in the emulator skin property file, using lines like the following:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000275"></A>command.keys.<I CLASS="Variable">command-type</I>=<I CLASS="Variable">button</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000276"></A>For example, <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> defines command preferences this way:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000277"></A>command.keys.BACK = SOFT1
+<A NAME="50417690_pgfId-1000278"></A>command.keys.EXIT = SOFT1
+<A NAME="50417690_pgfId-1000279"></A>command.keys.CANCEL = SOFT1
+<A NAME="50417690_pgfId-1000280"></A>command.keys.STOP = SOFT1
+<A NAME="50417690_pgfId-1000281"></A>&nbsp;
+<A NAME="50417690_pgfId-1000282"></A>command.keys.OK = SOFT2
+<A NAME="50417690_pgfId-1000283"></A>command.keys.SCREEN = SOFT2
+<A NAME="50417690_pgfId-1000284"></A>command.keys.ITEM = SOFT2
+<A NAME="50417690_pgfId-1000285"></A>command.keys.HELP = SOFT2
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000286"></A>By specifying additional button names, you can specify other preferred buttons for a particular command type. For example, this line tells the emulator to map <KBD CLASS="Filename-Command">BACK</KBD> commands to <KBD CLASS="Filename-Command">END</KBD>, if it is available, or <KBD CLASS="Filename-Command">SOFT1</KBD> otherwise.
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000287"></A>command.keys.BACK = END SOFT1
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000289"></A><A NAME="50417690_marker-1000288"></A>Finally, if you wish, you can specify that a soft button is only used for specific command types. The following definition restricts the <KBD CLASS="Filename-Command">SOFT1</KBD> key to only the command types <KBD CLASS="Filename-Command">BACK</KBD>, <KBD CLASS="Filename-Command">EXIT</KBD>, <KBD CLASS="Filename-Command">CANCEL</KBD>, and <KBD CLASS="Filename-Command">STOP</KBD>.
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000290"></A>command.exclusive.SOFT1 = BACK EXIT CANCEL STOP
+</PRE><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000292"></A>2.3.7	<A NAME="50417690_marker-1000291"></A>Command Menu</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001647"></A>When you have fewer available soft buttons than commands, commands are placed in a menu. The Sun Java Wireless Toolkit for CLDC emulator offers control over the command menu. You can choose the button that is used to show the menu, the buttons that are used to traverse the items in the menu, and the text labels that are shown for the menu.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000297"></A>The following property, from <KBD CLASS="Filename-Command">DefaultColorPhone</KBD>, tells the emulator skin to use the second soft button to show or hide the menu.
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000298"></A>command.menu.activate = SOFT2
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000299"></A>By default, the <KBD CLASS="Filename-Command">UP</KBD> and <KBD CLASS="Filename-Command">DOWN</KBD> buttons are used to traverse the menu, while <KBD CLASS="Filename-Command">SELECT</KBD> is used to choose a command. You can change these assignments using the following properties:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000300"></A><KBD CLASS="Filename-Command">command.menu.select = </KBD><I CLASS="Variable">button</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000301"></A><KBD CLASS="Filename-Command">command.menu.up = </KBD><I CLASS="Variable">button</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000302"></A><KBD CLASS="Filename-Command">command.menu.down = </KBD><I CLASS="Variable">button</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000304"></A>2.3.8	<A NAME="50417690_marker-1000303"></A>Pausing and Resuming</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001676"></A>The MIDP specification allows applications (MIDlets) to be paused at any time, for example, in response to other phone events like incoming calls.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000306"></A>You can use the emulator skin property file to define desktop keyboard shortcuts for pausing and resuming <KBD CLASS="Filename-Command">MIDlets</KBD>. <KBD CLASS="Filename-Command">DefaultColorPhone</KBD>, for example, uses F6 for pausing (suspending) and F7 for resuming:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000307"></A>midlet.SUSPEND_ALL = VK_F6
+<A NAME="50417690_pgfId-1000308"></A>midlet.RESUME_ALL = VK_F7
+</PRE><H3 CLASS="Head2"><A NAME="50417690_pgfId-1000309"></A>2.3.9	Pointer Events</H3>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000311"></A><A NAME="50417690_marker-1000310"></A>A single property, as follows, determines whether the emulator skin has a touch screen: 
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000312"></A>touch_screen=[true|false]
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001840"></A>If the emulator skin does have a touch screen, pointer events are delivered to <KBD CLASS="Filename-Command">Canvases</KBD>. 
+</P><H2 CLASS="Head1"><A NAME="50417690_pgfId-1000314"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>2.4	<A NAME="50417690_marker-1000313"></A>Locale and Character Encoding</H2>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000315"></A>A locale is a geographic or political region or community that shares the same language, customs, or cultural convention. In software, a locale is a collection of files, data, and code, which contains the information necessary to adapt software to a specific geographical location.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000316"></A>Some operations are locale-sensitive and require a specified locale to tailor information for users, such as the following:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000317"></A>Messages displayed to the user
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417690_pgfId-1000318"></A>Cultural information, such as dates and currency formats
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001855"></A>In the Sun Java Wireless Toolkit for CLDC emulator, the default locale is determined by the platform's locale.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000323"></A>To define a specific locale, use the following definition:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000324"></A>microedition.locale: <I CLASS="Variable">locale-name</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001691"></A>A locale name is comprised of two parts separated by a dash (-), for example, <KBD CLASS="Filename-Command">en-US</KBD> is the locale designation for English-United States and <KBD CLASS="Filename-Command">en-AU</KBD> is the designation for English-Australia.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001700"></A>The first part is a valid ISO Language Code. These codes are the lower-case two-letter codes defined by ISO-639. You can find a full list of these codes at a number of sites, such as
+<BR><KBD CLASS="URL"><A HREF="http://www.ics.uci.edu/pub/ietf/http/related/iso639.txt" CLASS="URL"><A HREF="http://www.ics.uci.edu/pub/ietf/http/related/iso639.txt" CLASS="URL">http://www.ics.uci.edu/pub/ietf/http/related/iso639.txt</A></A>. </KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000329"></A>The second part is a valid ISO Country Code. These codes are the upper-case two-letter codes defined by ISO-3166. You can find a full list of these codes at a number of sites, such as:
+<BR><KBD CLASS="URL"><A HREF="http://www.chemie.fu-berlin.de/diverse/doc/ISO_3166.html" CLASS="URL"><A HREF="http://www.chemie.fu-berlin.de/diverse/doc/ISO_3166.html" CLASS="URL">http://www.chemie.fu-berlin.de/diverse/doc/ISO_3166.html</A></A>. </KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000332"></A>The input and output APIs in CLDC use named character encodings to convert between 8-bit characters and 16-bit Unicode characters. Specific MIDP implementation might make only a small set of encodings available for MIDlets to use.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000333"></A>In the emulator, the default encoding is default encoder of the platform you are running on. Your emulator might use other encodings, such as UTF-8 and UTF-16, providing they are available in the Java SE platform.
+</P>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000335"></A><A NAME="50417690_marker-1000334"></A>To define the character encoding used by an emulator skin, use the following definition:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000336"></A>microedition.encoding: <I CLASS="Variable">encoding</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000337"></A>To define the set of all available encodings, use the following definition:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000338"></A>microedition.encoding.supported: <I CLASS="Variable">list of encodings</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1000339"></A>For example:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000340"></A>microedition.encoding: UTF-8
+<A NAME="50417690_pgfId-1000341"></A>microedition.encoding.supported: UTF-8, UTF-16, ISO-8859-1,ISO-8859-2, Shift_JIS
+</PRE>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-1001715"></A>To support all encodings supported by the Java SE platform, leave the <KBD CLASS="Filename-Command">microedition.encoding.supported</KBD> definition blank, as in:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50417690_pgfId-1000343"></A>microedition.encoding.supported:
+</PRE>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50417690_pgfId-1000344"></A>The encoding ISO-8859-1 is always available to applications running on emulated devices, whether or not it is listed in the <KBD CLASS="Filename-Command">microedition.encoding.supported</KBD> entry.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR>
+<P CLASS="Paragraph"><A NAME="50417690_pgfId-998874"></A>&nbsp;
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="45%"><col id="2" span="1" width="25%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc">
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC Basic Customization Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">v252
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="introduction.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="obfuscator.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

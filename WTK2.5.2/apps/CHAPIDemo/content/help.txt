@@ -1,0 +1,2 @@
+This viewer can be used to display text messages or email.  The viewer detects embedded URLs and enables them as links. For example: http://java.sun.com/im/logo_java.gif
+  Plain text can be used for help text, instructions or to provide a simple message.

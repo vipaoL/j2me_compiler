@@ -1,0 +1,14 @@
+MIDlet-1: APDUMIDlet,, APDUMIDlet
+MIDlet-2: SATMIDlet,, SATMIDlet
+MIDlet-3: CryptoMIDlet,, CryptoMIDlet
+MIDlet-4: MohairMIDlet,, MohairMIDlet
+MIDlet-Data-Size: 0
+MIDlet-Description: Java Card Demo3
+MIDlet-Jar-Size: 12689
+MIDlet-Jar-URL: SATSADemos.jar
+MIDlet-Name: SATSADemos
+MIDlet-Permissions: javax.microedition.apdu.aid,javax.microedition.securityservice.CMSMessageSignatureService,javax.microedition.apdu.sat
+MIDlet-Vendor: Sun Microsystems, Inc.
+MIDlet-Version: 1.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.1

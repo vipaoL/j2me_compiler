@@ -1,0 +1,7 @@
+Please note that the SNAP Mobile Sample Game requires a connection to the SNAP Mobile Development Servers or to a SNAP Mobile Emulation Environment to run.
+
+The SNAP Mobile Emulator Environment, development resources and support for SNAP Mobile are available from http://forum.nokia.com/games/snapmobile. 
+
+For more information about Nokia's SNAP Mobile, please visit http://snapmobile.nokia.com. 
+
+If this was a real Message Of The Day (MOTD), the content would be dynamically retrieved from the SNAP Mobile Online Community Servers.

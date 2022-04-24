@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  10 - Using the PIM and FileConnection APIs
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="mobile3d.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="bluetooth.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626578_pgfId-28847"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">10</SPAN><A NAME="50626578_11459"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626578_pgfId-21060"></A><A NAME="50626578_30678"></A>Using the <A NAME="50626578_marker-25460"></A>PIM and <A NAME="50626578_marker-25461"></A>FileConnection APIs
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626578_pgfId-24296"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC supports <A NAME="50626578_marker-25459"></A>JSR 75, the <A NAME="50626578_marker-29659"></A>PDA Optional Packages (<A NAME="50626578_marker-29658"></A>PDAP) for the J2ME Platform. JSR 75 includes two independent APIs:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626578_pgfId-24677"></A>The FileConnection optional package allows MIDlets access to a local device file system.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626578_pgfId-24685"></A>The Personal Information Management (PIM) optional package includes APIs for manipulating contact lists (address book), calendars, and to-do lists.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626578_pgfId-24658"></A>This chapter describes how the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC implements the FileConnection and PIM APIs.
+</P><H2 CLASS="Head1"><A NAME="50626578_pgfId-24786"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>10.1	FileConnection API</H2>
+<P CLASS="Paragraph"><A NAME="50626578_pgfId-24799"></A>On a real device, the <A NAME="50626578_marker-29660"></A>FileConnection API typically provides access to files stored in the device's memory or on a memory card.
+</P>
+<P CLASS="Paragraph"><A NAME="50626578_pgfId-24805"></A>In the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator, the FileConnection API enables MIDlets to access files stored on your desktop computer's hard disk.
+</P>
+<P CLASS="Paragraph"><A NAME="50626578_pgfId-29511"></A>The files that can be accessed using FileConnection are stored in subdirectories of <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;</KBD><I CLASS="Variable">skin</I><KBD CLASS="Filename-Command">&#92;filesystem</KBD>. For example, the <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> emulator skin comes with a root directory installed called <KBD CLASS="Filename-Command">root1</KBD>, which contains a file called <KBD CLASS="Filename-Command">Readme</KBD> and an empty directory named <KBD CLASS="Filename-Command">photos</KBD>. The full path of the file is:
+</P>
+<TABLE CLASS="" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0">
+</TABLE>
+<BR>
+<TABLE CLASS="Legend" BORDER="0" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626578_pgfId-30471"></A>Windows:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626578_pgfId-30473"></A><I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;</KBD><I CLASS="Variable">skin</I><KBD CLASS="Filename-Command">&#92;filesystem&#92;root1&#92;photos</KBD>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626578_pgfId-30475"></A>Linux:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626578_pgfId-30477"></A><I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">/appdb/</KBD><I CLASS="Variable">skin</I><KBD CLASS="Filename-Command">/filesystem/root1/photos</KBD>
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626578_pgfId-25596"></A>If multiple instances of the same emulator skin run simultaneously, the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC generates unique file paths for each one. For instance, the first directory is named <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> and the second instance is named <KBD CLASS="Filename-Command">DefaultColorPhone1</KBD>.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626578_pgfId-24836"></A>Each subdirectory of <KBD CLASS="Filename-Command">filesystem</KBD> is called a <EM CLASS="Emphasis">root</EM>. The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC provides a mechanism for <A NAME="50626578_marker-25462"></A>managing roots. While the emulator is running, choose MIDlet &gt; External events from the emulator window's menu. A utility window for adding and removing roots appears.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626578_pgfId-30289"></A>FIGURE 10-1 	Managing File System Roots
+</P>
+<BR><A NAME="50626578_pgfId-36959"></A>
+<P CLASS="FigureBox"><A NAME="50626578_pgfId-28932"></A>
+<P><IMG SRC="figures/pdap-5.jpg" TITLE="External event generator window with File Connection tab selected" ALT="External event generator window with File Connection tab selected" ALIGN="BASELINE">
+</P><A NAME="50626578_pgfId-36955"></A><A NAME="50626578_pgfId-36958"></A>
+<P CLASS="Paragraph"><A NAME="50626578_pgfId-24865"></A>The mounted roots and their contents are available to applications using the FileConnection API.
+</P>
+<P CLASS="Paragraph"><A NAME="50626578_pgfId-29252"></A>To add a new root directory, click Mount New and fill in a name for the directory. To make a directory inaccessible to the FileConnection API, select it in the list and click Unmount.
+</P><H2 CLASS="Head1"><A NAME="50626578_pgfId-24800"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>10.2	The <A NAME="50626578_marker-29662"></A>PIM API</H2>
+<P CLASS="Paragraph"><A NAME="50626578_pgfId-30213"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator stores contact, calendar, and to-do information in standard files on your desktop computer's hard disk. All information is stored in <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;</KBD><I CLASS="Variable">skin</I><KBD CLASS="Filename-Command">&#92;pim</KBD>. This directory is shared by all running emulators. Lists are stored in subdirectories of the <KBD CLASS="Filename-Command">contacts</KBD>, <KBD CLASS="Filename-Command">events</KBD>, and <KBD CLASS="Filename-Command">todo</KBD> directories. For example, a contact list called Contacts is contained in:
+</P>
+<BR>
+<TABLE CLASS="Legend" BORDER="0" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626578_pgfId-30220"></A>Windows:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626578_pgfId-30222"></A><I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;</KBD><I CLASS="Variable">skin</I><KBD CLASS="Filename-Command">&#92;pim&#92;contacts&#92;Contacts</KBD>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626578_pgfId-30224"></A>Linux:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626578_pgfId-30226"></A><I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">/appdb/</KBD><I CLASS="Variable">skin</I><KBD CLASS="Filename-Command">/pim/contacts/Contacts</KBD>
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626578_pgfId-24878"></A>Inside the list directory, items are stored in vCard (<KBD CLASS="Filename-Command">.vcs</KBD>) or vCalendar (<KBD CLASS="Filename-Command">.vcf</KBD>) format (see <KBD CLASS="URL"><A HREF="http://www.imc.org/pdi/" CLASS="URL"><A HREF="http://www.imc.org/pdi/" CLASS="URL">http://www.imc.org/pdi/</A></A>). Contacts are stored in vCard format, while calendar and to-do items are both stored in vCalendar format.</KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626578_pgfId-24692"></A>&nbsp;
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="mobile3d.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="bluetooth.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

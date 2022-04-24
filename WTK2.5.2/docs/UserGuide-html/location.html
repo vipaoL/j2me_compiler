@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  13 - Using the Location API
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="webservices.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="satsa.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626587_pgfId-28421"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">13</SPAN><A NAME="50626587_11459"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626587_pgfId-21060"></A><A NAME="50626587_66967"></A>Using the Location API
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28432"></A>The <A NAME="50626587_marker-29748"></A>JSR 179 <A NAME="50626587_marker-29749"></A>Location API gives applications the opportunity to use a device's location capabilities. For example, some devices include Global Positioning System (GPS) hardware. Other devices might be able to receive location information from the wireless network. The Location API provides a standard interface to location information, regardless of the underlying technique.
+</P>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28544"></A>In the Location API, a <EM CLASS="Emphasis">location provider</EM> encapsulates a positioning method and supplies information about the device's location. The application requests a provider by specifying required criteria, such as the desired accuracy and response time. If an appropriate implementation is available, the application can use it to obtain information about the device's physical location.
+</P>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28547"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC includes a simulated location provider. You can use the emulator's External Events window to specify where the emulator should think it is located. In addition, you can configure the properties of the provider itself, and you can manage a database of landmarks.
+</P><H2 CLASS="Head1"><A NAME="50626587_pgfId-28534"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>13.1	Setting the Emulator's Location at Runtime</H2>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28558"></A>You can specify the simulated location of the emulator while it is running. To do this, choose MIDlet &gt; External Events from the emulator window's menu. Click the Location tab. See <A HREF="location.html#50626587_18320" CLASS="XRef">FIGURE 13-1</A>.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626587_pgfId-30475"></A>FIGURE 13-1 	<A NAME="50626587_18320"></A>Controlling Location in the Emulator
+</P>
+<BR><A NAME="50626587_pgfId-37232"></A>
+<P CLASS="FigureBox"><A NAME="50626587_pgfId-28561"></A>
+<P><IMG SRC="figures/location-4.jpg" TITLE="External event generator with Location tab selected" ALT="External event generator with Location tab selected" ALIGN="BASELINE">
+</P><A NAME="50626587_pgfId-37213"></A><A NAME="50626587_pgfId-37231"></A>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28595"></A>In the Location area of the tab, you can fill in values for the latitude, longitude, altitude, speed, and course. Applications that use the Location API can retrieve these values as the location of the emulator.
+</P>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28598"></A>For more elaborate testing, you can set up a location script that describes motion over time. Location scripts are XML files consisting of a list of locations, called <EM CLASS="Emphasis">waypoints</EM>, and associated times. The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC determines the current location of the emulator by interpolating between the points in the location script. Here, for example, is a simple location script that specifies a starting point (<KBD CLASS="Filename-Command">time=&quot;0&quot;</KBD>) and moves to a new point in ten seconds:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626587_pgfId-28867"></A>&lt;waypoints&gt;
+<A NAME="50626587_pgfId-28868"></A>  &lt;waypoint time=&quot;0&quot;
+<A NAME="50626587_pgfId-28869"></A>            latitude=&quot;14&quot; longitude=&quot;50&quot; altitude=&quot;310&quot; /&gt;
+<A NAME="50626587_pgfId-28870"></A>  &lt;waypoint time=&quot;10000&quot;
+<A NAME="50626587_pgfId-28871"></A>            latitude=&quot;14.5&quot; longitude=&quot;50.1&quot; altitude=&quot;215&quot; /&gt; 
+<A NAME="50626587_pgfId-28872"></A>&lt;/waypoints&gt;
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28852"></A>The altitude measurement is in meters, and the time values are in milliseconds.
+</P>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28881"></A>Use a text editor to create your location script. You can load it into the external event window by pressing the Browse button next to the Script field. Immediately below are controls for playing, pausing, stopping, and moving to the beginning and end of the location script. You can also drag the time slider to a particular point.
+</P>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28600"></A>Some devices are also capable of measuring their orientation. To make this kind of information available to your application, change the State field in the Orientation box to Supported and fill in values for azimuth, pitch, and roll. The Magnetic Orientation checkbox indicates whether the azimuth and pitch measurements are relative to the Earth's magnetic field or relative to true north and gravity.
+</P>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28604"></A>To test how your application handles unexpected conditions, try changing the State field in the Location Provider box to Temporarily Unavailable or Out of Service. When your application attempts to retrieve the emulator's location, an exception is thrown and you can see how your application responds.
+</P><H2 CLASS="Head1"><A NAME="50626587_pgfId-28470"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>13.2	Configuring the Location Provider</H2>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28630"></A>You can configure the properties of the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC's location provider using the preferences. In the user interface, choose Edit &gt; Preferences and click Location.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626587_pgfId-30462"></A>FIGURE 13-2 	Configuring the Location Provider
+</P>
+<BR><A NAME="50626587_pgfId-37236"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626587_pgfId-28641"></A>
+<P><IMG SRC="figures/location-5.jpg" TITLE="Preferences window with the Location category selected" ALT="Preferences window with the Location category selected" ALIGN="BASELINE">
+</P><A NAME="50626587_pgfId-37218"></A><A NAME="50626587_pgfId-37235"></A>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-29493"></A>The fields in the Location tab enable you to specify the properties of the toolkit's built-in location provider. The properties you specify in the preferences correspond to the <KBD CLASS="Filename-Command">Criteria</KBD> class applications use to request a location provider.
+</P><H2 CLASS="Head1"><A NAME="50626587_pgfId-28442"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>13.3	Setting Up Landmarks</H2>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-29006"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator includes a <EM CLASS="Emphasis">landmark store</EM> system, just like many real devices. A landmark store is a collection of places with associated names and other information. To manage landmark stores, choose File &gt; Utilities from the menu, select Manage Landmarks, and press Launch.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626587_pgfId-30468"></A>FIGURE 13-3 	Landmark Manager
+</P>
+<BR><A NAME="50626587_pgfId-37234"></A>
+<P CLASS="FigureBox"><A NAME="50626587_pgfId-28689"></A>
+<P><IMG SRC="figures/location-6.jpg" TITLE="Manage Landmark Store window for adding, editing, or removing landmarks" ALT="Manage Landmark Store window for adding, editing, or removing landmarks" ALIGN="BASELINE">
+</P><A NAME="50626587_pgfId-37223"></A><A NAME="50626587_pgfId-37233"></A>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28908"></A>The landmark manager shows the content of a single landmark store. JSR 179 requires a minimum of one landmark store, and it is referred to as the default store. To select a different landmark store or create a new one, make a selection from the <EM CLASS="Emphasis">Landmark stores</EM> combo box at the top of the window.
+</P>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28747"></A>You can add or remove landmark stores by clicking the Manage Landmark Stores button. Landmark stores cannot be renamed.
+</P>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28748"></A>Landmarks can be associated with <EM CLASS="Emphasis">categories</EM>, which are specific to a landmark store. The categories for the current landmark store are shown in the left pane of the window. You can add or remove categories using the buttons at the bottom of the list. Check off one or more of the categories if you would like to see only the matching landmarks. You can also check <EM CLASS="Emphasis">no category set</EM> to see landmarks with no associated categories.
+</P>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28758"></A>The right pane of the landmark manager lists the landmarks in the current landmark store. Click a landmark to see its details listed in the bottom part of the right pane.
+</P>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28763"></A>To add a new landmark, click Add and fill in the fields as appropriate. Click Edit to change the currently selected landmark. Finally, press Remove to remove the currently selected landmark.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626587_pgfId-30481"></A>FIGURE 13-4 	Adding or Editing a Landmark
+</P>
+<BR><A NAME="50626587_pgfId-37238"></A>
+<P CLASS="FigureBox"><A NAME="50626587_pgfId-28764"></A>
+<P><IMG SRC="figures/location-7.jpg" TITLE="Landmark window with General tab selected" ALT="Landmark window with General tab selected" ALIGN="BASELINE">
+</P><A NAME="50626587_pgfId-37228"></A><A NAME="50626587_pgfId-37237"></A>
+<P CLASS="Paragraph"><A NAME="50626587_pgfId-28782"></A>You can also use the Assign Categories in the main window to specify the categories for a landmark.
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="webservices.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="satsa.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

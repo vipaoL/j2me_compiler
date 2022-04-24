@@ -1,0 +1,9 @@
+MIDlet-1: JCRMIMIDlet,, JCRMIMIDlet
+MIDlet-Data-Size: 0
+MIDlet-Description: Java Card Demo
+MIDlet-Name: SATSAJCRMIDemo
+MIDlet-Permissions: javax.microedition.jcrmi
+MIDlet-Vendor: Sun Microsystems, Inc.
+MIDlet-Version: 1.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.1

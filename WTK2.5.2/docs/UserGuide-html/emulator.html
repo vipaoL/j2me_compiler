@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  4 - Using the Emulator
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="projects.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="monitoring.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626614_pgfId-49211"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">4</SPAN><A NAME="50626614_82054"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626614_pgfId-41655"></A><A NAME="50626614_79426"></A>Using the Emulator
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-41642"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC <A NAME="50626614_marker-43108"></A>emulator simulates a MIDP device on your desktop computer. It is a convenient way to see how your application performs in a MIDP environment and gives you a tight development cycle that is entirely contained on your desktop computer.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-36983"></A>The emulator does not represent a specific device, but it provides correct implementations of its supported APIs.
+</P><H2 CLASS="Head1"><A NAME="50626614_pgfId-36935"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>4.1	<A NAME="50626614_marker-43107"></A><A NAME="50626614_31079"></A>Emulator Skins</H2>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-36941"></A>A <EM CLASS="Emphasis">skin</EM> is a thin layer on top of the emulator implementation that provides it with a certain appearance, screen characteristics, and input controls. The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC comes with skins that represent different kinds of devices.
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaption"> <A NAME="50626614_pgfId-37032"> </A> TABLE 4-1 	 <A NAME="50626614_63198"> </A> Emulator Skins </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626614_pgfId-37036"></A>Name
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626614_pgfId-37038"></A>Screen size
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626614_pgfId-37102"></A>Canvas size
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626614_pgfId-37067"></A>Colors
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626614_pgfId-37090"></A>Input
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37040"></A>DefaultColorPhone
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37042"></A>240 x 320
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37104"></A>240 x 289
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37069"></A>4096
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37092"></A>ITU-T
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37044"></A>DefaultGrayPhone
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37046"></A>180 x 208
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37106"></A>180 x 177
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37071"></A>4096
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37094"></A>ITU-T
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37048"></A>MediaControlSkin
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37050"></A>180 x 208
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37108"></A>180 x 177
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37073"></A>4096
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37096"></A>ITU-T
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37052"></A>QwertyDevice
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37054"></A>636 x 235
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37110"></A>540 x 204
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37075"></A>4096
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37098"></A>Qwerty
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37116"></A>You can create your own emulator skins if you wish. See the <I CLASS="Title">Basic Customization Guide</I> for details.
+</P><H2 CLASS="Head1"><A NAME="50626614_pgfId-37129"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>4.2	Emulator Controls</H2>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-51726"></A>The emulator looks and acts like a mobile phone inside a standard desktop window. This section describes how to control the emulator. The description and figures are based on the <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> skin, but all the skins operate in a similar way.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626614_pgfId-53372"></A>FIGURE 4-1 	The <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> Emulator skin
+</P>
+<BR><A NAME="50626614_pgfId-60479"></A>
+<P CLASS="FigureBox"><A NAME="50626614_pgfId-50512"></A>
+<P><IMG SRC="figures/emulator-4.jpg" TITLE="On the default emulator, the power button is on the top right and the soft buttons are on either side of the select button." ALT="On the default emulator, the power button is on the top right and the soft buttons are on either side of the select button." ALIGN="BASELINE">
+</P><A NAME="50626614_pgfId-60465"></A><A NAME="50626614_pgfId-60478"></A>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-41082"></A>You can use the mouse to click the buttons to press them. Most buttons also have keyboard shortcuts, which are generally easier to use. Keyboard numbers 0 through 9 correspond to the emulator's 0 through 9 buttons. Some less obvious <A NAME="50626614_marker-43109"></A>keyboard shortcuts are in the following table.
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaption"> <A NAME="50626614_pgfId-37160"> </A> TABLE 4-2 	Keyboard Shortcuts </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626614_pgfId-37164"></A>Emulator Button
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626614_pgfId-37166"></A>Keyboard Key
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37168"></A>Left soft button
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37170"></A>F1
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37172"></A>Right soft button
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37174"></A>F2
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37176"></A>Power button
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37178"></A>Esc
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37180"></A>SELECT
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626614_pgfId-37182"></A>Enter
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37792"></A>Entering text works much as it does on many real devices. Press a number key multiple times to get the letter you want. For example, press the 5 key twice for the letter K. When you are entering text, the asterisk key (*) switches between upper case, lower case, numbers, and symbols. The indicator at the top of the screen shows your current mode. The pound key (#) enters a space.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-51914"></A>Alternatively, you can just type on your keyboard to enter text. Although this is convenient for entering text, you must remember that it is a convenience your users will most likely be lacking.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-49825"></A>Another convenience is the capability to copy and paste information in text areas. You can paste text from the clipboard into a TextBox or TextField by pressing Control-v. To copy the contents of a TextBox or TextField, press Control-c. The entire contents of the text field will be placed on the clipboard.
+</P><H2 CLASS="Head1"><A NAME="50626614_pgfId-37199"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>4.3	<A NAME="50626614_marker-43110"></A>Setting Emulator Preferences</H2>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37203"></A>You can adjust the emulator settings to more closely resemble a specific device or to test your application under different resource conditions.
+</P><H3 CLASS="Head2"><A NAME="50626614_pgfId-37208"></A>4.3.1	<A NAME="50626614_marker-43111"></A>Network Proxies</H3>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37204"></A>The emulator uses your desktop network connection. For example, if the emulator runs a MIDlet that makes an HTTP connection, the emulator attempts to make the HTTP connection using the desktop's network setup.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37217"></A>If your development computer is behind a firewall, you might use a proxy server to make HTTP connections. If you're not sure, try examining your browser's settings to see if it uses proxy servers.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-49805"></A>If you are using proxy servers, you need to configure the emulator to use the same proxy servers. To do this, choose Edit &gt; Preferences. On the Network Configuration pane, fill in the names and port numbers for the proxy server you wish to use. You can also select which version of HTTP you wish to use.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-49810"></A>If your proxy servers use HTTP Basic authentication (see RFC 2617), check Authentication and fill in the user name and password.
+</P><H3 CLASS="Head2"><A NAME="50626614_pgfId-49807"></A>4.3.2	<A NAME="50626614_marker-49806"></A>Storage Sizes</H3>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-53242"></A>You can set or modify the amount of persistent storage assigned to each emulator, or you can change the heap size (the amount of storage allowed for your application's objects). Choose Edit &gt; Preferences and select the <A NAME="50626614_marker-53243"></A>Storage item. 
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626614_pgfId-53359"></A>FIGURE 4-2 	<A NAME="50626614_70051"></A>Storage Preferences
+</P>
+<BR><A NAME="50626614_pgfId-60481"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626614_pgfId-53247"></A>
+<P><IMG SRC="figures/emulator-5.jpg" TITLE="The Ktoolbar preferences Storage tab shows storage root directory, storage size, and heap size" ALT="The Ktoolbar preferences Storage tab shows storage root directory, storage size, and heap size" ALIGN="BASELINE">
+</P><A NAME="50626614_pgfId-60470"></A><A NAME="50626614_pgfId-60480"></A><H4 CLASS="Head3"><A NAME="50626614_pgfId-53268"></A>4.3.2.1	Persistent Storage</H4>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-51810"></A>The emulator has <A NAME="50626614_marker-43113"></A>persistent storage, which by default is placed below the <KBD CLASS="Filename-Command">appdb</KBD> subdirectory in a phone skin directory. These files have a <KBD CLASS="Filename-Command">.db</KBD> extension. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-53582"></A>For example, on Windows the persistent storage for the <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> emulator skin is stored in <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;DefaultColorPhone&#92;manager_storage_settings.db</KBD>. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-53583"></A>If multiple instances of the same emulator skin run simultaneously, the toolkit generates unique file paths for each one. For example, on Windows instances of <KBD CLASS="Filename-Command">DefaultColorPhone</KBD> might have a file path name of <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;temp.DefaultColorPhone1</KBD>, <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;temp.DefaultColorPhone2</KBD>, and so forth.
+</P>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626614_pgfId-53641"></A>The file <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;DefaultColorPhone&#92;in.use</KBD> keeps track of the number of storage roots marked as in use. If the emulator crashes, you need to delete the <KBD CLASS="Filename-Command">in.use</KBD><A NAME="50626614_marker-53652"></A> file.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37280"></A>The toolkit enables you to choose a different location for the storage files, and you can limit the size of the storage. This is useful if you wish to test your application's behavior when a small amount of persistent storage is available.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37281"></A>To adjust the <A NAME="50626614_marker-53560"></A>persistent storage settings, choose Edit &gt; Preferences and click Storage in the left pane. In the Storage root directory field, enter the name of the directory you want to use for persistent storage. You can only enter a relative path, and the directory you specify is created in the <KBD CLASS="Filename-Command">appdb</KBD> subdirectory.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37342"></A>By default you are allowed one megabyte (1024 Kbytes) of persistent storage. You can enter a limit in kilobytes. Bear in mind that the storage implementation has some overhead in addition to the space your application uses. For example, if you enter 8 kilobytes for the persistent storage size, 8192 bytes is available for both your application data and the storage overhead.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37866"></A>To erase the emulator's <A NAME="50626614_marker-53563"></A>persistent storage, choose File &gt; Utilities. Click the Clean Database button to wipe the persistent storage clean. Clean Database does not affect installed applications.
+</P><H4 CLASS="Head3"><A NAME="50626614_pgfId-53094"></A>4.3.2.2	Heap Size</H4>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-53288"></A>The <EM CLASS="Emphasis">heap</EM><A NAME="50626614_marker-53333"></A> is memory where your application's objects are stored. To change the heap size, choose Edit &gt; Preferences and select the <A NAME="50626614_marker-53303"></A>Storage item (see <A HREF="emulator.html#50626614_70051" CLASS="XRef">FIGURE 4-2</A>). By default the heap size is one megabyte. You can set the maximum heap size to more closely simulate the conditions on a real device. Fill in the maximum heap size in kilobytes in the Heap Size field. 
+</P><H3 CLASS="Head2"><A NAME="50626614_pgfId-53295"></A>4.3.3	<A NAME="50626614_marker-53294"></A>Adjusting Emulator Performance</H3>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-53296"></A>The emulator uses many of the resources of your desktop computer, including its display and network connection. Compared to the desktop-based emulator, a real MIDP device usually has a slower processor, less memory, and a slower network connection, and might have a different type of display.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37381"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC enables you to simulate the constrained environment of a real device. Although the emulator does not represent a real device, adjusting the performance settings gives you useful information about how your application performs under varying runtime conditions.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-53910"></A>Choose Edit &gt; Preferences and click Performance in the left pane. See <A HREF="emulator.html#50626614_64754" CLASS="XRef">FIGURE 4-3</A>.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626614_pgfId-53366"></A>FIGURE 4-3 	<A NAME="50626614_64754"></A>Adjusting the Emulator's Performance
+</P>
+<BR><A NAME="50626614_pgfId-60483"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626614_pgfId-49400"></A>
+<P><IMG SRC="figures/emulator-7.jpg" TITLE="The emulator Preferences Performance tab sets Graphics primitives latency, Display refresh, Enable VM speed emulation, and Enable network throughput emulation" ALT="The emulator Preferences Performance tab sets Graphics primitives latency, Display refresh, Enable VM speed emulation, and Enable network throughput emulation" ALIGN="BASELINE">
+</P><A NAME="50626614_pgfId-60475"></A><A NAME="50626614_pgfId-60482"></A>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37207"></A>Adjust the Graphics primitives latency to have an effect on the amount of time that elapses between your application's calls to drawing methods in the <KBD CLASS="Filename-Command">Graphics</KBD> class and when the drawing actually takes place.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37423"></A>To change the screen characteristics, choose one of the Display refresh types. If you choose a Periodic type, you also need to specify the Refresh Rate.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37424"></A>To simulate the slower speed of a real device, check Enable VM speed emulation and choose the speed you want. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37360"></A>To adjust the simulated network speed, check Enable network throughput emulation, and choose a speed in bits/sec.
+</P><H2 CLASS="Head1"><A NAME="50626614_pgfId-37426"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>4.4	<A NAME="50626614_marker-43115"></A>Pausing and Resuming</H2>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37430"></A>MIDlets have a life cycle that is defined by the MIDP specification. MIDlets can be started and stopped by the device. Furthermore, external events like incoming phone calls can cause the device to pause a MIDlet.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37450"></A>The emulator provides a simple mechanism to pause and resume running MIDlets. This is very helpful for testing your application's behavior when it is paused.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37451"></A>When the emulator is running, choose MIDlet &gt; Pause from the emulator window's menu. The running MIDlet is paused and the screen displays an &quot;Incoming Call...&quot; message.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37455"></A>To resume operation, choose MIDlet &gt; Resume from the menu.
+</P><H2 CLASS="Head1"><A NAME="50626614_pgfId-37478"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>4.5	<A NAME="50626614_marker-43120"></A>Running the Emulator Solo</H2>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37664"></A>During development, you usually run the emulator directly from the toolkit by pressing the Run button or selecting Project &gt; Run via OTA. For testing or demonstrations, you might want to run the emulator by itself. Several different approaches are described in this section. The program group that the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC installer creates includes several options for running the emulator by itself.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626614_pgfId-37689"></A>To run an application directly, which is analogous to pressing the Run button, choose the Run MIDP Application... item. The toolkit prompts you to locate a MIDlet descriptor file on your local disk. Note that the corresponding MIDlet suite JAR must also be present.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626614_pgfId-37695"></A>To run the emulator's Application Management Software (AMS), choose the OTA Provisioning item, which is roughly analogous to Run via OTA feature in the user interface. The emulator pops up with the AMS welcome screen, and you can install applications by typing in a URL.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626614_pgfId-37710"></A>To change the emulator's preferences, choose the Preferences item from the toolkit program group. This pulls up the same preferences window as choosing Edit &gt; Preferences... in the user interface.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626614_pgfId-37723"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC utilities are also accessible without running the user interface. Just choose the Utilities item.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626614_pgfId-37722"></A>Finally, you can change which emulator skin is used by default. Choose the Default Device Selection item, and choose one of the available emulator skins. The next time you launch the emulator the selected skin is used.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-37737"></A>You can also run the emulator from a command prompt. See <A HREF="commandline.html#50626620_32725" CLASS="XRef">Appendix B</A> for more information.
+</P><H2 CLASS="Head1"><A NAME="50626614_pgfId-49473"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>4.6	Using Third-Party Emulators</H2>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-51905"></A>Third-party companies, like device manufacturers and wireless carriers, sometimes create device emulators that are compatible with the toolkit. You can gain experience running your application on a wider variety of implementations by installing additional emulators into the toolkit. The procedure is usually to unpack or install the third party emulator, then copy its directory into <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;wtklib&#92;devices</KBD>. The next time you run the toolkit, the emulator is available.
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-49478"></A>A partial listing of some of the currently available emulators is available here:
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-49479"></A><KBD CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/midp/articles/emulators/" CLASS="URL">http://developers.sun.com/techtopics/mobility/midp/articles/emulators/</A></KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626614_pgfId-51370"></A>&nbsp;
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="projects.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="monitoring.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

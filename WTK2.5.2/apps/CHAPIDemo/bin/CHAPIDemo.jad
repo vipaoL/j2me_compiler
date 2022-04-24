@@ -1,0 +1,17 @@
+Favorite-Link-1: http://localhost/CHAPIDemo/content/index.txt
+Favorite-Title-1: CHAPI Demo
+MIDlet-1: Text Viewer,, example.text.TextViewer
+MIDlet-Description: A demo MIDlet showing what CHAPI is all about.
+MIDlet-Jar-Size: 14817
+MIDlet-Jar-URL: CHAPIDemo.jar
+MIDlet-Name: CHAPIDemo
+MIDlet-Permissions: javax.microedition.io.Connector.http,javax.microedition.content.ContentHandler
+MIDlet-Vendor: Sun Microsystems, Inc.
+MIDlet-Version: 1.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Handler-1: example.text.TextViewer,text/plain
+MicroEdition-Handler-1-ID: example.text.TextViewer
+MicroEdition-Handler-2: example.imageviewer.ImageViewer, image/png, .png , open, en_US
+MicroEdition-Handler-2-ID: com.sun.example.imageviewer
+MicroEdition-Handler-2-en_US: View
+MicroEdition-Profile: MIDP-2.1

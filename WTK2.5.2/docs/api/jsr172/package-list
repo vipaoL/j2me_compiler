@@ -1,0 +1,7 @@
+java.rmi
+javax.microedition.xml.rpc
+javax.xml.namespace
+javax.xml.parsers
+javax.xml.rpc
+org.xml.sax
+org.xml.sax.helpers

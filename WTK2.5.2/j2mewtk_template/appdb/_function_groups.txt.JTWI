@@ -1,0 +1,46 @@
+policy_type: jtwi
+
+net_access:
+ Airtime,
+ How often should %1 ask for permission to use airtime ? Using airtime may result in charges.,
+ Don't use airtime and don't ask
+
+messaging:
+ Messaging,
+ How often should %1 ask for permission before sending or receiving text messages ?,
+ Don't send or receive messages and don't ask
+
+application_auto_invocation:
+ Interrupt,
+ How often should %1 ask for permission to interrupt? The interrupted application will exit.,
+ Don't interrupt and don't ask
+
+local_connectivity:
+ Computer Connection,
+ How often should %1 ask for permission to connect to a computer? This may require a data cable that came with your phone.,
+ Don't connect and don't ask
+
+all_satsa:
+ Security Services,
+ How often should %1 ask for permission to access the security services ?,
+ Don't access and don't ask
+
+multimedia_recording:
+ Recording,
+ How often should %1 ask for permission to record audio and images? This will use space on your phone.,
+ Don't record and don't ask
+ 
+read_user_data_access:
+ Read User Access,
+ How often should %1 ask for permission to access user data for reading ?,
+ Don't access and don't ask
+
+write_user_data_access:
+ Write User Access,
+ How often should %1 ask for permission to access user data for writing ?,
+ Don't access and don't ask
+
+location:
+ Location,
+ How often should %1 ask for permission to access the location information ?,
+ Don't access and don't ask

@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Release Notes - Sun Java Wireless Toolkit for CLDC</title>
+  <link rel="stylesheet" href="document.css" type="text/css">
+</head>
+<body>
+<a name="_top"></a>
+<table summary="This table is for formatting purposes only." border="0"
+ cellpadding="0" cellspacing="0" width="100%">
+  <tbody>
+    <tr>
+      <td class="sun-darkblue">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="sun-darkblue">
+      <h1>Release Notes</h1>
+      <h2> Sun Java&trade; Wireless Toolkit for
+CLDC <br>Version 2.5.2_01</h2>
+      <h4>December 2008</h4>
+      </td>
+    </tr>
+    <tr>
+      <td class="sun-lightblue">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+<table id="SummaryNotReq1" class="full-width" border="0" cellpadding="0"
+ cellspacing="0">
+<!-- formatting table --> <tbody>
+    <tr>
+      <td class="go-left">
+      <p class="nav-link"> <a href="../index.html">Documentation Home</a>
+&gt; Release Notes </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h2>Table of Contents</h2>
+<dl>
+  <dt><a href="#overview">1. Overview</a></dt>
+  <dt><a href="#newin">2. New in this Release</a></dt>
+  <dt><a href="#systemrequirements">3. System Requirements</a></dt>
+  <dt><a href="#installation">4. Installation Instructions</a></dt>
+  <dt><a href="#running">5. Running the Toolkit</a></dt>
+  <!--<dt><a href="#ide">5. Running the Toolkit in an IDE</a></dt>-->
+  <dt><a href="#dst">6. Daylight Saving Time Changes</a></dt> 
+  <dt><a href="#knownbugs">7. Known Bugs</a></dt>
+  <dt><a href="#questions">8. Frequently Asked Questions</a></dt>
+</dl>
+<a name="overview"></a><a name="_maincontent"></a>
+<h2>1. Overview</h2>
+<table><tr  bgcolor = "LightSteelBlue" border=0 >
+			
+				<td>Sun Java Wireless Toolkit Version 2.5.2_01 for CLDC is a Security Update that corrects vulnerabilities that might allow an untrusted application to execute arbitrary code. This can only happen if you obtain a malicious program and run it in an earlier version of the toolkit.<br>
+					<br>
+					The only change between version 2.5.2_01 and version 2.5.2 is the security update, so references to version 2.5.2 on this page and in the documentation correctly identify the most recent feature release. The version 2.5.2 documentation remains valid.</td></tr>
+
+		</table>
+		
+		<p>The
+Sun Java Wireless Toolkit for CLDC, formerly known as the J2ME<small><sup>TM</sup></small>
+Wireless
+Toolkit, is a set of tools for creating MIDP applications.
+It consists of three main components:
+</p>
+		<ul>
+  <li>the toolkit user interface automates many of the tasks involved in creating MIDP applications.</li>
+  <li> The <i>emulator</i> is a simulated mobile phone. It is useful
+for testing MIDP applications. </li>
+  <li> A collection of <i>utilities</i> provides other useful
+functionality, including a text messaging console and cryptographic
+utilities. </li>
+</ul>
+		
+		<p>The Sun Java Wireless Toolkit for CLDC implements impressive
+capabilities that are
+exposed through standard APIs. The APIs are defined through the
+<a href="http://jcp.org/">Java Community Process<small><sup>TM</sup></small>
+(JCP<small><sup>TM</sup></small>) program</a>:
+</p>
+		<ul>
+			<li><a href="http://jcp.org/en/jsr/detail?id=248"> Mobile Service Architecture 1.0 (JSR 248)</a></li>
+
+
+			<li><a href="http://jcp.org/en/jsr/detail?id=185">Java Technology for the Wireless Industry 1.0 (JSR 185) </a>
+			<br>
+				<br>
+			
+			<li><a href="http://jcp.org/en/jsr/detail?id=139">Connected Limited Device Configuration (CLDC) 1.1 (JSR 139) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=118">Mobile Information Device Profile (MIDP) 2.1 (JSR 118) </a><br>
+				<br>
+			
+			<li><a href="http://jcp.org/en/jsr/detail?id=75">PDA Optional Packages for the J2ME Platform (JSR 75) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=82">Java APIs for Bluetooth (JSR 82) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=135">Mobile Media API (MMAPI) 1.2 (JSR 135) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=172">J2ME Web Services Specification (JSR 172) </a>
+		    	<li><a href="http://jcp.org/en/jsr/detail?id=177">Security and Trust Services API for J2ME (JSR 177) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=179">Location API for J2ME (JSR 179) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=180">SIP API for J2ME (JSR 180) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=184">Mobile 3D Graphics API for J2ME (JSR 184) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=205">Wireless Messaging API (WMA) 2.0 (JSR 205) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=211">Content Handler API (JSR 211) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=226">Scalable 2D Vector Graphics API for J2ME (JSR 226) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=229">Payment API (JSR 229) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=234">Advanced Multimedia Supplements (JSR 234) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=238">Mobile Internationalization API (JSR 238) </a>
+			<li><a href="http://jcp.org/en/jsr/detail?id=239">Java Binding for OpenGL&reg; ES (JSR 239) </a></ul>
+
+		<p>This release of the Sun Java Wireless Toolkit includes Nokia's
+Scalable Network Application Package (SNAP) Mobile API and the SNAP
+Mobile Sample Application as part of the toolkit's External API
+feature. SNAP Mobile is a combination of client software and server
+infrastructure that supports the creation of networked,
+community-enabled multiplayer games. For more information, consult the
+SNAP Mobile web site at <a href="http://snapmobile.nokia.com/">http://snapmobile.nokia.com/</a>.
+The Emulation Environment, development resources and support for SNAP
+Mobile are available from <a
+ href="http://www.forum.nokia.com/games/snapmobile">http://www.forum.nokia.com/games/snapmobile</a>.
+Please see <a href="#SNAPInstall">SNAP Mobile Emulation Environment
+Installation</a> for further information.</p>
+		<p>For more information on using the Sun Java Wireless Toolkit for CLDC
+to develop applications, see
+the <a href="UserGuide-html/index.html"><i>User's Guide</i></a>.
+</p>
+		<p class="nav-link">[<a href="#_top">Top</a>]</p>
+		<a name="newin"></a>
+		<h2>2. New in this Release</h2>
+		<p>The multiuser feature makes it possible for multiple users on the same machine to use a single installation of the wireless toolkit. The installer installs the product, then, for each user account it copies a subset of the installation files from the installation directory to a separate working directory named <tt>j2mewtk</tt>. The default location of the working directory (<i>workdir</i> ) is typically in one of these locations:</p>
+		
+		<Table><tr><td><b>Windows</b>:<td><tt>C:\Documents and Settings\</tt><i>User</i><tt>\j2mewtk\2.5.2</tt> (where <i>User</i> is your account name)</tr>
+
+		<tr><td><b>Linux</b>:<td><tt>~/j2mewtk/2.5.2</tt> (where <tt>~</tt> is your home directory)</tr></table>
+		<p>In general, you will use your working directory for the applications you write and any customizatons you make. Consult the User's Guide for a more detailed explanation of this feature. </p>
+		<p class="nav-link">[<a href="#_top">Top</a>]</p>
+		<a name="systemrequirements"></a>
+<h2>3. System Requirements</h2>
+<p>
+This section describes the system requirements for running the
+Sun Java Wireless Toolkit for CLDC.
+</p>
+		<h3>3.1 Required Software</h3>
+		<h4>Windows</h4>
+		<ul>
+  <li> Microsoft Windows XP </li>
+  <li>Java 2 Platform, Standard Edition Software Development Kit (Java 2 SDK) version 1.5.0, if you plan to do development, or Java 2, Standard Edition Runtime Environment (JRE<small><sup>TM</sup></small>)
+version 1.5.0, if you
+only plan to run the demonstration applications.
+
+			<p>To download the SDK or JRE software, go to <a
+ href="http://java.sun.com/javase/downloads/index.html">http://java.sun.com/javase/downloads/index.html</a></p>
+			<li> <a href="http://www.apple.com/quicktime/"> Apple QuickTime
+player</a></li>
+		</ul>
+		<h4>Linux</h4>
+		<ul>
+			<li>Ubuntu v6.x . The following libraries should be present on the system:
+			<ul>
+				<li>ibXpm (libxpm-dev)
+				<li>libXt (libxt-dev)
+				<li>libX11 (libx11-dev)
+				<li>libICE (libice-dev)
+				<li>libSM (libsm-dev)
+				<li>libpthread (libc6-dev)
+				<li>libm (libc6-dev)
+				<li>libnsl (libc6-dev)
+				<li>libstdc++6-dev
+			</ul>
+			<li>Java 2 Platform, Standard Edition Software Development Kit (Java 2 SDK) version 1.5.0, if you plan to do development, or Java 2, Standard Edition Runtime Environment (JRE) version 1.5.0, if you only plan to run the demonstration applications.
+			<p>To download the SDK or JRE software, go to <a href="http://java.sun.com/javase/downloads/index.html">http://java.sun.com/javase/downloads/index.html</a></p>
+			<li>To play Adaptive Multi-Rate (AMR) content on Linux you must have a 3GPP reference implementation. Chapter 8 of the <a href="UserGuide-html/index.html"><i>User's Guide</i></a> describes how to enable AMR support.
+		</ul>
+		<h3>3.2 Required Hardware</h3>
+		<p>Following are the minimum hardware requirements:
+</p>
+<ul>
+  <li>100 megabytes hard disk space</li>
+  <li>128 megabytes system RAM</li>
+  <li>800 megahertz Pentium III CPU</li>
+</ul>
+<p class="nav-link">[<a href="#_top">Top</a>]</p>
+<a name="installation"></a>
+<h2>4. Installation Instructions</h2>
+<p>Ensure you have an appropriate Java SE environment installed, as described previously.</p>
+<p>Run the installer executable. Follow the instructions provided by the installer.</p>
+<a name="SNAPInstall"></a>
+		<h3>4.1 SNAP Mobile Emulation Environment Installation</h3>
+		<p>Please note that the SNAP Mobile Emulation Environment needs to be downloaded, installed, and started to successfully run the SNAP Mobile Sample Application. Follow these steps to download and run the emulation environment:</p>
+		<ol>
+  <li><b>Go to </b><code><a
+ href="http://www.forum.nokia.com/games/snapmobile">http://www.forum.nokia.com/games/snapmobile</a></code><b>
+and log in (or create an account first if necessary).</b></li>
+  <li><b>Select SNAP Mobile SDK from the Tools and SDKs section.</b></li>
+  <li><b>Download the installer and run.</b></li>
+  <li><b>Go to </b><sdk install="" dir=""><code>\SNAPMobile\tools\ServerEmulator\</code></sdk><b>.</b></li>
+			<li><b>Under Windows, run</b><b> the server emulator with the following command:</b></li><br>
+					<code>java -jar sm-emu.jar</code>
+		</ol>
+
+		<p>This starts the emulation environment listening for connections over HTTP on localhost:8080. Run the SnapMobileSample application. It connects to the Server Emulator on this port. You can now log in using any of the preconfigured test accounts <code>test1</code>,
+<code>test2</code>, and
+so on (the password is <code>test</code>), or else create a new
+account using the
+Create
+Account button on the Login screen.<br>
+</p>
+		<p class="nav-link"><b>[<a href="#_top">Top</a>]</b></p>
+		<a name="running"></a>
+<h2><b>5. Running the Toolkit</b></h2>
+<p>The installer creates a new program group, <b>Sun Java Wireless Toolkit 2.5.1 for CLDC</b>. This group contains the following aliases: </p>
+<ul>
+  <li style="font-weight: normal;"><b>CLDC KToolbar</b> is the main entry point for the toolkit. Most other functions in the toolkit are accessible from KToolbar.</li>
+			<li style="font-weight: normal;"><b>Default Device Selection</b> can be used to select the default emulator skin.
+			<li style="font-weight: normal;"><b>Documentation</b> is a link to the documentation home.</li>
+			<li style="font-weight: normal;"><b>OTA Provisioning</b> is useful for testing the installing of applications.</li>
+			<li style="font-weight: normal;"><b>Preferences</b> provides a way to directly launch the emulator preferences.</li>
+  <li style="font-weight: normal;"><b>Run MIDP Application</b> is a shortcut for running a packaged application without having to run KToolbar.</li>
+<li><b>Utilities</b> launches the toolkit's utilities window.</li>
+</ul>
+
+
+<!--
+
+<p class="nav-link"><b>[<a href="#_top">Top</a>]</b></p>
+<a name="ide"></a>
+<h2><b>5. Running the Toolkit in an IDE</b></h2>
+<p>
+This release of the Sun Java Wireless Toolkit for CLDC
+can be integrated with
+Java integrated development environments (IDEs), such
+as
+<a href="http://www.netbeans.org/kb/55/mobility.html">NetBeans
+Mobility Pack 5.5</a>. For
+information on how to use the Sun Java Wireless Toolkit for CLDC within
+an IDE, refer
+to the documentation for the specific IDE.
+</p>
+<p>
+The toolkit is fully compliant with the Unified Emulator
+Interface
+(UEI)
+specification, which means it will work with any IDE that uses UEI.</p>
+-->
+
+<p class="nav-link"><b>[<a href="#_top">Top</a>]</b></p>
+<a name="dst"></a>
+		<h2>6. Daylight Savings Time Changes</h2>
+		<p>The United States has planned a change to its Daylight Savings Time (DST) observance beginning in 2007. The Energy Policy Act of 2005 mandates that DST will start on the second Sunday in March and end on the first Sunday in November. In 2007, the start and stop dates will be March 11 and November 4, respectively. These dates are different from previous DST start and stop dates. In 2006, the dates were the first Sunday in April (April 2, 2006) and the last Sunday in October (October 29, 2006).</p>
+		<p>This release updates the DST rules in the virtual machine (VM) so that time changes are handled correctly.</p>
+		<p>For more information, see <a href="http://java.sun.com/developer/technicalArticles/Intl/USDST">U.S. Daylight Saving Time Changes in 2007</a>.</p>
+<p class="nav-link"><b>[<a href="#_top">Top</a>]</b></p>
+<a name="knownbugs"></a>
+		<h2><b>7. Known Bugs</b></h2>
+		<p>
+This is not an exhaustive list of known bugs. It includes those
+bugs
+that developers are most likely to encounter in using the toolkit.<b><b>
+</b></b></p>
+<table>
+  <tbody>
+				<tr>
+      <th class="sun-verylightblue" scope="col">Bug ID</th>
+					<th class="sun-verylightblue" scope="col">Description</th>
+				</tr>
+				<tr>
+					<td>6415233</td>
+					<td>The MMAPI MPEG player implementation is unstable.  When running the MMAPI TCK    <tt>api/javax_microedition/media/Player/*</tt> test packages sporadic errors occur. The errors cannot be reliably reproduced.</td>
+				</tr>
+				<tr>
+					<td>6511054</td>
+					<td>Bingo Bluetooth example throws null pointer exeception. Calling the  method <tt>DiscoveryAgent.searchServices(...)</tt> can throw a <tt>NullPointerException</tt> if  the Bluetooth device doesn't offer any services. </td>
+				</tr>
+				<tr valign="top">
+					<td>6532775</td>
+					<td>On Linux,  holding down a keyboard key does not generate repeat events. The test <tt>com.motorola.tck.test.api.javax.microedition.MIDP2.1.interactive.CanvasRepeatEventTest</tt> fails for this reason. The test passes if a key on the emulator is held down with the mouse.</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+      <hr class="pTableHr/"></td>
+				</tr>
+			</tbody>
+</table>
+<p class="nav-link"><b><b>[<a href="#_top">Top</a>]</b></b></p>
+<b><b><a name="questions"></a>
+</b></b>
+<h2><b><b>8. Frequently Asked Questions</b></b></h2>
+<p>
+For answers to common questions, see the <a href="faq.html">FAQ</a>.
+</p>
+<p>To comment on this release, send us <a
+ href="http://developers.sun.com/contact/feedback.jsp?&amp;category=j2me&amp;mailsubject=Sun%20Java%20Wireless%20Toolkit%20for%20CLDC">feedback</a>
+from developer.sun.com.</p>
+<p class="nav-link"><b><b>[<a href="#_top">Top</a>]</b></b></p>
+<hr class="pHr">
+<p class="copyright"><a href="copyright.html">Copyright &copy; 2008</a>
+Sun Microsystems, Inc.
+All rights reserved.
+Use is subject to the <a href="BinaryLicense.html">license terms</a>.<b><b>
+</b></b></p>
+</body>
+</html>

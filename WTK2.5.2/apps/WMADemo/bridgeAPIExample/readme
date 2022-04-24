@@ -1,0 +1,16 @@
+This directory contains the class WMABridgeAPIExample and scripts to build
+and run it.
+
+WMABridgAPIExample.java is a J2SE program that uses the Wireless Toolkit's 
+WMA Bridge API to send and receive SMS and CBS messages to and from emulators
+in the toolkit environment. You can use the WMABridgeAPIExample class as an 
+example for how to integrate your own J2SE programs into the Wireless Toolkit's
+messaging environment.
+
+Two scripts (buildExample and runBridgeAPIExample) are provided to build the
+program and run it.
+
+To run the demo you should ensure that the runBridgeAPIExample script  
+(.bat or .sh) properly sets the "kvem.home" property to the
+directory containing the Wireless Toolkit. By default the script points to
+the directory where the Wireless Toolkit was installed. 

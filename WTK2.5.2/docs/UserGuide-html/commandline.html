@@ -1,0 +1,1378 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>A P P E N D I X  B - Command Line Reference
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="demonstrations.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="internationalization.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626620_pgfId-37646"></A>A P P E N D I X  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">B</SPAN><A NAME="50626620_32725"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626620_pgfId-39505"></A><A NAME="50626620_42159"></A><A NAME="50626620_44876"></A>Command Line Reference
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-39509"></A>This appendix describes how to operate the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC from the <A NAME="50626620_marker-39510"></A>command line and details the steps required to build and run an application. It also describes the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC <A NAME="50626620_marker-39514"></A>certificate manager utility, called <KBD CLASS="Filename-Command">MEKeyTool</KBD>, and the MIDlet signing utility, called <KBD CLASS="Filename-Command">JadTool</KBD> (Java Application Descriptor Tool).
+</P><H2 CLASS="Head1A"><A NAME="50626620_pgfId-23282"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>B.1	Prerequisites</H2>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-24143"></A>Before building and running an application from the command line, verify that you have a version no earlier than 1.4.2 of the Java SE software development kit. Make sure the <KBD CLASS="Filename-Command">jar</KBD> command is in your path. To find the version of the development kit, run the <KBD CLASS="Filename-Command">jar</KBD> command and then run <KBD CLASS="Filename-Command">java -version</KBD> at the <A NAME="50626620_marker-24144"></A>command line. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-30751"></A>For more examples, see the files <KBD CLASS="Filename-Command">build.bat</KBD> and <KBD CLASS="Filename-Command">run.bat</KBD> in the <KBD CLASS="Filename-Command">bin</KBD> directories of the demonstration applications. You can find these files in:
+</P>
+<BR>
+<TABLE CLASS="Legend" BORDER="0" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626620_pgfId-40429"></A>Windows:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-40431"></A><I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;apps&#92;</KBD><I CLASS="Variable">demo</I><KBD CLASS="Filename-Command">&#92;bin</KBD>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626620_pgfId-40433"></A>Linux:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-40455"></A><I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">/apps/</KBD><I CLASS="Variable">demo</I><KBD CLASS="Filename-Command">/bin</KBD>
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-40422"></A><I CLASS="Variable">toolkit</I> is the installation directory of the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC and <I CLASS="Variable">demo</I> is the name of one of the demo applications.
+</P><H2 CLASS="Head1A"><A NAME="50626620_pgfId-26498"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>B.2	The Development Cycle</H2>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26504"></A>For a full description of developing MIDP applications, see <A HREF="developing.html#50626612_11459" CLASS="XRef">Chapter 2</A>. This section describes how to accomplish each of the steps in the development cycle from the command line.
+</P><H3 CLASS="Head2A"><A NAME="50626620_pgfId-26508"></A>B.2.1	Build</H3>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26585"></A><A NAME="50626620_marker-39834"></A>In the user interface, building a project is a single step. Behind the scenes, however, there are actually two steps. First, Java source files are compiled into Java class files. Next, the class files are <EM CLASS="Emphasis">preverified</EM>, <A NAME="50626620_marker-39835"></A>which means they are prepared for the CLDC KVM.
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26586"></A>Use the <KBD CLASS="Filename-Command">javac</KBD> compiler from the Java SE development kit to compile Java source files. You can use the existing Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC project directory structure. You'll need to use the <KBD CLASS="Filename-Command">-bootclasspath</KBD> option to tell the compiler to use the MIDP APIs, and you'll use the <KBD CLASS="Filename-Command">-d</KBD> option to tell the compiler where to put the compiled class files.
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26595"></A>The following example shows how you could compile a MIDP 2.0 application, taking source files from the <KBD CLASS="Filename-Command">src</KBD> directory and placing the class files in the <KBD CLASS="Filename-Command">tmpclasses</KBD> directory. Newlines have been added for clarity.
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-40462"></A><STRONG>Windows</STRONG>
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-26598"></A>javac  -bootclasspath ..&#92;..&#92;lib&#92;cldcapi10.jar;..&#92;..&#92;lib&#92;midpapi20.jar  -d tmpclasses  src&#92;*.java
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26587"></A><STRONG>Linux</STRONG>
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-40479"></A>javac  -bootclasspath ../../lib/cldcapi10.jar;../../lib/midpapi20.jar  -d tmpclasses  src/*.java
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-40473"></A>If you want to use the optional APIs that are supported by the toolkit, add their JAR files to the <KBD CLASS="Filename-Command">-bootclasspath</KBD> option.
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26636"></A>For more information on <KBD CLASS="Filename-Command">javac</KBD>, consult the Java SE documentation.
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26627"></A>The next step is to preverify the class files. In the <KBD CLASS="Filename-Command">bin</KBD> directory of the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC lives a handy utility called <KBD CLASS="Filename-Command">preverify</KBD>. The syntax for the preverify command is as follows:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-26559"></A>preverify [<I CLASS="Variable">options</I>] <I CLASS="Variable">files</I> | <I CLASS="Variable">directories</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-38810"></A>Some of the options are as follows:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-26566"></A><KBD CLASS="Filename-Command">-classpath</KBD><A NAME="50626620_marker-26565"></A> <I CLASS="Variable">classpath</I>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-26567"></A>Specify the directories or JAR files (given as a semicolon-delimited list) from which classes are loaded.
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-26568"></A><KBD CLASS="Filename-Command">-d </KBD><I CLASS="Variable">output-directory</I>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-26569"></A>Specify the target directory for the output classes. This directory must exist before preverifying. If this option is not used, the preverifier places the classes in a directory called <KBD CLASS="Filename-Command">output</KBD>. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26572"></A>Following the <A NAME="50626620_marker-26571"></A>example for compiling, use the following command to verify the compiled class files. As before, newlines are added for clarity.
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-40490"></A><STRONG>Windows</STRONG>
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-26662"></A>preverify  -classpath ..&#92;..&#92;lib&#92;cldcapi10.jar;..&#92;..&#92;lib&#92;midpapi20.jar  -d classes  tmpclasses
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-40495"></A><STRONG>Linux</STRONG>
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-40496"></A>preverify  -classpath ../../lib/cldcapi10.jar;../../lib/midpapi20.jar  -d classes  tmpclasses
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-28274"></A>As a result of this command, preverified class files are placed in the <KBD CLASS="Filename-Command">classes</KBD> directory. If your application uses WMA, MMAPI, or other versions of CLDC or MIDP, be sure to include the relevant <KBD CLASS="Filename-Command">.jar</KBD> files in the classpath.
+</P><H3 CLASS="Head2A"><A NAME="50626620_pgfId-28275"></A>B.2.2	Package</H3>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-28277"></A>To package a MIDlet suite, you must create a manifest file, an application JAR file, and finally, a MIDlet suite descriptor.
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26699"></A>Create a <A NAME="50626620_marker-26698"></A>manifest file containing the appropriate attributes as specified in the MIDP specification. You can use any text editor to create the manifest file. A manifest might have the following contents, for example:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-26701"></A>MIDlet-1: My MIDlet, MyMIDlet.png, MyMIDlet
+<A NAME="50626620_pgfId-26702"></A>MIDlet-Name: MyMIDlet
+<A NAME="50626620_pgfId-26703"></A>MIDlet-Vendor: My Organization
+<A NAME="50626620_pgfId-26704"></A>MIDlet-Version: 1.0
+<A NAME="50626620_pgfId-26705"></A>MicroEdition-Configuration: CLDC-1.0
+<A NAME="50626620_pgfId-26706"></A>MicroEdition-Profile: MIDP-2.0
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26708"></A>Create a JAR file containing the manifest as well as the suite's class and resource files. To create the JAR file, use the <KBD CLASS="Filename-Command">jar</KBD> tool that comes with the Java SE software development kit. The syntax is as follows:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-26710"></A>jar cfm <I CLASS="Variable">file</I> <I CLASS="Variable">manifest</I> -C <I CLASS="Variable">class-directory</I> . -C <I CLASS="Variable">resource-directory</I> .
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-38831"></A>The arguments are as follows:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26712"></A><I CLASS="Variable">file</I><STRONG CLASS="Lead-In2para"> - </STRONG>JAR file to create.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26714"></A><I CLASS="Variable">manifest</I><STRONG CLASS="Lead-In2para"> - </STRONG>Manifest file for the MIDlets.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26716"></A><I CLASS="Variable">class-directory</I><STRONG CLASS="Lead-In2para"> - </STRONG>Directory containing the application's classes.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26718"></A><I CLASS="Variable">resource-directory</I><KBD CLASS="Filename-Command"> - </KBD>Directory containing the application's resources.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26720"></A>For example, to <A NAME="50626620_marker-26721"></A>create a JAR file named <KBD CLASS="Filename-Command">MyApp.jar</KBD> whose classes are in the <KBD CLASS="Filename-Command">classes</KBD> directory and resources are in the <KBD CLASS="Filename-Command">res</KBD> directory, use the following command:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-26723"></A>jar cfm MyApp.jar MANIFEST.MF -C classes . -C res .
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26725"></A>Create a JAD file containing the appropriate attributes as specified in the MIDP specification. You can use any text editor to create the JAD file. This file must have the extension <KBD CLASS="Filename-Command">.jad</KBD>.
+</P>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626620_pgfId-26726"></A>You need to set the <KBD CLASS="Filename-Command">MIDlet-Jar-Size</KBD> entry to the size of the JAR file created in the previous step.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26728"></A>For example, a JAD file might have the following contents:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-26729"></A>MIDlet-Name: MyMIDlet
+<A NAME="50626620_pgfId-26730"></A>MIDlet-Vendor: My Organization
+<A NAME="50626620_pgfId-26731"></A>MIDlet-Version: 1.0
+<A NAME="50626620_pgfId-26732"></A>MIDlet-Jar-URL: MyApp.jar
+<A NAME="50626620_pgfId-26733"></A>MIDlet-Jar-Size: 24601
+</PRE><H3 CLASS="Head2A"><A NAME="50626620_pgfId-26532"></A>B.2.3	Run</H3>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26823"></A>You can run the emulator from the command line. The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC's <KBD CLASS="Filename-Command">bin</KBD> directory contains the command <KBD CLASS="Filename-Command">emulator</KBD>. The syntax for the <KBD CLASS="Filename-Command">emulator</KBD> command is as follows: 
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-26825"></A><A NAME="50626620_marker-26824"></A>emulator <I CLASS="Variable">options</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26828"></A>The general options are as follows:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26883"></A><KBD CLASS="Filename-Command">-help</KBD><A NAME="50626620_marker-26827"></A><STRONG CLASS="Lead-In2para"> - </STRONG>Display a list of valid options.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26831"></A><KBD CLASS="Filename-Command">-version</KBD><A NAME="50626620_marker-26830"></A><STRONG CLASS="Lead-In2para"> - </STRONG>Display version information about the emulator.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26833"></A><KBD CLASS="Filename-Command">-Xquery</KBD><STRONG CLASS="Lead-In2para"> - </STRONG>Print emulator skin information on the standard output stream and exit immediately. The information includes the skin name, screen size, and other capabilities.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-26946"></A>Options that pertain to running MIDlet suites are as follows:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26836"></A><KBD CLASS="Filename-Command">-Xdevice:</KBD><I CLASS="Variable">skin-name</I><STRONG CLASS="Lead-In2para"> - </STRONG>Run<A NAME="50626620_marker-26837"></A> an application on the emulator using the given skin name. For a list of skin names, see <A HREF="emulator.html#50626614_31079" CLASS="XRef">Section 4.1, Emulator Skins</A>.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26845"></A><KBD CLASS="Filename-Command">-Xdescriptor:</KBD><I CLASS="Variable">jad-file</I><STRONG CLASS="Lead-In2para"> - </STRONG>Run an application locally using the given JAD file.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26847"></A><KBD CLASS="Filename-Command">-classpath</KBD> <I CLASS="Variable">classpath</I><STRONG CLASS="Lead-In2para"> - </STRONG>Specify the classpath for libraries required to run the application. Use this option when running an application locally. 
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26849"></A><KBD CLASS="Filename-Command">-Dcom.sun.midp.io.http.proxy </KBD><STRONG CLASS="Lead-In2para">- </STRONG>Set the HTTP and HTTPS proxy servers at run time. For example:
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-26851"></A><KBD CLASS="Filename-Command">-Dcom.sun.midp.io.http.proxy=</KBD><I CLASS="Variable">proxy-host</I><KBD CLASS="Filename-Command">:</KBD><I CLASS="Variable">proxy-port</I>
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-40791"></A><KBD CLASS="Filename-Command">-Dcom.sun.midp.midlet.platformRequestCommand</KBD> - Specify the <A NAME="50626620_marker-40921"></A>browser to use when applications call a URL. For example: 
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-40829"></A><KBD CLASS="Filename-Command">-Dcom.sun.midp.midlet.platformRequestCommand=</KBD><I CLASS="Variable">browser</I>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-40853"></A>A sample call might look like:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-40854"></A><KBD CLASS="Filename-Command">emulator -Dcom.sun.midp.midlet.platformRequestCommand=firefox -Xjam:install=</KBD><I CLASS="Variable">URL-to-app-using-platformRequest-method</I>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-40887"></A>If you want to use the same <A NAME="50626620_marker-40922"></A>browser every time, you can add the following line to <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">/lib/system.config</KBD>:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-40896"></A><KBD CLASS="Filename-Command">com.sun.midp.midlet.platformRequestCommand:</KBD> <I CLASS="Variable">browser</I>
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-40819"></A><STRONG>Windows</STRONG>: In Windows, if this parameter is not specified, the default browser is used. 
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626620_pgfId-40818"></A><STRONG>Linux</STRONG>: For Linux, this parameter is required because Linux systems do not usually have a default browser. If it is missing, nothing happens when an application tries to open a URL.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26852"></A><KBD CLASS="Filename-Command">-Xjam:</KBD><I CLASS="Variable">command</I><KBD CLASS="Filename-Command">=</KBD><I CLASS="Variable">application</I><STRONG CLASS="Lead-In2para"> - </STRONG>Run an application remotely using the Application Management Software (AMS) to run using OTA provisioning. If no application is specified with the argument, the graphical AMS is run. The commands are as follows:
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-26854"></A><KBD CLASS="Filename-Command">install=</KBD><I CLASS="Variable">jad-file-url</I><KBD CLASS="Filename-Command"> | force | list | storageNames|</KBD>
+</P>
+<P CLASS="ParaIndent3"><A NAME="50626620_pgfId-26855"></A>Install the application with the specified JAD file onto a device. 
+</P>
+<P CLASS="ParaIndent3"><A NAME="50626620_pgfId-40806"></A>Also
+</P>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-26856"></A><KBD CLASS="Filename-Command">run=[</KBD><I CLASS="Variable">storage-name</I><KBD CLASS="Filename-Command"> | </KBD><I CLASS="Variable">storage-number</I><KBD CLASS="Filename-Command">] </KBD>
+</P>
+<P CLASS="ParaIndent3"><A NAME="50626620_pgfId-26857"></A>Run a previously installed application. The application is specified by its valid storage name or storage number.
+</P>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-26858"></A><KBD CLASS="Filename-Command">remove=[</KBD><I CLASS="Variable">storage-name</I><KBD CLASS="Filename-Command"> | </KBD><I CLASS="Variable">storage-number</I><KBD CLASS="Filename-Command"> | all] </KBD>
+</P>
+<P CLASS="ParaIndent3"><A NAME="50626620_pgfId-26859"></A>Remove a previously installed application. The application is specified by its valid storage name or storage number. Specifying <KBD CLASS="Filename-Command">all</KBD>, all previously installed applications are removed.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26860"></A><KBD CLASS="Filename-Command">transient=</KBD><I CLASS="Variable">jad-file-url</I><STRONG CLASS="Lead-In2para"> - </STRONG>Install, run, and remove the application with the specified JAD file. Specifying <KBD CLASS="Filename-Command">transient</KBD> causes the application to be installed and run and then removed three times.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H3 CLASS="Head2A"><A NAME="50626620_pgfId-26971"></A>B.2.4	Debugging</H3>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-27006"></A>You can use the following options with the emulator for debugging and tracing.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-41109"></A><KBD CLASS="Filename-Command">-Xverbose:</KBD><A NAME="50626620_marker-41106"></A><A NAME="50626620_marker-41107"></A><I CLASS="Variable">trace-options</I><STRONG CLASS="Lead-In2para"> - </STRONG>Display <A NAME="50626620_marker-41108"></A>trace output, as specified by a list of comma-separated options, as follows:
+</LI>
+<P CLASS="Linebreak">
+</P>
+<UL>
+<LI CLASS="Bullet2"><A NAME="50626620_pgfId-41111"></A><KBD CLASS="Filename-Command">gc</KBD> - Trace garbage collection
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet2"><A NAME="50626620_pgfId-40958"></A><KBD CLASS="Filename-Command">class</KBD> - Trace class loading
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet2"><A NAME="50626620_pgfId-40948"></A><KBD CLASS="Filename-Command">all</KBD> <STRONG CLASS="Lead-In2para">- </STRONG>Use all tracing options
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26984"></A><KBD CLASS="Filename-Command">-Xdebug</KBD><A NAME="50626620_marker-26983"></A><STRONG CLASS="Lead-In2para"> - </STRONG>Enable runtime <A NAME="50626620_marker-26985"></A>debugging. <A NAME="50626620_marker-39850"></A>The <KBD CLASS="Filename-Command">-Xrunjdwp</KBD> option must also be used.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-26988"></A><KBD CLASS="Filename-Command">-Xrunjdwp:</KBD><A NAME="50626620_marker-26987"></A><I CLASS="Variable">debug-settings</I><STRONG CLASS="Lead-In2para"> - </STRONG>Start a Java debug wire protocol session, as specified by a list of comma-separated debug settings. The <KBD CLASS="Filename-Command">-Xdebug</KBD> option must also be used. Valid debug settings include the following:
+</LI>
+<P CLASS="Linebreak">
+</P>
+<UL>
+<LI CLASS="Bullet2"><A NAME="50626620_pgfId-26990"></A><KBD CLASS="Filename-Command">transport=</KBD><I CLASS="Variable">transport-mechanism</I><STRONG CLASS="Lead-In2para"> - </STRONG>Transport mechanism used to communicate with the debugger. The only transport mechanism supported is <KBD CLASS="Filename-Command">dt_socket</KBD>.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet2"><A NAME="50626620_pgfId-26992"></A><KBD CLASS="Filename-Command">address=</KBD><I CLASS="Variable">host:port</I><STRONG CLASS="Lead-In2para"> - </STRONG>Transport address for the debugger connection. You can omit providing a <I CLASS="Variable">host</I>. If <I CLASS="Variable">host</I> is omitted, <I CLASS="Variable">localhost</I> is assumed to be the host machine.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet2"><A NAME="50626620_pgfId-26994"></A><KBD CLASS="Filename-Command">server=</KBD><I CLASS="Variable">{y|n}</I><STRONG CLASS="Lead-In2para"> - </STRONG>Starts the debug agent as a server. The debugger must connect to the port specified. The possible values are <KBD CLASS="Filename-Command">y</KBD> and <KBD CLASS="Filename-Command">n</KBD>. Currently, only <KBD CLASS="Filename-Command">y</KBD> is supported (the emulator must act as a server).
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+</UL><H2 CLASS="Head1A"><A NAME="50626620_pgfId-26518"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>B.3	Launching Toolkit GUI Components</H2>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-27303"></A>The components of the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC can all be launched from the command line. Each component is in the toolkit's <KBD CLASS="Filename-Command">bin</KBD> directory.
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaptionA"> <A NAME="50626620_pgfId-27306"> </A> TABLE B-1 	Toolkit Component Commands </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626620_pgfId-27310"></A>Command
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626620_pgfId-27312"></A>Description
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-27314"></A><KBD CLASS="Filename-Command">DefaultDevice</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-27316"></A>Displays a dialog that allows you to choose the default emulator skin
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-27318"></A><KBD CLASS="Filename-Command">ktoolbar</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-27320"></A>Launches the user interface.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-27322"></A><KBD CLASS="Filename-Command">prefs</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-27324"></A>Launches the toolkit preferences
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-27326"></A><KBD CLASS="Filename-Command">utils</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-27328"></A>Launches the toolkit utilities window
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR><H2 CLASS="Head1A"><A NAME="50626620_pgfId-27329"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>B.4	Setting Emulator Preferences</H2>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-39033"></A>You can change the emulator preferences from the command line by using the <KBD CLASS="Filename-Command">-Xprefs</KBD> option for the <KBD CLASS="Filename-Command">emulator</KBD> command. The format is as follows:
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-27345"></A><KBD CLASS="Filename-Command">-Xprefs:</KBD><I CLASS="Variable">filename</I>
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-27346"></A>Provide a <I CLASS="Variable">filename </I>that is the full path name of a property file whose values override the values in the preferences dialog box. The property file can contain the properties described in the following table.
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaptionA-Wide"> <A NAME="50626620_pgfId-38233"> </A> TABLE B-2 	Emulator Preferences <A NAME="50626620_marker-39852"> </A>  Properties List  <EM CLASS="Emphasis">   </EM> </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626620_pgfId-38257"></A>Property Name
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626620_pgfId-38259"></A>Property Description and Legal Values
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38435"></A><KBD CLASS="Filename-Command">http.version</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38437"></A>Network Configuration &gt; HTTP Version
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38438"></A>Value: HTTP/1.1 | HTTP/1.0
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38430"></A><KBD CLASS="Filename-Command">http.proxyHost</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38432"></A>Network Configuration &gt; HTTP Address
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38433"></A>Value: hostname
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38425"></A><KBD CLASS="Filename-Command">http.proxyPort</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38427"></A>Network Configuration &gt; HTTP Port
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38428"></A>Value: integer
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38420"></A><KBD CLASS="Filename-Command">https.proxyHost</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38422"></A>Network Configuration &gt; HTTPS Address
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38423"></A>Value: hostname
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38415"></A><KBD CLASS="Filename-Command">https.proxyPort</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38417"></A>Network Configuration &gt; HTTPS Port
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38418"></A>Value: integer
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38410"></A><KBD CLASS="Filename-Command">kvem.memory.monitor.enable</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38412"></A>Monitor &gt; Enable memory monitor
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38413"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38405"></A><KBD CLASS="Filename-Command">kvem.netmon.comm.enable</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38407"></A>Monitor &gt; Enable Comm monitoring
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38408"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38400"></A><KBD CLASS="Filename-Command">kvem.netmon.datagram.enable</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38402"></A>Monitor &gt; Enable Datagram monitoring
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38403"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38395"></A><KBD CLASS="Filename-Command">kvem.netmon.http.enable</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38397"></A>Monitor &gt; Enable HTTP monitoring
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38398"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38390"></A><KBD CLASS="Filename-Command">kvem.netmon.https.enable</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38392"></A>Monitor &gt; Enable HTTPS monitoring
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38393"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38385"></A><KBD CLASS="Filename-Command">kvem.netmon.socket.enable</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38387"></A>Monitor &gt; Enable Socket monitoring
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38388"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38380"></A><KBD CLASS="Filename-Command">kvem.netmon.ssl.enable</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38382"></A>Monitor &gt; Enable SSL monitoring
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38383"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38375"></A><KBD CLASS="Filename-Command">kvem.profiler.enable</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38377"></A>Monitor &gt; Enable profiling
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38378"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38370"></A><KBD CLASS="Filename-Command">netspeed.bitpersecond</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38372"></A>Performance &gt; bits/sec combo box
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38373"></A>Value: integer
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38365"></A><KBD CLASS="Filename-Command">netspeed.enableSpeedEmulation</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38367"></A>Performance &gt; Enable network throughput emulation
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38368"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38360"></A><KBD CLASS="Filename-Command">screen.graphicsLatency</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38362"></A>Performance &gt; Graphics primitives latency
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38363"></A>Value: integer
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38355"></A><KBD CLASS="Filename-Command">screen.refresh.mode</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38357"></A>Performance &gt; Display refresh (radio button)
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38358"></A> Value: default | immediate | periodic
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38350"></A><KBD CLASS="Filename-Command">screen.refresh.rate</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38352"></A>Performance &gt; Display refresh (slider)
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38353"></A>Value: integer
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38345"></A><KBD CLASS="Filename-Command">vmspeed.bytecodespermilli</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38347"></A>Performance &gt; Enable VM speed emulation (check box)
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38348"></A>Value: integer
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38340"></A><KBD CLASS="Filename-Command">vmspeed.enableEmulation</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38342"></A>Performance &gt; Enable VM speed emulation (slider) 
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38343"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38335"></A><KBD CLASS="Filename-Command">storage.root</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38337"></A>Storage &gt; Storage root directory
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38338"></A>Value: String (relative path to <I CLASS="Variable">appdb</I>)
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38330"></A><KBD CLASS="Filename-Command">storage.size</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38332"></A>Storage &gt; Storage size
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38333"></A>Value: integer
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38325"></A><KBD CLASS="Filename-Command">mm.control.capture</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38327"></A>MMedia &gt; Audio Capture
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38328"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38320"></A><KBD CLASS="Filename-Command">mm.control.midi</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38322"></A>MMedia &gt; MIDI tones
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38323"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38315"></A><KBD CLASS="Filename-Command">mm.control.mixing</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38317"></A>MMedia &gt; Audio Mixing
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38318"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38310"></A><KBD CLASS="Filename-Command">mm.control.record</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38312"></A>MMedia &gt; Audio Record
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38313"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38306"></A><KBD CLASS="Filename-Command">mm.control.volume</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38308"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38301"></A><KBD CLASS="Filename-Command">mm.format.midi</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38303"></A>MMedia &gt; MIDI format
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38304"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38296"></A><KBD CLASS="Filename-Command">mm.format.video</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38298"></A>MMedia &gt; Video format
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38299"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38291"></A><KBD CLASS="Filename-Command">mm.format.wav</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38293"></A>MMedia &gt; WAV Audio format
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38294"></A>Value: true | false
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38286"></A><KBD CLASS="Filename-Command">wma.client.phoneNumber</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38288"></A>WMA &gt; Phone Number of Next Emulator
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38289"></A>Value: integer
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38281"></A><KBD CLASS="Filename-Command">wma.server.firstAssignedPhoneNumber</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38283"></A>WMA &gt; First Assigned Phone Number
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38284"></A>Value: integer
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38276"></A><KBD CLASS="Filename-Command">wma.server.percentFragmentLoss</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38278"></A>WMA &gt; % Random Message Fragment Loss
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38279"></A>Value: integer
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38271"></A><KBD CLASS="Filename-Command">wma.server.deliveryDelayMS</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-38273"></A>WMA &gt; Message Fragment Delivery Delay (ms)
+</P>
+<P CLASS="TableText"><A NAME="50626620_pgfId-38274"></A>Value: integer
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR><H2 CLASS="Head1A"><A NAME="50626620_pgfId-39047"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>B.5	Using Security Features</H2>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-27560"></A>The full spectrum of the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC's security features are also available from the command line. You can adjust the emulator's default protection domain, sign MIDlet suites, and manage certificates.
+</P><H3 CLASS="Head2A"><A NAME="50626620_pgfId-27564"></A>B.5.1	Changing the Emulator's Default Protection Domain<A NAME="50626620_27359"></A></H3>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-27595"></A><A NAME="50626620_marker-39853"></A>To adjust the emulator's default protection domain, use the following option with the <KBD CLASS="Filename-Command">emulator</KBD> command:
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-27579"></A><KBD CLASS="Filename-Command">-Xdomain </KBD><I CLASS="Variable">domain-type</I>
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-27580"></A>Assigns a security domain to the MIDlet suite. Domain types include <KBD CLASS="Filename-Command">untrusted</KBD>, <KBD CLASS="Filename-Command">trusted</KBD>, <KBD CLASS="Filename-Command">minimum</KBD>, and <KBD CLASS="Filename-Command">maximum</KBD>.
+</P><H3 CLASS="Head2A"><A NAME="50626620_pgfId-27539"></A>B.5.2	Signing MIDlet Suites<A NAME="50626620_marker-39854"></A></H3>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-27676"></A><KBD CLASS="Filename-Command">JadTool</KBD><A NAME="50626620_marker-39855"></A> is a command-line interface for signing MIDlet suites using public key cryptography according to the MIDP 2.0 specification. Signing a MIDlet suite is the process of adding the signer certificates and the digital signature of the JAR file to a JAD file. <KBD CLASS="Filename-Command">JadTool</KBD> is also capable of signing payment update (JPP) files.
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-27622"></A><KBD CLASS="Filename-Command">JadTool</KBD> only uses certificates and keys from Java SE platform keystores. Java SE software provides <KBD CLASS="Filename-Command">keytool</KBD>, the command-line tool to manage Java SE platform keystores.
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-27625"></A><KBD CLASS="Filename-Command">JadTool</KBD> is packaged in a JAR file. To run it, open a command prompt, change the current directory to <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;bin</KBD>, and enter the following command:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-27626"></A>java -jar JadTool.jar <I CLASS="Variable">command</I>
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-39055"></A>The commands are as follows:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-39056"></A><KBD CLASS="Filename-Command">-help</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-39078"></A>Prints the usage instructions for <KBD CLASS="Filename-Command">JADTool</KBD>.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-27630"></A><KBD CLASS="Filename-Command">-addcert -alias</KBD> <I CLASS="Variable">alias</I> <KBD CLASS="Filename-Command">[-keystore</KBD> <I CLASS="Variable">keystore</I><KBD CLASS="Filename-Command">]</KBD> <KBD CLASS="Filename-Command">[-storepass</KBD> <I CLASS="Variable">password</I><KBD CLASS="Filename-Command">]
+<BR>[-certnum</KBD> <I CLASS="Variable">number</I><KBD CLASS="Filename-Command">]</KBD> <KBD CLASS="Filename-Command">[-chainnum</KBD> <I CLASS="Variable">number</I><KBD CLASS="Filename-Command">] [-encoding</KBD> <I CLASS="Variable">encoding</I><KBD CLASS="Filename-Command">]</KBD> <KBD CLASS="Filename-Command">-inputjad | inputjpp </KBD><I CLASS="Variable">input-file</I> <KBD CLASS="Filename-Command">-outputjad | outputjpp </KBD><I CLASS="Variable">output-file</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-38031"></A>Adds the certificate of the key pair from the given keystore to the JAD file or JPP file.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-38045"></A><KBD CLASS="Filename-Command">-addjarsig -jarfile</KBD> <I CLASS="Variable">jarfile</I> <KBD CLASS="Filename-Command">-keystore</KBD> <I CLASS="Variable">keystore</I> <KBD CLASS="Filename-Command">-alias</KBD> <I CLASS="Variable">alias</I> <KBD CLASS="Filename-Command">-storepass</KBD> <I CLASS="Variable">password </I><KBD CLASS="Filename-Command">-keypass</KBD> <I CLASS="Variable">password</I> <KBD CLASS="Filename-Command">-inputjad</KBD> <I CLASS="Variable">input-jadfile</I> <KBD CLASS="Filename-Command">-outputjad</KBD> <I CLASS="Variable">output-jadfile</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-27633"></A>Adds the digital signature of the given JAR file to the specified JAD file. The default value for <KBD CLASS="Filename-Command">-jarfile</KBD> is the <KBD CLASS="Filename-Command">MIDlet-Jar-URL</KBD> property in the JAD file.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-27634"></A><KBD CLASS="Filename-Command">-showcert</KBD> <KBD CLASS="Filename-Command">[([-certnum</KBD> <I CLASS="Variable">number</I><KBD CLASS="Filename-Command">]</KBD> <KBD CLASS="Filename-Command">[-chainnum</KBD> <I CLASS="Variable">number</I><KBD CLASS="Filename-Command">])</KBD> <KBD CLASS="Filename-Command">|-all</KBD> <KBD CLASS="Filename-Command">[-encoding</KBD> <I CLASS="Variable">encoding</I><KBD CLASS="Filename-Command">]</KBD> <KBD CLASS="Filename-Command">-inputjad</KBD> <I CLASS="Variable">filename</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-27635"></A>Displays the list of certificates in the given JAD file. 
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-38064"></A><KBD CLASS="Filename-Command">-addjppsig</KBD> <KBD CLASS="Filename-Command">-alias</KBD> <I CLASS="Variable">alias</I> <KBD CLASS="Filename-Command">-keypass</KBD> <I CLASS="Variable">password</I> [<KBD CLASS="Filename-Command">-keystore</KBD> <I CLASS="Variable">keystore</I>] [<KBD CLASS="Filename-Command">-storepass</KBD> <I CLASS="Variable">password</I>] [<KBD CLASS="Filename-Command">-encoding</KBD> <I CLASS="Variable">encoding</I>] <KBD CLASS="Filename-Command">-inputjpp</KBD> <I CLASS="Variable">filename</I> <KBD CLASS="Filename-Command">-outputjpp</KBD> <I CLASS="Variable">filename</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-38193"></A>Adds a digital signature of the input JPP file to the specified output JPP file.
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-39144"></A>The default value are as follows:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-27637"></A><KBD CLASS="Filename-Command">-encoding</KBD> - <KBD CLASS="Filename-Command">UTF-8</KBD> 
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-27638"></A><KBD CLASS="Filename-Command">-jarfile</KBD> - <KBD CLASS="Filename-Command">MIDlet-Jar-URL</KBD> property in the JAD file
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-27639"></A><KBD CLASS="Filename-Command">-keystore</KBD> - <KBD CLASS="Filename-Command">%HOMEPATH%&#92;.keystore</KBD> 
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-27640"></A><KBD CLASS="Filename-Command">-certnum</KBD> - <KBD CLASS="Filename-Command">1</KBD> 
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-27641"></A><KBD CLASS="Filename-Command">-chainnum</KBD> - <KBD CLASS="Filename-Command">1</KBD> 
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H3 CLASS="Head2A"><A NAME="50626620_pgfId-22416"></A>B.5.3	Managing Certificates</H3>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-39154"></A><KBD CLASS="Filename-Command">MEKeyTool</KBD><A NAME="50626620_marker-39856"></A> manages the public keys of <A NAME="50626620_marker-22614"></A>certificate authorities (CAs), making it functionally similar to the <KBD CLASS="Filename-Command">keytool</KBD><A NAME="50626620_marker-22615"></A> utility that comes with the Java SE SDK. The keys can be used to facilitate secure HTTP communication over SSL (HTTPS).
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-22417"></A>Before using <KBD CLASS="Filename-Command">MEKeyTool</KBD>, you must first have access to a <A NAME="50626620_marker-22617"></A>Java Cryptography Extension keystore<A NAME="50626620_marker-39878"></A>. You can create one using the Java SE <KBD CLASS="Filename-Command">keytool</KBD> utility. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-40525"></A><STRONG>Windows</STRONG>
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-40529"></A><KBD CLASS="URL"><A HREF="http://java.sun.com/javase/6/docs/technotes/tools/windows/keytool.html" CLASS="URL"><A HREF="http://java.sun.com/javase/6/docs/technotes/tools/windows/keytool.html" CLASS="URL">http://java.sun.com/javase/6/docs/technotes/tools
+<BR>/windows/keytool.html</A></A></KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-40526"></A><STRONG>Linux</STRONG>
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-40528"></A><KBD CLASS="URL"><A HREF="http://java.sun.com/javase/6/docs/technotes/tools/solaris/keytool.html" CLASS="URL"><A HREF="http://java.sun.com/javase/6/docs/technotes/tools/solaris/keytool.html" CLASS="URL">http://java.sun.com/javase/6/docs/technotes/tools
+<BR>/solaris/keytool.html</A></A></KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-39174"></A>To run <KBD CLASS="Filename-Command">MEKeyTool</KBD>, open a command prompt, change the current directory to <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;bin</KBD>, and enter the following command:
+</P>
+<BR>
+<TABLE CLASS="Legend" BORDER="0" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626620_pgfId-40558"></A>Windows:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-40560"></A><I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;bin&#92;mekeytool.exe -</KBD><I CLASS="Variable">command</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626620_pgfId-40562"></A>Linux:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-40581"></A><I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">/bin/mekeytool -</KBD><I CLASS="Variable">command</I>
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-39177"></A>The command keywords follow. Note that while <KBD CLASS="Filename-Command">MEKeyTool</KBD> runs from the installation directory, the default keys and keys you create will reside in your personal directory, <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb</KBD>.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-22758"></A><KBD CLASS="Filename-Command">-help</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-22759"></A>Prints the usage instructions for MEKeyTool.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-22769"></A><KBD CLASS="Filename-Command">-import -alias </KBD><A NAME="50626620_marker-22768"></A><I CLASS="Variable">alias</I><KBD CLASS="Filename-Command"> [-keystore </KBD><I CLASS="Variable">JCEkeystore</I><KBD CLASS="Filename-Command">] [-storepass </KBD><I CLASS="Variable">storepass</I><KBD CLASS="Filename-Command">] 
+<BR>-domain </KBD><I CLASS="Variable">domain-name</I>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-22770"></A>Imports a public key into the ME keystore from the given JCE keystore using the given Java Cryptography Extension keystore password. The default ME keystore is <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;_main.mks</KBD> and the default Java Cryptography Extension keystore is <I CLASS="Variable">user.home</I><KBD CLASS="Filename-Command">&#92;.keystore</KBD>.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-22219"></A><KBD CLASS="Filename-Command">-list</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-22222"></A>Lists the keys in the ME keystore, including the owner and validity period for each. The ME keystore is <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;_main.mks</KBD>.
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626620_pgfId-31724"></A><KBD CLASS="Filename-Command">-delete (-owner </KBD><I CLASS="Variable">owner</I><KBD CLASS="Filename-Command"> | -number </KBD><I CLASS="Variable">key-number</I><KBD CLASS="Filename-Command">)</KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="ParaIndent2"><A NAME="50626620_pgfId-31725"></A>Deletes a key from the given ME keystore with the given owner. The ME keystore is <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;_main.mks</KBD>.
+</P>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626620_pgfId-22822"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC contains an ME keystore called <KBD CLASS="Filename-Command">_main.mks,</KBD> which is located in the <KBD CLASS="Filename-Command">appdb</KBD> subdirectory. This keystore includes all the certificates that exist in the default Java SE platform keystore, which comes with the Java SE SDK installation.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR><H2 CLASS="Head1A"><A NAME="50626620_pgfId-37687"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>B.6	Using the Stub Generator</H2>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-37689"></A>Mobile clients can use the Stub Generator to access web services. The <KBD CLASS="Filename-Command">wscompile</KBD><A NAME="50626620_marker-37688"></A> tool generates stubs, ties, serializers, and WSDL files used in Java API for XML (JAX) RPC clients and services. The tool reads a configuration file, which specifies either a WSDL file, a model file, or a compiled service endpoint interface. The syntax for the stub generator <A NAME="50626620_marker-37690"></A>command is as follows:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-37692"></A>wscompile [<I CLASS="Variable">options</I>] <I CLASS="Variable">configuration-files</I> 
+</PRE><H3 CLASS="Head2A"><A NAME="50626620_pgfId-37693"></A>B.6.1	Options</H3>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaptionA"> <A NAME="50626620_pgfId-37697"> </A> TABLE B-3 	Options for the  <KBD CLASS="Filename-Command"> wscompile </KBD>  Command  <EM CLASS="Emphasis">   </EM> </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626620_pgfId-37701"></A>Option
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626620_pgfId-37703"></A>Description
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37705"></A><KBD CLASS="Filename-Command">-d</KBD><EM CLASS="Emphasis"> output directory </EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37707"></A>Specifies where to place generated output files
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37709"></A><KBD CLASS="Filename-Command">-f:</KBD><EM CLASS="Emphasis">features</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37711"></A>Enables the given features
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37713"></A><KBD CLASS="Filename-Command">-features:</KBD><EM CLASS="Emphasis">features</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37715"></A>Same as<KBD CLASS="Filename-Command"> -f:</KBD><EM CLASS="Emphasis">features</EM>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37717"></A><KBD CLASS="Filename-Command">-g</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37719"></A>Generates debugging info
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37721"></A><KBD CLASS="Filename-Command">-gen</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37723"></A>Same as <KBD CLASS="Filename-Command">-gen:client</KBD>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37725"></A><KBD CLASS="Filename-Command">-gen:client</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37727"></A>Generates client artifacts (stubs, etc.)
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37729"></A><KBD CLASS="Filename-Command">-httpproxy:</KBD><EM CLASS="Emphasis">host:port</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37731"></A>Specifies a HTTP proxy server (port defaults to 8080)
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37733"></A><KBD CLASS="Filename-Command">-import</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37735"></A>Generates interfaces and value types only
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37737"></A><KBD CLASS="Filename-Command">-model </KBD><EM CLASS="Emphasis">file</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37739"></A>Writes the internal model to the given file
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37741"></A><KBD CLASS="Filename-Command">-O</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37743"></A>Optimizes generated code
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37745"></A><KBD CLASS="Filename-Command">-s </KBD><EM CLASS="Emphasis">directory</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37747"></A>Specifies where to place generated source files
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37749"></A><KBD CLASS="Filename-Command">-verbose</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37751"></A>Outputs messages about what the compiler is doing
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37753"></A><KBD CLASS="Filename-Command">-version</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37755"></A>Prints version information
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37757"></A><KBD CLASS="Filename-Command">-cldc1.0</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37759"></A>Sets the CLDC version to 1.0 (default). Float and double become String.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37761"></A><KBD CLASS="Filename-Command">-cldc1.1</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37763"></A>Sets the CLDC version to 1.1 (float and double are OK)
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37765"></A><KBD CLASS="Filename-Command">-cldc1.0info</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37767"></A>Shows all CLDC 1.0 information and warning messages.
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<BR>
+<HR NOSHADE SIZE=1>
+<TABLE CLASS="TipNote" DIR="LTR" WIDTH="100%" SUMMARY="TipNote">
+<COLGROUP SPAN="1" WIDTH="100%">
+<TR ALIGN="left" VALIGN="top">
+<TD ROWSPAN="1" COLSPAN="1" ABBR="TipNoteText"><B CLASS="TipNote">Note - </B><A NAME="50626620_pgfId-37769"></A>Exactly one <KBD CLASS="Filename-Command">-gen</KBD> option must be specified. The <KBD CLASS="Filename-Command">-f</KBD> option requires a comma-separated list of features.
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-39229"></A><A HREF="commandline.html#50626620_62464" CLASS="XRef">TABLE B-4</A> lists the features (delimited by commas) that can follow the <KBD CLASS="Filename-Command">-f</KBD> option. The <KBD CLASS="Filename-Command">wscompile</KBD> tool reads a WSDL file, compiled service endpoint interface (SEI), or model file as input. The Type of File column indicates which of these files can be used with a particular feature.
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaptionA"> <A NAME="50626620_pgfId-37778"> </A> TABLE B-4 	Command Supported Features ( <KBD CLASS="Filename-Command"> -f </KBD> ) for  <KBD CLASS="Filename-Command"> wscompile </KBD> <A NAME="50626620_62464"> </A>   </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626620_pgfId-37784"></A>Option
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626620_pgfId-37786"></A>Description
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626620_pgfId-37788"></A>Type of File
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37790"></A><KBD CLASS="Filename-Command">explicitcontext</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37792"></A>Turns on explicit service context mapping
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37794"></A>WSDL
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37796"></A><KBD CLASS="Filename-Command">nodatabinding</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37798"></A>Turns off data binding for literal encoding
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37800"></A>WSDL
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37802"></A><KBD CLASS="Filename-Command">noencodedtypes</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37804"></A>Turns off encoding type information
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37806"></A>WSDL, SEI, model 
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37808"></A><KBD CLASS="Filename-Command">nomultirefs</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37810"></A>Turns off support for multiple references
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37812"></A>WSDL, SEI, model 
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37814"></A><KBD CLASS="Filename-Command">novalidation</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37816"></A>Turns off full validation of imported WSDL documents
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37818"></A>WSDL
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37820"></A><KBD CLASS="Filename-Command">searchschema</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37822"></A>Searches schema aggressively for subtypes
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37824"></A>WSDL 
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37826"></A><KBD CLASS="Filename-Command">serializeinterfaces</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37828"></A>Turns on direct serialization of interface types
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37830"></A>WSDL, SEI, model 
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37832"></A><KBD CLASS="Filename-Command">wsi</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37834"></A>Enables WSI-Basic Profile features (default)
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37836"></A>&nbsp;
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37838"></A><KBD CLASS="Filename-Command">resolveidref</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37840"></A>Resolves <KBD CLASS="Filename-Command">xsd:IDREF</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37842"></A>&nbsp;
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37844"></A><KBD CLASS="Filename-Command">nounwrap</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37846"></A>No unwrap.
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626620_pgfId-37848"></A>&nbsp;
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626620_pgfId-37849"></A><STRONG>Example</STRONG>
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626620_pgfId-37850"></A>wscompile -gen -d generated config.xml
+<A NAME="50626620_pgfId-23150"></A>wscompile -gen -f:nounwrap -O -cldc1.1 -d generated config.xml 
+</PRE>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="demonstrations.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="internationalization.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

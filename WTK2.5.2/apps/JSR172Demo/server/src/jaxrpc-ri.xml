@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webServices
+    xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/dd"
+    version="1.0"
+    targetNamespaceBase="http://serverscript.org/wsdl"
+    typeNamespaceBase="http://serverscript.org/types"
+    urlPatternBase="/ws">
+
+    <endpoint
+        name="serverscript"
+        displayName="ServerScript Service"
+        description="Server controllable midlet" 
+	wsdl="/WEB-INF/classes/serverscript.wsdl"
+	model="/WEB-INF/model.gz"
+        interface="serverscript.Interface"  
+        implementation="serverscript.Implementation"/> 
+ 
+    <endpointMapping
+        endpointName="serverscript"
+        urlPattern="/serverscript"/>
+
+</webServices>

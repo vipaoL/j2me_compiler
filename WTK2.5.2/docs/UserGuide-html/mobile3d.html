@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  9 - Working With Mobile Graphics
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="mmapi.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="pdap.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626621_pgfId-27064"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">9</SPAN><A NAME="50626621_32725"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626621_pgfId-24705"></A><A NAME="50626621_32463"></A>Working With <A NAME="50626621_marker-25204"></A>Mobile Graphics
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-24706"></A>This chapter provides a brief overview of working with graphics content. The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC offers three APIs that provide comprehensive capabilities for interactive 2D and 3D graphics:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626621_pgfId-28161"></A>The Mobile 3D Graphics API for J2ME, JSR 184, provides 3D graphics capabilities with a low-level API and a high-level scene graph API. This chapter provides a brief overview and general guidelines for working with JSR 184.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626621_pgfId-28145"></A>The Scalable 2D Vector Graphics API for J2ME, JSR 226, supports rendering sophisticated and interactive 2D content.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626621_pgfId-27729"></A>Java Bindings for OpenGL&#174; ES, JSR 239, provides a Java language interface to the open standard OpenGL&#174; ES graphics API.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H2 CLASS="Head1"><A NAME="50626621_pgfId-27193"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>9.1	Using <A NAME="50626621_marker-27150"></A>the Mobile 3D Graphics API</H2>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-27775"></A><A NAME="50626621_marker-28277"></A>JSR 184 is a specification that defines the <A NAME="50626621_marker-28290"></A>Mobile 3D Graphics (<A NAME="50626621_marker-28289"></A>M3G) API for the J2ME. This API provides 3D functionality in a compact package that's appropriate for CLDC/MIDP devices. The API provides two methods for displaying 3D graphics content. The <EM CLASS="Emphasis">immediate mode</EM> API makes it possible for applications to directly create and manipulate 3D elements. Layered on top of this is a <EM CLASS="Emphasis">scene graph</EM> API, also called <EM CLASS="Emphasis">retained mode</EM>, that makes it possible to load and display entire 3D scenes that are designed ahead of time. Applications are free to use whichever approach is most appropriate or to use a combination of the retained mode and immediate mode APIs. The JSR 184 specification also defines a file format (<KBD CLASS="Filename-Command">.m3g</KBD>) for scene graphs.
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-24709"></A>For more information, consult the JSR 184 specification at
+<BR><KBD CLASS="URL"><A HREF="http://jcp.org/en/jsr/detail?id=184" CLASS="URL"><A HREF="http://jcp.org/en/jsr/detail?id=184" CLASS="URL">http://jcp.org/en/jsr/detail?id=184</A></A>.</KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-24712"></A>JSR 184 provides a standard API for CLDC/MIDP devices, enabling a new generation of 3D applications. The immediate mode API, in turn, is compatible with OpenGL ES, a standard lightweight API for 3D graphics. See <KBD CLASS="URL"><A HREF="http://khronos.org/" CLASS="URL"><A HREF="http://khronos.org/" CLASS="URL">http://khronos.org/</A></A> for more information on OpenGL ES.</KBD>
+</P><H3 CLASS="Head2"><A NAME="50626621_pgfId-24714"></A>9.1.1	Immediate Mode</H3>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-24715"></A>Immediate mode is appropriate for applications that generate 3D graphics content algorithmically, like scientific visualizations or statistical graphs. The application creates 3D objects and manipulates them directly.
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-24716"></A>For an example of immediate mode, see the <KBD CLASS="Filename-Command">Life3D</KBD> MIDlet in the <KBD CLASS="Filename-Command">Demo3D</KBD> example application.
+</P><H3 CLASS="Head2"><A NAME="50626621_pgfId-24717"></A>9.1.2	Retained Mode</H3>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-24718"></A>Most applications, particularly games, use the retained mode or scene graph API. In this approach, a graphic designer or artist uses 3D modeling software to create a scene graph. The scene graph is saved in the JSR 184 file format. The scene graph file is bundled with the application. At runtime, the application uses the scene graph API to load and display the file.
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-24719"></A>Applications can manipulate parts of a loaded scene graph to animate characters or create other effects. The basic strategy is to do as much work as possible in the modeling software. At runtime, the application can grab and manipulate parts of the scene graph, which can also include paths for animation or other effects.
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-27095"></A>For an example of retained mode, see the <KBD CLASS="Filename-Command">retainedmode</KBD> MIDlet in the <KBD CLASS="Filename-Command">Demo3D</KBD> example application.
+</P><H3 CLASS="Head2"><A NAME="50626621_pgfId-27096"></A>9.1.3	Trading Quality for Speed</H3>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-27097"></A>One of the challenges of MIDP development is the constrained environment of typical devices. Compared to desktop computers, MIDP devices have slow processors and little memory. These challenges extend into the arena of 3D graphics. To accommodate a wide variety of implementations, the JSR 184 specification provides various mechanisms to make the display of a 3D scene as efficient as possible.
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-24723"></A>One approach is <EM CLASS="Emphasis">scoping</EM>, a technique where you tell the 3D graphics implementation when objects are not going to interact with each other. For example, if you defined a scene graph for a house, you could use scoping to specify that the light in the basement doesn't affect the appearance of the bedroom on the second floor. Scoping makes the implementation's job easier by reducing the number of calculations required to show a scene.
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-27116"></A>In general, however, the best way to improve the rendering speed of 3D scenes is to make some compromises in quality. The Mobile 3D Graphics API includes <EM CLASS="Emphasis">rendering hints</EM> so that applications can suggest how the implementation can compromise quality to improve rendering speed.
+</P><H3 CLASS="Head2"><A NAME="50626621_pgfId-27117"></A>9.1.4	Creating Mobile 3D Graphics Content</H3>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-27118"></A>Most mobile 3D applications use scene graphs in resource files to describe objects, scenes, and characters. Usually it is not programmers but graphic designers or artists who create the scene graphs, using standard 3D modeling tools.
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-24727"></A>Several vendors offer tools for authoring content and converting files to the JSR 184 format. Superscape (<KBD CLASS="URL"><A HREF="http://superscape.com/" CLASS="URL"><A HREF="http://superscape.com/" CLASS="URL">http://superscape.com/</A></A>) is one such vendor.</KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-24729"></A>Because it is relatively difficult to create and manipulate 3D graphics content in an application using the immediate mode API, most applications rely as much as possible on a scene graph file. By putting as much as possible into the scene graph file at design time, the application's job at runtime is considerably simplified.
+</P><H2 CLASS="Head1"><A NAME="50626621_pgfId-27891"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>9.2	Rendering Scalable Vector Graphics Content</H2>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-27895"></A>Scalable Vector Graphics (<A NAME="50626621_marker-28288"></A>SVG) is a standard defined by the World Wide Web Consortium. It is an XML grammar for describing rich, interactive 2D graphics.<A NAME="50626621_marker-28280"></A>
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-28137"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator support <A NAME="50626621_marker-28278"></A>JSR 226, the Scalable 2D Vector Graphics API for J2ME. JSR 226 is a Java ME API to load, manipulate, render and play SVG content. SVG Tiny is an compact yet powerful XML format for describing rich, interactive, animated 2D content.
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-27896"></A>While it is possible to produce SVG content with a text editor, most people prefer to use an authoring tool. Here are three possibilities:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626621_pgfId-27897"></A><STRONG CLASS="Lead-In2para">BeatWare Mobile Designer - </STRONG><KBD CLASS="URL"><A HREF="http://www.beatware.com/products/md_golive.html" CLASS="URL"><A HREF="http://www.beatware.com/products/md_golive.html" CLASS="URL">http://www.beatware.com/products/md_golive.html</A></A></KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626621_pgfId-27900"></A><STRONG CLASS="Lead-In2para">Ikivo Animator - </STRONG><KBD CLASS="URL"><A HREF="http://www.ikivo.com/animator/" CLASS="URL"><A HREF="http://www.ikivo.com/animator/" CLASS="URL">http://www.ikivo.com/animator/</A></A></KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626621_pgfId-27901"></A><STRONG CLASS="Lead-In2para">Adobe Illustrator CS2 - </STRONG><KBD CLASS="URL"><A HREF="http://www.adobe.com/products/illustrator/main.html" CLASS="URL"><A HREF="http://www.adobe.com/products/illustrator/main.html" CLASS="URL">http://www.adobe.com/products/illustrator/main.html</A></A></KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-27941"></A>Java ME applications using SVG content can create graphical effects that adapt to the display resolution and form factor of the user's display. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-27944"></A>SVG images can be animated in two ways. One is to use declarative animations. The other is to repeatedly modify the SVG image parameters (such as color or position), through API calls. <A HREF="demonstrations.html#50626580_21357" CLASS="XRef">Section A.21.3, Play SVG Animation</A> illustrates declarative animation. 
+</P><H2 CLASS="Head1"><A NAME="50626621_pgfId-28063"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>9.3	OpenGL&#174; ES Overview</H2>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-28064"></A><A NAME="50626621_marker-28279"></A>JSR 239 defines the Java programming language bindings for two APIs, OpenGL&#174; for Embedded Systems (<A NAME="50626621_marker-28287"></A>OpenGL&#174; ES) and EGL. OpenGL&#174; ES is a standard API for 3D graphics, a subset of OpenGL&#174;, which is pervasive on desktop computers. EGL is a standard platform interface layer. Both OpenGL&#174; ES and EGL are developed by the Khronos Group (<KBD CLASS="URL"><A HREF="http://khronos.org/opengles/" CLASS="URL">http://khronos.org/opengles/</A></KBD>).
+</P>
+<P CLASS="Paragraph"><A NAME="50626621_pgfId-28291"></A>While JSR 184 (which is object oriented) requires high level functionality, OpenGL&#174; is a low level graphics library that is suited for accessing hardware accelerated 3D graphics. Explore the OpenGLESDemo sample project code.
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="mmapi.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="pdap.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

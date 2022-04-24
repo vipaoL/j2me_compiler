@@ -1,0 +1,13 @@
+MIDlet-1: MultiMedia Viewer,, example.mmademo.VideoTest
+MIDlet-Description: A demo MIDlet showing what CHAPI is all about.
+MIDlet-Jar-Size: 16005
+MIDlet-Jar-URL: MediaHandler.jar
+MIDlet-Name: MediaHandler
+MIDlet-Permissions: javax.microedition.io.Connector.http,javax.microedition.content.ContentHandler
+MIDlet-Vendor: Sun Microsystems, Inc.
+MIDlet-Version: 1.0
+Manifest-Version: 1.0
+MicroEdition-Configuration: CLDC-1.0
+MicroEdition-Handler-1: example.mmademo.VideoTest, image/jpeg video/mpeg audio/x-wav audio/midi audio/jts image/gif,.wav .mid .mpg .jts .jpg .gif
+MicroEdition-Handler-1-ID: example.mmademo.Player
+MicroEdition-Profile: MIDP-2.0

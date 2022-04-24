@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  7 - Using the Wireless Messaging API
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="security.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="mmapi.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626617_pgfId-1009221"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">7</SPAN><A NAME="50626617_14685"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626617_pgfId-41136"></A><A NAME="50626617_58059"></A>Using the Wireless Messaging API
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998462"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC supports the <A NAME="50626617_marker-1011543"></A>Wireless Messaging API (<A NAME="50626617_marker-1011542"></A>WMA) with a sophisticated simulation environment. WMA 1.1 (<A NAME="50626617_marker-1011334"></A>JSR 120) enables MIDlets to send and receive Short Message Service (SMS) or Cell Broadcast Service (CBS) messages. WMA 2.0 (<A NAME="50626617_marker-1011335"></A>JSR 205) includes support for MMS messages as well.
+</P>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-44524"></A>This chapter describes the tools you can use to develop WMA applications. It begins by showing how to configure the emulator's support of WMA. Next, it describes the WMA console, a handy utility for testing WMA applications. The chapter concludes with a brief description of the network monitor's WMA support.
+</P><H2 CLASS="Head1"><A NAME="50626617_pgfId-998513"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>7.1	<A NAME="50626617_marker-1003097"></A>Setting Emulator Phone Numbers</H2>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998519"></A>Each running instance of the emulator has a simulated phone number that is shown in the title bar of the emulator window. The phone numbers are important because they are used as addresses for WMA messages. By default, the first emulator instance has a phone number of +555000. Subsequent instances of the emulator have unique numbers in ascending order: +5550001, +5550002, +5550003, etc.
+</P>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998527"></A>You can affect the assigned phone numbers by choosing Edit &gt; Preferences and selecting WMA in the left pane.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626617_pgfId-1012493"></A>FIGURE 7-1 	Setting WMA Preferences
+</P>
+<BR><A NAME="50626617_pgfId-1019533"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626617_pgfId-1009234"></A>
+<P><IMG SRC="figures/wma-4.jpg" TITLE="WMA preferences include Phone # of Next Emulator, First Assigned Phone #, % Random Message Fragment Loss, and Message Fragment Delivery Delay in ms." ALT="WMA preferences include Phone # of Next Emulator, First Assigned Phone #, % Random Message Fragment Loss, and Message Fragment Delivery Delay in ms." ALIGN="BASELINE">
+</P><A NAME="50626617_pgfId-1019492"></A><A NAME="50626617_pgfId-1019532"></A>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998541"></A>The Phone Number of Next Emulator field is just what it sounds like. If you fill in a number for this field, the next emulator instance will have that number.
+</P>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998545"></A>If the Phone Number of Next Emulator is already in use, or if the field is blank, then the First Assigned Phone Number is used for the next emulator instance. Subsequent instances count up.
+</P>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998685"></A>For example, for the Phone Number of Next Emulator, suppose you enter +6269333, and for the First Assigned Phone Number you enter +5550000. If you launch four emulator instances, their numbers are +6269333, +5550000, +5550001, and +5550002.
+</P><H2 CLASS="Head1"><A NAME="50626617_pgfId-998686"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>7.2	<A NAME="50626617_marker-1003098"></A>Simulating an Unreliable Network</H2>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-1010753"></A>Long messages are sent by splitting them, sending the fragments separately, and reassembling the fragments on the receiving end. You can simulate some of the hazards of the wireless network in the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC. As before, choose Edit &gt; Preferences and select WMA.
+</P>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998582"></A>If you want the toolkit to lose some message fragments, adjust the Random Message Fragment Loss slider to the desired percentage. To simulate a delay between the time message fragments are sent and received, enter the delay in milliseconds in the Message Fragment Delivery Delay field.
+</P><H2 CLASS="Head1"><A NAME="50626617_pgfId-998485"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>7.3	Sending Messages With the <A NAME="50626617_marker-1003099"></A>WMA Console</H2>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998592"></A>The WMA console is a handy utility that enables you to send and receive messages. You can, for example, use the WMA console to send SMS messages to a MIDlet running on the emulator.
+</P>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998624"></A>To launch the WMA console, choose File &gt; Utilities. Click on WMA Console and press Launch.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626617_pgfId-1012499"></A>FIGURE 7-2 	The WMA Console
+</P>
+<BR><A NAME="50626617_pgfId-1019535"></A>
+<P CLASS="FigureBox"><A NAME="50626617_pgfId-1009268"></A>
+<P><IMG SRC="figures/wma-5.jpg" TITLE="WMA Console has buttons for Send SMS, Send CBS, and Send MMS" ALT="WMA Console has buttons for Send SMS, Send CBS, and Send MMS" ALIGN="BASELINE">
+</P><A NAME="50626617_pgfId-1019497"></A><A NAME="50626617_pgfId-1019534"></A><H3 CLASS="Head2"><A NAME="50626617_pgfId-998646"></A>7.3.1	Sending a <A NAME="50626617_marker-1003100"></A>Text SMS Message</H3>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998650"></A>To send a text SMS message, click Send SMS The send window appears.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626617_pgfId-1012505"></A>FIGURE 7-3 	Sending a Text Message
+</P>
+<BR><A NAME="50626617_pgfId-1019537"></A>
+<P CLASS="FigureBox"><A NAME="50626617_pgfId-1009302"></A>
+<P><IMG SRC="figures/wma-6.jpg" TITLE="The Send SMS window has tabs for Text SMS and Binary SMS. Figure shows Text SMS selected" ALT="The Send SMS window has tabs for Text SMS and Binary SMS. Figure shows Text SMS selected" ALIGN="BASELINE">
+</P><A NAME="50626617_pgfId-1019502"></A><A NAME="50626617_pgfId-1019536"></A>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998651"></A>The window automatically lists the phone numbers of all running emulator instances. Select a destination (Control-click to select multiple destinations) and enter a port number if you wish. Type your message and click Send.
+</P><H3 CLASS="Head2"><A NAME="50626617_pgfId-998668"></A>7.3.2	Sending a <A NAME="50626617_marker-1003101"></A>Binary SMS Message</H3>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998672"></A>You can use the WMA console to send the contents of a file as a binary message. Click Send SMS to bring up the send window. Click the Binary SMS tab.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626617_pgfId-1012511"></A>FIGURE 7-4 	Sending a Binary Message
+</P>
+<BR><A NAME="50626617_pgfId-1019539"></A>
+<P CLASS="FigureBox"><A NAME="50626617_pgfId-1009336"></A>
+<P><IMG SRC="figures/wma-7.jpg" TITLE="Send a Message window with Binary SMS tab selected" ALT="Send a Message window with Binary SMS tab selected" ALIGN="BASELINE">
+</P><A NAME="50626617_pgfId-1019507"></A><A NAME="50626617_pgfId-1019538"></A>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998724"></A>Selecting recipients is the same as for sending text SMS messages. You can type in the path of a file directly, or click Browse to open a file chooser.
+</P><H3 CLASS="Head2"><A NAME="50626617_pgfId-998712"></A>7.3.3	Sending Text or Binary <A NAME="50626617_marker-1003102"></A>CBS Messages</H3>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-998721"></A>Sending CBS messages is similar to sending SMS messages except that you don't need to choose recipients. To send a text or binary CBS message, click Send CBS in the WMA console. The Send window appears.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626617_pgfId-1012517"></A>FIGURE 7-5 	Sending CBS Messages
+</P>
+<BR><A NAME="50626617_pgfId-1019541"></A>
+<P CLASS="FigureBox"><A NAME="50626617_pgfId-1009370"></A>
+<P><IMG SRC="figures/wma-8.jpg" TITLE="Send a message window with Binary CBS selected" ALT="Send a message window with Binary CBS selected" ALIGN="BASELINE">
+</P><A NAME="50626617_pgfId-1019512"></A><A NAME="50626617_pgfId-1019540"></A><H3 CLASS="Head2"><A NAME="50626617_pgfId-1003258"></A>7.3.4	Sending MMS Messages</H3>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-1003259"></A>MMS messages consist of one or more files, usually images or sounds. MMS message can be sent to multiple recipients. To send an MMS message from the WMA console, click the Send MMS button.
+</P>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-1003260"></A>The window for composing MMS messages has two tabs, one for recipients and one for content. Begin by filling in a subject and recipient. If you wish to add more recipients, click the Add button. For example, to send a message to a running emulator whose number is +5550001, fill in the To line as <KBD CLASS="Filename-Command">mms://+5550001</KBD>. To remove a recipient, first select its line, then click Remove.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626617_pgfId-1012530"></A>FIGURE 7-6 	Adding Recipients for an MMS Message
+</P>
+<BR><A NAME="50626617_pgfId-1019543"></A>
+<P CLASS="FigureBox"><A NAME="50626617_pgfId-1009404"></A>
+<P><IMG SRC="figures/wma-9.jpg" TITLE="Send a Message - MMS window with Header tab selected" ALT="Send a Message - MMS window with Header tab selected" ALIGN="BASELINE">
+</P><A NAME="50626617_pgfId-1019517"></A><A NAME="50626617_pgfId-1019542"></A>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-1003271"></A>To add media files to the message, click the Parts tab. Click Add to add a part to the message. To remove a part, select it and press Remove.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626617_pgfId-1012536"></A>FIGURE 7-7 	Adding Parts to an MMS Message
+</P>
+<BR><A NAME="50626617_pgfId-1019545"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626617_pgfId-1009438"></A>
+<P><IMG SRC="figures/wma-10.jpg" TITLE="Send a Message - MMS window with Parts tab selected" ALT="Send a Message - MMS window with Parts tab selected" ALIGN="BASELINE">
+</P><A NAME="50626617_pgfId-1019522"></A><A NAME="50626617_pgfId-1019544"></A><H2 CLASS="Head1"><A NAME="50626617_pgfId-998746"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>7.4	Receiving Messages in the WMA Console</H2>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-1010911"></A>The WMA console can also receive messages. The WMA console window has its own phone number in the title bar. You can send messages to the WMA console from your applications running on the emulator.
+</P>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-1001064"></A>Received messages are shown in the WMA console's text area.
+</P><H2 CLASS="Head1"><A NAME="50626617_pgfId-1007246"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>7.5	Using the <A NAME="50626617_marker-1007245"></A>Network Monitor with WMA</H2>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-1010923"></A>The network monitor is fully described in <A HREF="monitoring.html#50626615_47713" CLASS="XRef">Chapter 5</A>. You can use the network monitor to track WMA messages that are sent to or from the emulator.
+</P>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-1010924"></A>Click the SMS/CBS or MMS tabs to see WMA messages. Information about the messages and their fragments is shown in the left pane of the network monitor. Click a message or message fragment to see its details in the right pane.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626617_pgfId-1012524"></A>FIGURE 7-8 	Using the Network Monitor to View a WMA Message
+</P>
+<BR><A NAME="50626617_pgfId-1019531"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626617_pgfId-1010928"></A>
+<P><IMG SRC="figures/wma-11.jpg" TITLE="Network Monitor with SMS/CBS tab selected shows WMA message" ALT="Network Monitor with SMS/CBS tab selected shows WMA message" ALIGN="BASELINE">
+</P><A NAME="50626617_pgfId-1019527"></A><A NAME="50626617_pgfId-1019530"></A>
+<P CLASS="Paragraph"><A NAME="50626617_pgfId-1011378"></A>&nbsp;
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="security.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="mmapi.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

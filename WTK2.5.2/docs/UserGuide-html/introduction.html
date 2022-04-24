@@ -1,0 +1,559 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  1 - Introduction
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="preface.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="developing.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626611_pgfId-38971"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">1</SPAN><A NAME="50626611_14685"></A><A NAME="50626611_26554"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626611_pgfId-41907"></A><A NAME="50626611_92154"></A>Introduction
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-41911"></A>This book describes how to use the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC.
+</P>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-41915"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC is a set of tools that makes it possible to create applications for mobile phones and other wireless devices. Although it is based on the Mobile Information Device Profile (MIDP) 2.1, the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC also supports many optional packages, making it a widely capable development toolkit.
+</P><H2 CLASS="Head1"><A NAME="50626611_pgfId-29820"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>1.1	About the Multiple User Environment</H2>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-43148"></A>The Sun Java Wireless Toolkit 2.5.2 for CLDC can be installed on a system running a supported version of either Windows or Linux. All users with an account on the host machine can access the toolkit, either singly or simultaneously. 
+</P><H3 CLASS="Head2"><A NAME="50626611_pgfId-43310"></A>1.1.1	<A NAME="50626611_23551"></A>The Installation Directory and the Working Directory</H3>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-43311"></A>Windows paths include a drive letter and use backslashes as directory separators. Linux paths use forward slashes. In Linux paths, &#126; represents a Linux user's home directory. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-43470"></A>To support multiple users the toolkit creates an installation directory that is used as a source for copying. This document uses the variable <I CLASS="Variable">workdir</I> to represent the toolkit working directory and <I CLASS="Variable">toolkit</I><A NAME="50626611_marker-43884"></A> to represent the installation directory. Each user's personal files are maintained in a separate working directory named <KBD CLASS="Filename-Command">j2mewtk</KBD> that has a subdirectory for each version installed. The default location of <I CLASS="Variable">workdir</I><A NAME="50626611_marker-43883"></A> is typically in one of these locations:
+</P>
+<BR>
+<TABLE CLASS="Legend" BORDER="0" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626611_pgfId-43210"></A>Windows:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-43212"></A>C:&#92;Documents and Settings&#92;<I CLASS="Variable">User</I>&#92;j2mewtk&#92;2.5.2 
+<BR>(where <I CLASS="Variable">User</I> is your account name)
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626611_pgfId-43214"></A>Linux:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-43216"></A>&#126;/j2mewtk/2.5.2 (where <I CLASS="Variable">&#126;</I> is your home directory)
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-43168"></A>Prominent differences between Windows and Linux are described in the documentation. If only one operating system is mentioned, you can assume the above path notation differences apply.
+</P><H3 CLASS="Head2"><A NAME="50626611_pgfId-43315"></A>1.1.2	<A NAME="50626611_87952"></A>Working Directory Files</H3>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-43329"></A>At installation time the installer copies a subset of files from the installation directory to the working directory of each user. The working directory contents are as follows:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-43551"></A><STRONG CLASS="Lead-In2para">.settings</STRONG> - Initially contains <KBD CLASS="Filename-Command">security.properties</KBD>.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-43626"></A><STRONG CLASS="Lead-In2para">appdb</STRONG> - The entire applications database is copied to your working directory.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-43552"></A><STRONG CLASS="Lead-In2para">apps</STRONG> - The <KBD CLASS="Filename-Command">apps</KBD> directory is created empty in your working directory. If you open a demonstration project it is automatically copied to this location. When you create a new project (<A HREF="developing.html#50626612_85395" CLASS="XRef">Section 2.1, About Projects</A>), it is stored here.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-43554"></A><STRONG CLASS="Lead-In2para">wtklib</STRONG> - Contains the emulator properties file (see <A HREF="emulator.html#50626614_82054" CLASS="XRef">Chapter 4</A>) and state information for the HTTP and WMA servers and clients.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-43549"></A><STRONG CLASS="Lead-In2para">sessions</STRONG> - This is the default save destination for monitoring tools (see <A HREF="monitoring.html#50626615_47713" CLASS="XRef">Chapter 5</A>). It is initially empty.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-43339"></A><A NAME="50626611_marker-43338"></A>All the source code for the demonstration applications is available in <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;apps</KBD>, and each demonstration has its own project directory. Any applications placed in <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;apps</KBD> are visible to all users. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-43385"></A>For example, on Windows the source code for the <KBD CLASS="Filename-Command">MobileMediaAPI</KBD> demonstration is in <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;apps&#92;MobileMediaAPI&#92;src</KBD>. When you use the Open Project command, you can see projects in the installation directory and your working directory (if they exist). As shown in <A HREF="introduction.html#50626611_94520" CLASS="XRef">FIGURE 1-1</A>, projects in your local directory are shown in <STRONG>bold</STRONG> font, and projects in the installation directory are shown in <EM CLASS="Emphasis">italic</EM> font. To see only your local files, clear the <STRONG>Show available demos</STRONG> check box.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626611_pgfId-43386"></A>FIGURE 1-1 	<A NAME="50626611_94520"></A>Project Listing Shows Local Projects in Bold Face
+</P>
+<BR><A NAME="50626611_pgfId-50452"></A>
+<P CLASS="FigureBox"><A NAME="50626611_pgfId-43800"></A>
+<P><IMG SRC="figures/introduction-4.jpg" TITLE="Open Project Dialog with apps from installdir and workdir displayed" ALT="Open Project Dialog with apps from installdir and workdir displayed" ALIGN="BASELINE">
+</P><A NAME="50626611_pgfId-50420"></A><A NAME="50626611_pgfId-50451"></A>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-43494"></A>When you open a project from the installation directory, a copy of the application is imported into <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;apps</KBD>. Often the import process is undetectable, but on slower machines you might see a progress dialog like that in <A HREF="introduction.html#50626611_41490" CLASS="XRef">FIGURE 1-2</A>. Any customizations should be made to your local copy.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626611_pgfId-43770"></A>FIGURE 1-2 	<A NAME="50626611_41490"></A>Project Import from <I CLASS="Variable">toolkit</I> to <I CLASS="Variable">workdir</I>
+</P>
+<BR><A NAME="50626611_pgfId-50448"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626611_pgfId-43771"></A>
+<P><IMG SRC="figures/introduction-5.jpg" TITLE="Open project dialog with import progress indicator tracks file copied to workdir" ALT="Open project dialog with import progress indicator tracks file copied to workdir" ALIGN="BASELINE">
+</P><A NAME="50626611_pgfId-50425"></A><A NAME="50626611_pgfId-50447"></A><H2 CLASS="Head1"><A NAME="50626611_pgfId-43844"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>1.2	<A NAME="50626611_13917"></A>Quick Start</H2>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-30096"></A>To get started right away, try the demonstration applications that are included with the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC.
+</P>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-41164"></A>To run the demonstrations, <A NAME="50626611_marker-37385"></A>start the toolkit as follows. 
+</P>
+<UL>
+<UL>
+<LI CLASS="Bullet2"><A NAME="50626611_pgfId-42340"></A>On Microsoft Windows choose Start &gt; Programs &gt; Sun Java Wireless Toolkit 2.5.2 for CLDC &gt; Wireless Toolkit 2.5.2.<A NAME="fnote1"></A><A HREF="#50626611_pgfId-37390"  CLASS="footnote"><SUP>[1]</SUP></A> 
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet2"><A NAME="50626611_pgfId-42341"></A>On Linux, change directory to <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">/bin</KBD>. To run the toolkit, enter<SPAN CLASS="Red"> </SPAN><KBD CLASS="Filename-Command">./ktoolbar</KBD>.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-43047"></A>A window similar to <A HREF="introduction.html#50626611_47524" CLASS="XRef">FIGURE 1-3</A> opens.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626611_pgfId-43068"></A>FIGURE 1-3 	<A NAME="50626611_47524"></A>Toolkit User Interface
+</P>
+<BR><A NAME="50626611_pgfId-50450"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626611_pgfId-43075"></A>
+<P><IMG SRC="figures/introduction-6.jpg" TITLE="Default KToolbar window at startup." ALT="Default KToolbar window at startup." ALIGN="BASELINE">
+</P><A NAME="50626611_pgfId-50430"></A><A NAME="50626611_pgfId-50449"></A>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-43063"></A>Click the Open Project button to see a list of all the available applications. As shown in <A HREF="introduction.html#50626611_94520" CLASS="XRef">FIGURE 1-1</A>, italicized names denote applications stored in the installation directory, and bold names, if any, are stored in your working directory. Pick one of them and click the Open Project button in the dialog. If you have not opened this project before, a copy will be created in your working directory, as discussed in <A HREF="introduction.html#50626611_87952" CLASS="XRef">Section 1.1.2, Working Directory Files</A>.
+</P>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-30220"></A>Once the application is open, press the Run button. The emulator appears running the example application.
+</P>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-32799"></A>Most demonstrations are self explanatory, but some have additional instructions. Some demos require you to use Project &gt; Run via OTA instead of run. See <A HREF="demonstrations.html#50626580_32725" CLASS="XRef">Appendix A</A> for general instructions and descriptions of demos.
+</P><H2 CLASS="Head1"><A NAME="50626611_pgfId-30095"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>1.3	Toolkit Components</H2>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-41263"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC has three main components:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-29825"></A>The user interface automates many of the tasks involved in creating MIDP applications.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-29832"></A>The emulator is a simulated mobile phone. It is useful for testing MIDP applications.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-29857"></A>A collection of utilities provides other useful functionality, including a text messaging console and cryptographic utilities.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-29863"></A>From the user interface you can build applications, launch the emulator, and start the utilities. Alternatively, the emulator and utilities can be run by themselves, which is useful in many situations. If you want to demonstrate MIDP applications, for example, it's useful to run the emulator by itself.
+</P>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-29931"></A>The only additional tool you need is a text editor for editing source code.
+</P><H2 CLASS="Head1"><A NAME="50626611_pgfId-30085"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>1.4	Toolkit Features</H2>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-30091"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC supports the creation of MIDP applications with the following main features:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-30100"></A><STRONG CLASS="Lead-In2para">Building and packaging</STRONG>: You write the source code and the toolkit takes care of the rest. With the push of a button, the toolkit compiles the source code, preverifies the class files, and packages a MIDlet suite.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-30104"></A><STRONG CLASS="Lead-In2para">Running and monitoring</STRONG>: You can run a MIDlet suite directly in the emulator or install it using a process that resembles application installation on a real device. A memory monitor, network monitor, and method profiler are provided to analyze the operation of your MIDlets.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-41269"></A><STRONG CLASS="Lead-In2para">MIDlet suite signing</STRONG>: The toolkit contains tools for cryptographically signing MIDlet suites. This is useful for testing the operation of MIDlets in different protection domains.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H2 CLASS="Head1"><A NAME="50626611_pgfId-42933"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>1.5	Toolkit Updates<A NAME="50626611_marker-42957"></A></H2>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-42937"></A>At installation you are given the option to activate the Check for Product Updates feature. This feature uses the network to check for an update every seven days. To determine whether an update is needed, it collects the following information:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-42938"></A>Operating System
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-42939"></A>Country and Language setting on your computer
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-42940"></A>Date and Version of the current Wireless Toolkit
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626611_pgfId-42941"></A>A Unique random user ID generated by the Wireless Toolkit
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-42942"></A>This data is used to improve the product. Please read Sun's privacy policy at <KBD CLASS="URL"><A HREF="http://www.sun.com/privacy/index.html" CLASS="URL"><A HREF="http://www.sun.com/privacy/index.html" CLASS="URL">http://www.sun.com/privacy/index.html</A></A>.</KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-42953"></A>To activate or deactivate this feature, select Edit &gt; Preferences and click Network Configuration. Towards the bottom of the panel, check or uncheck the Check for updates box. 
+</P><H2 CLASS="Head1"><A NAME="50626611_pgfId-41271"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>1.6	<A NAME="50626611_83653"></A>Supported Technology</H2>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-41424"></A><A NAME="50626611_marker-41272"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC supports many standard Application Programming Interfaces (APIs) defined through the Java Community Process<IMG SRC=shared/chars/tm.gif TITLE="trademark" ALT="trademark"> (JCP<IMG SRC=shared/chars/tm.gif TITLE="trademark" ALT="trademark">) program. <A HREF="introduction.html#50626611_46694" CLASS="XRef">TABLE 1-1</A> shows the APIs and includes links to the specifications.
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaption"> <A NAME="50626611_pgfId-41287"> </A> TABLE 1-1 	 <A NAME="50626611_46694"> </A> Supported JCP Program APIs <EM CLASS="Emphasis">   </EM> </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626611_pgfId-41291"></A>JSR
+</P>
+<P CLASS="TableHead"><A NAME="50626611_pgfId-41292"></A>  API
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626611_pgfId-41294"></A>Name
+</P>
+<P CLASS="TableHead"><A NAME="50626611_pgfId-41295"></A>  URL
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41297"></A>JSR 248
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41298"></A>  MSA 1.0
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41300"></A><I CLASS="Title">Mobile Service Architecture</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41302"></A><A HREF="http://jcp.org/en/jsr/detail?id=248" CLASS="URL">  http://jcp.org/en/jsr/detail?id=248</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41304"></A>JSR 185
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41305"></A>  JTWI 1.0
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41307"></A><I CLASS="Title">Java Technology for the Wireless Industry</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41309"></A><A HREF="http://jcp.org/en/jsr/detail?id=185" CLASS="URL">  http://jcp.org/en/jsr/detail?id=185</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41311"></A>JSR 139
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41312"></A>  CLDC 1.1
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41314"></A><I CLASS="Title">Connected Limited Device Configuration</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41316"></A><A HREF="http://jcp.org/en/jsr/detail?id=139" CLASS="URL">  http://jcp.org/en/jsr/detail?id=139</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41318"></A>JSR 118
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41319"></A>  MIDP 2.0
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41321"></A><I CLASS="Title">Mobile Information Device Profile</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41323"></A><A HREF="http://jcp.org/en/jsr/detail?id=118" CLASS="URL">  http://jcp.org/en/jsr/detail?id=118</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41325"></A>JSR 75
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41326"></A>  PIM and File
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41328"></A><I CLASS="Title">PDA Optional Packages for the J2ME Platform</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41330"></A><A HREF="http://jcp.org/en/jsr/detail?id=75" CLASS="URL">  http://jcp.org/en/jsr/detail?id=75</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41332"></A>JSR 82
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41333"></A>  Bluetooth and OBEX
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41335"></A><I CLASS="Title">Java APIs for Bluetooth</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41337"></A><A HREF="http://jcp.org/en/jsr/detail?id=82" CLASS="URL">  http://jcp.org/en/jsr/detail?id=82</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41339"></A>JSR 135
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41340"></A>  MMAPI 1.1
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41342"></A><I CLASS="Title">Mobile Media API</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41344"></A><A HREF="http://jcp.org/en/jsr/detail?id=135" CLASS="URL">  http://jcp.org/en/jsr/detail?id=135</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41346"></A>JSR 172
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41347"></A>  
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41349"></A><I CLASS="Title">J2ME Web Services Specification</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41351"></A><A HREF="http://jcp.org/en/jsr/detail?id=172" CLASS="URL">  http://jcp.org/en/jsr/detail?id=172</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41353"></A>JSR 177
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41354"></A>  SATSA
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41356"></A><I CLASS="Title">Security and Trust Services API for Java ME</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41358"></A><A HREF="http://jcp.org/en/jsr/detail?id=177" CLASS="URL">  http://jcp.org/en/jsr/detail?id=177</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41360"></A>JSR 179
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41361"></A>  Location
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41363"></A><I CLASS="Title">Location API for Java ME</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41365"></A><A HREF="http://jcp.org/en/jsr/detail?id=179" CLASS="URL">  http://jcp.org/en/jsr/detail?id=179</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41367"></A>JSR 180
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41368"></A>  SIP
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41370"></A><I CLASS="Title">SIP API for Java ME</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41372"></A><A HREF="http://jcp.org/en/jsr/detail?id=180" CLASS="URL">  http://jcp.org/en/jsr/detail?id=180</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41374"></A>JSR 184
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41375"></A>  3D Graphics
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41377"></A><I CLASS="Title">Mobile 3D Graphics API for J2ME</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41379"></A><A HREF="http://jcp.org/en/jsr/detail?id=184" CLASS="URL">  http://jcp.org/en/jsr/detail?id=184</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41381"></A>JSR 205
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41382"></A>  WMA 2.0
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41384"></A><I CLASS="Title">Wireless Messaging API</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41386"></A><A HREF="http://jcp.org/en/jsr/detail?id=205" CLASS="URL">  http://jcp.org/en/jsr/detail?id=205</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41388"></A>JSR 211
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41389"></A>  CHAPI
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41391"></A><I CLASS="Title">Content Handler API</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41393"></A><A HREF="http://jcp.org/en/jsr/detail?id=211" CLASS="URL">  http://jcp.org/en/jsr/detail?id=211</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41395"></A>JSR 226
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41396"></A>  
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41398"></A><I CLASS="Title">Scalable 2D Vector Graphics API for J2ME</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41400"></A><A HREF="http://jcp.org/en/jsr/detail?id=226" CLASS="URL">  http://jcp.org/en/jsr/detail?id=226</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41402"></A>JSR 229
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41403"></A>  
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41405"></A><I CLASS="Title">Payment API</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41407"></A><A HREF="http://jcp.org/en/jsr/detail?id=229" CLASS="URL">  http://jcp.org/en/jsr/detail?id=229</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41409"></A>JSR 234
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41410"></A>  AMMS
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41412"></A><I CLASS="Title">Advanced Multimedia Supplements</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41414"></A><A HREF="http://jcp.org/en/jsr/detail?id=234" CLASS="URL">  http://jcp.org/en/jsr/detail?id=234</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41416"></A>JSR 238
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41417"></A>  MIA
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41419"></A><I CLASS="Title">Mobile Internationalization API</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41421"></A><A HREF="http://jcp.org/en/jsr/detail?id=238" CLASS="URL">  http://jcp.org/en/jsr/detail?id=238</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41677"></A>JSR 239
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41681"></A><I CLASS="Title">Java Binding for OpenGL&#174; ES API</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41686"></A><A HREF="http://jcp.org/en/jsr/detail?id=239" CLASS="URL">  http://jcp.org/en/jsr/detail?id=239</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41709"></A>JSR 248
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626611_pgfId-41711"></A><I CLASS="Title">Mobile Service Architecture</I>
+</P>
+<P CLASS="TableText"><A NAME="50626611_pgfId-41713"></A><A HREF="http://jcp.org/en/jsr/detail?id=248" CLASS="URL">  http://jcp.org/en/jsr/detail?id=248</A>
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626611_pgfId-39346"></A>&nbsp;
+</P>
+<HR>
+<DIV CLASS="footnotes">
+<DIV CLASS="footnote"><SUP CLASS="Footnote"><SPAN CLASS="footnoteNumber">1</SPAN><B><A HREF="#fnote1"> (Footnote) </A></B><A NAME="50626611_pgfId-37390"></A></A>Depending on how Microsoft Windows is configured, you might need to choose Start &gt; All Programs instead of Start &gt; Programs. </SUP>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="preface.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="developing.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

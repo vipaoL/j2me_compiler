@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<CONFIGURATION> 
+	<SIP_STACK 
+stack_name="nist-proxy"
+stack_IP_address=""
+router_path="gov.nist.sip.proxy.router.ProxyRouter"
+max_connections="20"
+max_server_transactions="20"
+thread_pool_size="20"
+    >       
+
+<LISTENING_POINT port="5060" transport="UDP" />
+<LISTENING_POINT port="5060" transport="TCP" />
+<DOMAIN domain="" />
+</SIP_STACK>
+
+<REGISTRAR
+export_registrations="true"
+port="1099"
+/>
+
+<LOGGING
+access_log_via_rmi="false"
+enable_debug="true"
+output_proxy="lib/sip/debug/proxy.log"
+server_log="lib/sip/debug/server.log"
+bad_message_log="lib/sip/debug/bad_message.log"
+debug_log="lib/sip/debug/debug.log"
+/>
+
+<PRESENCE_SERVER 
+enable="true"
+/>
+
+<AUTHENTICATION
+enable="false"
+method="digest"
+class_file="gov.nist.sip.proxy.authentication.DigestServerAuthenticationMethod"
+passwords_file="lib/sip/configuration/passwords.xml"
+/>
+
+<REGISTRATIONS 
+enable="true"
+expires_time="3600"
+registrations_file="lib/sip/configuration/registrations.xml"
+/>
+
+</CONFIGURATION> 
+

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  15 - Using SIP
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="satsa.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="payment.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626591_pgfId-28425"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">15</SPAN><A NAME="50626591_11459"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626591_pgfId-28884"></A><A NAME="50626591_28941"></A>Using SIP
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-28980"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC supports the <A NAME="50626591_marker-30381"></A>SIP API for J2ME (<A NAME="50626591_marker-30380"></A>JSR 180) with a proxy server, registrar, and network monitor support.
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29529"></A>Session Initiation Protocol (SIP) is defined by RFC 3261, available at
+<BR><KBD CLASS="URL"><A HREF="http://www.ietf.org/rfc/rfc3261.txt" CLASS="URL"><A HREF="http://www.ietf.org/rfc/rfc3261.txt" CLASS="URL">http://www.ietf.org/rfc/rfc3261.txt</A></A>. </KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-30074"></A>SIP provides a standard way for applications to set up communications. The application determines what communication actually takes place. SIP can be used to set up instant messaging, text chat, voice chat, video conferencing, or other types of sessions.
+</P><H2 CLASS="Head1"><A NAME="50626591_pgfId-29095"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>15.1	Understanding the Registrar and Proxy</H2>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29089"></A>A SIP registrar enables client applications to associate a user name with a specific network address. In essence, registering provides a way for a user to say &quot;Here I am!&quot;
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29119"></A>A SIP proxy server is really just an entry point into a larger network of proxy servers. SIP messages that arrive at one proxy are routed to an appropriate destination, which is usually another proxy server or an end point, like a desktop computer or a mobile device. Although SIP messages can be sent directly between devices, they are usually routed through a proxy server.
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29099"></A>For example, suppose Diggory wants to start a video conference with Polly. Polly is on the road and her mobile phone sends a message to a registrar that associates her name with the mobile phone's network address. When Diggory tries to set up the video conference with Polly, his application uses SIP to ask the registrar for Polly's current network location. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29143"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC includes a very simple SIP proxy and registrar server that you can use for testing applications that use the SIP API. You can also configure the toolkit to use an external proxy server and registrar server.
+</P><H2 CLASS="Head1"><A NAME="50626591_pgfId-29019"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>15.2	SIP Settings</H2>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29023"></A>To adjust settings for the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC's SIP environment, choose Edit &gt; Preferences and click SIP.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626591_pgfId-31174"></A>FIGURE 15-1 	SIP Settings
+</P>
+<BR><A NAME="50626591_pgfId-38192"></A>
+<P CLASS="FigureBox"><A NAME="50626591_pgfId-29162"></A>
+<P><IMG SRC="figures/sip-4.jpg" TITLE="Preferences window with SIP category selected has Display name and Address fields." ALT="Preferences window with SIP category selected has Display name and Address fields." ALIGN="BASELINE">
+</P><A NAME="50626591_pgfId-38168"></A><A NAME="50626591_pgfId-38191"></A>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29232"></A>Display name and Address fields set the system properties <KBD CLASS="Filename-Command">sip.display.name</KBD> and <KBD CLASS="Filename-Command">sip.address</KBD>, respectively. Applications can use these system properties as a standard way to retrieve the identity associated with the device.
+</P><H2 CLASS="Head1"><A NAME="50626591_pgfId-28984"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>15.3	SIP Traffic in the Network Monitor</H2>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-28981"></A>Network data that is sent and received using the SIP API can be recorded with the network monitor. The network monitor is fully described in <A HREF="monitoring.html#50626615_47713" CLASS="XRef">Chapter 5</A>. You can use the network monitor to track SIP messages that are sent to or from the emulator.
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29223"></A>Click on the SIP tab to see SIP messages. SIP messages are shown in the left pane of the network monitor. Click a message to see its details in the right pane.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626591_pgfId-31180"></A>FIGURE 15-2 	SIP Messages in the Network Monitor
+</P>
+<BR><A NAME="50626591_pgfId-38198"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626591_pgfId-29253"></A>
+<P><IMG SRC="figures/sip-5.jpg" TITLE="Network monitor with SIP tab selected" ALT="Network monitor with SIP tab selected" ALIGN="BASELINE">
+</P><A NAME="50626591_pgfId-38173"></A><A NAME="50626591_pgfId-38197"></A><H2 CLASS="Head1"><A NAME="50626591_pgfId-29010"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>15.4	SIP Proxy Server and Registrar</H2>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29014"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC provides a simple SIP proxy server and registrar to make it easier to create SIP applications. To start the server, choose File &gt; Utilities. Select Start SIP Server from the list and press Launch. The SIP server console window appears.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626591_pgfId-31186"></A>FIGURE 15-3 	SIP Server Console
+</P>
+<BR><A NAME="50626591_pgfId-38200"></A>
+<P CLASS="FigureBox"><A NAME="50626591_pgfId-29309"></A>
+<P><IMG SRC="figures/sip-6.jpg" TITLE="SIP Proxy and Registrar window shows the registered user" ALT="SIP Proxy and Registrar window shows the registered user" ALIGN="BASELINE">
+</P><A NAME="50626591_pgfId-38178"></A><A NAME="50626591_pgfId-38199"></A>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29299"></A>To stop the server, click Stop. To start the server, click Start. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-30181"></A>While the server is running, the top left pane shows all users known to the registrar. Click a user name to see details about the user in the top right pane. The bottom pane of the window is a console that shows SIP messages that are received and sent by the proxy.
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-30182"></A>You can adjust the server options when the server is not running. Stop the server and click Options to see the options window (see <A HREF="sip.html#50626591_50852" CLASS="XRef">FIGURE 15-4</A>).
+</P>
+<P CLASS="FigureCaption"><A NAME="50626591_pgfId-31575"></A>FIGURE 15-4 	<A NAME="50626591_50852"></A>Setting Proxy Options
+</P>
+<BR><A NAME="50626591_pgfId-38194"></A>
+<P CLASS="FigureBox"><A NAME="50626591_pgfId-31582"></A>
+<P><IMG SRC="figures/sip-7.jpg" TITLE="Options window with proxy tab selected has IP Address field and lists Listening points specified by user" ALT="Options window with proxy tab selected has IP Address field and lists Listening points specified by user" ALIGN="BASELINE">
+</P><A NAME="50626591_pgfId-38183"></A><A NAME="50626591_pgfId-38193"></A>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29489"></A>On the Proxy tab, you can set the IP address and ports upon which the server listens for incoming messages. Note that 5060, the default listening point, is a well known port for the SIP proxy. If you are working in a multiuser environment there is a chance another user may be using the port and you might accidentally connect to someone else's SIP server instance(the SIP server does not have any authentication mechanism and TCP/IP ports are freely accessible). If this happens you must specify another port.
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-31506"></A>Click Add to specify more ports and their types. Select a port and click Remove to remove a listening port.
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29504"></A>Check Use Authentication to force connecting clients to authenticate themselves to the server. The scheme used is digest authentication, which is described in section 22.4 of RFC 3261. SIP's digest authentication is nearly identical to HTTP digest authentication.
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29453"></A>On the Registrar tab, you can set up the users and domains known to the registrar. The top list contains SIP users that are automatically registered when the SIP server is started. You can add a new user, edit an existing user, or remove a user.
+</P>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-31558"></A>In addition, you can adjust the list of domains managed by this registrar. Press Add to add a domain, Edit to edit an existing domain name, or Remove to remove a domain.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626591_pgfId-31559"></A>FIGURE 15-5 	Setting Registrar Options
+</P>
+<BR><A NAME="50626591_pgfId-38196"></A>
+<P CLASS="FigureBox"><A NAME="50626591_pgfId-31566"></A>
+<P><IMG SRC="figures/sip-8.jpg" TITLE="Options window Registrar tab manages registrations and domains" ALT="Options window Registrar tab manages registrations and domains" ALIGN="BASELINE">
+</P><A NAME="50626591_pgfId-38188"></A><A NAME="50626591_pgfId-38195"></A>
+<P CLASS="Paragraph"><A NAME="50626591_pgfId-29418"></A>&nbsp;
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="satsa.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="payment.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

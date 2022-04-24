@@ -1,0 +1,496 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>Preface
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><A HREF="index.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="introduction.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a></td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626610_pgfId-5881"></A>Preface
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-5885"></A>This document describes how to work with the Sun Java<IMG SRC=shared/chars/tm.gif TITLE="trademark" ALT="trademark"> Wireless Toolkit for CLDC.
+</P><H2 CLASS="Head1P"><A NAME="50626610_pgfId-5886"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>Who Should Use This Book</H2>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-5887"></A>This guide is intended for developers creating Mobile Information Device Profile (MIDP) applications with the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC. This book is not a tutorial in MIDP programming, nor is it a tutorial in programming any of the additional APIs that are supported by the toolkit. You should already understand how to use the Mobile Information Device Profile (MIDP) and the Connected Limited Device Configuration (CLDC).
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-5891"></A>If you need help getting started with the Java programming language, try the <I CLASS="Title">New to Java Center</I>:
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-5893"></A><KBD CLASS="URL"><A HREF="http://java.sun.com/learning/new2java/" CLASS="URL"><A HREF="http://java.sun.com/learning/new2java/" CLASS="URL">http://java.sun.com/learning/new2java/</A></A></KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-5894"></A>For a quick start with MIDP programming, read <I CLASS="Title">Learning Path: Getting Started with MIDP 2.0</I>:
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-5896"></A><KBD CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/learn/midp/midp20/" CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/learn/midp/midp20/" CLASS="URL">http://developers.sun.com/techtopics/mobility/learn/midp/midp20/</A></A></KBD>
+</P><H2 CLASS="Head1P"><A NAME="50626610_pgfId-5897"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>Related Documentation</H2>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6319"></A>This section lists related Java Platform, Micro Edition (Java ME) specifications. Java ME was formerly referred to as the Java 2 Platform, Micro Edition, or J2ME<IMG SRC=shared/chars/tm.gif TITLE="trademark" ALT="trademark">, as you see in some of the specification names. Although specifications are definitive, they are not always the most accessible kind of information. For a variety of developer-centered articles, try Sun's mobility web site:
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6003"></A><KBD CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/" CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/" CLASS="URL">http://developers.sun.com/techtopics/mobility/</A></A></KBD>
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaptionP"> <A NAME="50626610_pgfId-5903"> </A> TABLE P-1 	 <A NAME="50626610_39563"> </A> Related Documentation   </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626610_pgfId-5907"></A>Topic
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626610_pgfId-5909"></A>Title
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5913"></A>Customizing the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5919"></A><I CLASS="Title">Sun Java</I><SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC<I CLASS="Title"> Basic Customization Guide</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5921"></A>Release Notes
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5926"></A><I CLASS="Title">Sun Java</I><SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC<I CLASS="Title"> Release Notes</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5928"></A>CLDC 1.0 - JSR 30
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5930"></A><I CLASS="Title">J2ME Connected Limited Device Configuration</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5932"></A>MIDP 1.0 - JSR 37
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5934"></A><I CLASS="Title">Mobile Information Device Profile for the J2ME Platform</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5936"></A>PDAP Optional Packages - JSR 75
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5938"></A><I CLASS="Title">PDA Optional Packages for the J2ME Platform</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5940"></A>Bluetooth and OBEX - JSR 82
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5942"></A><I CLASS="Title">Java APIs for Bluetooth</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5944"></A>MIDP 2.1 - JSR 118
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5946"></A><I CLASS="Title">Mobile Information Device Profile 2.0 
+<BR>(Final Release 2 is referred to as MIDP 2.1)</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5948"></A>CLDC 1.1 - JSR 139
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5950"></A><I CLASS="Title">J2ME Connected Limited Device Configuration</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5952"></A>MMAPI - JSR 135
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5954"></A><I CLASS="Title">Mobile Media API</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5956"></A>J2ME Web Services - JSR 172
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5958"></A><I CLASS="Title">J2ME Web Services Specification </I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5960"></A>SATSA - JSR 177
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5962"></A><I CLASS="Title">Security and Trust Services APIs for J2ME</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5964"></A>Location API - JSR 179
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5966"></A><I CLASS="Title">Location API for J2ME</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5968"></A>SIP API - JSR 180
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5970"></A><I CLASS="Title">SIP API for J2ME</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5972"></A>Mobile 3D Graphics - JSR 184
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5974"></A><I CLASS="Title">Mobile 3D Graphics API for J2ME</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5976"></A>JTWI - JSR 185
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5978"></A><I CLASS="Title">Java Technology for the Wireless Industry</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5980"></A>WMA 2.0 - JSR 205
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5982"></A><I CLASS="Title">Wireless Messaging API (WMA)</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5984"></A>CHAPI 1.0 - JSR 211
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5986"></A><I CLASS="Title">Content Handler API</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5988"></A>SVG API - JSR 226
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5990"></A><I CLASS="Title">Scalable 2D Vector Graphics API for J2ME</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5992"></A>Payment API - JSR 229
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5994"></A><I CLASS="Title">Payment API</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5996"></A>Advanced Multimedia - JSR 234
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-5998"></A><I CLASS="Title">Advanced Multimedia Supplements</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6000"></A>Mobile Internationalization - JSR 238
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6002"></A><I CLASS="Title">Mobile Internationalization API</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6537"></A>Java Binding for OpenGL&#174; ES API - JSR 239
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6541"></A><I CLASS="Title">Java Binding for OpenGL&#174; ES API</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6557"></A>Mobile Service Architecture 
+<BR>- JSR 248
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6559"></A>Mobile Service Architecture
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR><H2 CLASS="Head1P"><A NAME="50626610_pgfId-6560"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>How This Book Is Organized</H2>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6005"></A>This guide contains the following chapters and appendices:
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6012"></A><A HREF="introduction.html#50626611_14685" CLASS="XRef">Chapter 1</A> introduces the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC and the development features it provides.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6016"></A><A HREF="developing.html#50626612_11459" CLASS="XRef">Chapter 2</A> describes the development processes for creating and running MIDlets.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6020"></A><A HREF="projects.html#50626613_99364" CLASS="XRef">Chapter 3</A> explains how to work with projects in the toolkit. You'll learn how to adjust project properties, manipulate MIDlets, work with the push registry, and understand the project directory structure.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6024"></A><A HREF="emulator.html#50626614_82054" CLASS="XRef">Chapter 4</A> describes the emulator and explains how to adjust its options and take advantage of its many features.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6028"></A><A HREF="monitoring.html#50626615_47713" CLASS="XRef">Chapter 5</A> shows how you can examine the performance of your application using the method profiler, memory monitor, and network monitor.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6032"></A><A HREF="security.html#50626616_32725" CLASS="XRef">Chapter 6</A> describes how to sign MIDlet suites and manage keys and certificates.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6036"></A><A HREF="wma.html#50626617_14685" CLASS="XRef">Chapter 7</A> details support for running and testing wireless messaging applications.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6043"></A><A HREF="mmapi.html#50626618_11459" CLASS="XRef">Chapter 8</A> explains how the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC supports the Mobile Media API.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6047"></A><A HREF="mobile3d.html#50626621_32725" CLASS="XRef">Chapter 9</A> contains information about developing 3D graphics content.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6051"></A><A HREF="pdap.html#50626578_11459" CLASS="XRef">Chapter 10</A> describes how the toolkit implements access to local files and personal information like contacts and calendar appointments.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6055"></A><A HREF="bluetooth.html#50626581_11459" CLASS="XRef">Chapter 11</A> covers the toolkit's Bluetooth and OBEX simulation environment.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6059"></A><A HREF="webservices.html#50626583_11459" CLASS="XRef">Chapter 12</A> shows how to use the web services stub generator.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6063"></A><A HREF="location.html#50626587_11459" CLASS="XRef">Chapter 13</A> describes how to work with the emulator's location features.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6067"></A><A HREF="satsa.html#50626589_11459" CLASS="XRef">Chapter 14</A> discusses the toolkit's support for SATSA.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6071"></A><A HREF="sip.html#50626591_11459" CLASS="XRef">Chapter 15</A> covers the toolkit's SIP support.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6075"></A><A HREF="payment.html#50626592_11459" CLASS="XRef">Chapter 16</A> describes the toolkit's Payment API features.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6079"></A><A HREF="mia.html#50626593_11459" CLASS="XRef">Chapter 17</A> shows how to manage resources for the Mobile Internationalization API.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6085"></A><A HREF="demonstrations.html#50626580_32725" CLASS="XRef">Appendix A</A> describes the application demonstrations that are included in the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6092"></A><A HREF="commandline.html#50626620_32725" CLASS="XRef">Appendix B</A> explains how to use the functionality of the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC from the command line.
+</P>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6099"></A><A HREF="internationalization.html#50626619_32725" CLASS="XRef">Appendix C</A> describes localization features in the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC.
+</P><H2 CLASS="Head1P"><A NAME="50626610_pgfId-6152"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>Typographic Conventions</H2>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6233"></A><A HREF="preface.html#50626610_63385" CLASS="XRef">TABLE P-2</A> describes font uses cases in this document.
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaptionP"> <A NAME="50626610_pgfId-6104"> </A> TABLE P-2 	 <A NAME="50626610_63385"> </A> Typographic Conventions </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626610_pgfId-6110"></A>Typeface
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626610_pgfId-6112"></A>Meaning
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50626610_pgfId-6114"></A>Examples
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6116"></A><KBD CLASS="Filename-Command">AaBbCc123</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6118"></A>The names of commands, files, and directories; on-screen computer output
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6120"></A>Edit your <KBD CLASS="Filename-Command">.login</KBD> file.
+</P>
+<P CLASS="TableText"><A NAME="50626610_pgfId-6121"></A>Use <KBD CLASS="Filename-Command">ls -a</KBD> to list all files.
+</P>
+<P CLASS="TableText"><A NAME="50626610_pgfId-6122"></A><KBD CLASS="Filename-Command">% You have mail</KBD>.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6124"></A><KBD CLASS="UserType">AaBbCc123</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6126"></A>What you type, when contrasted with on-screen computer output
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6128"></A><KBD CLASS="Filename-Command">% </KBD><KBD CLASS="UserType">su</KBD>
+</P>
+<P CLASS="TableText"><A NAME="50626610_pgfId-6129"></A><KBD CLASS="Filename-Command">Password:</KBD>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="2" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6131"></A><I CLASS="Variable">AaBbCc123</I>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6133"></A>Book titles, new words or terms, words to be emphasized.
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6138"></A>Read Chapter 6 in the <I CLASS="Title">User's Guide</I>.
+</P>
+<P CLASS="TableText"><A NAME="50626610_pgfId-6139"></A>These are called <EM CLASS="Emphasis">class</EM> options.
+</P>
+<P CLASS="TableText"><A NAME="50626610_pgfId-6140"></A>You <EM CLASS="Emphasis">must</EM> be superuser to do this.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6753"></A>Command-line variable; replace with a real name or value
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6766"></A>To delete a file, type <KBD CLASS="Filename-Command">rm</KBD> <I CLASS="Variable">filename</I>.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6144"></A>{<I CLASS="Variable">AaBbCc.dir</I>}
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6146"></A>Variable file names and directories.
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626610_pgfId-6148"></A>In this book, <I CLASS="Variable">toolkit</I> always refers to the directory where the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC is installed. <I CLASS="Variable">workdir</I> refers to a user's working directory, as explained in <A HREF="introduction.html#50626611_23551" CLASS="XRef">Section 1.1.1, The Installation Directory and the Working Directory</A>.
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR><H2 CLASS="Head1P"><A NAME="50626610_pgfId-6153"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>Accessing Sun Documentation Online</H2>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6293"></A>The following sites provide technical documentation related to Java technology: 
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626610_pgfId-6156"></A><KBD CLASS="URL"><A HREF="http://developer.sun.com/" CLASS="URL"><A HREF="http://developer.sun.com/" CLASS="URL">http://developer.sun.com/</A></A> </KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626610_pgfId-6158"></A><KBD CLASS="URL"><A HREF="http://java.sun.com/javame/" CLASS="URL"><A HREF="http://java.sun.com/javame/" CLASS="URL">http://java.sun.com/javame/</A></A> </KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H2 CLASS="Head1P"><A NAME="50626610_pgfId-6159"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>We Welcome Your Comments</H2>
+<P CLASS="Paragraph"><A NAME="50626610_pgfId-6306"></A>We are interested in improving our documentation. Email your feedback from <KBD CLASS="URL"><A HREF="developers.sun.com" CLASS="URL"><A HREF="http://developers.sun.com/contact/feedback.jsp?&amp;category=j2me&amp;mailsubject=Sun%20Java%20Wireless%20Toolkit%20for%20CLDC" CLASS="URL">developers.sun.com</A></A>. </KBD>
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><A HREF="index.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="introduction.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a></td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

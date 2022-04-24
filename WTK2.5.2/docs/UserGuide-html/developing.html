@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  2 - Developing MIDlet Suites
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="introduction.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="projects.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626612_pgfId-42466"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">2</SPAN><A NAME="50626612_11459"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626612_pgfId-20925"></A><A NAME="50626612_93401"></A>Developing MIDlet Suites
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24154"></A>This chapter describes how you can use the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC to create applications. It begins with a description of toolkit projects, then works through the development process.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24155"></A>You are likely to follow two basic development cycles in creating MIDlet suite applications. The first is quicker and simpler. It is useful in your initial development. The second cycle is longer but allows for more comprehensive and realistic testing.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-45238"></A>The end of the chapter contains information on how to use the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC with advanced development tools like an obfuscator and a debugger. A final section briefly describes how to configure a web server to serve MIDP applications.
+</P><H2 CLASS="Head1"><A NAME="50626612_pgfId-23583"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>2.1	<A NAME="50626612_85395"></A>About Projects</H2>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23665"></A>In the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC, MIDlet suites are organized into <A NAME="50626612_marker-33607"></A><EM CLASS="Emphasis">projects</EM>, where the end result of one project is one MIDlet suite. A project contains all of the files that will be used to build a MIDlet suite, including Java source files, resource files, and the MIDlet descriptor.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23670"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC works on one project at a time. You can create a new project or open an existing project.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23674"></A>In this chapter uses a very simple example project. As you read about each step in the development cycles, you can work along in the toolkit.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-30856"></A>To create a new project, first <A NAME="50626612_marker-33606"></A>start the user interface. On Microsoft Windows, choose Start &gt; Programs &gt; Sun Java Wireless Toolkit 2.5.2 for CLDC &gt; Wireless Toolkit 2.5.2.<A NAME="fnote1"></A><A HREF="#50626612_pgfId-30860"  CLASS="footnote"><SUP>[1]</SUP></A> The user interface appears, as shown in <A HREF="developing.html#50626612_47615" CLASS="XRef">FIGURE 2-1</A>.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626612_pgfId-47622"></A>FIGURE 2-1 	<A NAME="50626612_47615"></A>The Toolkit's User Interface
+</P>
+<BR><A NAME="50626612_pgfId-55500"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626612_pgfId-42479"></A>
+<P><IMG SRC="figures/developing-4.jpg" TITLE="Default toolkit UI at startup." ALT="Default toolkit UI at startup." ALIGN="BASELINE">
+</P><A NAME="50626612_pgfId-55441"></A><A NAME="50626612_pgfId-55499"></A>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23695"></A><A NAME="50626612_marker-33608"></A>Click New Project. The toolkit will ask you for the name of the project and the name of the MIDlet class you will write. Fill in the names and click Create Project.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626612_pgfId-47628"></A>FIGURE 2-2 	Creating a New Project
+</P>
+<BR><A NAME="50626612_pgfId-55502"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626612_pgfId-42513"></A>
+<P><IMG SRC="figures/developing-5.jpg" TITLE="UI window with New Project dialog. Project Name is Tiny and MIDlet class Name is TinyMIDlet." ALT="UI window with New Project dialog. Project Name is Tiny and MIDlet class Name is TinyMIDlet." ALIGN="BASELINE">
+</P><A NAME="50626612_pgfId-55446"></A><A NAME="50626612_pgfId-55501"></A>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-45259"></A>The Settings window is displayed. Your choices affect the build environment for the project. The default options are fine for this example, so click OK to dismiss the window. Messages appear in the console telling you exactly <A NAME="50626612_marker-33609"></A>where to store the source code and resource files for this project.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626612_pgfId-47616"></A>FIGURE 2-3 	File Locations in the Console
+</P>
+<BR><A NAME="50626612_pgfId-55508"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626612_pgfId-42547"></A>
+<P><IMG SRC="figures/developing-6.jpg" TITLE="KToolbar console displays locations of project files." ALT="KToolbar console displays locations of project files." ALIGN="BASELINE">
+</P><A NAME="50626612_pgfId-55451"></A><A NAME="50626612_pgfId-55507"></A><H2 CLASS="Head1"><A NAME="50626612_pgfId-25271"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>2.2	Simple Development Cycle</H2>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-45627"></A>The simple <A NAME="50626612_marker-33610"></A>development cycle looks like this:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626612_pgfId-24184"></A>Edit source code &gt; Build &gt; Run
+</P>
+<P CLASS="Step1"><A NAME="50626612_pgfId-24185"></A>	1.	<STRONG CLASS="Lead-In2para">Edit source code</STRONG>. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626612_pgfId-45698"></A>In this step, you create Java source files and resource files that will be used by your application.
+</P>
+<P CLASS="Step1-"><A NAME="50626612_pgfId-24186"></A>	2.	<STRONG CLASS="Lead-In2para">Build</STRONG>. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626612_pgfId-45709"></A>The toolkit compiles and preverifies your Java source files.
+</P>
+<P CLASS="Step1-"><A NAME="50626612_pgfId-24187"></A>	3.	<STRONG CLASS="Lead-In2para">Run</STRONG>. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626612_pgfId-45708"></A>The compiled Java class files are run on the emulator.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24188"></A>If an error occurs when the toolkit attempts to compile your source files, go back and edit them again. If you find a bug when you are testing your application in the emulator, edit the source files to fix the bug.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23933"></A>Now that you understand the simple development cycle at a high level, the rest of this section illustrates how you can accomplish each step using the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC.
+</P><H3 CLASS="Head2"><A NAME="50626612_pgfId-23575"></A>2.2.1	Edit Source Code</H3>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23658"></A>Editing <A NAME="50626612_marker-33611"></A>source code is the only step in which the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC is no help at all. Use the text editor of your choice to create and edit source code files. If you don't have a favorite text editor, try jEdit, at <KBD CLASS="URL"><A HREF="http://jedit.org/" CLASS="URL"><A HREF="http://jedit.org/" CLASS="URL">http://jedit.org/</A></A>.</KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23728"></A>If you are following along with the sample project, create a new Java technology source file <KBD CLASS="Filename-Command">TinyMIDlet.java</KBD>. Save it in your project's source directory. For example, on Windows this would be <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;apps&#92;Tiny&#92;src&#92;TinyMIDlet.java</KBD>. This file contains this simple MIDlet:
+</P>
+<DIV CLASS="Code">
+<BR>
+<TABLE CLASS="Code" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW">
+<PRE CLASS="ScreenText"><A NAME="50626612_pgfId-45992"></A>import javax.microedition.lcdui.*;
+<A NAME="50626612_pgfId-45994"></A>import javax.microedition.midlet.MIDlet;
+<A NAME="50626612_pgfId-45996"></A>&nbsp;
+<A NAME="50626612_pgfId-45998"></A>public class TinyMIDlet
+<A NAME="50626612_pgfId-46000"></A>    extends MIDlet
+<A NAME="50626612_pgfId-46002"></A>    implements CommandListener {
+<A NAME="50626612_pgfId-46004"></A>  public void startApp() {
+<A NAME="50626612_pgfId-46006"></A>    Display display = Display.getDisplay(this);
+<A NAME="50626612_pgfId-46008"></A>    
+<A NAME="50626612_pgfId-46010"></A>    Form mainForm = new Form(&quot;TinyMIDlet&quot;);
+<A NAME="50626612_pgfId-46012"></A>    mainForm.append(&quot;Welcome to the world of MIDlets!&quot;);
+<A NAME="50626612_pgfId-46014"></A>    
+<A NAME="50626612_pgfId-46016"></A>    Command exitCommand = new Command(&quot;Exit&quot;, Command.EXIT, 0);
+<A NAME="50626612_pgfId-46018"></A>    mainForm.addCommand(exitCommand);
+<A NAME="50626612_pgfId-46020"></A>    mainForm.setCommandListener(this);
+<A NAME="50626612_pgfId-46022"></A>    
+<A NAME="50626612_pgfId-46024"></A>    display.setCurrent(mainForm);
+<A NAME="50626612_pgfId-46026"></A>  }
+<A NAME="50626612_pgfId-46028"></A>  public void pauseApp () {}
+<A NAME="50626612_pgfId-46030"></A>  
+<A NAME="50626612_pgfId-46032"></A>  public void destroyApp(boolean unconditional) {}
+<A NAME="50626612_pgfId-46034"></A>  
+<A NAME="50626612_pgfId-46036"></A>  public void commandAction(Command c, Displayable s) {
+<A NAME="50626612_pgfId-46038"></A>    if (c.getCommandType() == Command.EXIT)
+<A NAME="50626612_pgfId-46040"></A>      notifyDestroyed();
+<A NAME="50626612_pgfId-46042"></A>  }
+<A NAME="50626612_pgfId-46044"></A>}
+</PRE>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+</DIV>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23569"></A>Save the file when you are finished.
+</P><H3 CLASS="Head2"><A NAME="50626612_pgfId-23785"></A>2.2.2	Build</H3>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23796"></A>The next step is to <A NAME="50626612_marker-33612"></A>build your source code. The toolkit makes this part very easy.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23797"></A>In the user interface, click the Build button. Assuming you saved your source file in the right place, the toolkit finds it and compiles it. Compilation errors are displayed in the console. If you have errors, as shown in <A HREF="developing.html#50626612_39901" CLASS="XRef">FIGURE 2-4</A>, edit the source code to fix them. Once you eliminate your errors, the console informs you that the build has completed successfully.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626612_pgfId-47635"></A>FIGURE 2-4 	<A NAME="50626612_39901"></A>Messages About Building
+</P>
+<BR><A NAME="50626612_pgfId-55498"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626612_pgfId-48317"></A>
+<P><IMG SRC="figures/developing-7.jpg" TITLE="Console displays build messages for Tiny file with error. The caret ^ indicates the error." ALT="Console displays build messages for Tiny file with error. The caret ^ indicates the error." ALIGN="BASELINE">
+</P><A NAME="50626612_pgfId-55456"></A><A NAME="50626612_pgfId-55497"></A>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-48323"></A>Behind the scenes, the toolkit also <A NAME="50626612_marker-48322"></A>preverifies the compiled class files. MIDlet class files must be preverified before they can be run on a MIDP device or emulator. The toolkit silently handles this detail for you. See the CLDC specification for more information on preverification.
+</P><H3 CLASS="Head2"><A NAME="50626612_pgfId-23807"></A>2.2.3	Run</H3>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23813"></A>Once the project builds successfully, you are ready to try it out in the emulator. Click the <A NAME="50626612_marker-33614"></A>Run button. The emulator displays a list of all the MIDlets in your project.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626612_pgfId-47604"></A>FIGURE 2-5 	List of Project MIDlets
+</P>
+<BR><A NAME="50626612_pgfId-55510"></A>
+<P CLASS="FigureBox"><A NAME="50626612_pgfId-42615"></A>
+<P><IMG SRC="figures/run1.gif" TITLE="List of project MIDlets displays the Tiny MIDlet" ALT="List of project MIDlets displays the Tiny MIDlet">
+</P><A NAME="50626612_pgfId-55461"></A><A NAME="50626612_pgfId-55509"></A>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23840"></A>Choose the MIDlet you want and select Launch. If you're following along with the <KBD CLASS="Filename-Command">TinyMIDlet</KBD> example, the result is as shown in <A HREF="developing.html#50626612_87759" CLASS="XRef">FIGURE 2-6</A>.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626612_pgfId-47610"></A>FIGURE 2-6 	<KBD CLASS="Filename-Command">TinyMIDlet</KBD><A NAME="50626612_87759"></A> in Action
+</P>
+<BR><A NAME="50626612_pgfId-55512"></A>
+<P CLASS="FigureBox"><A NAME="50626612_pgfId-42649"></A>
+<P><IMG SRC="figures/TinyMIDlet.gif" TITLE="TinyMIDlet output is &quot;Welcome to the world of MIDlets!&quot;" ALT="TinyMIDlet output is &quot;Welcome to the world of MIDlets!&quot;">
+</P><A NAME="50626612_pgfId-55466"></A><A NAME="50626612_pgfId-55511"></A><H2 CLASS="Head1"><A NAME="50626612_pgfId-45359"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>2.3	<A NAME="50626612_marker-45357"></A><A NAME="50626612_50954"></A>Full Development Cycle</H2>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-45364"></A>The second development cycle is slightly more complicated. It consists of the following high-level steps:
+</P>
+<P CLASS="ParaIndent1"><A NAME="50626612_pgfId-24163"></A>Edit source code &gt; Package &gt; Install &gt; Run
+</P>
+<P CLASS="Step1"><A NAME="50626612_pgfId-24164"></A>	1.	<STRONG CLASS="Lead-In2para">Edit source code</STRONG>. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626612_pgfId-45730"></A>This is the same as in the simple cycle.
+</P>
+<P CLASS="Step1-"><A NAME="50626612_pgfId-24169"></A>	2.	<STRONG CLASS="Lead-In2para">Package</STRONG>. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626612_pgfId-45731"></A>In this step, the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC compiles and preverifies the source files (essentially the same as the Build step from before). Then it bundles the Java class files and resource files into a MIDlet suite Java Archive (JAR) file and a MIDlet suite descriptor.
+</P>
+<P CLASS="Step1-"><A NAME="50626612_pgfId-24170"></A>	3.	<STRONG CLASS="Lead-In2para">Install</STRONG>. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626612_pgfId-45732"></A>MIDlet suites need to be installed before they can be run. You can install the MIDlet suite into the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator or a real device.
+</P>
+<P CLASS="Step1-"><A NAME="50626612_pgfId-24174"></A>	4.	<STRONG CLASS="Lead-In2para">Run</STRONG>. 
+</P>
+<P CLASS="StepPara1"><A NAME="50626612_pgfId-45733"></A>As in the simple development cycle, run your application and test for bugs.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23817"></A>In the full development cycle, the first step is identical to the simple development cycle. Editing source code is the same as always. The Build step is now incorporated in packaging.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23861"></A>The full development cycle includes two new steps, packaging and installing. Finally, running an installed application is different in important ways from running an application in the simple development cycle.
+</P><H3 CLASS="Head2"><A NAME="50626612_pgfId-23866"></A>2.3.1	<A NAME="50626612_marker-33616"></A>Package</H3>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-45378"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC automates the task of packaging a MIDlet suite. The end result of packaging is two files, a <A NAME="50626612_marker-46192"></A>MIDlet descriptor and a MIDlet suite <A NAME="50626612_marker-46194"></A>JAR file. <A NAME="50626612_marker-33617"></A>The descriptor is a small text file that contains information about the MIDlet suite. The <A NAME="50626612_marker-46193"></A>JAR file contains the class files and resources that make up the MIDlet suite. Devices can use the descriptor to learn about the application before downloading the entire JAR file, an important consideration in a memory-lean, bandwidth-starved wireless world.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23874"></A>To ask the toolkit to package your MIDlet suite, choose Project &gt; Package &gt; Create Package. The MIDlet suite descriptor and JAR file are generated and placed in the <KBD CLASS="Filename-Command">bin</KBD> directory of your project.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24519"></A>Packaging might involve additional steps. You can use a code obfuscator to shrink the size of the MIDlet suite JAR file, a technique that is described later in this chapter. In addition, the toolkit provides tools to enable you to cryptographically sign MIDlet suites. See <A HREF="security.html#50626616_32725" CLASS="XRef">Chapter 6</A> for more information.
+</P><H3 CLASS="Head2"><A NAME="50626612_pgfId-24523"></A>2.3.2	<A NAME="50626612_84050"></A>Install</H3>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-45395"></A>To properly test a MIDlet suite, install it into the toolkit's emulator or a real device. When you press the Run button in the user interface, the MIDlet suite is not installed into the emulator. Instead, the emulator runs the MIDlet classes directly.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23906"></A>The emulator also can install applications into its memory in a process that resembles how applications are transmitted and installed Over the Air (OTA) on real devices. To install applications in the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator, choose <A NAME="50626612_marker-33621"></A>Project &gt; Run via OTA.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23943"></A>The emulator window opens, but instead of running your MIDlet classes directly, the emulator shows the Application Management Software (<A NAME="50626612_marker-47248"></A>AMS) welcome screen. The emulator's software is an example of the type of software that real devices must have to manage MIDlet suites.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626612_pgfId-47641"></A>FIGURE 2-7 	Emulator AMS Welcome Screen
+</P>
+<BR><A NAME="50626612_pgfId-55514"></A>
+<P CLASS="FigureBox"><A NAME="50626612_pgfId-42683"></A>
+<P><IMG SRC="figures/developing-10.jpg" TITLE="This figure shows the screen portion of the emulator with the initial welcome message" ALT="This figure shows the screen portion of the emulator with the initial welcome message" ALIGN="BASELINE">
+</P><A NAME="50626612_pgfId-55471"></A><A NAME="50626612_pgfId-55513"></A>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-39925"></A>Choose Apps to go to the main list of installed applications. Select Install Application and press the select button on the emulator. The emulator prompts you for the URL location of the application you want to install. The URL is already completed for you.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626612_pgfId-47647"></A>FIGURE 2-8 	URL Prompt
+</P>
+<BR><A NAME="50626612_pgfId-55516"></A>
+<P CLASS="FigureBox"><A NAME="50626612_pgfId-42717"></A>
+<P><IMG SRC="figures/ams2.gif" TITLE="In the sample, the URL of the program to install from is http://localhost:2455/Tiny/bin/Tiny.html" ALT="In the sample, the URL of the program to install from is http://localhost:2455/Tiny/bin/Tiny.html">
+</P><A NAME="50626612_pgfId-55476"></A><A NAME="50626612_pgfId-55515"></A>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-25544"></A>From the menu, choose Go to begin the installation. The emulator shows a list of the applications it finds at the URL. Choose the only one and select Install from the menu. The emulator gives you one last chance to confirm your intentions.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626612_pgfId-47665"></A>FIGURE 2-9 	Confirming the Installation
+</P>
+<BR><A NAME="50626612_pgfId-55496"></A>
+<P CLASS="FigureBox"><A NAME="50626612_pgfId-44052"></A>
+<P><IMG SRC="figures/ams3.gif" TITLE="When prompted &quot;Are you sure...&quot; select Install on the lower right to complete the installation" ALT="When prompted &quot;Are you sure...&quot; select Install on the lower right to complete the installation">
+</P><A NAME="50626612_pgfId-55481"></A><A NAME="50626612_pgfId-55495"></A>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24001"></A>Choose Install again to finish the installation. You are returned to the emulator's installed list of applications, which now includes the application you just installed.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626612_pgfId-47653"></A>FIGURE 2-10 	Application Menu
+</P>
+<BR><A NAME="50626612_pgfId-55518"></A>
+<P CLASS="FigureBox"><A NAME="50626612_pgfId-42785"></A>
+<P><IMG SRC="figures/ams4.gif" TITLE="Use the select button to select an application" ALT="Use the select button to select an application">
+</P><A NAME="50626612_pgfId-55486"></A><A NAME="50626612_pgfId-55517"></A>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23988"></A>Run via OTA is an extremely useful mechanism that makes it easy to install your MIDlet suite on the toolkit emulator. Some features <EM CLASS="Emphasis">must</EM> be tested using this technique, including the push registry and the installation of signed MIDlet suites.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23965"></A><A NAME="50626612_marker-33622"></A>If you want to test your MIDlet suite on a real device, you must install it first. How this happens depends heavily on the device you are using. The following two possibilities are most likely:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626612_pgfId-23966"></A>You can deploy the application on a web server, then transmit the application from server to device using the Over the Air (OTA) protocol described in the MIDP 2.0 specification. This is most likely the same mechanism that users will encounter when they go to purchase or install your application.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626612_pgfId-23970"></A>You might be able to transfer the MIDlet suite to the device using a Bluetooth, infrared, or serial connection. This is quite a bit simpler than running a web server, and although it won't give you any insights into the process of installing your application on the device using OTA, it enables you to see how your application performs on the device.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H3 CLASS="Head2"><A NAME="50626612_pgfId-23787"></A>2.3.3	Run</H3>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-23942"></A>Once the application is installed, choose the application from the list and choose Launch from the menu.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626612_pgfId-47659"></A>FIGURE 2-11 	Launching the Installed Application
+</P>
+<BR><A NAME="50626612_pgfId-55520"></A>
+<P CLASS="FigureBox"><A NAME="50626612_pgfId-42819"></A>
+<P><IMG SRC="figures/run2.gif" TITLE="Use soft keys to open the menu and select 1 (Launch)" ALT="Use soft keys to open the menu and select 1 (Launch)">
+</P><A NAME="50626612_pgfId-55491"></A><A NAME="50626612_pgfId-55519"></A>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-43285"></A>Running an application on a real device depends heavily on the device itself. Consult your device documentation for information.
+</P><H2 CLASS="Head1"><A NAME="50626612_pgfId-43288"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>2.4	Creating a Project from a MIDlet Suite</H2>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-43339"></A>You can also create a Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC project from a MIDlet suite archive (<KBD CLASS="Filename-Command">.jar</KBD> file) and descriptor (<KBD CLASS="Filename-Command">.jad</KBD> file). This is useful for running MIDlet suites from the toolkit user interface even when you don't have the source code available. You can use the toolkit to easily manipulate the attributes in the descriptor, or you can run the project and use the toolkit's monitoring tools (described in <A HREF="monitoring.html#50626615_47713" CLASS="XRef">Chapter 5</A>) to scrutinize its behavior.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-43346"></A>To create a <A NAME="50626612_marker-46195"></A>project based on a MIDlet suite choose File &gt; Create project from JAD/JAR. Navigate to the descriptor you wish to use and click Open. Note that the descriptor and the JAR file must be in the same directory.
+</P><H2 CLASS="Head1"><A NAME="50626612_pgfId-24219"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>2.5	<A NAME="50626612_marker-33623"></A>Using an Obfuscator</H2>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24223"></A>An <EM CLASS="Emphasis">obfuscator</EM> is a tool that reduces the size of class files. MIDlet suites need to be compact, both to minimize download times and to comply with sometimes stringent limits on JAR file size imposed by manufacturers or carriers. Using an obfuscator is one way (not the only way) that you can keep your MIDlet suite JAR file small.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24227"></A>You can use an obfuscator in the packaging step of the development cycle. Although the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC doesn't come with an obfuscator, it is already configured to use the ProGuard obfuscator. All you need to do is download ProGuard and put it in a place where the toolkit can find it.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24246"></A>ProGuard is published under the terms of the GNU General Public License (GPL). If you are comfortable with the terms of the license, you can download and use ProGuard free of charge.
+</P><H3 CLASS="Head2"><A NAME="50626612_pgfId-48708"></A>2.5.1	Installing ProGuard</H3>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24269"></A><A NAME="50626612_marker-33624"></A>Follow these steps to install ProGuard:
+</P>
+<P CLASS="Step1"><A NAME="50626612_pgfId-24255"></A>	1.	Go to the ProGuard web site, <KBD CLASS="URL"><A HREF="http://proguard.sourceforge.net/" CLASS="URL"><A HREF="http://proguard.sourceforge.net/" CLASS="URL">http://proguard.sourceforge.net/</A></A>.</KBD>
+</P>
+<P CLASS="Step1-"><A NAME="50626612_pgfId-24280"></A>	2.	Download the latest version.
+</P>
+<P CLASS="Step1-"><A NAME="50626612_pgfId-24281"></A>	3.	Uncompress the <KBD CLASS="Filename-Command">proguard.jar</KBD> file from the <KBD CLASS="Filename-Command">lib</KBD> directory of the ProGuard installation to the <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">/bin</KBD> directory.
+</P><H3 CLASS="Head2"><A NAME="50626612_pgfId-24287"></A>2.5.2	Using ProGuard</H3>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-48744"></A>Once ProGuard is installed, you can use it by choosing Project &gt; Package &gt; Create Obfuscated Package. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-48817"></A>In some cases, you need to provide a script file that controls how the obfuscator works. If you are loading classes using <KBD CLASS="Filename-Command">Class.forName()</KBD>, for example, you need to tell ProGuard to leave the class names unchanged.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-48823"></A>To call the script file you must be able to modify your own copy of the file <KBD CLASS="Filename-Command">ktools.properties</KBD>. 
+</P>
+<P CLASS="StepSingle"><IMG CLASS="Icon" ALIGN="Middle" TITLE="single-step bullet" ALT="single-step bullet" SRC="shared/chars/bullet.gif">&nbsp;&nbsp;<A NAME="50626612_pgfId-48824"></A>Copy <I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">/wtklib/</KBD><I CLASS="Variable">os</I><KBD CLASS="Filename-Command">/ktools.properties</KBD> to <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">/wtklib/</KBD><I CLASS="Variable">os</I><KBD CLASS="Filename-Command">/ktools.properties</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-48818"></A>Create a script file using a text editor, then save it under the project's main directory. Consult the ProGuard documentation for information on script files. Next, tell the toolkit how to find this file. To do this, edit the <KBD CLASS="Filename-Command">ktools.properties</KBD> file you have copied to <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">/wtklib</KBD>. Add a line as follows:
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24350"></A><KBD CLASS="Filename-Command">obfuscate.script.name:</KBD> <I CLASS="Variable">scriptfile</I> 
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24348"></A>Replace <I CLASS="Variable">scriptfile</I> with the name you used for the script file. You must quit and restart the toolkit for the change to take effect.
+</P><H2 CLASS="Head1"><A NAME="50626612_pgfId-24381"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>2.6	<A NAME="50626612_marker-33627"></A>Using a Debugger</H2>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-39308"></A>A variation on running your application is running it with a debugger. A debugger enables you to monitor the running application more closely, set breakpoints, and examine variables.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-45531"></A>You must supply your own debugger. You can use the <KBD CLASS="Filename-Command">jdb</KBD> debugger from the Java SE platform or another debugger of your choice. If you want to use a debugger, an Integrated Development Environment (IDE) like Sun Java Studio Mobility software, which incorporates the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC, is your most likely choice. See <KBD CLASS="URL"><A HREF="http://www.sun.com/software/products/jsmobility/" CLASS="URL"><A HREF="http://www.sun.com/software/products/jsmobility/" CLASS="URL">http://www.sun.com/software/products/jsmobility/</A></A> for more information.</KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24457"></A>Begin by choosing Project &gt; Debug. Enter the TCP/IP port number that the debugger uses to connect to the emulator. Click Debug. The emulator begins running and waits for a connection from a debugger.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-45550"></A>Start your debugger and attach it to the port you specified. Make sure to set the remote debugger to run in remote mode and to use TCP/IP. For more information, consult the debugger's documentation.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-24444"></A><I CLASS="Title">Debugging MIDlets</I> has information about using <KBD CLASS="Filename-Command">jdb</KBD> with the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC. It is available at
+<BR><KBD CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/midp/questions/jdb/" CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/midp/questions/jdb/" CLASS="URL">http://developers.sun.com/techtopics/mobility/midp/questions/jdb/</A></A>. </KBD>
+</P><H2 CLASS="Head1"><A NAME="50626612_pgfId-28387"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>2.7	<A NAME="50626612_marker-33628"></A>Deploying Applications on a Web Server</H2>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-28440"></A><A NAME="50626612_marker-46196"></A>The MIDP 2.0 specification includes the <I CLASS="Title">Over The Air User Initiated Provisioning Specification</I>, which describes how MIDlet suites can be transferred over-the-air (OTA) to a device. You can test this type of scenario using the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-28389"></A>To deploy a packaged MIDP application <A NAME="50626612_marker-28388"></A>remotely on a web server, change the Java Application Descriptor (JAD) file's <KBD CLASS="Filename-Command">MIDlet-Jar-URL property</KBD> to the URL of the JAR file. The URL must be an absolute path. For example:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626612_pgfId-28392"></A>MIDlet-Jar-URL: http://your.server.com/midlets/example.jar
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-28393"></A><A NAME="50626612_marker-33629"></A>Next, ensure that the web server uses the correct MIME types for JAD and JAR files:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626612_pgfId-45801"></A>For MIDlet suite descriptors, map the <KBD CLASS="Filename-Command">.jad</KBD> extension to the <KBD CLASS="Filename-Command">text/vnd.sun.j2me.app-descriptor</KBD> MIME type.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626612_pgfId-45802"></A>For MIDlet suite JAR files, map the <KBD CLASS="Filename-Command">.jar</KBD> extension to the <KBD CLASS="Filename-Command">application/java-archive</KBD> MIME type.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-28396"></A>The details of how to configure a web server depend on the specific software used.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-28475"></A>The emulator implements the device behavior during OTA provisioning. You can use the emulator to test and demonstrate the full provisioning process of MIDlet suites from a server to the device. All you need to do is launch the emulator's AMS. You might already be familiar with the AMS if you have used the Run via OTA option.
+</P>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-28529"></A>To launch the emulator's AMS, you have two options:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626612_pgfId-38366"></A>In the Microsoft Windows start menu, choose Start &gt; Programs &gt; Sun Java Wireless Toolkit 2.5.2 for CLDC &gt; OTA Provisioning.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626612_pgfId-38368"></A>From the command line, issue the following command:
+</LI>
+<P CLASS="Linebreak">
+</P>
+<BR>
+<TABLE CLASS="Legend" BORDER="0" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626612_pgfId-47228"></A>Windows:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626612_pgfId-47230"></A><I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;bin&#92;emulator -Xjam</KBD>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626612_pgfId-47232"></A>Linux:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626612_pgfId-47234"></A><I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">/bin/emulator -Xjam</KBD>
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626612_pgfId-28408"></A>Now follow the AMS prompts to install your application. This process is very similar to the Run via OTA option described earlier in this chapter, except you must enter the URL of your own server to install your application. 
+</P>
+<HR>
+<DIV CLASS="footnotes">
+<DIV CLASS="footnote"><SUP CLASS="Footnote"><SPAN CLASS="footnoteNumber">1</SPAN><B><A HREF="#fnote1"> (Footnote) </A></B><A NAME="50626612_pgfId-30860"></A></A>Depending on how Microsoft Windows is configured, you might need to choose Start &gt; All Programs instead of Start &gt; Programs. </SUP>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="introduction.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="projects.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

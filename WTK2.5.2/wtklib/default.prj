@@ -1,0 +1,8 @@
+MIDlet-1: $__PROJECT_NAME__$, $__PROJECT_NAME__$.png, $__MAIN_CLASS__$
+MIDlet-Jar-Size: 100
+MIDlet-Jar-URL: $__PROJECT_NAME__$.jar
+MIDlet-Name: $__PROJECT_NAME__$
+MIDlet-Vendor: Unknown
+MIDlet-Version: 1.0
+MicroEdition-Configuration: $__CONFIGURATION__$
+MicroEdition-Profile: $__PROFILE__$

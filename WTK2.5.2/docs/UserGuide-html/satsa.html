@@ -1,0 +1,430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of 
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  14 - Using SATSA
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="location.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="sip.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626589_pgfId-28425"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">14</SPAN><A NAME="50626589_11459"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626589_pgfId-21060"></A><A NAME="50626589_28941"></A>Using SATSA
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28437"></A>The Security and Trust Services APIs (<A NAME="50626589_marker-33345"></A>SATSA) provide smart card access and cryptographic capabilities to applications running on small devices. <A NAME="50626589_marker-33344"></A>JSR 177 (the SATSA specification) defines four distinct APIs as optional packages:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50626589_pgfId-30473"></A><STRONG CLASS="Lead-In2para">SATSA-APDU - </STRONG>Enables applications to communicate with smart card applications using a low-level protocol.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626589_pgfId-28440"></A><STRONG CLASS="Lead-In2para">SATSA-JCRMI - </STRONG>Provides an alternate method for communicating with smart card applications using a remote object protocol.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626589_pgfId-28441"></A><STRONG CLASS="Lead-In2para">SATSA-PKI -</STRONG>Enables applications to use a smart card to digitally sign data and manage user certificates.
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50626589_pgfId-28442"></A><STRONG CLASS="Lead-In2para">SATSA-CRYPTO - </STRONG>A general-purpose cryptographic API that supports message digests, digital signatures, and ciphers.
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28486"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator fully supports SATSA. This chapter describes how you can use the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC to work with SATSA in your own applications.
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28501"></A>For a more general introduction to SATSA and using smart cards with small devices, see the <I CLASS="Title">SATSA Developer's Guide</I>, which is available at
+<BR><KBD CLASS="URL"><A HREF="http://java.sun.com/j2me/docs/satsa-dg/" CLASS="URL"><A HREF="http://java.sun.com/j2me/docs/satsa-dg/" CLASS="URL">http://java.sun.com/j2me/docs/satsa-dg/</A></A>.</KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-30372"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC includes the Java Card Platform Simulator, which you can use to simulate smart cards in the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator's slots. The Java Card Platform Simulator is found in.
+</P>
+<BR>
+<TABLE CLASS="Legend" BORDER="0" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626589_pgfId-33932"></A>Windows:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626589_pgfId-33934"></A><I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">&#92;bin&#92;cref.exe</KBD>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50626589_pgfId-33936"></A>Linux:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50626589_pgfId-33938"></A><I CLASS="Variable">toolkit</I><KBD CLASS="Filename-Command">/bin/cref</KBD>
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-33928"></A>Hereafter we refer to it as simply <KBD CLASS="Filename-Command">cref</KBD><A NAME="50626589_marker-33961"></A>.
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28717"></A>If you need to develop your own Java Card applications, download the Java Card Development Kit, available at <KBD CLASS="URL"><A HREF="http://java.sun.com/products/javacard/" CLASS="URL"><A HREF="http://java.sun.com/products/javacard/" CLASS="URL">http://java.sun.com/products/javacard/</A></A>.</KBD>
+</P><H2 CLASS="Head1"><A NAME="50626589_pgfId-28513"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>14.1	Card Slots in the Emulator</H2>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28532"></A>Real SATSA devices are likely to have one or more slots that house smart cards. Applications that use SATSA to communicate with smart cards need to specify a slot and a card application.
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28535"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator is not a real device and, therefore, does not have physical slots for smart cards. Instead, it communicates with a smart card application using a socketprotocol. The other end of the socket might be a smart card simulator or it might be a proxy that talks with real smart card hardware.
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28549"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator includes two simulated smart card slots. Each slot has an associated socket that represents one end of the protocol that is used to communicate with smart card applications. You can set the socket port number for each slot. Choose Edit &gt; Preferences, then click the SATSA tab. The default ports are 9025 for slot 0 and 9026 for slot 1.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626589_pgfId-34041"></A>FIGURE 14-1 	Setting Port Numbers for Smart Card Slots
+</P>
+<BR><A NAME="50626589_pgfId-41538"></A>
+<P CLASS="FigureBox"><A NAME="50626589_pgfId-28558"></A>
+<P><IMG SRC="figures/satsa-4.jpg" TITLE="Preferences window with SATSA category shown sets Port # for slot 0 and slot 1, card emulator host name and simulator type." ALT="Preferences window with SATSA category shown sets Port # for slot 0 and slot 1, card emulator host name and simulator type." ALIGN="BASELINE">
+</P><A NAME="50626589_pgfId-41529"></A><A NAME="50626589_pgfId-41537"></A><H2 CLASS="Head1"><A NAME="50626589_pgfId-28539"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>14.2	Using the Java Card Platform Simulator</H2>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28613"></A>The basic procedure for testing SATSA applications with the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC is as follows:
+</P>
+<P CLASS="Step1"><A NAME="50626589_pgfId-28624"></A>	1.	Start <KBD CLASS="Filename-Command">cref</KBD> with a Java Card platform application.
+</P>
+<P CLASS="Step1-"><A NAME="50626589_pgfId-28633"></A>	2.	Start the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC emulator.
+</P>
+<P CLASS="StepPara1"><A NAME="50626589_pgfId-28632"></A>When a SATSA application attempts to communicate with a smart card, it uses a socket connection to communicate with <KBD CLASS="Filename-Command">cref</KBD>.
+</P>
+<P CLASS="StepPara1"><A NAME="50626589_pgfId-28641"></A>It's important, therefore, to make sure that you start <KBD CLASS="Filename-Command">cref</KBD> with the same port number as one of the slot port numbers you specified in the Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC preferences.
+</P>
+<P CLASS="StepPara1"><A NAME="50626589_pgfId-28651"></A>For example, you could run <KBD CLASS="Filename-Command">cref</KBD> on port 9025 with a prebuilt memory image using a command line like this:
+</P>
+<P CLASS="StepPara1"><A NAME="50626589_pgfId-28659"></A><KBD CLASS="Filename-Command">cref -p 9025 -i memory_image.eeprom</KBD>
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28668"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC includes a demonstration application, <KBD CLASS="Filename-Command">Mohair</KBD>, which illustrates how to use SATSA. For detailed instructions on running <KBD CLASS="Filename-Command">Mohair</KBD>, see <A HREF="demonstrations.html#50626580_32725" CLASS="XRef">Appendix A</A>.
+</P><H2 CLASS="Head1"><A NAME="50626589_pgfId-28732"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>14.3	Using the Network Monitor with SATSA</H2>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28603"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC can display data exchanged with simulated smart card applications in the network monitor. The network monitor displays Application Protocol Data Units (APDUs) that are exchanged between the emulator and the smart card simulator. It can also show data exchanged using the Java Card Remote Method Invocation (Java Card RMI) protocol. The APDU and JCRMI tabs in the network monitor show data exchanged with a smart card.
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28749"></A>The network monitor parses each APDU and shows fields in the request and response as appropriate.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626589_pgfId-34047"></A>FIGURE 14-2 	Viewing an APDU in the Network Monitor
+</P>
+<BR><A NAME="50626589_pgfId-41540"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626589_pgfId-28755"></A>
+<P><IMG SRC="figures/satsa-5.jpg" TITLE="Network Monitor with APDU tab selected" ALT="Network Monitor with APDU tab selected" ALIGN="BASELINE">
+</P><A NAME="50626589_pgfId-41534"></A><A NAME="50626589_pgfId-41539"></A><H2 CLASS="Head1"><A NAME="50626589_pgfId-30580"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>14.4	Adjusting Access Control</H2>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-30585"></A>Access control permissions and PIN properties can be specified in text files. When the first APDU or Java Card RMI connection is established, the implementation reads the ACL and PIN data from the <KBD CLASS="Filename-Command">acl_</KBD><I CLASS="Variable">slot-number</I> in the <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb</KBD> directory. For example, an access control file for slot 0 is <I CLASS="Variable">workdir</I><KBD CLASS="Filename-Command">&#92;appdb&#92;acl_0</KBD>. If the file is absent or contains errors, the access control verification for this slot is disabled.
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-28928"></A>The file can contain information about PIN properties and application permissions.
+</P><H3 CLASS="Head2"><A NAME="50626589_pgfId-29645"></A>14.4.1	Specifying PIN Properties</H3>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-30450"></A>PIN properties are represented by a <KBD CLASS="Filename-Command">pin_data</KBD> record in the access control file.
+</P>
+<DIV CLASS="Code">
+<BR>
+<TABLE CLASS="Code" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW">
+<PRE CLASS="ScreenText"><A NAME="50626589_pgfId-34343"></A>pin_data {
+<A NAME="50626589_pgfId-34345"></A>    label <I CLASS="Variable">string</I>
+<A NAME="50626589_pgfId-34347"></A>    id <I CLASS="Variable">number</I>
+<A NAME="50626589_pgfId-34349"></A>    type       bcd | ascii | utf | half-nibble | iso
+<A NAME="50626589_pgfId-34351"></A>    min        <I CLASS="Variable">minLength</I> - 
+<A NAME="50626589_pgfId-34353"></A>    stored     <I CLASS="Variable">storedLength</I>
+<A NAME="50626589_pgfId-34355"></A>    max        <I CLASS="Variable">maxLength</I>
+<A NAME="50626589_pgfId-34357"></A>    reference  <I CLASS="Variable">byte</I>
+<A NAME="50626589_pgfId-34359"></A>    pad        <I CLASS="Variable">byte</I> - optional
+<A NAME="50626589_pgfId-34361"></A>    flag       case-sensitive | change-disabled |
+<A NAME="50626589_pgfId-34363"></A>               unblock-disabled | needs-padding |
+<A NAME="50626589_pgfId-34365"></A>               disable-allowed | unblockingPIN
+<A NAME="50626589_pgfId-34367"></A>   }
+</PRE>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+</DIV><H3 CLASS="Head2"><A NAME="50626589_pgfId-31373"></A>14.4.2	Specifying Application Permissions</H3>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-31455"></A>Application permissions are defined in access control file (<KBD CLASS="Filename-Command">acf</KBD>) records.
+</P>
+<DIV CLASS="Code">
+<BR>
+<TABLE CLASS="Code" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW">
+<PRE CLASS="ScreenText"><A NAME="50626589_pgfId-34370"></A>acf AID fnumbers separated by blanks {
+<A NAME="50626589_pgfId-34372"></A>    ace {
+<A NAME="50626589_pgfId-34374"></A>         root CA name
+<A NAME="50626589_pgfId-34376"></A>         ...
+<A NAME="50626589_pgfId-34378"></A>         apdu {
+<A NAME="50626589_pgfId-34380"></A>                eight numbers separated by blanks
+<A NAME="50626589_pgfId-34382"></A>                ...
+<A NAME="50626589_pgfId-34384"></A>         }
+<A NAME="50626589_pgfId-34386"></A>         ...
+<A NAME="50626589_pgfId-34388"></A>         jcrmi {
+<A NAME="50626589_pgfId-34390"></A>                 classes {
+<A NAME="50626589_pgfId-34392"></A>                   classname
+<A NAME="50626589_pgfId-34394"></A>                   ...
+<A NAME="50626589_pgfId-34396"></A>                   }
+<A NAME="50626589_pgfId-34398"></A>                    hashModifier string
+<A NAME="50626589_pgfId-34400"></A>                    methods {
+<A NAME="50626589_pgfId-34402"></A>                   method name and signatiure
+<A NAME="50626589_pgfId-34404"></A>                   ...
+<A NAME="50626589_pgfId-34406"></A>                 }
+<A NAME="50626589_pgfId-34408"></A>         }
+<A NAME="50626589_pgfId-34410"></A>         ...
+<A NAME="50626589_pgfId-34412"></A>         pin_apdu {
+<A NAME="50626589_pgfId-34414"></A>                 id number
+<A NAME="50626589_pgfId-34416"></A>            verify | change | disable | enable | unblock
+<A NAME="50626589_pgfId-34418"></A>            four hexadecimal numbers
+<A NAME="50626589_pgfId-34420"></A>                 ...
+<A NAME="50626589_pgfId-34422"></A>         }
+<A NAME="50626589_pgfId-34424"></A>         ...
+<A NAME="50626589_pgfId-34426"></A>         pin_jcrmi {
+<A NAME="50626589_pgfId-34428"></A>                id number
+<A NAME="50626589_pgfId-34430"></A>            verify | change | disable | enable | unblock
+<A NAME="50626589_pgfId-34432"></A>            method name and signature
+<A NAME="50626589_pgfId-34434"></A>                ...
+<A NAME="50626589_pgfId-34436"></A>           }
+<A NAME="50626589_pgfId-34438"></A>        ...
+<A NAME="50626589_pgfId-34440"></A>        }
+<A NAME="50626589_pgfId-34442"></A>    ...
+<A NAME="50626589_pgfId-34444"></A>}
+</PRE>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+</DIV>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-31456"></A>The <KBD CLASS="Filename-Command">acf</KBD> record is an Access Control File. The AID after <KBD CLASS="Filename-Command">acf</KBD> identifies the application. A missing AID indicates that the entry applies to all applications. The <KBD CLASS="Filename-Command">acf</KBD> record can contain <KBD CLASS="Filename-Command">ace</KBD> records. If there are no <KBD CLASS="Filename-Command">ace</KBD> records, access to an application is restricted by this <KBD CLASS="Filename-Command">acf</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-29776"></A>The <KBD CLASS="Filename-Command">ace</KBD> record is an Access Control Entry. It can contain <KBD CLASS="Filename-Command">root</KBD>, <KBD CLASS="Filename-Command">apdu</KBD>, <KBD CLASS="Filename-Command">jcrmi</KBD>, <KBD CLASS="Filename-Command">pin_apdu</KBD>, and <KBD CLASS="Filename-Command">pin_jcrmi</KBD> records. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-30458"></A>The <KBD CLASS="Filename-Command">root</KBD> record contains one CA name. If the MIDlet suite was authorized using a certificate issued by this CA, this <KBD CLASS="Filename-Command">ace</KBD> grants access to this MIDlet. A missing <KBD CLASS="Filename-Command">root</KBD> field indicates that the <KBD CLASS="Filename-Command">ace</KBD> applies to all identified parties. One principal is described by one line. This line must contain only the word <KBD CLASS="Filename-Command">root</KBD> and the principal name, for example:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626589_pgfId-29006"></A>root CN=thehost;OU=JCT;O=dummy CA;L=Santa Clara;ST=CA;C=US
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-29008"></A>The <KBD CLASS="Filename-Command">apdu</KBD> or <KBD CLASS="Filename-Command">jcrmi</KBD> record describes an APDU or Java Card RMI permission. A missing permission record indicates that all operations are allowed.
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-30461"></A>An APDU permission contains one or more sequences of eight hexadecimal values, separated by blanks. The first four bytes describe the APDU command and the other four bytes are the mask, for example:
+</P>
+<PRE CLASS="Codeline1"><A NAME="50626589_pgfId-33311"></A>apdu {
+<A NAME="50626589_pgfId-29017"></A>    0 20  0 82  0 20  0 82
+<A NAME="50626589_pgfId-29018"></A>    80 20  0  0 ff ff  0  0
+<A NAME="50626589_pgfId-29019"></A>}
+</PRE>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-29021"></A>The Java Card RMI permission contains information about the hash modifier (optional), class list, and method list (optional). If the list of methods is empty, an application is allowed to invoke all the remote methods of interfaces in the list of classes, for example:
+</P>
+<DIV CLASS="Code">
+<BR>
+<TABLE CLASS="Code" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW">
+<PRE CLASS="ScreenText1"><A NAME="50626589_pgfId-33141"></A>jcrmi {
+<A NAME="50626589_pgfId-33143"></A>    classes {
+<A NAME="50626589_pgfId-33145"></A>             com.sun.javacard.samples.RMIDemo.Purse
+<A NAME="50626589_pgfId-33147"></A>    }
+<A NAME="50626589_pgfId-33149"></A>    hashModifier zzz
+<A NAME="50626589_pgfId-33151"></A>    methods {
+<A NAME="50626589_pgfId-33153"></A>        debit(S)V
+<A NAME="50626589_pgfId-33155"></A>        setAccountNumber([B)V
+<A NAME="50626589_pgfId-33157"></A>        getAccountNumber()[B
+<A NAME="50626589_pgfId-33159"></A>    }
+<A NAME="50626589_pgfId-33161"></A>}
+</PRE>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+</DIV>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-30462"></A>All the numbers are hexadecimal. Tabulation, blank, CR, and LF symbols are used as separators. Separators can be omitted before and after symbols <KBD CLASS="Filename-Command">{</KBD> and <KBD CLASS="Filename-Command">}</KBD>.
+</P>
+<P CLASS="Paragraph"><A NAME="50626589_pgfId-29836"></A>The <KBD CLASS="Filename-Command">pin_apdu</KBD> and <KBD CLASS="Filename-Command">pin_jcrmi</KBD> records contain information necessary for PIN entry methods, which is the PIN identifier and APDU command headers, or remote method names.
+</P><H3 CLASS="Head2"><A NAME="50626589_pgfId-34499"></A>14.4.3	Access Control File Example</H3>
+<DIV CLASS="Code">
+<BR>
+<TABLE CLASS="Code" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW">
+<PRE CLASS="ScreenText1"><A NAME="50626589_pgfId-34502"></A>pin_data {
+<A NAME="50626589_pgfId-34504"></A>  label   Unblock pin
+<A NAME="50626589_pgfId-34506"></A>  id        44
+<A NAME="50626589_pgfId-34508"></A>  type      utf
+<A NAME="50626589_pgfId-34510"></A>  min       4
+<A NAME="50626589_pgfId-34512"></A>  stored    8
+<A NAME="50626589_pgfId-34514"></A>  max       8
+<A NAME="50626589_pgfId-34516"></A>  reference 33
+<A NAME="50626589_pgfId-34518"></A>  pad       ff
+<A NAME="50626589_pgfId-34520"></A>  flag      needs-padding
+<A NAME="50626589_pgfId-34522"></A>  yflag     unblockingPIN
+<A NAME="50626589_pgfId-34524"></A>}
+<A NAME="50626589_pgfId-34526"></A>pin_data {
+<A NAME="50626589_pgfId-34528"></A>  label     Main pin
+<A NAME="50626589_pgfId-34530"></A>  id        55
+<A NAME="50626589_pgfId-34532"></A>  type      half-nibble
+<A NAME="50626589_pgfId-34534"></A>  min       4
+<A NAME="50626589_pgfId-34536"></A>  stored    8
+<A NAME="50626589_pgfId-34538"></A>  max       8
+<A NAME="50626589_pgfId-34540"></A>  reference 12
+<A NAME="50626589_pgfId-34542"></A>  pad       ff
+<A NAME="50626589_pgfId-34544"></A>  flag      disable-allowed
+<A NAME="50626589_pgfId-34546"></A>  flag      needs-padding
+<A NAME="50626589_pgfId-34548"></A>}
+<A NAME="50626589_pgfId-34550"></A>&nbsp;
+<A NAME="50626589_pgfId-34552"></A>acf a0 0 0 0 62 ff 1 {
+<A NAME="50626589_pgfId-34554"></A>  ace {
+<A NAME="50626589_pgfId-34556"></A>        root CN=thehost;OU=JCT;O=dummy CA;L=Santa Clara;ST=CA;C=US
+<A NAME="50626589_pgfId-34558"></A> &nbsp;
+<A NAME="50626589_pgfId-34560"></A>        pin_jcrmi {
+<A NAME="50626589_pgfId-34562"></A>            id 55
+<A NAME="50626589_pgfId-34564"></A>            verify enterPIN([B)S
+<A NAME="50626589_pgfId-34566"></A>            change changePIN([B[B)S
+<A NAME="50626589_pgfId-34568"></A>            disable disablePIN([B)S
+<A NAME="50626589_pgfId-34570"></A>            enable enablePIN([B)S
+<A NAME="50626589_pgfId-34572"></A>            unblock unblockPIN([B[B)S
+<A NAME="50626589_pgfId-34574"></A>           }
+<A NAME="50626589_pgfId-34576"></A>  }
+<A NAME="50626589_pgfId-34578"></A>}
+<A NAME="50626589_pgfId-34580"></A>&nbsp;
+<A NAME="50626589_pgfId-34582"></A>acf a0 0 0 0 62 ee 1 {
+<A NAME="50626589_pgfId-34584"></A>  ace {
+<A NAME="50626589_pgfId-34586"></A>    root CN=thehost;OU=JCT;O=dummy CA;L=Santa Clara;ST=CA;C=US
+<A NAME="50626589_pgfId-34588"></A>&nbsp;
+<A NAME="50626589_pgfId-34590"></A>    pin_apdu {
+<A NAME="50626589_pgfId-34592"></A>            id 55
+<A NAME="50626589_pgfId-34594"></A>            verify 1 2 3 1
+<A NAME="50626589_pgfId-34596"></A>            change 4 3 2 2
+<A NAME="50626589_pgfId-34598"></A>            disable 1 1 1 3 
+<A NAME="50626589_pgfId-34600"></A>            enable 5 5 5 4
+<A NAME="50626589_pgfId-34602"></A>            unblock 7 7 7 5
+<A NAME="50626589_pgfId-34604"></A>        }
+<A NAME="50626589_pgfId-34606"></A>  }
+<A NAME="50626589_pgfId-34608"></A>}
+<A NAME="50626589_pgfId-34610"></A>&nbsp;
+<A NAME="50626589_pgfId-34612"></A>acf a0 0 0 0 62 3 1 c 8 1 {
+<A NAME="50626589_pgfId-34614"></A>  ace {
+<A NAME="50626589_pgfId-34616"></A>        root CN=thehost;OU=JCT;O=dummy CA;L=Santa Clara;ST=CA;C=US
+<A NAME="50626589_pgfId-34618"></A>&nbsp;
+<A NAME="50626589_pgfId-34620"></A>        jcrmi {
+<A NAME="50626589_pgfId-34622"></A>                 classes {
+<A NAME="50626589_pgfId-34624"></A>                     com.sun.javacard.samples.RMIDemo.Purse
+<A NAME="50626589_pgfId-34626"></A>              }
+<A NAME="50626589_pgfId-34628"></A>                 hashModifier xxx
+<A NAME="50626589_pgfId-34630"></A>                 methods {
+<A NAME="50626589_pgfId-34632"></A>                   setAccountNumber([B)V
+<A NAME="50626589_pgfId-34634"></A>                   getBalance()S
+<A NAME="50626589_pgfId-34636"></A>                   credit(S)V
+<A NAME="50626589_pgfId-34638"></A>                 }
+<A NAME="50626589_pgfId-34640"></A>  }
+<A NAME="50626589_pgfId-34642"></A>}
+<A NAME="50626589_pgfId-34644"></A>  ace {
+<A NAME="50626589_pgfId-34646"></A>        jcrmi {
+<A NAME="50626589_pgfId-34648"></A>                classes {
+<A NAME="50626589_pgfId-34650"></A>                     com.sun.javacard.samples.RMIDemo.Purse
+<A NAME="50626589_pgfId-34652"></A>                  }
+<A NAME="50626589_pgfId-34654"></A>&nbsp;
+<A NAME="50626589_pgfId-34656"></A>                  debit(S)V
+<A NAME="50626589_pgfId-34658"></A>                  getAccountNumber()[B
+<A NAME="50626589_pgfId-34660"></A>              }
+<A NAME="50626589_pgfId-34662"></A>            }
+<A NAME="50626589_pgfId-34664"></A>       }
+<A NAME="50626589_pgfId-34666"></A>  }
+<A NAME="50626589_pgfId-34668"></A> &nbsp;
+<A NAME="50626589_pgfId-34670"></A>acf a0 00 00 00 62 03 01 0c 02 01 {
+<A NAME="50626589_pgfId-34672"></A>  ace {
+<A NAME="50626589_pgfId-34674"></A>        root CN=thehost;OU=JCT;O=dummy CA;L=Santa Clara;ST=CA;C=US
+<A NAME="50626589_pgfId-34676"></A>        apdu {
+<A NAME="50626589_pgfId-34678"></A>               0 20  0 82  0 20  0 82
+<A NAME="50626589_pgfId-34680"></A>               80 20  0  0 ff ff  0  0
+<A NAME="50626589_pgfId-34682"></A>             }
+<A NAME="50626589_pgfId-34684"></A>        apdu {
+<A NAME="50626589_pgfId-34686"></A>               80 22  0  0 ff ff  0  0 
+<A NAME="50626589_pgfId-34688"></A>             }
+<A NAME="50626589_pgfId-34690"></A>        }
+<A NAME="50626589_pgfId-34692"></A>  }
+<A NAME="50626589_pgfId-34694"></A>acf a0 00 00 00 62 03 01 0c 02 01 {
+<A NAME="50626589_pgfId-34696"></A>&nbsp;
+<A NAME="50626589_pgfId-34698"></A>  ace {
+<A NAME="50626589_pgfId-34700"></A>    apdu {
+<A NAME="50626589_pgfId-34702"></A>        0 20 0 82 ff ff ff ff
+<A NAME="50626589_pgfId-34704"></A>    }
+<A NAME="50626589_pgfId-34706"></A>  }
+<A NAME="50626589_pgfId-34708"></A>}
+<A NAME="50626589_pgfId-34710"></A>&nbsp;
+<A NAME="50626589_pgfId-34712"></A>acf a0 00 00 00 62 03 01 0c 06 01 {
+<A NAME="50626589_pgfId-34714"></A>&nbsp;
+<A NAME="50626589_pgfId-34716"></A>  ace {
+<A NAME="50626589_pgfId-34718"></A>    apdu {
+<A NAME="50626589_pgfId-34720"></A>        0 20 0 82 ff ff ff ff
+<A NAME="50626589_pgfId-34722"></A>    }
+<A NAME="50626589_pgfId-34724"></A>  }
+<A NAME="50626589_pgfId-34726"></A>}
+</PRE>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+</DIV>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="location.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="sip.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

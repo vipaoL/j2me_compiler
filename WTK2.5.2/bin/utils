@@ -1,0 +1,24 @@
+#!/bin/sh
+
+javapathtowtk=/home/runner/work/j2me_compiler/jdk1.6.0_45/bin/
+
+PRG=$0
+
+# Resolve soft links
+while [ -h "$PRG" ]; do
+    ls=`/bin/ls -ld "$PRG"`
+    link=`/usr/bin/expr "$ls" : '.*-> \(.*\)$'`
+    if /usr/bin/expr "$link" : '^/' > /dev/null 2>&1; then
+        PRG="$link"
+    else
+        PRG="`/usr/bin/dirname $PRG`/$link"
+    fi
+done
+
+KVEM_BIN=`dirname $PRG`
+KVEM_HOME=`cd ${KVEM_BIN}/.. ; pwd`
+KVEM_LIB=${KVEM_HOME}/wtklib
+KVEM_API=${KVEM_HOME}/lib
+"${javapathtowtk}java" -Dkvem.home="${KVEM_HOME}" \
+    -cp "${KVEM_LIB}/kenv.zip:${KVEM_LIB}/ktools.zip:${KVEM_BIN}/JadTool.jar:${KVEM_BIN}/MEKeyTool.jar:${KVEM_LIB}/customjmf.jar:${KVEM_API}/j2me-ws.jar:${KVEM_BIN}/schema2beansdev.jar:${KVEM_BIN}/j2me_sg_ri.jar:${KVEM_BIN}/jaxrpc-impl.jar:${KVEM_BIN}/jaxrpc-api.jar:${KVEM_BIN}/jaxrpc-spi.jar:${KVEM_BIN}/activation.jar:${KVEM_BIN}/mail.jar:${KVEM_BIN}/saaj-api.jar:${KVEM_BIN}/saaj-impl.jar:${KVEM_BIN}/xsdlib.jar:${KVEM_LIB}/nist-sip-1.2.jar:${KVEM_LIB}/JainSipApi1.1.jar:${KVEM_LIB}/jain-sip-presence-proxy.jar" \
+    com.sun.kvem.preferences.Utilities "$@" 0

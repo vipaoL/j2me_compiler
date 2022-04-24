@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC User's Guide">
+<META name="description" content="The Sun Java Wireless Toolkit for CLDC User's Guide describes how to use the wireless toolkit user interface and the emulator. It also describes how various JSRs are implemented in the user interface and discusses many of <LeaveWindow>:reset()<Btn1Down>:set()<Btn1Up>:notify() unset()*DataForeground:#FF0000000000*Dialog.background:#e2e2de*Dialog.foreground:#000000*DtEditor*textFontList:-dt-interface user-medium-r-normal-m*-*-*-*-*-*-*-*-*:*DtTerm*shadowThickness:1*Entry.activeBackground:#ffffff*En<Key>u:delete-to-start-of-line()        Ctrl<Key>k:delete-to-end-of-line()        Ctrl<Key>a:beginning-of-line()        Ctrl<Key>e:end-of-line()        Ctrl<Key>p:process-up()        Ctrl<Key>b:backward-character()        Ctrl<Key>n:process-down()        Ctrl<Key>f:forward-character()*XmText*background:seashell*XmText.background:#ffffff*XmText.foreground:#000000*XmTextField*FontList:-dt-interface user-medium-r-normal-m*-*-*-*-*-*-*-*-*:*XmTextField*Translations:#override        Ctrl<Key>u:delete-to-start-of-line()        Ctrl<Key>k:delete-to-end-of-line()        Ctrl<Key>a:beginning-of-line()        Ctrl<Key>e:end-of-line()        Ctrl<Key>b:backward-character()        Ctrl<Key>f:forward-character()*XmTextField*background:seashell*XmTextField.background:#ffffff*XmTextField.foreground:#000000*XmToggleButton.background:#e2e2de*XmToggleButton.foreground:#000000*XmToggleButtonGadget.background:#e2e2de*XmToggleButton
+<META name="partnumber" content="&nbsp;">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>C H A P T E R  16 - Working with the Payment API
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="sip.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="mia.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Number" ABBR="ChapNum" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1">
+<TR>
+<TD ALIGN="right" CLASS="ChapNumber"><SPAN CLASS="ChapNumPrefix"><A NAME="50626592_pgfId-28425"></A>C H A P T E R  </SPAN>&nbsp;<SPAN CLASS="ChapNumNum">16</SPAN><A NAME="50626592_11459"></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50626592_pgfId-21060"></A><A NAME="50626592_28941"></A>Working with the Payment API
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-29543"></A><A NAME="50626592_marker-29931"></A>JSR 229, the <A NAME="50626592_marker-29932"></A>Payment API, enables applications to make payments on behalf of their users. The Payment API supports different payment mechanisms through payment <EM CLASS="Emphasis">adapters</EM>. A device that implements the Payment API has one or more adapters. MIDlet suites use descriptor attributes to specify what types of payment adapters they can use.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28813"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC's emulator implements the Payment API with an example payment adapter that simulates both Premium Priced SMS (PPSMS) and credit card payments. In addition, the toolkit makes it easy to set the necessary attributes in the MIDlet's descriptor and JAR file manifest. Finally, a payment console enables you to easily track payments made or attempted by an application.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-29585"></A>Because the Payment API is closely tied to provisioning and external device payment mechanisms, and because payments can only succeed in a trusted protection domain, always test and debug your Payment API applications using the toolkit's Run via OTA mechanism. See <A HREF="developing.html#50626612_11459" CLASS="XRef">Chapter 2</A> for details.
+</P><H2 CLASS="Head1"><A NAME="50626592_pgfId-28805"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>16.1	Project Settings for Payment</H2>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28804"></A>To adjust the payment attributes for a project, click Settings and select the Payment icon.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626592_pgfId-30697"></A>FIGURE 16-1 	Payment Settings
+</P>
+<BR><A NAME="50626592_pgfId-37507"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626592_pgfId-28851"></A>
+<P><IMG SRC="figures/payment-4.jpg" TITLE="Settings window with Payment category selected" ALT="Settings window with Payment category selected" ALIGN="BASELINE">
+</P><A NAME="50626592_pgfId-37483"></A><A NAME="50626592_pgfId-37506"></A>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28824"></A>The fields and values are explained fully in JSR 229, the Payment API specification.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28825"></A>The General box contains information about the Payment API version in use and where to find payment updates. For testing, you can specify a <KBD CLASS="Filename-Command">localhost</KBD> URL (as shown in the screen shot) that retrieves an update file directly from your project directory.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28901"></A>The Debug box contains options that are useful during application testing. Each option is explained in the Payment API specification.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28902"></A>The Features box lists the features your application can charge. These features correspond to the pricing information that is listed for each provider. You can modify the list of features by using the Add and Remove buttons.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28906"></A>The Providers box lists specific payment providers that can be used for this application. When the time comes to make a payment, the emulator (or device) matches one of its available payment adapters to one of the providers listed for the application. You can modify the list of providers with the Add, Edit, and Remove buttons. If you add or edit a provider, the following window appears.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626592_pgfId-30703"></A>FIGURE 16-2 	Editing a Payment Provider
+</P>
+<BR><A NAME="50626592_pgfId-37509"></A>
+<P CLASS="FigureBox"><A NAME="50626592_pgfId-28951"></A>
+<P><IMG SRC="figures/payment-5.jpg" TITLE="For each payment provider, info is name, supported adapter, currency, and payment specific info." ALT="For each payment provider, info is name, supported adapter, currency, and payment specific info." ALIGN="BASELINE">
+</P><A NAME="50626592_pgfId-37488"></A><A NAME="50626592_pgfId-37508"></A>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28953"></A>These fields are also described fully in the Payment API specification.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28956"></A>The Price Info box contains one line for each defined payment feature. To edit a value for a price tag, double click the corresponding cell in the Value column.
+</P><H2 CLASS="Head1"><A NAME="50626592_pgfId-29779"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>16.2	Editing Payment Attributes Directly</H2>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-29780"></A>Payment attributes are stored in a <EM CLASS="Emphasis">payment update file</EM> with a <KBD CLASS="Filename-Command">.jpp</KBD> extension. Read the specification for full details. The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC provides a utility that makes it easy to edit the payment update file independently of the project settings. 
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-29124"></A>To run the utility, choose File &gt; Utilities, select Payment Edit Dialog, and press Launch. You are prompted to select the payment update file you wish to edit. After you choose a file, a window that looks nearly identical to the Payment section of the project settings appears. The debug settings are not included in the payment edit utility.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-29125"></A>Edit the payment update settings and press OK when you're finished. Because payment update files are cryptographically signed, the toolkit shows you a list of keys that you can use to sign the file. Select the key you wish to use and press Sign Payment Update File.
+</P><H2 CLASS="Head1"><A NAME="50626592_pgfId-29106"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>16.3	Payment Preferences</H2>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28961"></A>To adjust the Payment API settings for the toolkit, chooseEdit &gt; Preferences and click Payment.
+</P>
+<P CLASS="FigureCaption-Wide"><A NAME="50626592_pgfId-30709"></A>FIGURE 16-3 	Setting Payment Preferences
+</P>
+<BR><A NAME="50626592_pgfId-37511"></A>
+<P CLASS="FigureBox-Wide"><A NAME="50626592_pgfId-28981"></A>
+<P><IMG SRC="figures/payment-6.jpg" TITLE="Preferences Payment category options are Mobile Country Code, Mobile Network Code, Past Transactions Limit, and Console Phone Number." ALT="Preferences Payment category options are Mobile Country Code, Mobile Network Code, Past Transactions Limit, and Console Phone Number." ALIGN="BASELINE">
+</P><A NAME="50626592_pgfId-37493"></A><A NAME="50626592_pgfId-37510"></A>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-29835"></A>The Mobile Country Code (MCC) and Mobile Network Code (MNC) are used in conjunction with PPSMS payment providers. Taken together, the MCC and MNC identify the wireless carrier of a device. At payment time, the MCC and MNC are used to find a matching provider from the list of providers in the project settings. Because the emulator is not a real device, you can simulate a carrier by filling in appropriate values for MCC and MNC. Consult the Payment API specification for more details.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-29050"></A>Past Transactions Limit determines how many previous transactions are recorded in the emulator. This affects the length of the list shown in the external event window, described below, as well as the number of past transactions that can be retrieved by the application itself.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-29051"></A>Finally, Console Phone Number determines the simulated phone number of the payment console, which is described later.
+</P><H2 CLASS="Head1"><A NAME="50626592_pgfId-28966"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>16.4	Viewing Transaction History</H2>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28970"></A>The emulator keeps track of payment transactions, just as a real device does. To see the history of transactions, choose MIDlet &gt; External Events from the emulator window's menu. Click the Payment Transactions tab.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626592_pgfId-30715"></A>FIGURE 16-4 	Viewing Payment Transactions
+</P>
+<BR><A NAME="50626592_pgfId-37513"></A>
+<P CLASS="FigureBox"><A NAME="50626592_pgfId-29020"></A>
+<P><IMG SRC="figures/payment-7.jpg" TITLE="External Event Generator with Payment Transactions tab selected" ALT="External Event Generator with Payment Transactions tab selected" ALIGN="BASELINE">
+</P><A NAME="50626592_pgfId-37498"></A><A NAME="50626592_pgfId-37512"></A>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-29010"></A>Click Refresh to update the list after making more payments. Select a transaction and click Details to see all the details in a separate window.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-29104"></A>The external events window only shows transactions that have been made while the emulator is running via OTA. Although it is possible to complete transactions without using OTA, such transactions are not shown. For the most realistic simulation of payments, always use Run via OTA to test applications.
+</P><H2 CLASS="Head1"><A NAME="50626592_pgfId-28962"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>16.5	Monitoring Payments</H2>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28963"></A>The Sun Java<SUP CLASS="Superscript">TM</SUP> Wireless Toolkit for CLDC provides a payment console that makes it easy to see payments passing through the example payment adapter. To launch the Payment Service Provider Console, select File &gt; Utilities &gt; Payment Console.
+</P>
+<P CLASS="FigureCaption"><A NAME="50626592_pgfId-30721"></A>FIGURE 16-5 	Payment Console
+</P>
+<BR><A NAME="50626592_pgfId-37515"></A>
+<P CLASS="FigureBox"><A NAME="50626592_pgfId-29074"></A>
+<P><IMG SRC="figures/payment-8.jpg" TITLE="Payment Service Provider console window displays messages from payment transactions" ALT="Payment Service Provider console window displays messages from payment transactions" ALIGN="BASELINE">
+</P><A NAME="50626592_pgfId-37503"></A><A NAME="50626592_pgfId-37514"></A>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28800"></A>In addition, you can view transactions using the network monitor. Credit card transactions are conducted using HTTPS, while PPSMS transactions use SMS. For a full description of the network monitor, see <A HREF="monitoring.html#50626615_47713" CLASS="XRef">Chapter 5</A>.
+</P>
+<P CLASS="Paragraph"><A NAME="50626592_pgfId-28792"></A>&nbsp;
+</P>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="4" width="100%"><col id="1" span="1" width="1%"><col id="2" span="1" width="69%"><col id="3" span="1" width="1%"><col id="4" span="1" width="29%">
+<tr bgcolor="#cccccc"><td>&nbsp;</td>
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC User's Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">&nbsp;
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><a href="sip.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="mia.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

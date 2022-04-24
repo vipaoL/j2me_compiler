@@ -1,0 +1,497 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML LANG="en">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 7.0/HTML Export Filter">
+
+<LINK REL="STYLESHEET" HREF="unx_unstr_styles.css" CHARSET="ISO-8859-1" TYPE="text/css">
+<META name="dc.title" content="Sun Java Wireless Toolkit for CLDC Basic Customization Guide">
+<META name="description" content="The Basic Customization Guide for Sun Java Wireless Toolkit for CLDC details the customization options available in a binary release.">
+<META name="partnumber" content="v252">
+<META name="date" content="September 2007">
+<META name="revision" content="Revision 01">
+<TITLE>Preface
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<div class="navbar" align="center">
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="2" width="100%"><col id="1" span="1" width="50%"><col id="2" span="1" width="50%">
+<tr bgcolor="#cccccc">
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC Basic Customization Guide
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><A HREF="index.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="introduction.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a></td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+</DIV>
+<TABLE DIR="LTR" SUMMARY="Chapter Title" ABBR="ChapTitle" WIDTH="100%" BORDER="0">
+<COLGROUP SPAN="1" WIDTH="100%"><COL ID="1" SPAN="1" WIDTH="100%">
+<TR>
+<TD ALIGN="right" CLASS="ChapTitle">
+<HR SIZE=7 NOSHADE><A NAME="50417688_pgfId-4401"></A>Preface
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-5887"></A>The <I CLASS="Title">Sun Java<IMG SRC=shared/chars/tm.gif TITLE="trademark" ALT="trademark"> Wireless Toolkit for CLDC Basic Customization Guide </I>provides technical details for customizing the Sun Java Wireless Toolkit for CLDC.
+</P><H2 CLASS="Head1P"><A NAME="50417688_pgfId-5891"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>Who Should Use This Book</H2>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-5894"></A>This guide is intended for developers who need to customize the Sun Java Wireless Toolkit for CLDC for their own use, such as to be able to accommodate a new device or modifying the source code to accommodate new APIs for emulators. 
+</P><H2 CLASS="Head1P"><A NAME="50417688_pgfId-5897"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>How This Book Is Organized</H2>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-6078"></A>This guide contains the following chapters and appendices:
+</P>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-5905"></A><A HREF="introduction.html#50417689_51108" CLASS="XRef">Chapter 1</A> gives a brief overview of the customization possibilities.
+</P>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-5913"></A><A HREF="skinning.html#50417690_49242" CLASS="XRef">Chapter 2</A> describes how to create new emulator skins.
+</P>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-5917"></A><A HREF="obfuscator.html#50417691_30810" CLASS="XRef">Chapter 3</A> describes how to create obfuscator plug-ins.
+</P><H2 CLASS="Head1P"><A NAME="50417688_pgfId-5918"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>Paths and Operating System Commands</H2>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-5919"></A>This document may not contain information on basic UNIX&#174;, Linux, or Microsoft Windows system commands and procedures such as opening a terminal window, changing directories, and setting environment variables. See the software documentation that you received with your system for this information.
+</P>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-6994"></A>The examples in this document are for the Windows platform. On Linux systems, replace backslash path separators (&#92;) with forward slashes (/). For example:
+</P>
+<BR>
+<TABLE CLASS="Untitled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50417688_pgfId-7008"></A>Windows
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-7010"></A>toolkit<KBD CLASS="Filename-Command">&#92;wtklib&#92;devices&#92;DefaultColorPhone&#92;netIndicatorOn.png</KBD>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50417688_pgfId-7012"></A>Linux
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-7022"></A>toolkit<KBD CLASS="Filename-Command">/wtklib/devices/DefaultColorPhone/netIndicatorOn.png</KBD>
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-7243"></A>In this book, <I CLASS="Variable">toolkit</I> always refers to the directory where the Sun Java Wireless Toolkit for CLDC is installed. <I CLASS="Variable">workdir</I> refers to a user's working directory. The default location of <I CLASS="Variable">workdir</I><A NAME="50417688_marker-7242"></A> is typically in one of these locations:
+</P>
+<BR>
+<TABLE CLASS="Legend" BORDER="0" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR">
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50417688_pgfId-7246"></A>Windows:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-7251"></A>C:&#92;Documents and Settings&#92;<I CLASS="Variable">User</I>&#92;j2mewtk&#92;2.5.2 
+<BR>(where <I CLASS="Variable">User</I> is your account name)
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableHead-Side"><A NAME="50417688_pgfId-7253"></A>Linux:
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-7258"></A>&#126;/j2mewtk/2.5.2 (where <I CLASS="Variable">&#126;</I> is your home directory)
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR><H2 CLASS="Head1P"><A NAME="50417688_pgfId-5962"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>Typographic Conventions</H2>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaptionP"> <A NAME="50417688_pgfId-6620"> </A> TABLE P-1 	Typographic Conventions </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50417688_pgfId-5929"></A>Typeface
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50417688_pgfId-5931"></A>Meaning
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50417688_pgfId-5933"></A>Examples
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-5935"></A><KBD CLASS="Filename-Command">AaBbCc123</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-5937"></A>The names of commands, files, and directories; on-screen computer output
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-5939"></A>Edit your <KBD CLASS="Filename-Command">.login</KBD> file.
+</P>
+<P CLASS="TableText"><A NAME="50417688_pgfId-5940"></A>Use <KBD CLASS="Filename-Command">ls -a</KBD> to list all files.
+</P>
+<P CLASS="TableText"><A NAME="50417688_pgfId-5941"></A><KBD CLASS="Filename-Command">% You have mail</KBD>.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-5943"></A><KBD CLASS="UserType">AaBbCc123</KBD>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-5945"></A>What you type, when contrasted with on-screen computer output
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-5947"></A><KBD CLASS="Filename-Command">% </KBD><KBD CLASS="UserType">su</KBD>
+</P>
+<P CLASS="TableText"><A NAME="50417688_pgfId-5948"></A><KBD CLASS="Filename-Command">Password:</KBD>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-5950"></A><I CLASS="Variable">AaBbCc123</I>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-5952"></A>Book titles, new words or terms, words to be emphasized
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-5957"></A>Read Chapter 6 in the <I CLASS="Title">User's Guide</I>.
+</P>
+<P CLASS="TableText"><A NAME="50417688_pgfId-6839"></A>These are called <EM CLASS="Emphasis">class</EM> options.
+</P>
+<P CLASS="TableText"><A NAME="50417688_pgfId-6840"></A>You <EM CLASS="Emphasis">must</EM> be superuser to do this.
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6805"></A> 
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6814"></A>Command-line variable; replace with a real name or value
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6821"></A>To delete a file, type <KBD CLASS="Filename-Command">rm</KBD> <I CLASS="Variable">filename</I>.
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR><CAPTION CLASS="TableCaptionP"> <A NAME="50417688_pgfId-6456"> </A> &nbsp; </CAPTION><H2 CLASS="Head1P"><A NAME="50417688_pgfId-6458"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>Related Documentation</H2>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-6430"></A>This section lists related Java Platform, Micro Edition (Java ME) specifications. Java ME was formerly referred to as the Java 2 Platform, Micro Edition, or J2ME<IMG SRC=shared/chars/tm.gif TITLE="trademark" ALT="trademark">, as you see in some of the specification names. 
+</P>
+<BR>
+<TABLE CLASS="Titled" BORDER="1" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#000000" CELLPADDING="5" CELLSPACING="0" DIR="LTR"><CAPTION CLASS="TableCaptionP"> <A NAME="50417688_pgfId-6279"> </A> TABLE P-2 	Related Documentation </CAPTION>
+<THEAD>
+<TR>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50417688_pgfId-6283"></A>Topic
+</P>
+</TH>
+<TH SCOPE="COL" ROWSPAN="1" COLSPAN="1" BGCOLOR="#CCCCCC">
+<P CLASS="TableHead"><A NAME="50417688_pgfId-6285"></A>Title
+</P>
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6289"></A>Sun Java Wireless Toolkit for CLDC
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6295"></A><I CLASS="Title">Sun Java Wireless Toolkit for CLDC User's Guide</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6297"></A>Customization
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6302"></A><I CLASS="Title">Sun Java Wireless Toolkit for CLDC Advanced Customization Guide<A NAME="fnote1"></A><A HREF="#50417688_pgfId-6305"  CLASS="footnote"><SUP>[1]</SUP></A></I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6307"></A>Unified Emulator Interface
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6309"></A><I CLASS="Title">Unified Emulator Interface Specification</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6407"></A>PDAP Optional Packages - JSR 75
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6409"></A><I CLASS="Title">PDA Optional Packages for the J2ME Platform</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6403"></A>Bluetooth and OBEX - JSR 82
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6405"></A><I CLASS="Title">Java APIs for Bluetooth</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6399"></A>MIDP 2.1 - JSR 118
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6401"></A><I CLASS="Title">Mobile Information Device Profile 2.0</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6395"></A>CLDC 1.1 - JSR 139
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6397"></A><I CLASS="Title">J2ME Connected Limited Device Configuration</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6391"></A>MMAPI - JSR 135
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6393"></A><I CLASS="Title">Mobile Media API</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6387"></A>J2ME Web Services - JSR 172
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6389"></A><I CLASS="Title">J2ME Web Services Specification </I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6383"></A>SATSA - JSR 177
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6385"></A><I CLASS="Title">Security and Trust Services APIs for J2ME</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6379"></A>Location API - JSR 179
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6381"></A><I CLASS="Title">Location API for J2ME</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6375"></A>SIP API - JSR 180
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6377"></A><I CLASS="Title">SIP API for J2ME</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6371"></A>Mobile 3D Graphics - JSR 184
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6373"></A><I CLASS="Title">Mobile 3D Graphics API for J2ME</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6367"></A>JTWI - JSR 185
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6369"></A><I CLASS="Title">Java Technology for the Wireless Industry</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6363"></A>WMA 2.0 - JSR 205
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6365"></A><I CLASS="Title">Wireless Messaging API (WMA)</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6359"></A>CHAPI 1.0 - JSR 211
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6361"></A><I CLASS="Title">Content Handler API</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6355"></A>SVG API - JSR 226
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6357"></A><I CLASS="Title">Scalable 2D Vector Graphics API for J2ME</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6351"></A>Payment API - JSR 229
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6353"></A><I CLASS="Title">Payment API</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6347"></A>Advanced Multimedia - JSR 234
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6349"></A><I CLASS="Title">Advanced Multimedia Supplements</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6343"></A>Mobile Internationalization - JSR 238
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6345"></A><I CLASS="Title">Mobile Internationalization API</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6661"></A>Java Binding for OpenGL&#174; ES API - JSR 239
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6663"></A><I CLASS="Title">Java Binding for OpenGL&#174; ES API</I>
+</P>
+</TD>
+</TR>
+<TR>
+<TD SCOPE="ROW" ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6640"></A>MSA - JSR 248
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="TableText"><A NAME="50417688_pgfId-6642"></A>Mobile Service Architecture
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-6040"></A>Although specifications are definitive, they are not always the most accessible kind of information. Check out the Mobility page for an additional viewpoint:
+</P>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-6437"></A><KBD CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/" CLASS="URL"><A HREF="http://developers.sun.com/techtopics/mobility/" CLASS="URL">http://developers.sun.com/techtopics/mobility/</A></A></KBD>
+</P><H2 CLASS="Head1P"><A NAME="50417688_pgfId-6042"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>Accessing Documentation Online</H2>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-6043"></A>The following sites provide technical documentation related to Java technology:
+</P>
+<UL>
+<LI CLASS="Bullet1"><A NAME="50417688_pgfId-6045"></A><KBD CLASS="URL"><A HREF="http://developers.sun.com/" CLASS="URL"><A HREF="http://developers.sun.com/" CLASS="URL">http://developers.sun.com/</A></A> </KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+<LI CLASS="Bullet1"><A NAME="50417688_pgfId-6047"></A><KBD CLASS="URL"><A HREF="http://java.sun.com/docs/" CLASS="URL"><A HREF="http://java.sun.com/docs/" CLASS="URL">http://java.sun.com/docs/</A></A> </KBD>
+</LI>
+<P CLASS="Linebreak">
+</P>
+</UL><H2 CLASS="Head1P"><A NAME="50417688_pgfId-6048"></A>
+<DIV>
+<HR ALIGN=left SIZE=6 WIDTH=15% noshade>
+</DIV>We Welcome Your Comments</H2>
+<P CLASS="Paragraph"><A NAME="50417688_pgfId-6106"></A>We are interested in improving our documentation and welcome your suggestions. Email your feedback from <KBD CLASS="URL"><A HREF="developers.sun.com" CLASS="URL"><A HREF="http://developers.sun.com/contact/feedback.jsp?referer=http://java.sun.com/javame/index.jsp&amp;category=j2me" CLASS="URL">developers.sun.com</A></A>. </KBD>
+</P>
+<HR>
+<DIV CLASS="footnotes">
+<DIV CLASS="footnote"><SUP CLASS="Footnote"><SPAN CLASS="footnoteNumber">1</SPAN><B><A HREF="#fnote1"> (TableFootnote) </A></B><A NAME="50417688_pgfId-6305"></A></A>Available with a source license.</SUP>
+<div class="navbar" align="center">
+<br>
+<br>
+<table dir="LTR" summary="Navigation bar, includes the book title and navigation buttons" width=100% cellpadding="0" cellspacing="0" border="0"><colgroup span="3" width="100%"><col id="1" span="1" width="45%"><col id="2" span="1" width="25%"><col id="3" span="1" width="30%">
+<tr bgcolor="#cccccc">
+<td class="navbartitle" align=left rowspan="1" colspan="1" abbr="ChapTitle">Sun Java Wireless Toolkit for CLDC Basic Customization Guide
+</td>
+<td class="navbartitle" align=right rowspan="1" colspan="1" abbr="PartNum">v252
+</td>
+<td valign="top" align="right" rowspan="1" colspan="1" abbr="NavButtons"><a href="index.html"><img src="shared/toc01.gif" title="Table Of Contents" alt="Table Of Contents" width="30" height="26" border="0"></a><A HREF="index.html"><img src="shared/prev01.gif" title="Previous Chapter" alt="Previous Chapter" width="30" height="26" border="0"></a><a href="introduction.html"><img src="shared/next01.gif" title="Next Chapter" alt="Next Chapter" width="30" height="26" border="0"></a><a href="ix.html"><img src="shared/index01.gif" title="Book Index" alt="Book Index" width="30" height="26" border="0"></a></td>
+</tr>
+</table>
+<br>
+<br>
+</div>
+<P CLASS="copyrightlink"><A HREF="copyright.html">Copyright</a> &#169; 2007, Sun Microsystems, Inc.   All Rights Reserved.</P>
+</BODY>
+</HTML>

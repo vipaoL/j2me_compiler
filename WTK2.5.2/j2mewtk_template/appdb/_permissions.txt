@@ -1,0 +1,190 @@
+javax_microedition_io_Connector_http: 
+ Is it OK to Use Airtime ?,
+ %1 wants to connect to %2 using airtime. This may result in charges.\n\nIs it OK to use airtime?
+
+javax_microedition_io_Connector_socket:
+ Is it OK to Use Network ?,
+ %1 wants to send and receive data using the network. This may result in charges.\n\nIs it OK to use network?
+
+javax_microedition_io_Connector_https:
+ javax_microedition_io_Connector_http
+
+javax_microedition_io_Connector_ssl:
+ javax_microedition_io_Connector_socket
+
+javax_microedition_io_Connector_serversocket:
+ javax_microedition_io_Connector_socket
+
+javax_microedition_io_Connector_datagram:
+ javax_microedition_io_Connector_socket
+
+javax_microedition_io_Connector_datagramreceiver:
+ javax_microedition_io_Connector_socket
+
+javax_microedition_io_Connector_comm:
+ Is it OK to Connect ?,
+ %1 wants to connect to a computer. This may require a data cable.\n\nIs it OK to make a connection?
+        
+javax_microedition_io_PushRegistry:
+ Is it OK to Receive Updates?,
+ %1 wants to receive automatic updates from the network. Receiving updates may result in charges.\n\nIs it OK to receive automatic updates?
+ 
+javax_microedition_io_Connector_sms:
+ Is it OK to Communicate via Messages?,
+ %1 wants to communicate %2 using text message functionality.\n\nIs it OK to communicate?
+ 
+javax_microedition_io_Connector_cbs:
+ Is it OK to Communicate via Secured Messages?,
+ %1 wants to communicate using secured message functionality.\n\nIs it OK to communicate?
+
+javax_wireless_messaging_sms_send:
+ Is it OK to Send Messages?,
+ %1 wants to send text message(s). This could result in charges. %3 message(s) will be sent to %2.\n\nIs it OK to send messages?
+ 
+javax_wireless_messaging_sms_receive:
+ Is it OK to Receive Messages?,
+ %1 wants to receive text message(s).\n\nIs it OK to receive messages?
+ 
+javax_wireless_messaging_cbs_receive:
+ Is it OK to Receive Secured Messages?,
+ %1 wants to receive secured message(s).\n\nIs it OK to receive secured messages?
+ 
+javax_microedition_media_control_RecordControl:
+ Is it OK to Record?,
+ %1 wants to record an audio clip.\n\nIs it OK to record?
+ 
+javax_microedition_media_control_VideoControl_getSnapshot:
+ Is it OK to Record?,
+ %1 wants to record a snapshot image.\n\nIs it OK to record?
+
+javax_microedition_io_Connector_mms:
+ Is it OK to Communicate via Messages?,
+ %1 wants to communicate %2 using multimedia message functionality.\n\nIs it OK to communicate?
+
+javax_wireless_messaging_mms_send:
+ Is it OK to Send Messages?,
+ %1 wants to send multimedia message(s). This could result in charges. %3 message(s) will be sent to %2.\n\nIs it OK to send messages?
+
+javax_wireless_messaging_mms_receive:
+ Is it OK to Receive Messages?,
+ %1 wants to receive multimedia message(s).\n\nIs it OK to receive them?
+
+javax_microedition_io_Connector_obex_client:
+ Is it OK to Connect ?,
+ %1 wants to create client OBEX connection.\n\nIs it OK to make the connection?
+
+javax_microedition_io_Connector_obex_server:
+ Is it OK to Connect ?,
+ %1 wants to open server OBEX connection. This means other devices can connect to yours\n\nIs it OK to make the connection?
+
+javax_microedition_io_Connector_obex_client_tcp:
+ javax_microedition_io_Connector_comm
+
+javax_microedition_io_Connector_obex_server_tcp:
+ javax_microedition_io_Connector_comm
+ 
+javax_microedition_pim_ContactList_read:
+ Is it OK to read user data?,
+ %1 wants to read data from the address book.\n\nIs it OK to read from your address book?
+
+javax_microedition_pim_ContactList_write:
+ Is it OK to write user data?,
+ %1 wants to write data to the address book.\n\nIs it OK to update your address book?
+
+javax_microedition_pim_EventList_read:
+ Is it OK to read user data?,
+ %1 wants to read data from the calendar.\n\nIs it OK to read from your calendar?
+
+javax_microedition_pim_EventList_write:
+ Is it OK to write user data?,
+ %1 wants to write data to the calendar.\n\nIs it OK to update your calendar?
+
+javax_microedition_pim_ToDoList_read:
+ Is it OK to read user data?,
+ %1 wants to read data from the to-do list.\n\nIs it OK to read from your to-do list?
+
+javax_microedition_pim_ToDoList_write:
+ Is it OK to write user data?,
+ %1 wants to write data to the to-do list.\n\nIs it OK to update your to-do list?
+
+javax_microedition_io_Connector_file_read:
+ Is it OK to read local files?,
+ %1 wants to read from the local file system.\n\nIs it OK to read your files?
+
+javax_microedition_io_Connector_file_write:
+ Is it OK to write local files?,
+ %1 wants to write the local file system.\n\nIs it OK to update your files?
+
+javax_microedition_io_Connector_bluetooth_client:
+ Is it OK to Connect ?,
+ %1 wants to create client Bluetooth connection.\n\nIs it OK to make the connection?
+
+javax_microedition_io_Connector_bluetooth_server:
+ Is it OK to Connect ?,
+ %1 wants to open server Bluetooth connection. This means other Bluetooth devices can connect to yours\n\nIs it OK to make the connection?
+ 
+javax_bluetooth_RemoteDevice_authorize:
+ Authorize connection?,
+ Application %1 received unauthorized bluetooth connection from %2.\n\nAuthorize this connection?
+
+javax_microedition_location_Location:
+ Location services,
+ Application %1 wants to use the location services.\n\nIs it OK to use them?
+
+javax_microedition_location_Orientation:
+ javax_microedition_location_Location
+
+javax_microedition_location_ProximityListener:
+ javax_microedition_location_Location
+
+javax_microedition_location_LandmarkStore_read:
+ Landmark services,
+ Application %1 wants to use the landmark services.\n\nIs this OK?
+
+javax_microedition_location_LandmarkStore_write:
+ javax_microedition_location_LandmarkStore_read
+
+javax_microedition_location_LandmarkStore_category:
+ javax_microedition_location_LandmarkStore_read
+
+javax_microedition_location_LandmarkStore_management:
+ javax_microedition_location_LandmarkStore_read
+
+javax_microedition_apdu_aid:
+ OK to Access SmartCard?,
+ %1 wants to use the smart card. Is this OK? (%3)
+
+javax_microedition_jcrmi:
+ javax_microedition_apdu_aid
+
+javax_microedition_securityservice_CMSMessageSignatureService:
+ OK to sign message?,
+ %1 wants to use the signature service. Is this OK? (%3)
+
+javax_microedition_apdu_sat:
+ javax_microedition_apdu_aid
+ 
+javax_microedition_content_ContentHandler:
+ OK to update content handler?,
+ %1 wants to %3 as a content handler. Is this OK?
+
+javax_microedition_payment_process:
+ Payment Process,
+ Application %1 wants to use the Payment Process.\n\nAuthorize this operation?
+
+javax_microedition_io_Connector_sip:
+ SIP Services,
+ Application %1 wants to use SIP connection.\n\nAuthorize this connection?
+
+javax_microedition_io_Connector_sips:
+ SIPS Services,
+ Application %1 wants to use SIPS connection.\n\nAuthorize this connection?
+
+javax_microedition_amms_control_camera_enableShutterFeedback:
+ Camera control,
+ Application %1 wants to change the state of the camera shutter feedback. Is this OK?
+
+javax_microedition_amms_control_tuner_setPreset:
+ Set Tuner Preset,
+ Application %1 wants to set a tuner preset.\n\nIs it OK?
+
